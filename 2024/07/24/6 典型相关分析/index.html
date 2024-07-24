@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>6 典型相关分析</title>
+<meta name="keywords" content="6 典型相关分析, Hexo">
+<meta name="description" content="典型相关分析典型相关分析 Canonical Correlation，是研究两组变量（每组变量中都可能有多个指标）之间的相关关系的一种多元统计方法，即多变量间的相关性分析
+基本思想就是，在每组数据内，给每一个指标确定一个权重，然后通过线性组">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="6 典型相关分析">
+<meta property="og:description" content="典型相关分析典型相关分析 Canonical Correlation，是研究两组变量（每组变量中都可能有多个指标）之间的相关关系的一种多元统计方法，即多变量间的相关性分析
+基本思想就是，在每组数据内，给每一个指标确定一个权重，然后通过线性组">
+
+<link rel="shortcut icon" href="/icon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="http://example.com">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="http://example.com">
+        <h1 class="site-title">Hexo</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://space.bilibili.com/3546387746654749" class="menu purple-link">
+        哔哩哔哩
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/cdscvhh" class="menu purple-link">
+        知乎
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_72565814" class="menu purple-link">
+        CSDN
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://github.com/Diraw" class="menu purple-link">
+        GitHub
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">6 典型相关分析</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2024-07-24</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+              数学建模
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="典型相关分析"><a href="#典型相关分析" class="headerlink" title="典型相关分析"></a>典型相关分析</h1><p>典型相关分析 Canonical Correlation，是研究两组变量（每组变量中都可能有多个指标）之间的相关关系的一种多元统计方法，即<strong>多变量间的相关性分析</strong></p>
+<p>基本思想就是，在每组数据内，给每一个指标确定一个权重，然后通过线性组合的方式，得到两个新的向量，记为$U$和$V$，然后通过调整两个系数向量，使得$U$和$V$之间的相关系数最大</p>
+<p>最终得到的$U$和$V$被称为<strong>典型变量</strong>，其系数被称为<strong>典型相关系数</strong></p>
+<p>系数须满足条件：1、$D(aX)&#x3D;D(bY)&#x3D;1$，2、$\rho(aX,bY)$ 最大</p>
+<p>SPSS操作：分析-相关-典型相关性-选择指标到集合1和集合2-确定-导出为word，改一下集合名称，表格名称“典型相关性”改成“典型相关系数”，“相关性”改成“相关系数”，“显著性”改成“P值”，将P值和显著性水平作比较</p>
+<p>置信水平：90 95 99，显著性水平：0.1 0.05 0.01，确定一个置信水平，选择P值小于显著性水平的特征值</p>
+<p>然后下面的系数使用标准化后的更好（消除量纲影响）</p>
+<p><strong>典型载荷分析</strong>：导出的文件有</p>
+<p><strong>典型冗余分析</strong>：导出的文件有（方差比例）</p>
+<p>典型相关分析关键步骤：<br>1、假设两组数据服从联合正态分布<br>2、对两组变量的相关性进行检验（构造似然比统计量）<br>3、确定典型相关变量的个数（直接看典型相关系数对应的P值即可）<br>4、利用标准化后的典型相关变量分析问题<br>5、进行典型载荷分析</p>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E5%85%B8%E5%9E%8B%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90"><span class="top-box-text">典型相关分析</span></a></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2024/07/23/5%20%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0/">
+          <h3 class="post-title">
+            下一篇：5 相关系数
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/Diraw" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至zhihu" href="https://www.zhihu.com/people/cdscvhh" target="_blank">
+          <i class="icon icon-zhihu"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

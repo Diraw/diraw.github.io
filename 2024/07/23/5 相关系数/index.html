@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>5 相关系数</title>
+<meta name="keywords" content="5 相关系数, Hexo">
+<meta name="description" content="相关系数总体：索要考察对象的全部个体
+样本：从总体中所抽取的一部分个体，计算这些抽取的样本量来估计总体的统计量
+一、皮尔逊Person相关系数协方差的大小和两个变量的量纲有关，不适合作比较，因此引入相关系数，也就是总体皮尔逊Person相关">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="5 相关系数">
+<meta property="og:description" content="相关系数总体：索要考察对象的全部个体
+样本：从总体中所抽取的一部分个体，计算这些抽取的样本量来估计总体的统计量
+一、皮尔逊Person相关系数协方差的大小和两个变量的量纲有关，不适合作比较，因此引入相关系数，也就是总体皮尔逊Person相关">
+
+<link rel="shortcut icon" href="/icon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="http://example.com">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="http://example.com">
+        <h1 class="site-title">Hexo</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://space.bilibili.com/3546387746654749" class="menu purple-link">
+        哔哩哔哩
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/cdscvhh" class="menu purple-link">
+        知乎
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_72565814" class="menu purple-link">
+        CSDN
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://github.com/Diraw" class="menu purple-link">
+        GitHub
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">5 相关系数</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2024-07-23</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+              数学建模
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h1><p>总体：索要考察对象的全部个体</p>
+<p>样本：从总体中所抽取的一部分个体，计算这些抽取的样本量来估计总体的统计量</p>
+<h1 id="一、皮尔逊Person相关系数"><a href="#一、皮尔逊Person相关系数" class="headerlink" title="一、皮尔逊Person相关系数"></a>一、皮尔逊Person相关系数</h1><p>协方差的大小和两个变量的量纲有关，不适合作比较，因此引入<strong>相关系数</strong>，也就是<strong>总体皮尔逊Person相关系数</strong>：<br>$$<br>\rho_{XY}&#x3D;\frac{\mathbf{Cov}(XY)}{\sigma_X\sigma_Y}<br>$$</p>
+<p>皮尔逊相关系数可以看作将X和Y标准化后（提出量纲影响）的协方差</p>
+<p>可以证明，$|\rho_{XY}|\leq 1$，且当 $Y+aX+b$ 时，$\rho_{XY}&#x3D;\begin{cases} 1\ ,\ a&gt;0\ -1\ ,\ a&lt;0\end{cases} \$</p>
+<p>而<strong>样本皮尔逊相关系数</strong>：$r_{XY}&#x3D;\dfrac{\mathbf{Cov}(XY)}{S_XS_Y}$，其中样本标准差、协方差的分母是n-1</p>
+<p>皮尔逊相关系数是用来衡量两个变量<strong>线性</strong>相关程度的指标，用之前得保证两个变量是线性相关的：<br>1、非线性也会导致相关系数很大<br>2、离群点对相关系数得影响很大<br>3、两个变量相关系数很大也不能说明二者有关，可能是受到异常值得影响<br>4、相关系数为0只是说明不是线性相关，说不定有更复杂的相关关系（非线性相关）</p>
+<p>所以首先画出<strong>散点图</strong>很关键</p>
+<p>相关系数的大小：正&#x2F;负，无&#x2F;弱&#x2F;中&#x2F;前相关性，但事实上，比起相关系数的1大小，我们往往更关系的是<strong>显著性</strong>（假设检验）</p>
+<p><strong>corrcoef函数</strong><br><code>R=corrcoef(A)</code> 返回A的相关系数矩阵，<code>R=corrcoef(A,B)</code> 返回A、B向量之间的系数</p>
+<h1 id="二、假设检验"><a href="#二、假设检验" class="headerlink" title="二、假设检验"></a>二、假设检验</h1><p>假设一个统计满足正态分布（<strong>原假设</strong>），则样本落在那个 $3\sigma$ 表示的临界值之内的概率为<strong>置信水平</strong> $\beta&#x3D;1-\alpha$，即相信原假设的概率（一般为90%、95%、99%），而落在临界值之外概率为<strong>显著性水平</strong> $\alpha$，即拒绝原假设的可能性，被称为犯第一类错误的概率</p>
+<p>上述临界值之内的区域被称为<strong>接受域</strong>，临界值以外的被称为<strong>拒绝域</strong>，接受域和置信区间不一样，一个是假设检验的东西，一个是参数估计的东西</p>
+<p>也就是说，我们假设一个统计满足的分布之后，<strong>人为设置</strong>一个置信水平，就可以计算得到接受域和拒绝域，最后我们把真实的情况带进入，看它是落在哪个里面，做最后相信还是拒绝假设的判断</p>
+<p>所以有可能在95%置信水平下拒绝的假设，在99%置信水平下却接受了，因为此时拒绝域的范围变小了，小概率事件特别难发生</p>
+<p><strong>双侧检验</strong>（two-tailed test）：拒绝域在分布的两端。用于检测参数是否显著不同于某个值（即可能更大或更小）。<br><strong>单侧检验</strong>（one-tailed test）：拒绝域只在分布的一端。用于检测参数是否显著大于或小于某个值。<br>双侧检验和单侧检验的选择取决于具体的研究问题和假设</p>
+<p>而<strong>接受域的范围的获得</strong>是通过累计密度函数&#x2F;分布函数 $F(x)$ 获得，例如我们计算正态分布95%置信水平对应的接受域范围，并时是双侧检验，对于双侧检验，95%置信水平意味着我们在每一端各留出2.5%的概率。因此，我们需要找到使得累计概率为0.975的临界值 $a$，则有 $F(a)&#x3D;\int_{-\infty}^af(x)\mathrm{d}x&#x3D;0.95+0.025&#x3D;0.975$，求一个反函数则有 $a&#x3D;F^{-1}(0.975)$，计算得 $a&#x3D;1.96$</p>
+<p>而如果是单侧检验，考虑正态分布的右侧单侧检验，置信水平依然是95%，但此时我们只需在右侧留出5%的概率就行了。我们需要找到使得累计概率为0.95的临界值 $a$，<br>通过求反函数，我们得到 $a&#x3D;F^{-1}(0.95)$，这就是单侧检验和双侧检验的区别</p>
+<p>注意上述我们预先限定了满足分布、置信水平取多少、双&#x2F;单侧检验，<strong>这三个量都要事先确定</strong></p>
+<p><strong>假设检验的步骤</strong>：<br>1、写出 $H_0$ 和 $H_1$<br>2、在 $H_0$ 成立条件下，构造一个统计量，该统计量有一个分布<br>3、在给定置信水平 $\beta$ 下，求出接受域，即 $P(a\leq统计量\leq b)&#x3D;\beta$，($\beta&#x3D;90%、95%、99%$)<br>4、用已知的样本数据带入计算过程，得到检验值，若检验值落在 $[a,b]$ 内，则无法拒接原假设，否则拒绝域原假设</p>
+<p>上述过程，最难的是构造分布的过程，但我们一般只用别人的分布</p>
+<p>再者，由反函数倒推 $x$ 值还是挺麻烦的，我们<strong>其实可以直接比较概率值</strong> $P(x)$，其实也可以判断假设检验，都是一样的，但是计算量小了。P值就是分布函数的那个变上限函数把 $x$ 代进去积分出来的值&#x2F;面积，这里应该每个概率论老师都会强调。<strong>如果通过P值判断，最好画图</strong>，因为会有双侧&#x2F;单侧检验的区别</p>
+<h1 id="三、皮尔逊相关系数的假设检验"><a href="#三、皮尔逊相关系数的假设检验" class="headerlink" title="三、皮尔逊相关系数的假设检验"></a>三、皮尔逊相关系数的假设检验</h1><p>Q：我已经求出了相关系数了，为什么还有检验？这个显著性是个什么东西？</p>
+<p>A：虽然我们可以计算出皮尔逊相关系数来衡量两个变量之间的线性关系，但这并不意味着我们可以立即得出结论说这两个变量之间确实存在显著的线性关系。<strong>显著性检验的主要目的</strong>是确定我们计算出的相关系数是否在统计上显著，即它是否可能仅仅是由于随机抽样误差而出现的。</p>
+<p>常见的<strong>显著性标记</strong>和它们对应的p值区间如下：</p>
+<p>p&lt;0.05：通常标记为 * 或 **，表示结果在95%的置信水平上显著。<br>p&lt;0.01：通常标记为 ** 或 ***，表示结果在99%的置信水平上显著。<br>p&lt;0.001：通常标记为 *** 或 ****，表示结果在99.9%的置信水平上显著。</p>
+<p>例如，在一篇研究论文或数据分析报告中，表格或图表中的数据点可能会附有这些标记，以指示结果的显著性。例如：</p>
+<table>
+<thead>
+<tr>
+<th align="center">变量</th>
+<th align="center">均值</th>
+<th align="center">标准差</th>
+<th align="center">p值</th>
+<th align="center">显著性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center">10.5</td>
+<td align="center">2.3</td>
+<td align="center">0.03</td>
+<td align="center">*</td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="center">8.7</td>
+<td align="center">1.9</td>
+<td align="center">0.001</td>
+<td align="center">***</td>
+</tr>
+</tbody></table>
+<p>在这个表格中，变量A的结果在95%的置信水平上显著，而变量B的结果在99.9%的置信水平上显著。</p>
+<p><strong>皮尔逊相关系数假设检验的条件</strong>：<br>1、实验数据通常是成对的来自正态分布的总体（这时候就<strong>需要对数据进行正态分布检验</strong>，见本文第四节）<br>2、实验数据之间的差距不能太大<br>3、每组样本之间是独立抽样的</p>
+<p><strong>对皮尔逊相关系数进行假设检验的步骤</strong>：<br>1、提出原假设 $H_0$ 和备择架设 $H_1$（两个假设完全相反），有：<br>$$<br>H_0:r&#x3D;0\ , \ H_1:r\neq0<br>$$<br>2、在原假设成立的条件下，利用我们要检验的量构造出一个符合某一分布的统计量</p>
+<blockquote>
+<p>注1：统计量的表达式里不能包含其他的随机变量<br>注2：这里满足的分布一般是：正态分布、$t$ 分布、$\chi^2$ 分布、$F$ 分布</p>
+</blockquote>
+<p>对于皮尔逊相关系数而言，在前面那三个条件下，我们可以构造统计量：<br>$$<br>t&#x3D;r\sqrt{\frac{n-2}{1-r^2}}<br>$$<br>可以证明t是满足服从自由度n-2的t分布</p>
+<p>3、将我们要检验的这个值带入统计量，得到检验值</p>
+<p>4、画出该统计量的概率密度函数，并给定一个置信水平，根据这个置信水平查表找到临界值，并画出检验统计量的接受域和拒绝域</p>
+<blockquote>
+<p>常见的置信区间有：90%、95%、99%</p>
+</blockquote>
+<p>5、看我们计算出来的检验值是落在拒绝域还是接受域，最后下结论即可</p>
+<h1 id="四、对数据进行正态分布检验"><a href="#四、对数据进行正态分布检验" class="headerlink" title="四、对数据进行正态分布检验"></a>四、对数据进行正态分布检验</h1><p><strong>1、正态分布JB检验</strong>（大样本n&gt;30）Jarque-Bera 雅克-贝拉</p>
+<p>偏度为 $E[(\dfrac{X-u}{\sigma})^3]$，&gt;0正偏态，&lt;0负偏态、&#x3D;0正态，<code>skewness(x)</code>偏度</p>
+<p>峰度为 $E[(\dfrac{X-u}{\sigma})^4]$ 或 $E[(\dfrac{X-u}{\sigma})^4]-3$，正太分布偏度为3（第一种定义、MATLAB用的这种），或0（第二种定义）， <code>kurtosis(x)</code>峰度</p>
+<p>构造JB统计量为 $JB&#x3D;\dfrac{n}{6}[S^2+\dfrac{(K-3)^2}{4}]$ ~ $\chi^2(2)$（自由度为2的卡方分布）</p>
+<p>假设检验的步骤：<br>1、$H_0$：该随机变量满足正态分布、$H_1$：不满足<br>2、计算偏度、峰度，得到检验值JB*，通过MATLAB计算其对应的P值<br>3、若选择95%的置信水平，则将P值与0.05进行比较，如果小于0.05就拒绝原假设</p>
+<p>JB检验 <code>[h,p]=jbtest(x,alpha)</code>alpha为显著性水平，一般取0.05，x必须为向量</p>
+<p><strong>2、Shapiro-wilk检验</strong>（小样本3$\leq$n$\leq$50） 夏尔洛-威尔克</p>
+<p>SPSS：分析-描述统计-探索-图-勾选含检验的正态图-确定</p>
+<p><strong>2、Q-Q图</strong>（数据量非常大）</p>
+<p><code>qqplot(x)</code> 是否属于正态分布，看Q-Q图上的点是否近似地在一条直线附近</p>
+<h1 id="五、斯皮尔曼Spearman相关系数"><a href="#五、斯皮尔曼Spearman相关系数" class="headerlink" title="五、斯皮尔曼Spearman相关系数"></a>五、斯皮尔曼Spearman相关系数</h1><p>$X_i$ 与 $Y_i$ 为两组数据，其斯皮尔曼相关系数为：<br>$$<br>r_s&#x3D;1-\frac{6\sum^n_{i&#x3D;1}d_i^2}{n(n^2-1)}<br>$$</p>
+<p>其中：$d_i$为 $X_i$ 和 $Y_i$ 之间的等级差</p>
+<p>一个数的等级，就是将它所在的列从小到大排序之后的序数，如果有数值相同的，则取它们序数的算术平均</p>
+<p>另一种定义是：等级之间的皮尔逊相关系数（MATLAB默认的定义）</p>
+<p><code>cor(x_1,x_2,&#39;type&#39;,&#39;Spearman&#39;)</code> 两个向量必须是列向量，记得加 <code>&#39;</code> 转置<br><code>cor(X,&#39;type&#39;,&#39;Spearman&#39;)</code> 传入矩阵</p>
+<p>斯皮尔曼相关系数的假设检验：<br>1、小样本情况（n$\leq$30），直接查表，必须大于等于表中的临界值，才能给出显著的结论<br>2、大样本情况，构造统计量 $r_s\sqrt{n-1}\sim N(0,1)$，后计算检验值，求出P值与0.05比较 <code>normcdf()</code></p>
+<h1 id="六、相关系数的比较"><a href="#六、相关系数的比较" class="headerlink" title="六、相关系数的比较"></a>六、相关系数的比较</h1><p>1、连续数据、正态分布（很难满足）、线性关系，用皮尔逊相关系数<br>2、三个条件有一个不满足，有斯皮尔曼相关系数<br>3、两个定序数据（优良差）之间也用斯皮尔曼相关系数</p>
+<p>定序数据是指仅仅反映观测对象等级、顺序关系的数据，是由定序尺度计量形成的，表现为类别，可以进行排序，属于品质数据</p>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="top-box-text">相关系数</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%80%E3%80%81%E7%9A%AE%E5%B0%94%E9%80%8APerson%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="top-box-text">一、皮尔逊Person相关系数</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%BA%8C%E3%80%81%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="top-box-text">二、假设检验</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%89%E3%80%81%E7%9A%AE%E5%B0%94%E9%80%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E7%9A%84%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="top-box-text">三、皮尔逊相关系数的假设检验</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E5%9B%9B%E3%80%81%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E6%A3%80%E9%AA%8C"><span class="top-box-text">四、对数据进行正态分布检验</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%BA%94%E3%80%81%E6%96%AF%E7%9A%AE%E5%B0%94%E6%9B%BCSpearman%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="top-box-text">五、斯皮尔曼Spearman相关系数</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E5%85%AD%E3%80%81%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E7%9A%84%E6%AF%94%E8%BE%83"><span class="top-box-text">六、相关系数的比较</span></a></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2024/07/22/4%20%E6%8B%9F%E5%90%88%E7%AE%97%E6%B3%95/">
+          <h3 class="post-title">
+            下一篇：4 拟合算法法
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/Diraw" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至zhihu" href="https://www.zhihu.com/people/cdscvhh" target="_blank">
+          <i class="icon icon-zhihu"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

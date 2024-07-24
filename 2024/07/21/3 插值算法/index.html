@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>3 插值算法</title>
+<meta name="keywords" content="3 插值算法, Hexo">
+<meta name="description" content="插值算法思路：构造函数 $y&#x3D;f(x)$ 过所有已知的节点，通过 $f(x^*)$ 求得 $y^*$（一维数据的插值）
+插值多项式：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方法求解
+1、">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="3 插值算法">
+<meta property="og:description" content="插值算法思路：构造函数 $y&#x3D;f(x)$ 过所有已知的节点，通过 $f(x^*)$ 求得 $y^*$（一维数据的插值）
+插值多项式：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方法求解
+1、">
+
+<link rel="shortcut icon" href="/icon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="http://example.com">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="http://example.com">
+        <h1 class="site-title">Hexo</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://space.bilibili.com/3546387746654749" class="menu purple-link">
+        哔哩哔哩
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/cdscvhh" class="menu purple-link">
+        知乎
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_72565814" class="menu purple-link">
+        CSDN
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://github.com/Diraw" class="menu purple-link">
+        GitHub
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">3 插值算法</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2024-07-21</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+              数学建模
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="插值算法"><a href="#插值算法" class="headerlink" title="插值算法"></a>插值算法</h1><p>思路：构造函数 $y&#x3D;f(x)$ 过所有已知的节点，通过 $f(x^*)$ 求得 $y^*$（<strong>一维数据的插值</strong>）</p>
+<p><strong>插值多项式</strong>：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方法求解</p>
+<p>1、<strong>拉格朗日插值法</strong>：考虑三个点，对 $x_0$，先写分子为 $(x-x_1)(x-x_2)y_0$，即x去减去除0以外的其他值，再把分母写上 $\dfrac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}y_0$，这就得到 $x_0$ 这一项，再把 $x_1$、$x_2$ 的项写出来，相加便得到插值多项式</p>
+<p><strong>龙格现象</strong>：高次插值会产生龙格现象，即在两端处波动极大，产生明显的震荡，这时需采用分段插值</p>
+<p><strong>分段插值</strong>：<br>分段线性插值：相邻的点连线，取中点插值，分段二次插值（分段抛物插值）、分段三次插值</p>
+<p>2、<strong>牛顿插值法</strong>：</p>
+<p>定义一阶差商 $f[x_0,x_1]&#x3D;\dfrac{f(x_1)-f(x_0)}{x_1-x_0}$</p>
+<p>定义二阶差商 $f[x_0,x_1,x_2]&#x3D;\dfrac{f[x_0,x_2]-f[x_0,x_1]}{x_2-x_1}$</p>
+<p>以此类推n阶差商</p>
+<p>则有插值多项式 $f(x)&#x3D;f(x_0)+f<a href="x-x_0">x_0,x_1</a>+f<a href="x-x_0">x_0,x_1,x_2</a>(x-x_1)$</p>
+<p>与拉格朗日插值法相比，牛顿插值法具有<strong>继承性</strong>，但是牛顿插值也会有龙格现象</p>
+<p>并且前两种插值法都<strong>不能全面反映被插值函数的性态</strong></p>
+<p>3、<strong>Hermite插值法</strong></p>
+<p>该插值法除了要求 $f(x_i)&#x3D;y_i$，还要要求导数相等 $f^{‘}(x_i)&#x3D;y^{‘}$</p>
+<p>对于n+1个节点，由Hermite插值法能找到一个次数不超过2n+1的多项式满足上面两个条件，参数过多，实际更多使用分段插值的思想</p>
+<p><strong>分段三次Hermite插值</strong> <code>p=pchip(x,y,new_x)</code>，<code>new_x</code>为插值的横坐标</p>
+<p><strong>三次样条插值</strong>：要求在插值区间上二阶连续可微 <code>p=spline(x,y,new_x)</code></p>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E6%8F%92%E5%80%BC%E7%AE%97%E6%B3%95"><span class="top-box-text">插值算法</span></a></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2024/07/20/2%20TOPSIS%E6%B3%95/">
+          <h3 class="post-title">
+            下一篇：2 TOPSIS法
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/Diraw" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至zhihu" href="https://www.zhihu.com/people/cdscvhh" target="_blank">
+          <i class="icon icon-zhihu"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

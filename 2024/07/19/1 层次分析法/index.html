@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>1 层次分析法</title>
+<meta name="keywords" content="1 层次分析法, Hexo">
+<meta name="description" content="The Analytic Hierarchy Process (AHP)
+一、基本问题用于解决评价类问题
+
+（目标层 Objection）目标
+（方案层 Plan）可选方案
+（准则层 Criterion）评价指标：背景资料、常识(头脑风暴)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="1 层次分析法">
+<meta property="og:description" content="The Analytic Hierarchy Process (AHP)
+一、基本问题用于解决评价类问题
+
+（目标层 Objection）目标
+（方案层 Plan）可选方案
+（准则层 Criterion）评价指标：背景资料、常识(头脑风暴)">
+
+<link rel="shortcut icon" href="/icon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="http://example.com">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="http://example.com">
+        <h1 class="site-title">Hexo</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://space.bilibili.com/3546387746654749" class="menu purple-link">
+        哔哩哔哩
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/cdscvhh" class="menu purple-link">
+        知乎
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_72565814" class="menu purple-link">
+        CSDN
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://github.com/Diraw" class="menu purple-link">
+        GitHub
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">1 层次分析法</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2024-07-19</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+              数学建模
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <p>The Analytic Hierarchy Process (AHP)</p>
+<h1 id="一、基本问题"><a href="#一、基本问题" class="headerlink" title="一、基本问题"></a>一、基本问题</h1><p>用于解决<strong>评价类</strong>问题</p>
+<ol>
+<li>（目标层 Objection）目标</li>
+<li>（方案层 Plan）可选方案</li>
+<li>（准则层 Criterion）评价指标：背景资料、常识(头脑风暴)、搜论文(旅游选择因素)</li>
+</ol>
+<p>（层次评价模型）层次结构图：亿图图示、Visio</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">指标权重</th>
+<th align="center">方案 1</th>
+<th align="center">方案 2</th>
+<th align="center">……</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>指标 1</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>指标 2</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>……</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>指标权重求和为 1，每一个指标下的方案权重求和也要为 1</p>
+<p>excel 表格计算权重时：F4 固定表格</p>
+<h1 id="二、确定权重"><a href="#二、确定权重" class="headerlink" title="二、确定权重"></a>二、确定权重</h1><p>分而治之的思想</p>
+<table>
+<thead>
+<tr>
+<th align="center">C</th>
+<th align="center"><strong>P1</strong></th>
+<th align="center"><strong>P2</strong></th>
+<th align="center"><strong>P3</strong></th>
+<th align="center"><strong>P4</strong></th>
+<th align="center"><strong>P5</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>P1</strong></td>
+<td align="center">1</td>
+<td align="center">O</td>
+<td align="center">O</td>
+<td align="center">O</td>
+<td align="center">O</td>
+</tr>
+<tr>
+<td align="center"><strong>P2</strong></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center">O</td>
+<td align="center">O</td>
+<td align="center">O</td>
+</tr>
+<tr>
+<td align="center"><strong>P3</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center">O</td>
+<td align="center">O</td>
+</tr>
+<tr>
+<td align="center"><strong>P4</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center">O</td>
+</tr>
+<tr>
+<td align="center"><strong>P5</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<p><strong>每一个求和为 1，就有一张这样的表</strong>，所以有 $指标个数+1$ 个表</p>
+<p>单元格为<strong>该行</strong>比<strong>该列</strong>的重要程度</p>
+<table>
+<thead>
+<tr>
+<th>标度</th>
+<th>1</th>
+<th>3</th>
+<th>5</th>
+<th>7</th>
+<th>9</th>
+<th>2468</th>
+<th>倒数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>同等重要</td>
+<td>稍微</td>
+<td>明显</td>
+<td>强烈</td>
+<td>极端</td>
+<td>中值</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="三、一致性检验"><a href="#三、一致性检验" class="headerlink" title="三、一致性检验"></a>三、一致性检验</h1><p>判断矩阵：$a_{ij}&gt;0$ 且 $a_{ij}\times a_{ji}&#x3D;1$ (正互反矩阵)<br>一致矩阵：$a_{ij}\times a_{jk}&#x3D;a_{ik}$ ，即各行（各列）成倍数关系</p>
+<p>一致性检验</p>
+<ol>
+<li>计算一致性指标 $CI&#x3D;\dfrac{\lambda_{max}-n}{n-1}$ （一致时 $\lambda_{max}&#x3D;n$ ，不一致时 $\lambda_{max}&gt;n$ ）</li>
+<li>查找对应的平均随机一致性指标 $RI$</li>
+<li>计算一致性比例 $CR&#x3D;\dfrac{CI}{RI}$ （若 $CR&lt;0.1$，则可以接受）</li>
+</ol>
+<h1 id="四、计算归一化权重"><a href="#四、计算归一化权重" class="headerlink" title="四、计算归一化权重"></a>四、计算归一化权重</h1><p>又被称为<strong>层次单排序</strong>，也就是有一张表就要求一次归一化权重，注意是计算的每行的权重</p>
+<blockquote>
+<p>首先得通过一致性检验</p>
+</blockquote>
+<h2 id="1、算术平均法求权重"><a href="#1、算术平均法求权重" class="headerlink" title="1、算术平均法求权重"></a>1、算术平均法求权重</h2><p>$$<br>\omega_i&#x3D;\frac{1}{n}\Sigma^n_{j&#x3D;1}\frac{a_{ij}}{\Sigma^n_{k&#x3D;1}a_{kj}}\ (i&#x3D;1,2,3\cdots n)<br>$$</p>
+<p>k 表示对单一列求和 $\downarrow$ ；j 表示把每一列加起来 $\rightarrow$</p>
+<h2 id="2、几何平均法求权重"><a href="#2、几何平均法求权重" class="headerlink" title="2、几何平均法求权重"></a>2、几何平均法求权重</h2><p>$$<br>\omega_i&#x3D;\frac{(\prod^n_{j&#x3D;1}a_{ij})^{\frac{1}{n}}}{\Sigma^n_{k&#x3D;1}(\prod^n_{j&#x3D;1}a_{kj})^{\frac{1}{n}}}<br>$$</p>
+<h2 id="3、特征值法"><a href="#3、特征值法" class="headerlink" title="3、特征值法"></a>3、特征值法</h2><p>求最大特征值 $\lambda_{max}$ 和它对应的特征向量，对特征向量进行归一化即可（特征向量归一化后就是上面的权重向量）</p>
+<h1 id="五、局限"><a href="#五、局限" class="headerlink" title="五、局限"></a>五、局限</h1><ol>
+<li>$n\leq 15$，不能太大</li>
+<li>不适用于决策层中的指标数据已知的情况</li>
+</ol>
+<h1 id="六、回顾步骤"><a href="#六、回顾步骤" class="headerlink" title="六、回顾步骤"></a>六、回顾步骤</h1><ol>
+<li>分析系统中各因素之间的关系，建立系统的递阶层次结构</li>
+<li>对于同一层次的各元素关于上一层次中某一准则的重要性进行两两比较，构造两两比较矩阵（判断矩阵O-C、C-P）</li>
+<li>由判断矩阵计算被比较元素对于该准则的相对权重，并计算一致性检验（检验通过权重才能用）</li>
+<li>计算各层元素对系统目标的合成权重，并进行排序</li>
+</ol>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98"><span class="top-box-text">一、基本问题</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%BA%8C%E3%80%81%E7%A1%AE%E5%AE%9A%E6%9D%83%E9%87%8D"><span class="top-box-text">二、确定权重</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%89%E3%80%81%E4%B8%80%E8%87%B4%E6%80%A7%E6%A3%80%E9%AA%8C"><span class="top-box-text">三、一致性检验</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E5%9B%9B%E3%80%81%E8%AE%A1%E7%AE%97%E5%BD%92%E4%B8%80%E5%8C%96%E6%9D%83%E9%87%8D"><span class="top-box-text">四、计算归一化权重</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#1%E3%80%81%E7%AE%97%E6%9C%AF%E5%B9%B3%E5%9D%87%E6%B3%95%E6%B1%82%E6%9D%83%E9%87%8D"><span class="top-box-text">1、算术平均法求权重</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#2%E3%80%81%E5%87%A0%E4%BD%95%E5%B9%B3%E5%9D%87%E6%B3%95%E6%B1%82%E6%9D%83%E9%87%8D"><span class="top-box-text">2、几何平均法求权重</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#3%E3%80%81%E7%89%B9%E5%BE%81%E5%80%BC%E6%B3%95"><span class="top-box-text">3、特征值法</span></a></li></ol></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%BA%94%E3%80%81%E5%B1%80%E9%99%90"><span class="top-box-text">五、局限</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E5%85%AD%E3%80%81%E5%9B%9E%E9%A1%BE%E6%AD%A5%E9%AA%A4"><span class="top-box-text">六、回顾步骤</span></a></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/Diraw" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至zhihu" href="https://www.zhihu.com/people/cdscvhh" target="_blank">
+          <i class="icon icon-zhihu"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

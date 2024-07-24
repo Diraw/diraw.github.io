@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>2 TOPSIS法</title>
+<meta name="keywords" content="2 TOPSIS法, Hexo">
+<meta name="description" content="TOPSIS法Technique for Order Preference by Similarity to Ideal Solution逼近理想解排序法、优劣解距离法
+一、引入越大（高）越好的指标：极大型指标（效益型指标）越少（低）越好的">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="2 TOPSIS法">
+<meta property="og:description" content="TOPSIS法Technique for Order Preference by Similarity to Ideal Solution逼近理想解排序法、优劣解距离法
+一、引入越大（高）越好的指标：极大型指标（效益型指标）越少（低）越好的">
+
+<link rel="shortcut icon" href="/icon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="http://example.com">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="http://example.com">
+        <h1 class="site-title">Hexo</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://space.bilibili.com/3546387746654749" class="menu purple-link">
+        哔哩哔哩
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/cdscvhh" class="menu purple-link">
+        知乎
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_72565814" class="menu purple-link">
+        CSDN
+      </a>
+    
+  
+    
+      <a target="_blank" rel="noopener" href="https://github.com/Diraw" class="menu purple-link">
+        GitHub
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">2 TOPSIS法</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2024-07-20</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+              数学建模
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="TOPSIS法"><a href="#TOPSIS法" class="headerlink" title="TOPSIS法"></a>TOPSIS法</h1><p>Technique for Order Preference by Similarity to Ideal Solution<br>逼近理想解排序法、优劣解距离法</p>
+<h1 id="一、引入"><a href="#一、引入" class="headerlink" title="一、引入"></a>一、引入</h1><p>越大（高）越好的指标：极大型指标（效益型指标）<br>越少（低）越好的指标：极小型指标（成本型指标）</p>
+<p>1、将所有的指标转化为极大型（<strong>指标正向化</strong>）</p>
+<blockquote>
+<p>极小型转极大型公式：$max-x$</p>
+</blockquote>
+<p>2、<strong>为消去不同指标量纲的影响</strong>，需要对已经正向化的矩阵进行<strong>标准化处理</strong>：<br>$$<br>z_{ij}&#x3D;\frac{x_{ij}}{\sqrt{\sum_{i&#x3D;1}^nx_{ij}^2}}<br>$$</p>
+<p>3、计算评分的公式：<br>$$<br>\frac{x-min}{max-min}&#x3D;\frac{x-min}{(max-x)+(x-min)}<br>$$<br>即：<br>$$<br>\dfrac{\text{x与最大值的距离}}{\text{x与最大值的距离}+\text{x与最小值的距离}}<br>$$</p>
+<p>如果有很多维度（即得到一个矩阵）的话，则构建各维度最大值所组成的最大值向量，和最小值向量，之后取欧几里得度量即可<br>$$<br>\text{与最大值的距离}:D^+<em>i&#x3D;\sqrt{\sum^m</em>{j&#x3D;1}(Z^+<em>j-z</em>{ij})^2}<br>$$<br>最小值同理，然后就求出未归一化得分：$S_i&#x3D;\dfrac{D^-_i}{D^+_i+D^-_i}$</p>
+<h1 id="二、TOPSIS法"><a href="#二、TOPSIS法" class="headerlink" title="二、TOPSIS法"></a>二、TOPSIS法</h1><p>极大型指标（效益型指标）：越大（高）越好的指标<br>极小型指标（成本型指标）：越少（低）越好的指标<br>中间型指标：越接近某个值越好<br>区间型指标：落在某个区间最好</p>
+<h2 id="1、将原始矩阵正向化"><a href="#1、将原始矩阵正向化" class="headerlink" title="1、将原始矩阵正向化"></a>1、将原始矩阵正向化</h2><p>极小型 $\rightarrow$ 极大型：$max-x$ 或 $\dfrac{1}{x}$<br>中间型 $\rightarrow$ 极大型：对最佳数值 $x_{best}$<br>$$<br>M&#x3D;max{|x_i-x_{best}|}\ ,\ \tilde x_i&#x3D;1-\frac{|x_i-x_{best}|}{M}<br>$$<br>区间型 $\rightarrow$ 极大型：对区间 $[a,b]$<br>$$<br>M&#x3D;max{a-min{x_i},max{x_i}-b}<br>$$<br>$$<br>x_i&#x3D;\begin{cases} 1-\dfrac{a-x}{M}\ ,\ x&lt;a\ 1\ ,\ a\leq x\leq b\ 1-\dfrac{x-b}{M}\ ,\ b\leq x \end{cases}<br>$$</p>
+<h2 id="2、正向化矩阵标准化"><a href="#2、正向化矩阵标准化" class="headerlink" title="2、正向化矩阵标准化"></a>2、正向化矩阵标准化</h2><p>即$每一个元素&#x2F;\sqrt{其所在列的元素的平方和}$，目的是消除不同指标量纲的影响<br>$$<br>z_{ij}&#x3D;\frac{x_{ij}}{\sqrt{\sum_{i&#x3D;1}^nx_{ij}^2}}<br>$$</p>
+<h2 id="3、计算得分并得归一化"><a href="#3、计算得分并得归一化" class="headerlink" title="3、计算得分并得归一化"></a>3、计算得分并得归一化</h2><p>前面讲过了，即：<br>$$<br>S_i&#x3D;\dfrac{D^-_i}{D^+_i+D^-_i}<br>$$</p>
+<h1 id="三、模型扩展"><a href="#三、模型扩展" class="headerlink" title="三、模型扩展"></a>三、模型扩展</h1><h2 id="1、层次分析法"><a href="#1、层次分析法" class="headerlink" title="1、层次分析法"></a>1、层次分析法</h2><p>前面的方法，各评价指标的权重都是一样，如果权重不一样，有<br>$$<br>\text{与最大值的距离}:D^+<em>i&#x3D;\sqrt{\sum^m</em>{j&#x3D;1}\omega_j(Z^+<em>j-z</em>{ij})^2}<br>$$<br>可以用层次分析法给这m个评价指标确定权重（带权重的TOPSIS）:<br>$$<br>\sum_{j&#x3D;1}^m<br>\omega_j&#x3D;1<br>$$</p>
+<h2 id="2、熵权法"><a href="#2、熵权法" class="headerlink" title="2、熵权法"></a>2、熵权法</h2><p>指标的<strong>变异程度</strong>（方差）越小，所反映的信息量也越少，其对应的权值也应该越低（但这种方法在一些事情上有问题）</p>
+<p>越有可能发生的事情，信息量越少；越不可能发生的事情，信息量越多</p>
+<p>定义信息量 $I(x)&#x3D;-\ln (p(x))$，信息熵 $H(x)&#x3D;\sum_{i&#x3D;1}^n[p(x_i)I(x_i)]$</p>
+<p>当各时间概率相同时 $p(x_i)&#x3D;\frac{1}{n}$，此时信息熵最大 $H(x)&#x3D;\ln n$</p>
+<p>随机变量的信息熵越大，则他的值（内容）能给你补充的信息量越大，而知道这个值之前你已有的信息量越小</p>
+<p>提出约化信息熵 $e_j&#x3D;-\dfrac{1}{\ln n}\sum_{i&#x3D;1}^n[p_{ij}\ln(p_{ij})]$，当 $e_j&#x3D;1$ 时，信息熵达到最大</p>
+<p>定义信息效用值 $d_j&#x3D;1-e_j$，信息效用值越大，所对应的信息越多</p>
+<p>最后对信息效用值进行归一化，</p>
+<p>得到每个指标的熵权 $W_j&#x3D;\dfrac{d_j}{\sum_{i&#x3D;1}^nd_j}$ </p>
+<p>补充：<br>1、输入矩阵必须是非负的，如果有负数，需用新的标准化方法，公式和前面计算得分的式子是一样的<br>$$<br>\tilde x_{ij}&#x3D;\frac{x_{ij}-min{x_{1j},x_{2j},\cdots,x_{nj}}}{(max{x_{1j},x_{2j},\cdots,x_{nj}}-x_{ij})+(x_{ij}-min{x_{1j},x_{2j},\cdots,x_{nj}})}<br>$$<br>2、计算概率矩阵 $P$<br>$$<br>p_{ij}&#x3D;\frac{\tilde{z}<em>{ij}}{\sum</em>{i&#x3D;1}^n\tilde{z}_{ij}}<br>$$</p>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#TOPSIS%E6%B3%95"><span class="top-box-text">TOPSIS法</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%80%E3%80%81%E5%BC%95%E5%85%A5"><span class="top-box-text">一、引入</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%BA%8C%E3%80%81TOPSIS%E6%B3%95"><span class="top-box-text">二、TOPSIS法</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#1%E3%80%81%E5%B0%86%E5%8E%9F%E5%A7%8B%E7%9F%A9%E9%98%B5%E6%AD%A3%E5%90%91%E5%8C%96"><span class="top-box-text">1、将原始矩阵正向化</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#2%E3%80%81%E6%AD%A3%E5%90%91%E5%8C%96%E7%9F%A9%E9%98%B5%E6%A0%87%E5%87%86%E5%8C%96"><span class="top-box-text">2、正向化矩阵标准化</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#3%E3%80%81%E8%AE%A1%E7%AE%97%E5%BE%97%E5%88%86%E5%B9%B6%E5%BE%97%E5%BD%92%E4%B8%80%E5%8C%96"><span class="top-box-text">3、计算得分并得归一化</span></a></li></ol></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%89%E3%80%81%E6%A8%A1%E5%9E%8B%E6%89%A9%E5%B1%95"><span class="top-box-text">三、模型扩展</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#1%E3%80%81%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95"><span class="top-box-text">1、层次分析法</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#2%E3%80%81%E7%86%B5%E6%9D%83%E6%B3%95"><span class="top-box-text">2、熵权法</span></a></li></ol></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2024/07/19/1%20%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95/">
+          <h3 class="post-title">
+            下一篇：1 层次分析法
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/Diraw" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至zhihu" href="https://www.zhihu.com/people/cdscvhh" target="_blank">
+          <i class="icon icon-zhihu"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
