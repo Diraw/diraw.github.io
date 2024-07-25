@@ -11,18 +11,22 @@
 
 <title>3 插值算法</title>
 <meta name="keywords" content="3 插值算法, 物理 数学 计算机">
-<meta name="description" content="插值算法思路：构造函数 $y&#x3D;f(x)$ 过所有已知的节点，通过 $f(x^*)$ 求得 $y^*$（一维数据的插值）
-插值多项式：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方法求解
-1、">
+<meta name="description" content="插值算法
+思路：构造函数 \(y=f(x)\)
+过所有已知的节点，通过 \(f(x^*)\) 求得
+\(y^*\)（一维数据的插值）
+插值多项式：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="3 插值算法">
-<meta property="og:description" content="插值算法思路：构造函数 $y&#x3D;f(x)$ 过所有已知的节点，通过 $f(x^*)$ 求得 $y^*$（一维数据的插值）
-插值多项式：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方法求解
-1、">
+<meta property="og:description" content="插值算法
+思路：构造函数 \(y=f(x)\)
+过所有已知的节点，通过 \(f(x^*)\) 求得
+\(y^*\)（一维数据的插值）
+插值多项式：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方">
 
-<link rel="shortcut icon" href="/icon.ico">
+<link rel="shortcut icon" href="/images/icon.ico">
 <link rel="stylesheet" href="/style/main.css">
 
   <meta name="generator" content="Hexo 7.3.0"></head>
@@ -33,7 +37,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://diraw.github.io">
-        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+        <img class="avatar" src="/images/logo.png" alt="logo" width="32px" height="32px">
       </a>
       <a href="https://diraw.github.io">
         <h1 class="site-title">Diraw&#39;s blog</h1>
@@ -121,23 +125,42 @@
       </div>
       <div class="post-content-wrapper">
         <div class="post-content">
-          <h1 id="插值算法"><a href="#插值算法" class="headerlink" title="插值算法"></a>插值算法</h1><p>思路：构造函数 $y&#x3D;f(x)$ 过所有已知的节点，通过 $f(x^*)$ 求得 $y^*$（<strong>一维数据的插值</strong>）</p>
+          <h1 id="插值算法">插值算法</h1>
+<p>思路：构造函数 <span class="math inline">\(y=f(x)\)</span>
+过所有已知的节点，通过 <span class="math inline">\(f(x^*)\)</span> 求得
+<span
+class="math inline">\(y^*\)</span>（<strong>一维数据的插值</strong>）</p>
 <p><strong>插值多项式</strong>：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方法求解</p>
-<p>1、<strong>拉格朗日插值法</strong>：考虑三个点，对 $x_0$，先写分子为 $(x-x_1)(x-x_2)y_0$，即x去减去除0以外的其他值，再把分母写上 $\dfrac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}y_0$，这就得到 $x_0$ 这一项，再把 $x_1$、$x_2$ 的项写出来，相加便得到插值多项式</p>
+<p>1、<strong>拉格朗日插值法</strong>：考虑三个点，对 <span
+class="math inline">\(x_0\)</span>，先写分子为 <span
+class="math inline">\((x-x_1)(x-x_2)y_0\)</span>，即x去减去除0以外的其他值，再把分母写上
+<span
+class="math inline">\(\dfrac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}y_0\)</span>，这就得到
+<span class="math inline">\(x_0\)</span> 这一项，再把 <span
+class="math inline">\(x_1\)</span>、<span
+class="math inline">\(x_2\)</span> 的项写出来，相加便得到插值多项式</p>
 <p><strong>龙格现象</strong>：高次插值会产生龙格现象，即在两端处波动极大，产生明显的震荡，这时需采用分段插值</p>
-<p><strong>分段插值</strong>：<br>分段线性插值：相邻的点连线，取中点插值，分段二次插值（分段抛物插值）、分段三次插值</p>
+<p><strong>分段插值</strong>：
+分段线性插值：相邻的点连线，取中点插值，分段二次插值（分段抛物插值）、分段三次插值</p>
 <p>2、<strong>牛顿插值法</strong>：</p>
-<p>定义一阶差商 $f[x_0,x_1]&#x3D;\dfrac{f(x_1)-f(x_0)}{x_1-x_0}$</p>
-<p>定义二阶差商 $f[x_0,x_1,x_2]&#x3D;\dfrac{f[x_0,x_2]-f[x_0,x_1]}{x_2-x_1}$</p>
+<p>定义一阶差商 <span
+class="math inline">\(f[x_0,x_1]=\dfrac{f(x_1)-f(x_0)}{x_1-x_0}\)</span></p>
+<p>定义二阶差商 <span
+class="math inline">\(f[x_0,x_1,x_2]=\dfrac{f[x_0,x_2]-f[x_0,x_1]}{x_2-x_1}\)</span></p>
 <p>以此类推n阶差商</p>
-<p>则有插值多项式 $f(x)&#x3D;f(x_0)+f<a href="x-x_0">x_0,x_1</a>+f<a href="x-x_0">x_0,x_1,x_2</a>(x-x_1)$</p>
+<p>则有插值多项式 <span
+class="math inline">\(f(x)=f(x_0)+f[x_0,x_1](x-x_0)+f[x_0,x_1,x_2](x-x_0)(x-x_1)\)</span></p>
 <p>与拉格朗日插值法相比，牛顿插值法具有<strong>继承性</strong>，但是牛顿插值也会有龙格现象</p>
 <p>并且前两种插值法都<strong>不能全面反映被插值函数的性态</strong></p>
 <p>3、<strong>Hermite插值法</strong></p>
-<p>该插值法除了要求 $f(x_i)&#x3D;y_i$，还要要求导数相等 $f^{‘}(x_i)&#x3D;y^{‘}$</p>
+<p>该插值法除了要求 <span
+class="math inline">\(f(x_i)=y_i\)</span>，还要要求导数相等 <span
+class="math inline">\(f^{&#39;}(x_i)=y^{&#39;}\)</span></p>
 <p>对于n+1个节点，由Hermite插值法能找到一个次数不超过2n+1的多项式满足上面两个条件，参数过多，实际更多使用分段插值的思想</p>
-<p><strong>分段三次Hermite插值</strong> <code>p=pchip(x,y,new_x)</code>，<code>new_x</code>为插值的横坐标</p>
-<p><strong>三次样条插值</strong>：要求在插值区间上二阶连续可微 <code>p=spline(x,y,new_x)</code></p>
+<p><strong>分段三次Hermite插值</strong>
+<code>p=pchip(x,y,new_x)</code>，<code>new_x</code>为插值的横坐标</p>
+<p><strong>三次样条插值</strong>：要求在插值区间上二阶连续可微
+<code>p=spline(x,y,new_x)</code></p>
 
         </div>
           

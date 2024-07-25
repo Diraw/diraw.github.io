@@ -11,16 +11,20 @@
 
 <title>2 TOPSIS法</title>
 <meta name="keywords" content="2 TOPSIS法, 物理 数学 计算机">
-<meta name="description" content="TOPSIS法Technique for Order Preference by Similarity to Ideal Solution逼近理想解排序法、优劣解距离法
-一、引入越大（高）越好的指标：极大型指标（效益型指标）越少（低）越好的">
+<meta name="description" content="TOPSIS法
+Technique for Order Preference by Similarity to Ideal Solution
+逼近理想解排序法、优劣解距离法 # 一、引入
+越大（高）越好的指标：极大型指标（效益型指标）">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="2 TOPSIS法">
-<meta property="og:description" content="TOPSIS法Technique for Order Preference by Similarity to Ideal Solution逼近理想解排序法、优劣解距离法
-一、引入越大（高）越好的指标：极大型指标（效益型指标）越少（低）越好的">
+<meta property="og:description" content="TOPSIS法
+Technique for Order Preference by Similarity to Ideal Solution
+逼近理想解排序法、优劣解距离法 # 一、引入
+越大（高）越好的指标：极大型指标（效益型指标）">
 
-<link rel="shortcut icon" href="/icon.ico">
+<link rel="shortcut icon" href="/images/icon.ico">
 <link rel="stylesheet" href="/style/main.css">
 
   <meta name="generator" content="Hexo 7.3.0"></head>
@@ -31,7 +35,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://diraw.github.io">
-        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+        <img class="avatar" src="/images/logo.png" alt="logo" width="32px" height="32px">
       </a>
       <a href="https://diraw.github.io">
         <h1 class="site-title">Diraw&#39;s blog</h1>
@@ -119,35 +123,94 @@
       </div>
       <div class="post-content-wrapper">
         <div class="post-content">
-          <h1 id="TOPSIS法"><a href="#TOPSIS法" class="headerlink" title="TOPSIS法"></a>TOPSIS法</h1><p>Technique for Order Preference by Similarity to Ideal Solution<br>逼近理想解排序法、优劣解距离法</p>
-<h1 id="一、引入"><a href="#一、引入" class="headerlink" title="一、引入"></a>一、引入</h1><p>越大（高）越好的指标：极大型指标（效益型指标）<br>越少（低）越好的指标：极小型指标（成本型指标）</p>
-<p>1、将所有的指标转化为极大型（<strong>指标正向化</strong>）</p>
-<blockquote>
-<p>极小型转极大型公式：$max-x$</p>
-</blockquote>
-<p>2、<strong>为消去不同指标量纲的影响</strong>，需要对已经正向化的矩阵进行<strong>标准化处理</strong>：<br>$$<br>z_{ij}&#x3D;\frac{x_{ij}}{\sqrt{\sum_{i&#x3D;1}^nx_{ij}^2}}<br>$$</p>
-<p>3、计算评分的公式：<br>$$<br>\frac{x-min}{max-min}&#x3D;\frac{x-min}{(max-x)+(x-min)}<br>$$<br>即：<br>$$<br>\dfrac{\text{x与最大值的距离}}{\text{x与最大值的距离}+\text{x与最小值的距离}}<br>$$</p>
-<p>如果有很多维度（即得到一个矩阵）的话，则构建各维度最大值所组成的最大值向量，和最小值向量，之后取欧几里得度量即可<br>$$<br>\text{与最大值的距离}:D^+<em>i&#x3D;\sqrt{\sum^m</em>{j&#x3D;1}(Z^+<em>j-z</em>{ij})^2}<br>$$<br>最小值同理，然后就求出未归一化得分：$S_i&#x3D;\dfrac{D^-_i}{D^+_i+D^-_i}$</p>
-<h1 id="二、TOPSIS法"><a href="#二、TOPSIS法" class="headerlink" title="二、TOPSIS法"></a>二、TOPSIS法</h1><p>极大型指标（效益型指标）：越大（高）越好的指标<br>极小型指标（成本型指标）：越少（低）越好的指标<br>中间型指标：越接近某个值越好<br>区间型指标：落在某个区间最好</p>
-<h2 id="1、将原始矩阵正向化"><a href="#1、将原始矩阵正向化" class="headerlink" title="1、将原始矩阵正向化"></a>1、将原始矩阵正向化</h2><p>极小型 $\rightarrow$ 极大型：$max-x$ 或 $\dfrac{1}{x}$<br>中间型 $\rightarrow$ 极大型：对最佳数值 $x_{best}$<br>$$<br>M&#x3D;max{|x_i-x_{best}|}\ ,\ \tilde x_i&#x3D;1-\frac{|x_i-x_{best}|}{M}<br>$$<br>区间型 $\rightarrow$ 极大型：对区间 $[a,b]$<br>$$<br>M&#x3D;max{a-min{x_i},max{x_i}-b}<br>$$<br>$$<br>x_i&#x3D;\begin{cases} 1-\dfrac{a-x}{M}\ ,\ x&lt;a\ 1\ ,\ a\leq x\leq b\ 1-\dfrac{x-b}{M}\ ,\ b\leq x \end{cases}<br>$$</p>
-<h2 id="2、正向化矩阵标准化"><a href="#2、正向化矩阵标准化" class="headerlink" title="2、正向化矩阵标准化"></a>2、正向化矩阵标准化</h2><p>即$每一个元素&#x2F;\sqrt{其所在列的元素的平方和}$，目的是消除不同指标量纲的影响<br>$$<br>z_{ij}&#x3D;\frac{x_{ij}}{\sqrt{\sum_{i&#x3D;1}^nx_{ij}^2}}<br>$$</p>
-<h2 id="3、计算得分并得归一化"><a href="#3、计算得分并得归一化" class="headerlink" title="3、计算得分并得归一化"></a>3、计算得分并得归一化</h2><p>前面讲过了，即：<br>$$<br>S_i&#x3D;\dfrac{D^-_i}{D^+_i+D^-_i}<br>$$</p>
-<h1 id="三、模型扩展"><a href="#三、模型扩展" class="headerlink" title="三、模型扩展"></a>三、模型扩展</h1><h2 id="1、层次分析法"><a href="#1、层次分析法" class="headerlink" title="1、层次分析法"></a>1、层次分析法</h2><p>前面的方法，各评价指标的权重都是一样，如果权重不一样，有<br>$$<br>\text{与最大值的距离}:D^+<em>i&#x3D;\sqrt{\sum^m</em>{j&#x3D;1}\omega_j(Z^+<em>j-z</em>{ij})^2}<br>$$<br>可以用层次分析法给这m个评价指标确定权重（带权重的TOPSIS）:<br>$$<br>\sum_{j&#x3D;1}^m<br>\omega_j&#x3D;1<br>$$</p>
-<h2 id="2、熵权法"><a href="#2、熵权法" class="headerlink" title="2、熵权法"></a>2、熵权法</h2><p>指标的<strong>变异程度</strong>（方差）越小，所反映的信息量也越少，其对应的权值也应该越低（但这种方法在一些事情上有问题）</p>
+          <h1 id="topsis法">TOPSIS法</h1>
+<p>Technique for Order Preference by Similarity to Ideal Solution
+逼近理想解排序法、优劣解距离法 # 一、引入
+越大（高）越好的指标：极大型指标（效益型指标）
+越少（低）越好的指标：极小型指标（成本型指标）</p>
+<p>1、将所有的指标转化为极大型（<strong>指标正向化</strong>） &gt;
+极小型转极大型公式：<span class="math inline">\(max-x\)</span></p>
+<p>2、<strong>为消去不同指标量纲的影响</strong>，需要对已经正向化的矩阵进行<strong>标准化处理</strong>：
+<span class="math display">\[
+z_{ij}=\frac{x_{ij}}{\sqrt{\sum_{i=1}^nx_{ij}^2}}
+\]</span></p>
+<p>3、计算评分的公式： <span class="math display">\[
+\frac{x-min}{max-min}=\frac{x-min}{(max-x)+(x-min)}
+\]</span> 即： <span class="math display">\[
+\dfrac{\text{x与最大值的距离}}{\text{x与最大值的距离}+\text{x与最小值的距离}}
+\]</span></p>
+<p>如果有很多维度（即得到一个矩阵）的话，则构建各维度最大值所组成的最大值向量，和最小值向量，之后取欧几里得度量即可
+<span class="math display">\[
+\text{与最大值的距离}:D^+_i=\sqrt{\sum^m_{j=1}(Z^+_j-z_{ij})^2}
+\]</span> 最小值同理，然后就求出未归一化得分：<span
+class="math inline">\(S_i=\dfrac{D^-_i}{D^+_i+D^-_i}\)</span> #
+二、TOPSIS法</p>
+<p>极大型指标（效益型指标）：越大（高）越好的指标
+极小型指标（成本型指标）：越少（低）越好的指标
+中间型指标：越接近某个值越好 区间型指标：落在某个区间最好</p>
+<h2 id="将原始矩阵正向化">1、将原始矩阵正向化</h2>
+<p>极小型 <span class="math inline">\(\rightarrow\)</span> 极大型：<span
+class="math inline">\(max-x\)</span> 或 <span
+class="math inline">\(\dfrac{1}{x}\)</span> 中间型 <span
+class="math inline">\(\rightarrow\)</span> 极大型：对最佳数值 <span
+class="math inline">\(x_{best}\)</span> <span class="math display">\[
+M=max\{|x_i-x_{best}|\}\ ,\ \tilde x_i=1-\frac{|x_i-x_{best}|}{M}
+\]</span> 区间型 <span class="math inline">\(\rightarrow\)</span>
+极大型：对区间 <span class="math inline">\([a,b]\)</span> <span
+class="math display">\[
+M=max\{a-min\{x_i\},max\{x_i\}-b\}
+\]</span> <span class="math display">\[
+x_i=\begin{cases} 1-\dfrac{a-x}{M}\ ,\ x&lt;a\\ 1\ ,\ a\leq x\leq b\\
+1-\dfrac{x-b}{M}\ ,\ b\leq x \end{cases}
+\]</span> ## 2、正向化矩阵标准化 即<span
+class="math inline">\(每一个元素/\sqrt{其所在列的元素的平方和}\)</span>，目的是消除不同指标量纲的影响
+<span class="math display">\[
+z_{ij}=\frac{x_{ij}}{\sqrt{\sum_{i=1}^nx_{ij}^2}}
+\]</span> ## 3、计算得分并得归一化 前面讲过了，即： <span
+class="math display">\[
+S_i=\dfrac{D^-_i}{D^+_i+D^-_i}
+\]</span></p>
+<h1 id="三模型扩展">三、模型扩展</h1>
+<h2 id="层次分析法">1、层次分析法</h2>
+<p>前面的方法，各评价指标的权重都是一样，如果权重不一样，有 <span
+class="math display">\[
+\text{与最大值的距离}:D^+_i=\sqrt{\sum^m_{j=1}\omega_j(Z^+_j-z_{ij})^2}
+\]</span> 可以用层次分析法给这m个评价指标确定权重（带权重的TOPSIS）:
+<span class="math display">\[
+\sum_{j=1}^m
+\omega_j=1
+\]</span> ## 2、熵权法
+指标的<strong>变异程度</strong>（方差）越小，所反映的信息量也越少，其对应的权值也应该越低（但这种方法在一些事情上有问题）</p>
 <p>越有可能发生的事情，信息量越少；越不可能发生的事情，信息量越多</p>
-<p>定义信息量 $I(x)&#x3D;-\ln (p(x))$，信息熵 $H(x)&#x3D;\sum_{i&#x3D;1}^n[p(x_i)I(x_i)]$</p>
-<p>当各时间概率相同时 $p(x_i)&#x3D;\frac{1}{n}$，此时信息熵最大 $H(x)&#x3D;\ln n$</p>
+<p>定义信息量 <span class="math inline">\(I(x)=-\ln
+(p(x))\)</span>，信息熵 <span
+class="math inline">\(H(x)=\sum_{i=1}^n[p(x_i)I(x_i)]\)</span></p>
+<p>当各时间概率相同时 <span
+class="math inline">\(p(x_i)=\frac{1}{n}\)</span>，此时信息熵最大 <span
+class="math inline">\(H(x)=\ln n\)</span></p>
 <p>随机变量的信息熵越大，则他的值（内容）能给你补充的信息量越大，而知道这个值之前你已有的信息量越小</p>
-<p>提出约化信息熵 $e_j&#x3D;-\dfrac{1}{\ln n}\sum_{i&#x3D;1}^n[p_{ij}\ln(p_{ij})]$，当 $e_j&#x3D;1$ 时，信息熵达到最大</p>
-<p>定义信息效用值 $d_j&#x3D;1-e_j$，信息效用值越大，所对应的信息越多</p>
+<p>提出约化信息熵 <span class="math inline">\(e_j=-\dfrac{1}{\ln
+n}\sum_{i=1}^n[p_{ij}\ln(p_{ij})]\)</span>，当 <span
+class="math inline">\(e_j=1\)</span> 时，信息熵达到最大</p>
+<p>定义信息效用值 <span
+class="math inline">\(d_j=1-e_j\)</span>，信息效用值越大，所对应的信息越多</p>
 <p>最后对信息效用值进行归一化，</p>
-<p>得到每个指标的熵权 $W_j&#x3D;\dfrac{d_j}{\sum_{i&#x3D;1}^nd_j}$ </p>
-<p>补充：<br>1、输入矩阵必须是非负的，如果有负数，需用新的标准化方法，公式和前面计算得分的式子是一样的<br>$$<br>\tilde x_{ij}&#x3D;\frac{x_{ij}-min{x_{1j},x_{2j},\cdots,x_{nj}}}{(max{x_{1j},x_{2j},\cdots,x_{nj}}-x_{ij})+(x_{ij}-min{x_{1j},x_{2j},\cdots,x_{nj}})}<br>$$<br>2、计算概率矩阵 $P$<br>$$<br>p_{ij}&#x3D;\frac{\tilde{z}<em>{ij}}{\sum</em>{i&#x3D;1}^n\tilde{z}_{ij}}<br>$$</p>
+<p>得到每个指标的熵权 <span
+class="math inline">\(W_j=\dfrac{d_j}{\sum_{i=1}^nd_j}\)</span></p>
+<p>补充：
+1、输入矩阵必须是非负的，如果有负数，需用新的标准化方法，公式和前面计算得分的式子是一样的
+<span class="math display">\[
+\tilde
+x_{ij}=\frac{x_{ij}-min\{x_{1j},x_{2j},\cdots,x_{nj}\}}{(max\{x_{1j},x_{2j},\cdots,x_{nj}\}-x_{ij})+(x_{ij}-min\{x_{1j},x_{2j},\cdots,x_{nj}\})}
+\]</span> 2、计算概率矩阵 <span class="math inline">\(P\)</span> <span
+class="math display">\[
+p_{ij}=\frac{\tilde{z}_{ij}}{\sum_{i=1}^n\tilde{z}_{ij}}
+\]</span></p>
 
         </div>
           
         <div class="top-div">
-          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#TOPSIS%E6%B3%95"><span class="top-box-text">TOPSIS法</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%80%E3%80%81%E5%BC%95%E5%85%A5"><span class="top-box-text">一、引入</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%BA%8C%E3%80%81TOPSIS%E6%B3%95"><span class="top-box-text">二、TOPSIS法</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#1%E3%80%81%E5%B0%86%E5%8E%9F%E5%A7%8B%E7%9F%A9%E9%98%B5%E6%AD%A3%E5%90%91%E5%8C%96"><span class="top-box-text">1、将原始矩阵正向化</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#2%E3%80%81%E6%AD%A3%E5%90%91%E5%8C%96%E7%9F%A9%E9%98%B5%E6%A0%87%E5%87%86%E5%8C%96"><span class="top-box-text">2、正向化矩阵标准化</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#3%E3%80%81%E8%AE%A1%E7%AE%97%E5%BE%97%E5%88%86%E5%B9%B6%E5%BE%97%E5%BD%92%E4%B8%80%E5%8C%96"><span class="top-box-text">3、计算得分并得归一化</span></a></li></ol></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%89%E3%80%81%E6%A8%A1%E5%9E%8B%E6%89%A9%E5%B1%95"><span class="top-box-text">三、模型扩展</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#1%E3%80%81%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95"><span class="top-box-text">1、层次分析法</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#2%E3%80%81%E7%86%B5%E6%9D%83%E6%B3%95"><span class="top-box-text">2、熵权法</span></a></li></ol></li></ol>
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#topsis%E6%B3%95"><span class="top-box-text">TOPSIS法</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%B0%86%E5%8E%9F%E5%A7%8B%E7%9F%A9%E9%98%B5%E6%AD%A3%E5%90%91%E5%8C%96"><span class="top-box-text">1、将原始矩阵正向化</span></a></li></ol></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%89%E6%A8%A1%E5%9E%8B%E6%89%A9%E5%B1%95"><span class="top-box-text">三、模型扩展</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95"><span class="top-box-text">1、层次分析法</span></a></li></ol></li></ol>
         </div>
           
       </div>

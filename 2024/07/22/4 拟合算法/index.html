@@ -11,16 +11,18 @@
 
 <title>4 拟合算法</title>
 <meta name="keywords" content="4 拟合算法, 物理 数学 计算机">
-<meta name="description" content="拟合算法在插值算法中，得到的多项式会经过所有的样本点，而拟合的话则没有这个要求，只要误差足够小就行
-1、最小二乘法：$\hat{y}i&#x3D;kx_i+b$，$\hat{k},\hat{b}&#x3D;\underset{k,b}{ar">
+<meta name="description" content="拟合算法
+在插值算法中，得到的多项式会经过所有的样本点，而拟合的话则没有这个要求，只要误差足够小就行
+1、最小二乘法：\(\hat{y}_i=kx_i+b\)，\(\hat{k},\hat{b}=\underset{k,b}{arg\m">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="4 拟合算法">
-<meta property="og:description" content="拟合算法在插值算法中，得到的多项式会经过所有的样本点，而拟合的话则没有这个要求，只要误差足够小就行
-1、最小二乘法：$\hat{y}i&#x3D;kx_i+b$，$\hat{k},\hat{b}&#x3D;\underset{k,b}{ar">
+<meta property="og:description" content="拟合算法
+在插值算法中，得到的多项式会经过所有的样本点，而拟合的话则没有这个要求，只要误差足够小就行
+1、最小二乘法：\(\hat{y}_i=kx_i+b\)，\(\hat{k},\hat{b}=\underset{k,b}{arg\m">
 
-<link rel="shortcut icon" href="/icon.ico">
+<link rel="shortcut icon" href="/images/icon.ico">
 <link rel="stylesheet" href="/style/main.css">
 
   <meta name="generator" content="Hexo 7.3.0"></head>
@@ -31,7 +33,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://diraw.github.io">
-        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+        <img class="avatar" src="/images/logo.png" alt="logo" width="32px" height="32px">
       </a>
       <a href="https://diraw.github.io">
         <h1 class="site-title">Diraw&#39;s blog</h1>
@@ -119,20 +121,41 @@
       </div>
       <div class="post-content-wrapper">
         <div class="post-content">
-          <h1 id="拟合算法"><a href="#拟合算法" class="headerlink" title="拟合算法"></a>拟合算法</h1><p>在插值算法中，得到的多项式会经过所有的样本点，而拟合的话则没有这个要求，只要误差足够小就行</p>
-<p>1、<strong>最小二乘法</strong>：$\hat{y}<em>i&#x3D;kx_i+b$，$\hat{k},\hat{b}&#x3D;\underset{k,b}{arg\min}(\sum</em>{i&#x3D;1}^n(y_i-\hat y_i)^2)$</p>
-<p>定义损失函数&#x2F;残差平方和：$L&#x3D;\sum_{i&#x3D;1}^n(y_i-\hat y_i)^2&#x3D;\sum_{i&#x3D;1}^n(y_i-kx_i-b)^2$，现要找 $k,b$ 使得 $L$ 最小</p>
+          <h1 id="拟合算法">拟合算法</h1>
+<p>在插值算法中，得到的多项式会经过所有的样本点，而拟合的话则没有这个要求，只要误差足够小就行</p>
+<p>1、<strong>最小二乘法</strong>：<span
+class="math inline">\(\hat{y}_i=kx_i+b\)</span>，<span
+class="math inline">\(\hat{k},\hat{b}=\underset{k,b}{arg\min}(\sum_{i=1}^n(y_i-\hat
+y_i)^2)\)</span></p>
+<p>定义损失函数/残差平方和：<span
+class="math inline">\(L=\sum_{i=1}^n(y_i-\hat
+y_i)^2=\sum_{i=1}^n(y_i-kx_i-b)^2\)</span>，现要找 <span
+class="math inline">\(k,b\)</span> 使得 <span
+class="math inline">\(L\)</span> 最小</p>
 <p>2、为<strong>评价拟合的好坏</strong>，引入</p>
-<p>总体平方和 $SST&#x3D;\sum_{i&#x3D;1}^n(y_i-\bar{y})^2$</p>
-<p>误差平方和 $SSE&#x3D;\sum_{i&#x3D;1}^n(y_i-\hat{y})^2$</p>
-<p>回归平方和 $SSR&#x3D;\sum_{i&#x3D;1}^n(\hat{y_i}-\bar{y})^2$</p>
-<p>拟合优度（可决系数）$R^2&#x3D;\dfrac{SSR}{SST}&#x3D;1-\dfrac{SSE}{SST}\leq 1$，可以证明：$SST&#x3D;SSE+SSR$</p>
-<p>$R^2$ 越接近1，说明误差平方和越接近0，误差越小，拟合越好</p>
-<p>$R^2$ 只适用于拟合函数是线性函数时，对于拟合结果的评价（此处的线性函数是指<strong>对参数线性</strong>，即参数均为一次方，也没有进行参数复合，如 $y&#x3D;a(b+sin(cx))$，因此 $y&#x3D;a+bx^2$ （对参数）是线性函数，可以用 $R^2$ 去评价）</p>
-<p>对于拟合方式的评价（比较不同函数去拟合的好坏），直接看 $SSE$ 即可</p>
+<p>总体平方和 <span
+class="math inline">\(SST=\sum_{i=1}^n(y_i-\bar{y})^2\)</span></p>
+<p>误差平方和 <span
+class="math inline">\(SSE=\sum_{i=1}^n(y_i-\hat{y})^2\)</span></p>
+<p>回归平方和 <span
+class="math inline">\(SSR=\sum_{i=1}^n(\hat{y_i}-\bar{y})^2\)</span></p>
+<p>拟合优度（可决系数）<span
+class="math inline">\(R^2=\dfrac{SSR}{SST}=1-\dfrac{SSE}{SST}\leq
+1\)</span>，可以证明：<span
+class="math inline">\(SST=SSE+SSR\)</span></p>
+<p><span class="math inline">\(R^2\)</span>
+越接近1，说明误差平方和越接近0，误差越小，拟合越好</p>
+<p><span class="math inline">\(R^2\)</span>
+只适用于拟合函数是线性函数时，对于拟合结果的评价（此处的线性函数是指<strong>对参数线性</strong>，即参数均为一次方，也没有进行参数复合，如
+<span class="math inline">\(y=a(b+sin(cx))\)</span>，因此 <span
+class="math inline">\(y=a+bx^2\)</span> （对参数）是线性函数，可以用
+<span class="math inline">\(R^2\)</span> 去评价）</p>
+<p>对于拟合方式的评价（比较不同函数去拟合的好坏），直接看 <span
+class="math inline">\(SSE\)</span> 即可</p>
 <p>3、<code>cftool</code> 工具箱</p>
 <p><code>custom equation</code> 自定义拟合函数表达式</p>
-<p><code>polynomial</code> 多项式拟合，其中<code>degree</code>为多项式次数</p>
+<p><code>polynomial</code>
+多项式拟合，其中<code>degree</code>为多项式次数</p>
 <p>如果出现未收敛情况，要进到<code>Fit Option</code>里面更改<code>StartPoint</code>初始值</p>
 
         </div>
