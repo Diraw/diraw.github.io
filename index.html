@@ -21,7 +21,119 @@
 <link rel="shortcut icon" href="/images/icon.ico">
 <link rel="stylesheet" href="/style/main.css">
 
-  <meta name="generator" content="Hexo 7.3.0"></head>
+  <meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
   <body>
     <div id="app" class="main">
 
@@ -178,7 +290,11 @@ Correlation，是研究两组变量（每组变量中都可能有多个指标）
             
 			    拟合算法
 在插值算法中，得到的多项式会经过所有的样本点，而拟合的话则没有这个要求，只要误差足够小就行
-1、最小二乘法：\(\hat{y}_i=kx_i+b\)，\(\hat{k},\hat{b}=\underset{k,b}{arg\m
+1、最小二乘法：，
+定义损失函数/残差平方和：，现要找  使得  最小
+2、为评价拟合的好坏，引入
+总体平方和 
+误差平方和 
             
           </div>
       </a>
@@ -209,10 +325,11 @@ Correlation，是研究两组变量（每组变量中都可能有多个指标）
           <div class="post-abstract">
             
 			    插值算法
-思路：构造函数 \(y=f(x)\)
-过所有已知的节点，通过 \(f(x^*)\) 求得
-\(y^*\)（一维数据的插值）
-插值多项式：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方
+思路：构造函数 
+过所有已知的节点，通过  求得
+（一维数据的插值）
+插值多项式：有n+1各互异的节点，用一个n次多项式去拟合，可以得到n+1个线性方程，用线性代数的方法求解
+1、拉格朗日插值法：考虑三个点，对 ，先写分
             
           </div>
       </a>
@@ -244,8 +361,9 @@ Correlation，是研究两组变量（每组变量中都可能有多个指标）
             
 			    TOPSIS法
 Technique for Order Preference by Similarity to Ideal Solution
-逼近理想解排序法、优劣解距离法 # 一、引入
-越大（高）越好的指标：极大型指标（效益型指标）
+逼近理想解排序法、优劣解距离法
+# 一、引入
+越大（高）越好的指标：极大型指标（效益型指标
             
           </div>
       </a>
