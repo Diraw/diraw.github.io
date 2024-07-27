@@ -505,11 +505,94 @@ Err为回归系数所对应的标准误差，后面的t统计量为前面的回�
 <code>regress/reg y x_1 x_2 ..., beta/b</code></p>
 <p>对数据进行标准化处理不会影响回归系数的标准误差，也不会影响显著性（即P值）</p>
 <p>然后是_cons的均值是其本身，标准化之后就变成了0</p>
+<h2 id="扰动项">8、扰动项</h2>
+<p>在之前的回归分析中，我们都默认了扰动项是球型扰动项（<strong>满足“同方差”和“无自相关”两个条件</strong>）</p>
+<p>横截面数据容易出现异方差的问题；时间序列数据容易出现自相关的问题。</p>
+<p>如果扰动项存在异方差：<br>
+1、OLS估计出来的回归系数是无偏、一致的<br>
+2、假设检验无法使用（构造的统计量失效了）<br>
+3、OLS估计量不再是最优线性无偏估计量（BLUE）</p>
+<p>怎么解决异方差：<br>
+1、使用OLS + 稳健的标准误<br>
+2、广义最小二乘估计法GLS</p>
+<p><strong>检验异方差</strong>，在回归结束后运行命令：<br>
+<code>rvfplot</code> (画残差与拟合值的散点图）<br>
+<code>rvpplot x</code> (画残差与自变量x的散点图)</p>
+<p>拟合值出现负数的原因：评价量的分布极度不平衡<br>
+代码<code>summarize 评价量,d</code>可以看到百分比的数据</p>
+<p><strong>异方差的假设检验</strong><br>
+1、BP检验<br>
+Stata命令（在回归结束后使用）：<code>estat hettest ,rhs iid</code></p>
+<p>BP检验原假设：扰动项不存在异方差</p>
+<blockquote>
+<p>P值小于0.05，说明在95%的置信水平下拒绝原假设，即我们认为扰动项存在异方差。</p>
+</blockquote>
+<p>2、怀特检验</p>
+<p>怀特检验原假设：扰动项不存在异方差</p>
+<p>Stata命令（在回归结束后使用）：<code>estat imtest,white</code></p>
+<p><strong>怎么解决异方差</strong>：<br>
+1、使用OLS + 稳健的标准误（推荐）<br>
+2、广义最小二乘法GLS</p>
+<blockquote>
+<p>Stock and Watson (2011)推荐，在大多数情况下应该使用“OLS +
+稳健标准误”</p>
+</blockquote>
+<p>使用OLS + 稳健的标准误 <code>regress y x1 x2 … xk,robust</code></p>
+<h2 id="多重共线性">9、多重共线性</h2>
+<p>多重共线性（Multicollinearity）是指在回归分析中，多个自变量之间存在较强的线性关系。这种现象会导致回归模型中某些自变量的系数估计不稳定，标准误差增大，从而影响模型的解释性和预测能力。</p>
+<p>多重共线性的影响：<br>
+1、系数不稳定：自变量之间高度相关会导致回归系数难以精确估计，可能出现较大的变化。<br>
+2、标准误差增大：多重共线性会使得估计系数的标准误差增大，从而使得系数的显著性检验失效。<br>
+3、模型解释性降低：由于自变量之间的高度相关性，很难确定哪个变量对因变量的影响更大。</p>
+<p>检测多重共线性的方法：<br>
+1、<strong>方差膨胀因子（VIF, Variance Inflation
+Factor）</strong>：计算每个自变量的VIF值，通常VIF值超过10被认为存在严重的多重共线性。<br>
+2、特征值和条件数：通过计算设计矩阵的特征值和条件数（Condition
+Number），条件数较大（如大于30）表明存在多重共线性。<br>
+3、相关矩阵：检查自变量之间的相关系数矩阵，相关系数接近1或-1表示存在较强的线性关系。</p>
+<p>Stata计算各自变量VIF的命令（在回归结束后使用）：<code>estat vif</code></p>
+<p>解决多重共线性的方法：<br>
+1、删除相关性高的变量：从模型中移除那些高度相关的自变量。<br>
+2、主成分分析（PCA）：通过主成分分析将原始自变量转换为新的不相关变量。<br>
+3、岭回归（Ridge
+Regression）：通过引入惩罚项来减小系数估计的方差，从而缓解多重共线性。<br>
+4、增加样本量：在某些情况下，增加样本量可以减轻多重共线性的影响。</p>
+<h2 id="逐步回归分析">10、逐步回归分析</h2>
+<p>1、向前逐步回归（Forward
+Selection）：从无变量的空模型开始，每一步选择一个最显著的变量加入模型，直到加入任何变量都不显著为止。</p>
+<p>2、<strong>向后逐步回归（Backward
+Elimination）</strong>：从包含所有自变量的全模型开始，每一步删除一个最不显著的变量，直到所有剩余变量都显著为止。（推荐）</p>
+<p>3、双向逐步回归（Stepwise
+Selection）：结合前向选择和后向消除的方法，每一步既可以加入最显著的变量，也可以删除最不显著的变量，直到模型中的所有变量都显著且无法再加入或删除变量为止。</p>
+<p><strong>Stata实现逐步回归法</strong></p>
+<p>1、向前逐步回归Forward selection：<br>
+<code>stepwise regress y x1 x2 … xk, pe(#1)</code></p>
+<blockquote>
+<p>pe(#1) specifies the significance level for addition to the model;
+terms with p&lt;#1 areeligible for addition（显著才加入模型中）</p>
+</blockquote>
+<p>2、向后逐步回归Backward elimination：<br>
+<code>stepwise regress y x1 x2 … xk, pr(#2)</code></p>
+<blockquote>
+<p>pr(#2) specifies the significance level for removal from the model;
+terms with p&gt;= #2are eligible for removal（不显著就剔除出模型）</p>
+</blockquote>
+<p>如果你觉得筛选后的变量仍很多，你可以减小#1或者#2；如果你觉得筛选后的变量太少了，你可以增加#1或者#2</p>
+<p>注:<br>
+（1）x1 x2 … xk之间不能有完全多重共线性(否则会报错，和regress不同)<br>
+（2）可以在后面再加参数b和r，即标准化回归系数或稳健标准误</p>
+<p><strong>优点</strong>：<br>
+1、自动化：逐步回归自动选择变量，减少了人为干预。<br>
+2、简化模型：通过逐步选择，最终模型可能比全模型更简洁，解释性更强。</p>
+<p><strong>缺点</strong>：<br>
+1、局部最优：逐步回归可能陷入局部最优解，而非全局最优解。<br>
+2、忽略多重共线性：逐步回归可能无法有效处理多重共线性问题。<br>
+3、数据依赖性强：结果可能对数据的变化非常敏感。</p>
 
         </div>
           
         <div class="top-div">
-          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%80%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E4%BB%8B%E7%BB%8D"><span class="top-box-text">一、回归分析介绍</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%BA%8C%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="top-box-text">二、线性回归</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="top-box-text">1、数据类型</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="top-box-text">2、一元线性回归模型</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E9%81%97%E6%BC%8F%E5%8F%98%E9%87%8F%E5%AF%BC%E8%87%B4%E7%9A%84%E5%86%85%E7%94%9F%E6%80%A7"><span class="top-box-text">3、遗漏变量导致的内生性</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%9B%9E%E5%BD%92%E7%B3%BB%E6%95%B0%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="top-box-text">4、回归系数的解释</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E8%99%9A%E6%8B%9F%E5%8F%98%E9%87%8F"><span class="top-box-text">5、虚拟变量</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%90%AB%E6%9C%89%E4%BA%A4%E4%BA%92%E9%A1%B9%E7%9A%84%E8%87%AA%E5%8F%98%E9%87%8F"><span class="top-box-text">6、含有交互项的自变量</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%9B%9E%E5%BD%92%E7%9A%84%E5%BA%94%E7%94%A8"><span class="top-box-text">7、回归的应用</span></a></li></ol></li></ol>
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%80%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E4%BB%8B%E7%BB%8D"><span class="top-box-text">一、回归分析介绍</span></a></li><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%BA%8C%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="top-box-text">二、线性回归</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="top-box-text">1、数据类型</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="top-box-text">2、一元线性回归模型</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E9%81%97%E6%BC%8F%E5%8F%98%E9%87%8F%E5%AF%BC%E8%87%B4%E7%9A%84%E5%86%85%E7%94%9F%E6%80%A7"><span class="top-box-text">3、遗漏变量导致的内生性</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%9B%9E%E5%BD%92%E7%B3%BB%E6%95%B0%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="top-box-text">4、回归系数的解释</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E8%99%9A%E6%8B%9F%E5%8F%98%E9%87%8F"><span class="top-box-text">5、虚拟变量</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%90%AB%E6%9C%89%E4%BA%A4%E4%BA%92%E9%A1%B9%E7%9A%84%E8%87%AA%E5%8F%98%E9%87%8F"><span class="top-box-text">6、含有交互项的自变量</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%9B%9E%E5%BD%92%E7%9A%84%E5%BA%94%E7%94%A8"><span class="top-box-text">7、回归的应用</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E6%89%B0%E5%8A%A8%E9%A1%B9"><span class="top-box-text">8、扰动项</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E5%A4%9A%E9%87%8D%E5%85%B1%E7%BA%BF%E6%80%A7"><span class="top-box-text">9、多重共线性</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E9%80%90%E6%AD%A5%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90"><span class="top-box-text">10、逐步回归分析</span></a></li></ol></li></ol>
         </div>
           
       </div>
