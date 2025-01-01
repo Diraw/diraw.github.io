@@ -1,37 +1,152 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    
-
-    
-<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
-    
-
-<meta charset="utf-8" >
-
-<title>8 分类模型（含逻辑回归）</title>
-<meta name="keywords" content="8 分类模型（含逻辑回归）, 物理 数学 计算机">
-<meta name="description" content="一、逻辑回归
-SPSS生成虚拟变量：标题栏：转换-创建虚拟变量
-对于因变量为分类变量的情况，我们可以使用逻辑回归进行处理
-把y看成事件发生的概率，y≥0.5表示发生；y&lt;0.5表示不发生
-1、线性概率模型
-线性概率模型（Li">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>8 分类模型（含逻辑回归） | Diraw's blog</title><meta name="author" content="Diraw"><meta name="copyright" content="Diraw"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、逻辑回归 SPSS生成虚拟变量：标题栏：转换-创建虚拟变量 对于因变量为分类变量的情况，我们可以使用逻辑回归进行处理 把y看成事件发生的概率，y≥0.5表示发生；y&lt;0.5表示不发生 1、线性概率模型 线性概率模型（Linear Probability Model，简记LPM）  很明显有问题： 1、内生性问题： 只能取0或1，有：  显然 ，回归系数估计出来不一致">
+<meta property="og:type" content="article">
 <meta property="og:title" content="8 分类模型（含逻辑回归）">
-<meta property="og:description" content="一、逻辑回归
-SPSS生成虚拟变量：标题栏：转换-创建虚拟变量
-对于因变量为分类变量的情况，我们可以使用逻辑回归进行处理
-把y看成事件发生的概率，y≥0.5表示发生；y&lt;0.5表示不发生
-1、线性概率模型
-线性概率模型（Li">
+<meta property="og:url" content="https://diraw.github.io/2024/07/28/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/8%20%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%EF%BC%88%E5%90%AB%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%EF%BC%89/index.html">
+<meta property="og:site_name" content="Diraw&#39;s blog">
+<meta property="og:description" content="一、逻辑回归 SPSS生成虚拟变量：标题栏：转换-创建虚拟变量 对于因变量为分类变量的情况，我们可以使用逻辑回归进行处理 把y看成事件发生的概率，y≥0.5表示发生；y&lt;0.5表示不发生 1、线性概率模型 线性概率模型（Linear Probability Model，简记LPM）  很明显有问题： 1、内生性问题： 只能取0或1，有：  显然 ，回归系数估计出来不一致">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://diraw.github.io/img/avatar.png">
+<meta property="article:published_time" content="2024-07-27T17:00:00.000Z">
+<meta property="article:modified_time" content="2024-07-29T09:37:25.356Z">
+<meta property="article:author" content="Diraw">
+<meta property="article:tag" content="数学建模">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://diraw.github.io/img/avatar.png"><link rel="shortcut icon" href="/%5Bobject%20Object%5D"><link rel="canonical" href="https://diraw.github.io/2024/07/28/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/8%20%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%EF%BC%88%E5%90%AB%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%EF%BC%89/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
-<link rel="shortcut icon" href="/images/icon.ico">
-<link rel="stylesheet" href="/style/main.css">
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
 
-  <meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '8 分类模型（含逻辑回归）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -143,103 +258,7 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
-  <body>
-    <div id="app" class="main">
-
-<div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://diraw.github.io">
-        <img class="avatar" src="/images/logo.png" alt="logo" width="32px" height="32px">
-      </a>
-      <a href="https://diraw.github.io">
-        <h1 class="site-title">Diraw&#39;s blog</h1>
-      </a>
-    </div>
-    <div class="right">
-        <i class="icon menu-switch icon-menu-outline" ></i>
-    </div>
-  </div>
-</div>
-
-<div class="menu-container" style="height: 0;opacity: 0;">
-<nav class="menu-list">
-  
-    
-      <a href="/" class="menu purple-link">
-        首页
-      </a>
-    
-  
-    
-      <a href="/tags" class="menu purple-link">
-        标签
-      </a>
-    
-  
-    
-      <a href="/about" class="menu purple-link">
-        关于
-      </a>
-    
-  
-    
-      <a target="_blank" rel="noopener" href="https://space.bilibili.com/3546387746654749" class="menu purple-link">
-        哔哩哔哩
-      </a>
-    
-  
-    
-      <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/cdscvhh" class="menu purple-link">
-        知乎
-      </a>
-    
-  
-    
-      <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_72565814" class="menu purple-link">
-        CSDN
-      </a>
-    
-  
-    
-      <a target="_blank" rel="noopener" href="https://github.com/Diraw" class="menu purple-link">
-        GitHub
-      </a>
-    
-  
-    
-      <a href="/youlian" class="menu purple-link">
-        友链
-      </a>
-    
-  
-</nav>
-</div>
-
-
-
-  <div class="content-container">
-    <div class="post-detail">
-      
-      <h2 class="post-title">8 分类模型（含逻辑回归）</h2>
-      <div class="post-info post-detail-info">
-        <span><i class="icon icon-calendar-outline"></i> 2024-07-28</span>
-        
-          <span>
-          <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
-              数学建模
-                
-              </a>
-            
-          </span>
-        
-      </div>
-      <div class="post-content-wrapper">
-        <div class="post-content">
-          <h1 id="一逻辑回归">一、逻辑回归</h1>
+</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: true;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Diraw's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">8 分类模型（含逻辑回归）</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">8 分类模型（含逻辑回归）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-27T17:00:00.000Z" title="发表于 2024-07-28 01:00:00">2024-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-29T09:37:25.356Z" title="更新于 2024-07-29 17:37:25">2024-07-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">数学建模</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="一逻辑回归">一、逻辑回归</h1>
 <p>SPSS生成虚拟变量：标题栏：转换-创建虚拟变量</p>
 <p>对于因变量为分类变量的情况，我们可以使用逻辑回归进行处理</p>
 <p>把y看成事件发生的概率，y≥0.5表示发生；y&lt;0.5表示不发生</p>
@@ -287,79 +306,4 @@ scatter matrix）为 <span class="math inline"><mjx-container class="MathJax" ja
 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.407ex" height="1.027ex" role="img" focusable="false" viewBox="0 -443 622 454"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D714" d="M495 384Q495 406 514 424T555 443Q574 443 589 425T604 364Q604 334 592 278T555 155T483 38T377 -11Q297 -11 267 66Q266 68 260 61Q201 -11 125 -11Q15 -11 15 139Q15 230 56 325T123 434Q135 441 147 436Q160 429 160 418Q160 406 140 379T94 306T62 208Q61 202 61 187Q61 124 85 100T143 76Q201 76 245 129L253 137V156Q258 297 317 297Q348 297 348 261Q348 243 338 213T318 158L308 135Q309 133 310 129T318 115T334 97T358 83T393 76Q456 76 501 148T546 274Q546 305 533 325T508 357T495 384Z"></path></g></g></g></svg></mjx-container></span></p>
 <p>以上是二分类，如果是多分类，更改定义范围即可</p>
 <p>Logistic回归也可用于多分类，将连接函数从Sigmoid函数推广为Softmax函数即可</p>
-
-        </div>
-          
-        <div class="top-div">
-          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E4%B8%80%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="top-box-text">一、逻辑回归</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#%E7%BA%BF%E6%80%A7%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B"><span class="top-box-text">1、线性概率模型</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90"><span class="top-box-text">2、Fisher线性判别分析</span></a></li></ol></li></ol>
-        </div>
-          
-      </div>
-    </div>
-
-    
-      <div class="next-post">
-        <a class="purple-link" href="/2024/07/26/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/7%20%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%88%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%89/">
-          <h3 class="post-title">
-            下一篇：7 回归分析（线性回归）
-          </h3>
-        </a>
-      </div>
-    
-  </div>
-
-
-
-
-
-
-
-
-
-
-<footer>
-<div class="site-footer">
-  <div class="social-container">
-    
-      
-        <a aria-label="跳转至github" href="https://github.com/Diraw" target="_blank">
-          <i class="icon icon-github"></i>
-        </a>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  
-    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
-  
-  
-  
-  
-  
-  
-</div>
-</footer>
-
-
-      </div>
-    </div>
-    
-<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
-
-<script src="/js/main.js"></script>
-
-
-
-
-
-
-  </body>
-</html>
-
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://diraw.github.io">Diraw</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://diraw.github.io/2024/07/28/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/8%20%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%EF%BC%88%E5%90%AB%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%EF%BC%89/">https://diraw.github.io/2024/07/28/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/8%20%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%EF%BC%88%E5%90%AB%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://diraw.github.io" target="_blank">Diraw's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">数学建模</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/07/28/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/9%20%E8%81%9A%E7%B1%BB%E6%A8%A1%E5%9E%8B/" title="9 聚类模型"><div class="cover" style="background: true"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">9 聚类模型</div></div><div class="info-2"><div class="info-item-1">聚类（Clustering）是一种无监督学习技术，用于将数据集中的样本分成多个组或簇，使得同一簇内的样本在某种意义上更加相似，而不同簇之间的样本差异较大 一、K-means聚类算法 K-Means 聚类算法是一种简单且广泛使用的无监督学习算法，用于将数据集分成  个簇。其目标是最小化每个样本到其所在簇的质心的平方距离之和。 K-Means聚类算法的步骤： 1、选择  个初始质心：随机选择  个数据点作为初始质心，或者使用其他方法（如 K-Means++）来选择初始质心。 2、分配每个数据点到最近的质心：对于每个数据点 ，计算它到每个质心  的距离，并将  分配到距离最近的质心所属的簇。 3、更新质心：重新计算每个簇的质心，即计算每个簇内所有数据点的平均值。 4、重复步骤 2 和 3：直到质心不再发生变化，或者达到预定的迭代次数。 算法的数学描述： 1、初始化：选择  个初始质心 。 2、簇分配：对于每个数据点 ，计算其到每个质心的欧氏距离：  将  分配到距离最近的质心所属的簇：  3、质心更新：对于每个簇...</div></div></div></a><a class="pagination-related" href="/2024/07/26/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/7%20%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%88%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%89/" title="7 回归分析（线性回归）"><div class="cover" style="background: true"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">7 回归分析（线性回归）</div></div><div class="info-2"><div class="info-item-1">一、回归分析介绍 回归分析：研究X和Y之间的相关性分析，X为解释变量，Y为被解释变量 Y：GDP增长率（连续数值型变量）线性回归 Y：能/不能还款（0-1型变量）逻辑/0-1回归 Y：1-5表示喜欢（定序变量）定序回归 Y：到访次数（计数变量） Y：人的寿命60+（生存变量） 回归分析的关键： 1、识别重要变量（逐步回归法） 2、判断相关性的方向 3、估计权重（回归系数）    类型 模型 Y的特点 例子     线性回归 OLS、GLS（最小二乘） 连续数值型变量 GPD、产量、收入   0-1回归 logistic回归 二值变量（0-1） 是否违约、是否得病   定序回归 probit定序回归 定序变量 等级评定（优良差）   计数回归 泊松回归（泊松分布） 计数变量 每分钟车流量   生存回归 Cox等比例风险回归 生存变量（截断数据） 企业、产品的寿命    二、线性回归 1、数据类型 1、横截面数据：在某一时间点收集到的不同对象的数据 Cross...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/07/19/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/1%20%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95/" title="1 层次分析法"><div class="cover" style="background: true"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-19</div><div class="info-item-2">1 层次分析法</div></div><div class="info-2"><div class="info-item-1">The Analytic Hierarchy Process (AHP) 一、基本问题 用于解决评价类问题  （目标层 Objection）目标 （方案层 Plan）可选方案 （准则层 Criterion）评价指标：背景资料、常识(头脑风暴)、搜论文(旅游选择因素)  （层次评价模型）层次结构图：亿图图示、Visio     指标权重 方案 1 方案 2 ……     指标 1       指标 2       ……        指标权重求和为 1，每一个指标下的方案权重求和也要为 1 excel 表格计算权重时：F4 固定表格 二、确定权重 分而治之的思想    C P1 P2 P3 P4 P5     P1 1 O O O O   P2  1 O O O   P3   1 O O   P4    1 O   P5     1    每一个求和为...</div></div></div></a><a class="pagination-related" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/10%20%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" title="10 主成分分析"><div class="cover" style="background: true"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-29</div><div class="info-item-2">10 主成分分析</div></div><div class="info-2"><div class="info-item-1">主成分分析（Principal Component Analysis，PCA）是一种广泛使用的数据降维技术，主要用于减少数据集的维度，同时尽量保留数据的主要信息。以下是PCA的基本步骤和原理： 基本步骤： 1、数据标准：对数据进行标准化处理，使得每个特征具有相同的尺度。这通常通过减去均值并除以标准差来实现。 2、计算协方差矩阵：计算标准化数据的协方差矩阵，以了解特征之间的相关性。 3、特征值分解：对协方差矩阵进行特征值分解，得到特征值和特征向量。特征向量代表了新的特征空间的方向，特征值指示了这些方向上的方差大小。 4、选择主成分：按照特征值的大小排序，选择前个最大的特征值对应的特征向量。这些特征向量构成了新的特征空间。 5、转换数据：将原始数据投影到新的特征空间上，从而得到降维后的数据。 假设我们有一个  的数据矩阵 （ 是样本数， 是特征数），PCA的目标是找到一个  的变换矩阵 ，使得变换后的数据  最大程度地保留原始数据的方差信息 1、对数据进行标准化处理 计算均值 ，和标准差...</div></div></div></a><a class="pagination-related" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/11%20%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/" title="11 因子分析"><div class="cover" style="background: true"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-29</div><div class="info-item-2">11 因子分析</div></div><div class="info-2"><div class="info-item-1">一、因子分析的原理 假设  维随机向量  的均值 ，协方差矩阵  因子分析的一般模型为：  其中  被称为公共因子，  为特殊因子，它们都是无法观测的随机变量 公共因子  出现在每一个原始变量  的表达式中，可以理解为原始变量共同拥有的某些特征（具有共同的影响因素）；每个特殊因子  仅仅出现在与之相应的第  个原始变量  的表达式中，它只对这个原始变量起作用 上面这个公式我们用矩阵形式可以写为：  其中  为公共因子向量，  为特殊因子向量，  称为因子载荷矩阵，并假设  的秩为 。 要进行因子分析，必须要解出矩阵  这些假设用来计算  矩阵 二、因子分析模型的假设 对于  假设 ，假设  其中  () 为公共因子向量  为特殊因子向量  称为因子载荷矩阵，并假设  的秩为  公因子彼此不相关，且具有单位方差；特殊因子彼此不相关且与公因子也不相关 三、因子模型的性质 1、 的协方差矩阵  的分解 假设 ，假设  则  2、因子载荷不唯一 令  为任意一个  的正交矩阵，令 ，...</div></div></div></a><a class="pagination-related" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/13%20%E7%81%B0%E8%89%B2%E5%85%B3%E8%81%94%E5%BA%A6%E5%88%86%E6%9E%90/" title="13 灰色关联度分析"><div class="cover" style="background: true"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-29</div><div class="info-item-2">13 灰色关联度分析</div></div><div class="info-2"><div class="info-item-1">灰色关联度分析是一种用于分析系统中各因素之间关联程度的统计方法，特别适用于数据不完全或系统信息不确定的情况下。该方法基于灰色系统理论，由中国学者邓聚龙在20世纪80年代提出，广泛应用于经济、社会、环境等领域 灰色关联分析的基本思想是根据序列曲线几何形状的相似程度来判断其联系是否紧密。曲线越接近，相应序列之间的关联度就越大，反之就越小。 一、进行系统分析 1、画统计图（excel画） 2、确定分析数列 母序列（又称参考数列、母指标）：能反映系统行为特征的数据序列 → 类似于因变量 ，此处记为 。 子序列（又称比较数列、子指标）：影响系统行为的因素组成的数据序列 → 类似于自变量 ，此处记为 。 3、对数据进行预处理 两个目的：去量纲，弱化变量间量化差异 对母序列和子序列中的每个指标进行数据处理：先求出每个指标的均值，再用该指标中的每个元素都除以其均值 4、计算子序列中各个指标与母序列的关联系数 定义两极最小差  和两极最大差 ， 其中 ， 而关联系数定义为：  其中， 是分辨系数（一般取 0.5） 5、定义灰色关联度 定义  为  和 ...</div></div></div></a><a class="pagination-related" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/12%20%E5%B2%AD%E5%9B%9E%E5%BD%92%E5%92%8CLasso%E5%9B%9E%E5%BD%92/" title="12 岭回归和Lasso回归"><div class="cover" style="background: true"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-29</div><div class="info-item-2">12 岭回归和Lasso回归</div></div><div class="info-2"><div class="info-item-1">一、岭回归 1、岭回归的原理 线性回归： 其中： 岭回归： 为一正单位数 记：  显然：当  时，岭回归和线性回归结果相同；当  时， 另外：  由于  非退化，则  的特征值均为正数，加上  后， 特征值均为正数，则  可逆 所以：  2、正则化参数的选择 法1：岭迹法 1、各回归系数的岭估计基本稳定：随着  的变化，各回归系数的估计值应该趋于稳定，不会出现剧烈波动 2、用最小二乘估计时符号不合理的回归系数，其岭估计的符号变得合理：当使用最小二乘法估计时，如果某些回归系数的符号不符合预期（例如，经济意义上的正负关系），那么在岭回归中，选择适当的  可以使这些系数的符号变得合理 3、回归系数没有不合理的绝对值：回归系数的绝对值应当在经济意义上是合理的，不应过大或过小 4、残差平方和增加不太多：虽然引入  会增加模型的偏差，但增加的残差平方和应当在可以接受的范围内，不应显著影响模型的预测能力 图中展示了不同回归系数  随着 ...</div></div></div></a><a class="pagination-related" href="/2024/07/30/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/14%20%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90/" title="14 时间序列分析"><div class="cover" style="background: true"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-30</div><div class="info-item-2">14 时间序列分析</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Diraw</div><div class="author-info-description">希望能构建心中的一片圣地</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">1.</span> <span class="toc-text">一、逻辑回归</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1、线性概率模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">2、Fisher线性判别分析</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/30/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/14%20%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90/" title="14 时间序列分析"><div style="background: true"></div></a><div class="content"><a class="title" href="/2024/07/30/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/14%20%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90/" title="14 时间序列分析">14 时间序列分析</a><time datetime="2024-07-29T20:00:00.000Z" title="发表于 2024-07-30 04:00:00">2024-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/13%20%E7%81%B0%E8%89%B2%E5%85%B3%E8%81%94%E5%BA%A6%E5%88%86%E6%9E%90/" title="13 灰色关联度分析"><div style="background: true"></div></a><div class="content"><a class="title" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/13%20%E7%81%B0%E8%89%B2%E5%85%B3%E8%81%94%E5%BA%A6%E5%88%86%E6%9E%90/" title="13 灰色关联度分析">13 灰色关联度分析</a><time datetime="2024-07-28T20:00:00.000Z" title="发表于 2024-07-29 04:00:00">2024-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/12%20%E5%B2%AD%E5%9B%9E%E5%BD%92%E5%92%8CLasso%E5%9B%9E%E5%BD%92/" title="12 岭回归和Lasso回归"><div style="background: true"></div></a><div class="content"><a class="title" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/12%20%E5%B2%AD%E5%9B%9E%E5%BD%92%E5%92%8CLasso%E5%9B%9E%E5%BD%92/" title="12 岭回归和Lasso回归">12 岭回归和Lasso回归</a><time datetime="2024-07-28T19:00:00.000Z" title="发表于 2024-07-29 03:00:00">2024-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/11%20%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/" title="11 因子分析"><div style="background: true"></div></a><div class="content"><a class="title" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/11%20%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/" title="11 因子分析">11 因子分析</a><time datetime="2024-07-28T18:00:00.000Z" title="发表于 2024-07-29 02:00:00">2024-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/10%20%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" title="10 主成分分析"><div style="background: true"></div></a><div class="content"><a class="title" href="/2024/07/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/10%20%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" title="10 主成分分析">10 主成分分析</a><time datetime="2024-07-28T17:00:00.000Z" title="发表于 2024-07-29 01:00:00">2024-07-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Diraw</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
