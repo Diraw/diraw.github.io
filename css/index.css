@@ -1365,6 +1365,8 @@ canvas:not(#ribbon-canvas),
   --mark-bg: rgba(0,0,0,0.3);
 }
 body {
+  visibility: hidden;
+  overflow: hidden;
   position: relative;
   overflow-y: scroll;
   min-height: 100%;
