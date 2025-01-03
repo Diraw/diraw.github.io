@@ -1,0 +1,10 @@
+.pjax-leave-active {
+  opacity: 0;
+  background-color: white;
+}
+
+.pjax-enter-active {
+  transition: opacity 1s ease, background-color 1s ease;
+  opacity: 1;
+  background-color: white;
+}
