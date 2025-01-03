@@ -4,7 +4,7 @@
 }
 
 .pjax-enter-active {
-  transition: opacity 1s ease, background-color 1s ease;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
   background-color: white;
 }
