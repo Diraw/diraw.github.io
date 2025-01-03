@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Butterfly魔改3：修改副标题字体大小</title>
+      <link href="/2025/01/03/Hexo/Butterfly/Custom/3/"/>
+      <url>/2025/01/03/Hexo/Butterfly/Custom/3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>众所周知，Butterfly在可以在 <code>_config.yml</code> 中用<code>font</code> 配置全局的字体和代码大小，如下图所示：</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Global font settings</span></span><br><span class="line"><span class="comment"># Don't modify the following settings unless you know how they work</span></span><br><span class="line"><span class="attr">font:</span></span><br><span class="line">  <span class="attr">global_font_size:</span> <span class="string">16px</span></span><br><span class="line">  <span class="attr">code_font_size:</span> <span class="string">16px</span></span><br><span class="line">  <span class="attr">font_family:</span></span><br><span class="line">  <span class="attr">code_font_family:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Font settings for the site title and site subtitle</span></span><br><span class="line"><span class="attr">blog_title_font:</span></span><br><span class="line">  <span class="attr">font_link:</span></span><br><span class="line">  <span class="attr">font_family:</span></span><br></pre></td></tr></table></figure><p>但是一些更精细的调整就没有了。就比如我把全局大小设置成16px之后，我感觉我首页的副标题的中文字体有点大了，我想改小一点。</p><h1 id="步骤">步骤</h1><p>在 <code>\themes\butterfly\layout\includes\header\index.pug</code>中搜索 <code>site-subtitle</code> 可以找到：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#site-subtitle</span><br><span class="line">    span#subtitle</span><br></pre></td></tr></table></figure><p>添加 <code>(style="font-size: 22px;")</code> 即可，如下图所示：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#site-subtitle(style="font-size: 22px;")</span><br><span class="line">    span#subtitle</span><br></pre></td></tr></table></figure><p>改之前：<br><img src="/img/202501/6.png" alt="Image 6"></p><p>改之后：<br><img src="/img/202501/7.png" alt="Image 7"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Butterfly魔改2：页面渐变切换</title>
       <link href="/2025/01/03/Hexo/Butterfly/Custom/2/"/>
       <url>/2025/01/03/Hexo/Butterfly/Custom/2/</url>
