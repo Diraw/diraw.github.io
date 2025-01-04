@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Butterfly魔改4：自动检测深色/浅色模式</title>
+      <link href="/2025/01/04/Hexo/Butterfly/Custom/4/"/>
+      <url>/2025/01/04/Hexo/Butterfly/Custom/4/</url>
+      
+        <content type="html"><![CDATA[<p>在 <code>\themes\butterfly\layout\includes\head.pug</code>的最后添加如下代码：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">script.</span><br><span class="line">  function updateTheme() {</span><br><span class="line">    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;</span><br><span class="line">    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  // 初始设置</span><br><span class="line">  updateTheme();</span><br><span class="line"></span><br><span class="line">  // 监听系统主题变化</span><br><span class="line">  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Butterfly魔改3：修改副标题字体大小</title>
       <link href="/2025/01/03/Hexo/Butterfly/Custom/3/"/>
       <url>/2025/01/03/Hexo/Butterfly/Custom/3/</url>
