@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   // 初始检查背景图片
   checkBackgroundImage();
-  
+
   if (window.Pjax) {
     new Pjax({
       elements: 'a',
@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function checkBackgroundImage() {
+  document.body.style.visibility = 'hidden';
+  document.body.style.overflow = 'hidden';
   var fullPageElement = document.querySelector('.full_page, .post-bg');
 
   if (fullPageElement) {
