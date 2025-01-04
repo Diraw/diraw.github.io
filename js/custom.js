@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function checkBackgroundImage() {
+  document.body.style.visibility = 'hidden';
+  document.body.style.overflow = 'hidden';
   var fullPageElement = document.querySelector('.full_page, .post-bg');
 
   if (fullPageElement) {
@@ -89,4 +91,7 @@ updateTheme();
 
 // 监听系统主题变化
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+
+
+
 
