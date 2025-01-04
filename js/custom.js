@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function checkBackgroundImage() {
-  document.body.style.visibility = 'hidden';
-  document.body.style.overflow = 'hidden';
   var fullPageElement = document.querySelector('.full_page, .post-bg');
 
   if (fullPageElement) {
@@ -82,6 +80,8 @@ function checkBackgroundImage() {
 }
 
 function updateTheme() {
+  document.body.style.visibility = 'hidden';
+  document.body.style.overflow = 'hidden';
   const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
 }
