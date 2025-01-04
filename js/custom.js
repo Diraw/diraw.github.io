@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function checkBackgroundImage() {
-  document.body.style.visibility = 'hidden';
-  document.body.style.overflow = 'hidden';
   var fullPageElement = document.querySelector('.full_page, .post-bg');
 
   if (fullPageElement) {
