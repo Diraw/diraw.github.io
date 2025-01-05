@@ -92,3 +92,17 @@ updateTheme();
 // 监听系统主题变化
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
 
+
+function preloadImages(imageUrls) {
+  imageUrls.forEach(url => {
+    const img = new Image();
+    img.src = url;
+  });
+}
+
+const imagesToPreload = [
+  '/img/1.png',
+  '/img/2.png'
+];
+
+preloadImages(imagesToPreload);
