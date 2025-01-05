@@ -25,14 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 切换主题的示例代码
-  const toggleThemeButton = document.getElementById('toggle-theme');
-  toggleThemeButton.addEventListener('click', function () {
-    const htmlElement = document.documentElement;
-    const currentTheme = htmlElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    htmlElement.setAttribute('data-theme', newTheme);
-  });
 });
 
 function checkBackgroundImage() {
