@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Diraw&#39;s World</title>
+  <icon>https://diraw.github.io/icon.png</icon>
+  
+  <link href="https://diraw.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://diraw.github.io/"/>
+  <updated>2025-01-05T15:50:39.896Z</updated>
+  <id>https://diraw.github.io/</id>
+  
+  <author>
+    <name>Diraw</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于这个小站</title>
+    <link href="https://diraw.github.io/2025/01/05/about/"/>
+    <id>https://diraw.github.io/2025/01/05/about/</id>
+    <published>2025-01-05T14:48:00.000Z</published>
+    <updated>2025-01-05T15:50:39.896Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;施工中……&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly魔改5：在网站底部添加建站时间</title>
+    <link href="https://diraw.github.io/2025/01/05/Hexo/Butterfly/Custom/5/"/>
+    <id>https://diraw.github.io/2025/01/05/Hexo/Butterfly/Custom/5/</id>
+    <published>2025-01-05T14:26:00.000Z</published>
+    <updated>2025-01-05T14:31:33.069Z</updated>
+    
+    
+    <summary type="html">Butterfly在网站底部添加建站时间</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly魔改准备工作：文件管理魔改代码</title>
+    <link href="https://diraw.github.io/2025/01/04/Hexo/Butterfly/Custom/0/"/>
+    <id>https://diraw.github.io/2025/01/04/Hexo/Butterfly/Custom/0/</id>
+    <published>2025-01-04T07:00:00.000Z</published>
+    <updated>2025-01-04T07:11:14.202Z</updated>
+    
+    
+    <summary type="html">Butterfly魔改准备工作：文件管理魔改代码</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly魔改4：自动检测深色/浅色模式</title>
+    <link href="https://diraw.github.io/2025/01/04/Hexo/Butterfly/Custom/4/"/>
+    <id>https://diraw.github.io/2025/01/04/Hexo/Butterfly/Custom/4/</id>
+    <published>2025-01-04T05:01:00.000Z</published>
+    <updated>2025-01-04T07:34:18.676Z</updated>
+    
+    
+    <summary type="html">Butterfly自动检测深色/浅色模式</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly魔改3：修改副标题字体大小</title>
+    <link href="https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/3/"/>
+    <id>https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/3/</id>
+    <published>2025-01-03T11:34:00.000Z</published>
+    <updated>2025-01-03T11:34:39.965Z</updated>
+    
+    
+    <summary type="html">Butterfly修改副标题字体大小</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly魔改2：页面渐变切换</title>
+    <link href="https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/2/"/>
+    <id>https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/2/</id>
+    <published>2025-01-03T10:39:00.000Z</published>
+    <updated>2025-01-03T11:24:18.022Z</updated>
+    
+    
+    <summary type="html">Butterfly添加页面渐变切换功能</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly魔改1：首页大图预加载</title>
+    <link href="https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/1/"/>
+    <id>https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/1/</id>
+    <published>2025-01-03T07:33:00.000Z</published>
+    <updated>2025-01-05T13:34:11.204Z</updated>
+    
+    
+    <summary type="html">Butterfly添加首页大图预加载功能</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo报错ssh: connect to host github.com port 22: Connection timed out解决办法</title>
+    <link href="https://diraw.github.io/2025/01/03/Hexo/Error/1/"/>
+    <id>https://diraw.github.io/2025/01/03/Hexo/Error/1/</id>
+    <published>2025-01-02T16:00:00.000Z</published>
+    <updated>2025-01-03T07:53:02.359Z</updated>
+    
+    
+    <summary type="html">Hexo d报错ssh: connect to host github.com port 22: Connection timed out解决办法</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="ssh" scheme="https://diraw.github.io/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly报错TypeError: coverVal.indexOf is not a function解决办法</title>
+    <link href="https://diraw.github.io/2025/01/02/Hexo/Butterfly/Error/1/"/>
+    <id>https://diraw.github.io/2025/01/02/Hexo/Butterfly/Error/1/</id>
+    <published>2025-01-02T13:36:00.000Z</published>
+    <updated>2025-01-03T07:50:18.263Z</updated>
+    
+    
+    <summary type="html">Hexo在编译文件过程中报错TypeError: coverVal.indexOf is not a function解决办法</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
+  
+</feed>
