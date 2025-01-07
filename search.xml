@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Hexo部署twikoo功能时MongoDB报错：tlsv1 alert internal error</title>
+      <link href="/2025/01/07/Hexo/Error/2/"/>
+      <url>/2025/01/07/Hexo/Error/2/</url>
+      
+        <content type="html"><![CDATA[<p>如下所示：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">    "code": 1000,</span><br><span class="line">    "message": "80D8C13E607F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:907:SSL alert number 80\n"</span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>这个是使用SSL/TLS连接的时候出现了错误，之后我发现是MongoDB防火墙的问题<sub>（虽然我记得初始化的时候命明明设置了0.0.0.0/0的，但不知道为什么没设置成功）</sub></p><p><strong>解决步骤</strong>：进入MongoDB面板-左侧选择<code>Network Access</code>-点击右侧<code>ADD IP ADDRESS</code>-添加<code>0.0.0.0/0</code>即可</p><p>这是再重新访问MongoDB即恢复正常：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">    "code": 100,</span><br><span class="line">    "message": "Twikoo 云函数运行正常，请参考 https://twikoo.js.org/frontend.html 完成前端的配置",</span><br><span class="line">    "version": "1.6.41"</span><br><span class="line">}</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> twikoo </tag>
+            
+            <tag> MongoDB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于这个小站</title>
       <link href="/2025/01/05/about/"/>
       <url>/2025/01/05/about/</url>
