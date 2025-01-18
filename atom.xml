@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-01-07T04:49:00.973Z</updated>
+  <updated>2025-01-18T16:53:43.232Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>英语复习短文第一周</title>
+    <link href="https://diraw.github.io/2025/01/19/English%20Learning/%E7%AC%AC%E4%B8%80%E5%91%A8/"/>
+    <id>https://diraw.github.io/2025/01/19/English%20Learning/%E7%AC%AC%E4%B8%80%E5%91%A8/</id>
+    <published>2025-01-18T16:44:00.000Z</published>
+    <updated>2025-01-18T16:53:43.232Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;20250119-20250126&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="英语" scheme="https://diraw.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
+    
+    
+    <category term="复习短文" scheme="https://diraw.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%9F%AD%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo部署twikoo功能时MongoDB报错：tlsv1 alert internal error</title>
