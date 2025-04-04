@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-01-18T16:53:43.232Z</updated>
+  <updated>2025-04-04T09:07:33.862Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -17,28 +17,69 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>英语复习短文第一周</title>
-    <link href="https://diraw.github.io/2025/01/19/English%20Learning/%E7%AC%AC%E4%B8%80%E5%91%A8/"/>
-    <id>https://diraw.github.io/2025/01/19/English%20Learning/%E7%AC%AC%E4%B8%80%E5%91%A8/</id>
-    <published>2025-01-18T16:44:00.000Z</published>
-    <updated>2025-01-18T16:53:43.232Z</updated>
+    <title>在ubuntu上面使用vscode需注意的</title>
+    <link href="https://diraw.github.io/2025/04/04/Linux/2/"/>
+    <id>https://diraw.github.io/2025/04/04/Linux/2/</id>
+    <published>2025-04-03T16:00:00.000Z</published>
+    <updated>2025-04-04T09:07:33.862Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;20250119-20250126&lt;/p&gt;
-&lt;h1</summary>
-        
-      
+    <summary type="html">在ubuntu上面使用vscode需注意的</summary>
     
     
     
-    <category term="英语" scheme="https://diraw.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="复习短文" scheme="https://diraw.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%9F%AD%E6%96%87/"/>
+    <category term="vscode" scheme="https://diraw.github.io/tags/vscode/"/>
+    
+    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>缩短Linux终端中显示的用户名前缀</title>
+    <link href="https://diraw.github.io/2025/04/04/Linux/3/"/>
+    <id>https://diraw.github.io/2025/04/04/Linux/3/</id>
+    <published>2025-04-03T16:00:00.000Z</published>
+    <updated>2025-04-04T09:33:43.484Z</updated>
+    
+    
+    <summary type="html">缩短Linux终端中显示的用户名前缀</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何在ubuntu上面安装hexo</title>
+    <link href="https://diraw.github.io/2025/04/04/Linux/1/"/>
+    <id>https://diraw.github.io/2025/04/04/Linux/1/</id>
+    <published>2025-04-03T16:00:00.000Z</published>
+    <updated>2025-04-04T09:07:38.796Z</updated>
+    
+    
+    <summary type="html">如何在ubuntu上面安装hexo</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
     
   </entry>
   
