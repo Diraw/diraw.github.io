@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-04T01:51:23.739Z</updated>
+  <updated>2025-04-05T15:11:05.178Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu安装cuda驱动</title>
+    <link href="https://diraw.github.io/2025/04/05/Linux/5/"/>
+    <id>https://diraw.github.io/2025/04/05/Linux/5/</id>
+    <published>2025-04-05T14:00:00.000Z</published>
+    <updated>2025-04-05T15:11:05.178Z</updated>
+    
+    
+    <summary type="html">ubuntu安装cuda驱动</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
+    
+    <category term="cuda" scheme="https://diraw.github.io/tags/cuda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重装ubuntu初始化</title>
+    <link href="https://diraw.github.io/2025/04/05/Linux/4/"/>
+    <id>https://diraw.github.io/2025/04/05/Linux/4/</id>
+    <published>2025-04-05T07:00:00.000Z</published>
+    <updated>2025-04-05T07:28:39.803Z</updated>
+    
+    
+    <summary type="html">重装ubuntu初始化**</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>如何缩短Linux终端中显示的用户名前缀</title>
@@ -38,14 +82,14 @@
   </entry>
   
   <entry>
-    <title>在ubuntu上面使用vscode需注意的</title>
+    <title>在ubuntu上面安装vscode需注意的</title>
     <link href="https://diraw.github.io/2025/04/04/Linux/2/"/>
     <id>https://diraw.github.io/2025/04/04/Linux/2/</id>
     <published>2025-04-04T07:00:00.000Z</published>
-    <updated>2025-04-04T01:51:56.223Z</updated>
+    <updated>2025-04-05T08:55:30.890Z</updated>
     
     
-    <summary type="html">在ubuntu上面使用vscode需注意的</summary>
+    <summary type="html">在ubuntu上面安装vscode需注意的</summary>
     
     
     
