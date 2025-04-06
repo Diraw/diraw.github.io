@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-05T07:30:20.282Z</updated>
+  <updated>2025-04-06T08:22:13.720Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>双系统windows时间显示不对</title>
+    <link href="https://diraw.github.io/2025/04/06/Linux/6/"/>
+    <id>https://diraw.github.io/2025/04/06/Linux/6/</id>
+    <published>2025-04-06T08:00:00.000Z</published>
+    <updated>2025-04-06T08:22:13.720Z</updated>
+    
+    
+    <summary type="html">双系统windows时间显示不对</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ubuntu安装cuda驱动</title>
     <link href="https://diraw.github.io/2025/04/05/Linux/5/"/>
     <id>https://diraw.github.io/2025/04/05/Linux/5/</id>
     <published>2025-04-05T14:00:00.000Z</published>
-    <updated>2025-04-05T07:30:20.282Z</updated>
+    <updated>2025-04-06T08:22:33.463Z</updated>
     
     
     <summary type="html">ubuntu安装cuda驱动</summary>

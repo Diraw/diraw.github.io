@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>双系统windows时间显示不对</title>
+      <link href="/2025/04/06/Linux/6/"/>
+      <url>/2025/04/06/Linux/6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="原因">原因</h1><p>linux会自动把BIOS改成伦敦时间（GMT+0），windows不知道，错把BIOS当成北京时间（GMT+8），所以windows上的时间会晚8个小时</p><h1 id="解决">解决</h1><p>管理员身份打开终端，输入<code>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ubuntu安装cuda驱动</title>
       <link href="/2025/04/05/Linux/5/"/>
       <url>/2025/04/05/Linux/5/</url>
       
-        <content type="html"><![CDATA[<h1 id="一安装nvidia-driver">一、安装nvidia-driver</h1><p>运行 <code>ubuntu-drivers devices</code></p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(base) diraw@solitude:~$ ubuntu-drivers devices</span><br><span class="line">== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==</span><br><span class="line">modalias : pci:v000010DEd00002520sv00001043sd00001CBCbc03sc00i00</span><br><span class="line">vendor   : NVIDIA Corporation</span><br><span class="line">model    : GA106M [GeForce RTX 3060 Mobile / Max-Q]</span><br><span class="line">driver   : nvidia-driver-570-server-open - distro non-free</span><br><span class="line">driver   : nvidia-driver-550-open - distro non-free</span><br><span class="line">driver   : nvidia-driver-545 - distro non-free</span><br><span class="line">driver   : nvidia-driver-470-server - distro non-free</span><br><span class="line">driver   : nvidia-driver-570-server - distro non-free</span><br><span class="line">driver   : nvidia-driver-535-open - distro non-free</span><br><span class="line">driver   : nvidia-driver-470 - distro non-free</span><br><span class="line">driver   : nvidia-driver-535 - distro non-free</span><br><span class="line">driver   : nvidia-driver-550 - distro non-free recommended</span><br><span class="line">driver   : nvidia-driver-545-open - distro non-free</span><br><span class="line">driver   : nvidia-driver-535-server - distro non-free</span><br><span class="line">driver   : nvidia-driver-535-server-open - distro non-free</span><br><span class="line">driver   : xserver-xorg-video-nouveau - distro free <span class="built_in">builtin</span></span><br></pre></td></tr></table></figure><p>其中550版本被标记为<code>recommended</code></p><p>运行<code>sudo apt install nvidia-driver-550</code></p><p>之后会让你输入密码，完成之后<code>sudo reboot</code>，出现下图：</p><p><img src="/img/202504/6.png" alt="Image 6"></p><p>选择第二行<code>Enroll MOK</code>，然后出现下图：</p><p><img src="/img/202504/7.png" alt="Image 7"></p><p>选择<code>continue</code></p><p><img src="/img/202504/8.png" alt="Image 8"></p><p>然后选择<code>reboot</code></p><p>重启之后，运行<code>nvidia-smi</code>，预期出现下图，右上角为所支持的最大版本cuda，我这个为12.04</p><p><img src="/img/202504/9.png" alt="Image 9"></p><h1 id="二安装cuda-toolkit">二、安装CUDA Toolkit</h1><blockquote><p>不能（？存疑）通过<code>sudo apt install nvidia-cuda-toolkit</code>安装，会出现版本不一致的情况，使用<code>sudo apt purge nvidia-cuda-toolkit</code>，然后使用<code>sudo apt autoremove</code>，卸载apt 安装的 CUDA</p></blockquote><p>去https://developer.nvidia.com/cuda-toolkit-archive，选择12.04</p><p><img src="/img/202504/10.png" alt="Image 10"></p><p>然后选择你的配置</p><p><img src="/img/202504/11.png" alt="Image 11"></p><p>然后把下面的代码走一遍</p><p><img src="/img/202504/12.png" alt="Image 12"></p><p>传统内核模块:可能与旧系统或需要传统驱动结构的特定软件具有更好的兼容性。</p><p>开放内核模块:使用开源内核模块，可以更好地与 Linux内核集成，潜在地提高安全性并加快更新速度。</p><p>这里选择第二个，以及如果第一步操作了，nvidia-driver已经安装了，执行第二条即可</p><p><img src="/img/202504/13.png" alt="Image 13"></p><p>检查成功：<code>nvcc --version</code></p><h1 id="三添加环境变量">三、添加环境变量</h1><p><code>nano ~/.bashrc</code></p><p>添加以下行到文件末尾</p><p><code>export CUDA_HOME=/usr/local/cuda export PATH=$CUDA_HOME/bin:$PATH export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH</code></p><p>应用更改<code>source ~/.bashrc</code></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="一安装nvidia-driver">一、安装nvidia-driver</h1><p>运行 <code>ubuntu-drivers devices</code></p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(base) diraw@solitude:~$ ubuntu-drivers devices</span><br><span class="line">== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==</span><br><span class="line">modalias : pci:v000010DEd00002520sv00001043sd00001CBCbc03sc00i00</span><br><span class="line">vendor   : NVIDIA Corporation</span><br><span class="line">model    : GA106M [GeForce RTX 3060 Mobile / Max-Q]</span><br><span class="line">driver   : nvidia-driver-570-server-open - distro non-free</span><br><span class="line">driver   : nvidia-driver-550-open - distro non-free</span><br><span class="line">driver   : nvidia-driver-545 - distro non-free</span><br><span class="line">driver   : nvidia-driver-470-server - distro non-free</span><br><span class="line">driver   : nvidia-driver-570-server - distro non-free</span><br><span class="line">driver   : nvidia-driver-535-open - distro non-free</span><br><span class="line">driver   : nvidia-driver-470 - distro non-free</span><br><span class="line">driver   : nvidia-driver-535 - distro non-free</span><br><span class="line">driver   : nvidia-driver-550 - distro non-free recommended</span><br><span class="line">driver   : nvidia-driver-545-open - distro non-free</span><br><span class="line">driver   : nvidia-driver-535-server - distro non-free</span><br><span class="line">driver   : nvidia-driver-535-server-open - distro non-free</span><br><span class="line">driver   : xserver-xorg-video-nouveau - distro free <span class="built_in">builtin</span></span><br></pre></td></tr></table></figure><p>其中550版本被标记为<code>recommended</code></p><p>运行<code>sudo apt install nvidia-driver-550</code></p><p>之后会让你输入密码，完成之后<code>sudo reboot</code>，出现下图：</p><p><img src="/img/202504/6.png" alt="Image 6"></p><p>选择第二行<code>Enroll MOK</code>，然后出现下图：</p><p><img src="/img/202504/7.png" alt="Image 7"></p><p>选择<code>continue</code></p><p><img src="/img/202504/8.png" alt="Image 8"></p><p>然后选择<code>reboot</code></p><p>重启之后，运行<code>nvidia-smi</code>，预期出现下图，右上角为所支持的最大版本cuda，我这个为12.04</p><p><img src="/img/202504/9.png" alt="Image 9"></p><h1 id="二安装cuda-toolkit">二、安装CUDA Toolkit</h1><blockquote><p>不能（？存疑）通过<code>sudo apt install nvidia-cuda-toolkit</code>安装，会出现版本不一致的情况，使用<code>sudo apt purge nvidia-cuda-toolkit</code>，然后使用<code>sudo apt autoremove</code>，卸载apt 安装的 CUDA</p></blockquote><p>去 <a href="https://developer.nvidia.com/cuda-toolkit-archive，选择12.04" class="uri">https://developer.nvidia.com/cuda-toolkit-archive，选择12.04</a></p><p><img src="/img/202504/10.png" alt="Image 10"></p><p>然后选择你的配置</p><p><img src="/img/202504/11.png" alt="Image 11"></p><p>然后把下面的代码走一遍</p><p><img src="/img/202504/12.png" alt="Image 12"></p><p>传统内核模块:可能与旧系统或需要传统驱动结构的特定软件具有更好的兼容性。</p><p>开放内核模块:使用开源内核模块，可以更好地与 Linux内核集成，潜在地提高安全性并加快更新速度。</p><p>这里选择第二个，以及如果第一步操作了，nvidia-driver已经安装了，执行第二条即可</p><p><img src="/img/202504/13.png" alt="Image 13"></p><p>检查成功：<code>nvcc --version</code></p><h1 id="三添加环境变量">三、添加环境变量</h1><p><code>nano ~/.bashrc</code></p><p>添加以下行到文件末尾</p><p><code>export CUDA_HOME=/usr/local/cuda export PATH=$CUDA_HOME/bin:$PATH export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH</code></p><p>应用更改<code>source ~/.bashrc</code></p>]]></content>
       
       
       <categories>
