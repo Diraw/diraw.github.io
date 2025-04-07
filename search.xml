@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>如何使用git本地回档</title>
+      <link href="/2025/04/07/git/1/"/>
+      <url>/2025/04/07/git/1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="起因">起因</h1><p>写博客，某一次<code>hexo d</code>不知道什么情况，我的<code>img</code>丢失了（似乎是<code>hexo clean</code>导致的，存疑），正好学习一下使用<code>git</code>回档</p><h1 id="步骤">步骤</h1><p>1、进入包含<code>.git</code>文件，打开<code>git bash</code>，输入<code>git log --oneline</code>可以看到历史提交记录</p><p><strong>注</strong>：如果提交记录过长，退出分页模式，按<code>q</code></p><p><img src="/img/202504/15.png" alt="Image 15"></p><p>2、在github网站上，可以查看回档的具体的文件</p><p><img src="/img/202504/16.png" alt="Image 16"></p><p><img src="/img/202504/17.png" alt="Image 17"></p><p><img src="/img/202504/18.png" alt="Image 18"></p><p>按理来说，网页端应该也可以回档，但是我没找到在哪里，索性就用本地仓库回档吧</p><p>3、本地执行<code>git reset --hard bd739f1</code>，这个是硬重置，删掉的文件会回到本地目录，但同时所有的提交就没有了</p><p><img src="/img/202504/19.png" alt="Image 19"></p><p>而<code>git reset --soft bd739f1</code>是软重置，仅仅是撤销提交commit，但保留工作目录和暂存区的更改</p><p><img src="/img/202504/20.png" alt="Image 20"></p><p><img src="/img/202504/21.png" alt="Image 21"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Butterfly魔改6：修改透明背景和主题色</title>
+      <link href="/2025/04/07/Hexo/Butterfly/Custom/6/"/>
+      <url>/2025/04/07/Hexo/Butterfly/Custom/6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>浏览本篇之前，请先完成<a href="./0.md">魔改准备工作</a></p><h1 id="修改透明背景">修改透明背景</h1><p>在<code>_config.yml</code>中找到：</p><p>1、<code>footer_img</code>：网页最下面那个版权信息的块改成透明</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># The background image of footer</span></span><br><span class="line"><span class="attr">footer_img:</span> <span class="string">transparent</span></span><br></pre></td></tr></table></figure><p>2、<code>background</code>改成和封面一样的图片</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Website Background</span></span><br><span class="line"><span class="comment"># Can set it to color or image url</span></span><br><span class="line"><span class="attr">background:</span> <span class="string">/img/2.png</span></span><br></pre></td></tr></table></figure><p>3、<code>mask</code>蒙版效果，这个看个人喜好</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Add a mask to the header and footer</span></span><br><span class="line"><span class="attr">mask:</span></span><br><span class="line">  <span class="attr">header:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">ture</span></span><br></pre></td></tr></table></figure><p>4、<code>enter_transitions</code>关闭，不然会有白色渐变效果</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Page Transition</span></span><br><span class="line"><span class="attr">enter_transitions:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure><p>5、在<code>\themes\butterfly\source\css\custom.css</code>最后添加如下代码：</p><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*侧边卡片的透明度 */</span></span><br><span class="line"><span class="selector-pseudo">:root</span> {</span><br><span class="line">  <span class="attr">--card-bg</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, .<span class="number">8</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">"dark"</span>]</span> {</span><br><span class="line">  <span class="attr">--card-bg</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.2</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure><h1 id="修改主题色">修改主题色</h1><p>在<code>_config.yml</code>中找到<code>theme_color</code>把<code>enable</code>改成<code>true</code>，颜色可参考下面</p><p><img src="/img/202504/14.png" alt="Image 14"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>双系统windows时间显示不对</title>
       <link href="/2025/04/06/Linux/6/"/>
       <url>/2025/04/06/Linux/6/</url>
@@ -130,11 +182,11 @@
       
         <tags>
             
-            <tag> vscode </tag>
-            
             <tag> linux </tag>
             
             <tag> ubuntu </tag>
+            
+            <tag> vscode </tag>
             
         </tags>
       
