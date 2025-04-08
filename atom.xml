@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-08T06:58:38.605Z</updated>
+  <updated>2025-04-08T07:31:16.581Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -17,9 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>英语单词记忆法总结记录</title>
+    <link href="https://diraw.github.io/2025/04/08/EN/1/"/>
+    <id>https://diraw.github.io/2025/04/08/EN/1/</id>
+    <published>2025-04-08T08:00:00.000Z</published>
+    <updated>2025-04-08T07:31:16.581Z</updated>
+    
+    
+    <summary type="html">英语单词记忆法总结记录</summary>
+    
+    
+    
+    <category term="英语" scheme="https://diraw.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
+    
+    
+    <category term="背单词" scheme="https://diraw.github.io/tags/%E8%83%8C%E5%8D%95%E8%AF%8D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Butterfly魔改8：添加文章搜索功能并调整导航位置</title>
-    <link href="https://diraw.github.io/2025/04/08/Hexo/Butterfly/Custom/8/"/>
-    <id>https://diraw.github.io/2025/04/08/Hexo/Butterfly/Custom/8/</id>
+    <link href="https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/8/"/>
+    <id>https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/8/</id>
     <published>2025-04-08T06:00:00.000Z</published>
     <updated>2025-04-08T06:58:38.605Z</updated>
     
@@ -39,10 +58,10 @@
   
   <entry>
     <title>Butterfly魔改7：修改首页导航内容和图标</title>
-    <link href="https://diraw.github.io/2025/04/08/Hexo/Butterfly/Custom/7/"/>
-    <id>https://diraw.github.io/2025/04/08/Hexo/Butterfly/Custom/7/</id>
+    <link href="https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/7/"/>
+    <id>https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/7/</id>
     <published>2025-04-08T05:00:00.000Z</published>
-    <updated>2025-04-08T05:58:28.673Z</updated>
+    <updated>2025-04-08T07:10:38.258Z</updated>
     
     
     <summary type="html">Butterfly魔改7：修改首页导航内容和图标</summary>
@@ -60,8 +79,8 @@
   
   <entry>
     <title>如何使用git本地回档</title>
-    <link href="https://diraw.github.io/2025/04/07/git/1/"/>
-    <id>https://diraw.github.io/2025/04/07/git/1/</id>
+    <link href="https://diraw.github.io/2025/04/07/CS/git/1/"/>
+    <id>https://diraw.github.io/2025/04/07/CS/git/1/</id>
     <published>2025-04-07T12:22:00.000Z</published>
     <updated>2025-04-07T12:37:37.711Z</updated>
     
@@ -79,8 +98,8 @@
   
   <entry>
     <title>Butterfly魔改6：修改透明背景和主题色</title>
-    <link href="https://diraw.github.io/2025/04/07/Hexo/Butterfly/Custom/6/"/>
-    <id>https://diraw.github.io/2025/04/07/Hexo/Butterfly/Custom/6/</id>
+    <link href="https://diraw.github.io/2025/04/07/CS/Hexo/Butterfly/Custom/6/"/>
+    <id>https://diraw.github.io/2025/04/07/CS/Hexo/Butterfly/Custom/6/</id>
     <published>2025-04-07T12:00:00.000Z</published>
     <updated>2025-04-08T06:31:21.890Z</updated>
     
@@ -100,8 +119,8 @@
   
   <entry>
     <title>双系统windows时间显示不对</title>
-    <link href="https://diraw.github.io/2025/04/06/Linux/6/"/>
-    <id>https://diraw.github.io/2025/04/06/Linux/6/</id>
+    <link href="https://diraw.github.io/2025/04/06/CS/Linux/6/"/>
+    <id>https://diraw.github.io/2025/04/06/CS/Linux/6/</id>
     <published>2025-04-06T08:00:00.000Z</published>
     <updated>2025-04-06T08:29:34.468Z</updated>
     
@@ -121,8 +140,8 @@
   
   <entry>
     <title>ubuntu安装cuda驱动</title>
-    <link href="https://diraw.github.io/2025/04/05/Linux/5/"/>
-    <id>https://diraw.github.io/2025/04/05/Linux/5/</id>
+    <link href="https://diraw.github.io/2025/04/05/CS/Linux/5/"/>
+    <id>https://diraw.github.io/2025/04/05/CS/Linux/5/</id>
     <published>2025-04-05T14:00:00.000Z</published>
     <updated>2025-04-06T08:22:33.463Z</updated>
     
@@ -144,8 +163,8 @@
   
   <entry>
     <title>重装ubuntu初始化</title>
-    <link href="https://diraw.github.io/2025/04/05/Linux/4/"/>
-    <id>https://diraw.github.io/2025/04/05/Linux/4/</id>
+    <link href="https://diraw.github.io/2025/04/05/CS/Linux/4/"/>
+    <id>https://diraw.github.io/2025/04/05/CS/Linux/4/</id>
     <published>2025-04-05T07:00:00.000Z</published>
     <updated>2025-04-05T07:31:55.541Z</updated>
     
@@ -165,8 +184,8 @@
   
   <entry>
     <title>如何缩短Linux终端中显示的用户名前缀</title>
-    <link href="https://diraw.github.io/2025/04/04/Linux/3/"/>
-    <id>https://diraw.github.io/2025/04/04/Linux/3/</id>
+    <link href="https://diraw.github.io/2025/04/04/CS/Linux/3/"/>
+    <id>https://diraw.github.io/2025/04/04/CS/Linux/3/</id>
     <published>2025-04-04T09:00:00.000Z</published>
     <updated>2025-04-04T01:51:23.739Z</updated>
     
@@ -186,8 +205,8 @@
   
   <entry>
     <title>在ubuntu上面安装vscode需注意的</title>
-    <link href="https://diraw.github.io/2025/04/04/Linux/2/"/>
-    <id>https://diraw.github.io/2025/04/04/Linux/2/</id>
+    <link href="https://diraw.github.io/2025/04/04/CS/Linux/2/"/>
+    <id>https://diraw.github.io/2025/04/04/CS/Linux/2/</id>
     <published>2025-04-04T07:00:00.000Z</published>
     <updated>2025-04-05T08:55:30.890Z</updated>
     
@@ -209,8 +228,8 @@
   
   <entry>
     <title>如何在ubuntu上面安装hexo</title>
-    <link href="https://diraw.github.io/2025/04/04/Linux/1/"/>
-    <id>https://diraw.github.io/2025/04/04/Linux/1/</id>
+    <link href="https://diraw.github.io/2025/04/04/CS/Linux/1/"/>
+    <id>https://diraw.github.io/2025/04/04/CS/Linux/1/</id>
     <published>2025-04-04T05:00:00.000Z</published>
     <updated>2025-04-04T01:45:40.475Z</updated>
     
@@ -232,8 +251,8 @@
   
   <entry>
     <title>Hexo部署twikoo功能时MongoDB报错：tlsv1 alert internal error</title>
-    <link href="https://diraw.github.io/2025/01/07/Hexo/Error/2/"/>
-    <id>https://diraw.github.io/2025/01/07/Hexo/Error/2/</id>
+    <link href="https://diraw.github.io/2025/01/07/CS/Hexo/Error/2/"/>
+    <id>https://diraw.github.io/2025/01/07/CS/Hexo/Error/2/</id>
     <published>2025-01-07T04:38:00.000Z</published>
     <updated>2025-01-07T04:49:00.973Z</updated>
     
@@ -255,8 +274,8 @@
   
   <entry>
     <title>Butterfly魔改5：在网站底部添加建站时间</title>
-    <link href="https://diraw.github.io/2025/01/05/Hexo/Butterfly/Custom/5/"/>
-    <id>https://diraw.github.io/2025/01/05/Hexo/Butterfly/Custom/5/</id>
+    <link href="https://diraw.github.io/2025/01/05/CS/Hexo/Butterfly/Custom/5/"/>
+    <id>https://diraw.github.io/2025/01/05/CS/Hexo/Butterfly/Custom/5/</id>
     <published>2025-01-05T14:26:00.000Z</published>
     <updated>2025-01-05T14:31:33.069Z</updated>
     
@@ -276,8 +295,8 @@
   
   <entry>
     <title>Butterfly魔改准备工作：文件管理魔改代码</title>
-    <link href="https://diraw.github.io/2025/01/04/Hexo/Butterfly/Custom/0/"/>
-    <id>https://diraw.github.io/2025/01/04/Hexo/Butterfly/Custom/0/</id>
+    <link href="https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/0/"/>
+    <id>https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/0/</id>
     <published>2025-01-04T07:00:00.000Z</published>
     <updated>2025-01-04T07:11:14.202Z</updated>
     
@@ -297,8 +316,8 @@
   
   <entry>
     <title>Butterfly魔改4：自动检测深色/浅色模式</title>
-    <link href="https://diraw.github.io/2025/01/04/Hexo/Butterfly/Custom/4/"/>
-    <id>https://diraw.github.io/2025/01/04/Hexo/Butterfly/Custom/4/</id>
+    <link href="https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/4/"/>
+    <id>https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/4/</id>
     <published>2025-01-04T05:01:00.000Z</published>
     <updated>2025-01-04T07:34:18.676Z</updated>
     
@@ -318,8 +337,8 @@
   
   <entry>
     <title>Butterfly魔改3：修改副标题字体大小</title>
-    <link href="https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/3/"/>
-    <id>https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/3/</id>
+    <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/3/"/>
+    <id>https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/3/</id>
     <published>2025-01-03T11:34:00.000Z</published>
     <updated>2025-01-03T11:34:39.965Z</updated>
     
@@ -339,8 +358,8 @@
   
   <entry>
     <title>Butterfly魔改2：页面渐变切换</title>
-    <link href="https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/2/"/>
-    <id>https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/2/</id>
+    <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/2/"/>
+    <id>https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/2/</id>
     <published>2025-01-03T10:39:00.000Z</published>
     <updated>2025-01-03T11:24:18.022Z</updated>
     
@@ -360,8 +379,8 @@
   
   <entry>
     <title>Butterfly魔改1：首页大图预加载</title>
-    <link href="https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/1/"/>
-    <id>https://diraw.github.io/2025/01/03/Hexo/Butterfly/Custom/1/</id>
+    <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/1/"/>
+    <id>https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/1/</id>
     <published>2025-01-03T07:33:00.000Z</published>
     <updated>2025-01-05T13:34:11.204Z</updated>
     
@@ -381,8 +400,8 @@
   
   <entry>
     <title>Hexo报错ssh: connect to host github.com port 22: Connection timed out解决办法</title>
-    <link href="https://diraw.github.io/2025/01/03/Hexo/Error/1/"/>
-    <id>https://diraw.github.io/2025/01/03/Hexo/Error/1/</id>
+    <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Error/1/"/>
+    <id>https://diraw.github.io/2025/01/03/CS/Hexo/Error/1/</id>
     <published>2025-01-02T16:00:00.000Z</published>
     <updated>2025-01-03T07:53:02.359Z</updated>
     
@@ -402,8 +421,8 @@
   
   <entry>
     <title>Butterfly报错TypeError: coverVal.indexOf is not a function解决办法</title>
-    <link href="https://diraw.github.io/2025/01/02/Hexo/Butterfly/Error/1/"/>
-    <id>https://diraw.github.io/2025/01/02/Hexo/Butterfly/Error/1/</id>
+    <link href="https://diraw.github.io/2025/01/02/CS/Hexo/Butterfly/Error/1/"/>
+    <id>https://diraw.github.io/2025/01/02/CS/Hexo/Butterfly/Error/1/</id>
     <published>2025-01-02T13:36:00.000Z</published>
     <updated>2025-01-03T07:50:18.263Z</updated>
     
