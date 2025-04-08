@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>Butterfly魔改8：添加文章搜索功能并调整导航位置</title>
+      <link href="/2025/04/08/Hexo/Butterfly/Custom/8/"/>
+      <url>/2025/04/08/Hexo/Butterfly/Custom/8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="添加搜索功能">添加搜索功能</h1><p>在根目录下安装插件<code>npm install hexo-generator-search --save</code></p><p>然后去<code>_config.yml</code>中启用<code>local_search</code>即可</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">use:</span> <span class="string">local_search</span></span><br><span class="line">  <span class="attr">placeholder:</span></span><br></pre></td></tr></table></figure><h1 id="调整位置">调整位置</h1><p>buterfly的搜索添加之后是默认在最后的，以及这个是和导航分开来的（如下图所示）</p><p><img src="/img/202504/23.png" alt="Image 23"></p><p>所以我没法简单的把搜索图标弄到最后面去，以及我懒得去找<code>.pug</code>了（一些不好的回忆），索性直接用js来操作好了（这样还不用伤到模板文件）</p><p>请先完成<a href="./0.md">魔改准备工作</a>，然后在<code>\themes\butterfly\source\js\custom.js</code>最后添加如下代码：</p><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">'DOMContentLoaded'</span>, <span class="keyword">function</span>(<span class="params"></span>) {</span><br><span class="line">  <span class="keyword">var</span> searchButton = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">'search-button'</span>);</span><br><span class="line">  <span class="keyword">var</span> menusItems = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">'.menus_items'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (searchButton &amp;&amp; menusItems.<span class="property">length</span> &gt; <span class="number">0</span>) {</span><br><span class="line">    <span class="comment">// 获取 menusItems 的克隆节点</span></span><br><span class="line">    <span class="keyword">var</span> menusItemsClone = menusItems[<span class="number">0</span>].<span class="title function_">cloneNode</span>(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将克隆节点插入到 searchButton 之前</span></span><br><span class="line">    searchButton.<span class="property">parentNode</span>.<span class="title function_">insertBefore</span>(menusItemsClone, searchButton);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 删除所有的 menusItems 元素</span></span><br><span class="line">    menusItems.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">item</span>) {</span><br><span class="line">      item.<span class="property">parentNode</span>.<span class="title function_">removeChild</span>(item);</span><br><span class="line">    });</span><br><span class="line">  }</span><br><span class="line">});</span><br></pre></td></tr></table></figure><p>这段代码的目的是将页面上第一个 class 为 menus_items的元素克隆一份，插入到 id 为 search-button 的元素之前，然后删除所有class 为 menus_items 的元素。这可以用来改变页面上元素的排列顺序，并且避免出现重复的元素。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Butterfly魔改7：修改首页导航内容和图标</title>
+      <link href="/2025/04/08/Hexo/Butterfly/Custom/7/"/>
+      <url>/2025/04/08/Hexo/Butterfly/Custom/7/</url>
+      
+        <content type="html"><![CDATA[<p>首页导航配置在<code>_config.yml</code>中<code>manu</code>下修改：</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">开往:</span> <span class="string">https://www.travellings.cn/go.html</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-subway</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">博文</span> <span class="string">||</span> <span class="attr">fa fa-graduation-cap:</span></span><br><span class="line">    <span class="string">分类:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">    <span class="string">标签:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">    <span class="string">归档:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-folder-open</span></span><br></pre></td></tr></table></figure><p>buterfly导航图标默认用的是 <strong>Font Awesome图标库</strong>，格式如下：<br>- Solid 图标（fas）：实心图标，如 <code>fas fa-home</code><br>- Regular 图标（far）：空心图标，如 <code>far fa-heart</code><br>- Brands 图标（fab）：品牌图标，如 <code>fab fa-github</code></p><p>查找图标去官网 <a href="https://fontawesome.com.cn/v5，搜索即可" class="uri">https://fontawesome.com.cn/v5，搜索即可</a></p><p><img src="/img/202504/22.png" alt="Image 22"></p><p>值得注意的是，如果你是直接在buterfly的主题文件夹下的<code>_config.yml</code>中修改的配置，修改完之后你可以直接刷新浏览器查看；而如果你是在最外层文件夹新建了一个<code>_config.butterfly.yml</code>，那么你每次修改都需要重新<code>hexo s</code>才能查看</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何使用git本地回档</title>
       <link href="/2025/04/07/git/1/"/>
       <url>/2025/04/07/git/1/</url>
@@ -33,7 +87,7 @@
       <link href="/2025/04/07/Hexo/Butterfly/Custom/6/"/>
       <url>/2025/04/07/Hexo/Butterfly/Custom/6/</url>
       
-        <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>浏览本篇之前，请先完成<a href="./0.md">魔改准备工作</a></p><h1 id="修改透明背景">修改透明背景</h1><p>在<code>_config.yml</code>中找到：</p><p>1、<code>footer_img</code>：网页最下面那个版权信息的块改成透明</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># The background image of footer</span></span><br><span class="line"><span class="attr">footer_img:</span> <span class="string">transparent</span></span><br></pre></td></tr></table></figure><p>2、<code>background</code>改成和封面一样的图片</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Website Background</span></span><br><span class="line"><span class="comment"># Can set it to color or image url</span></span><br><span class="line"><span class="attr">background:</span> <span class="string">/img/2.png</span></span><br></pre></td></tr></table></figure><p>3、<code>mask</code>蒙版效果，这个看个人喜好</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Add a mask to the header and footer</span></span><br><span class="line"><span class="attr">mask:</span></span><br><span class="line">  <span class="attr">header:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">ture</span></span><br></pre></td></tr></table></figure><p>4、<code>enter_transitions</code>关闭，不然会有白色渐变效果</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Page Transition</span></span><br><span class="line"><span class="attr">enter_transitions:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure><p>5、在<code>\themes\butterfly\source\css\custom.css</code>最后添加如下代码：</p><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*侧边卡片的透明度 */</span></span><br><span class="line"><span class="selector-pseudo">:root</span> {</span><br><span class="line">  <span class="attr">--card-bg</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, .<span class="number">8</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">"dark"</span>]</span> {</span><br><span class="line">  <span class="attr">--card-bg</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.2</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure><h1 id="修改主题色">修改主题色</h1><p>在<code>_config.yml</code>中找到<code>theme_color</code>把<code>enable</code>改成<code>true</code>，颜色可参考下面</p><p>网站可选择：<a href="https://www.sioe.cn/yingyong/yanse-rgb-16/" class="uri">https://www.sioe.cn/yingyong/yanse-rgb-16/</a></p><p><img src="/img/202504/14.png" alt="Image 14" width="50%"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>浏览本篇之前，请先完成<a href="./0.md">魔改准备工作</a></p><h1 id="修改透明背景">修改透明背景</h1><p>在<code>_config.yml</code>中找到：</p><p>1、<code>footer_img</code>：网页最下面那个版权信息的块改成透明</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># The background image of footer</span></span><br><span class="line"><span class="attr">footer_img:</span> <span class="string">transparent</span></span><br></pre></td></tr></table></figure><p>2、<code>background</code>改成和封面一样的图片</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Website Background</span></span><br><span class="line"><span class="comment"># Can set it to color or image url</span></span><br><span class="line"><span class="attr">background:</span> <span class="string">/img/2.png</span></span><br></pre></td></tr></table></figure><p>3、<code>mask</code>蒙版效果，这个看个人喜好</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Add a mask to the header and footer</span></span><br><span class="line"><span class="attr">mask:</span></span><br><span class="line">  <span class="attr">header:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">ture</span></span><br></pre></td></tr></table></figure><p>4、<code>enter_transitions</code>关闭，不然会有白色渐变效果</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Page Transition</span></span><br><span class="line"><span class="attr">enter_transitions:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure><p>5、在<code>\themes\butterfly\source\css\custom.css</code>最后添加如下代码：</p><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*侧边卡片的透明度 */</span></span><br><span class="line"><span class="selector-pseudo">:root</span> {</span><br><span class="line">  <span class="attr">--card-bg</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, .<span class="number">8</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">"dark"</span>]</span> {</span><br><span class="line">  <span class="attr">--card-bg</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.2</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure><h1 id="修改主题色">修改主题色</h1><p>在<code>_config.yml</code>中找到<code>theme_color</code>把<code>enable</code>改成<code>true</code>，颜色可参考下面</p><p>网站可选择：<a href="https://www.sioe.cn/yingyong/yanse-rgb-16/" class="uri">https://www.sioe.cn/yingyong/yanse-rgb-16/</a>，注意十六进制大小写都是一样的</p><p><img src="/img/202504/14.png" alt="Image 14" width="50%"></p>]]></content>
       
       
       <categories>
@@ -247,25 +301,6 @@
             <tag> MongoDB </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于这个小站</title>
-      <link href="/2025/01/05/about/"/>
-      <url>/2025/01/05/about/</url>
-      
-        <content type="html"><![CDATA[<p>施工中……</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 生活 </category>
-          
-      </categories>
-      
       
     </entry>
     

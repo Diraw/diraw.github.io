@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-07T12:37:37.711Z</updated>
+  <updated>2025-04-08T06:58:38.605Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Butterfly魔改8：添加文章搜索功能并调整导航位置</title>
+    <link href="https://diraw.github.io/2025/04/08/Hexo/Butterfly/Custom/8/"/>
+    <id>https://diraw.github.io/2025/04/08/Hexo/Butterfly/Custom/8/</id>
+    <published>2025-04-08T06:00:00.000Z</published>
+    <updated>2025-04-08T06:58:38.605Z</updated>
+    
+    
+    <summary type="html">Butterfly魔改8：添加文章搜索功能并调整导航位置</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly魔改7：修改首页导航内容和图标</title>
+    <link href="https://diraw.github.io/2025/04/08/Hexo/Butterfly/Custom/7/"/>
+    <id>https://diraw.github.io/2025/04/08/Hexo/Butterfly/Custom/7/</id>
+    <published>2025-04-08T05:00:00.000Z</published>
+    <updated>2025-04-08T05:58:28.673Z</updated>
+    
+    
+    <summary type="html">Butterfly魔改7：修改首页导航内容和图标</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
   
   <entry>
     <title>如何使用git本地回档</title>
@@ -40,7 +82,7 @@
     <link href="https://diraw.github.io/2025/04/07/Hexo/Butterfly/Custom/6/"/>
     <id>https://diraw.github.io/2025/04/07/Hexo/Butterfly/Custom/6/</id>
     <published>2025-04-07T12:00:00.000Z</published>
-    <updated>2025-04-07T12:40:15.917Z</updated>
+    <updated>2025-04-08T06:31:21.890Z</updated>
     
     
     <summary type="html">Butterfly修改透明背景和主题色</summary>
@@ -208,30 +250,6 @@
     <category term="twikoo" scheme="https://diraw.github.io/tags/twikoo/"/>
     
     <category term="MongoDB" scheme="https://diraw.github.io/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于这个小站</title>
-    <link href="https://diraw.github.io/2025/01/05/about/"/>
-    <id>https://diraw.github.io/2025/01/05/about/</id>
-    <published>2025-01-05T14:48:00.000Z</published>
-    <updated>2025-01-05T15:50:39.896Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;施工中……&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
     
   </entry>
   
