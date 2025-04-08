@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-08T07:31:16.581Z</updated>
+  <updated>2025-04-08T07:38:27.894Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://diraw.github.io/2025/04/08/EN/1/"/>
     <id>https://diraw.github.io/2025/04/08/EN/1/</id>
     <published>2025-04-08T08:00:00.000Z</published>
-    <updated>2025-04-08T07:31:16.581Z</updated>
+    <updated>2025-04-08T07:38:27.894Z</updated>
     
     
-    <summary type="html">英语单词记忆法总结记录</summary>
+    <summary type="html">以下文字仅为我个人的经验和体会，单纯作为背单词方法交流使用，若有不适，请立即退出</summary>
     
     
     
@@ -40,10 +40,18 @@
     <link href="https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/8/"/>
     <id>https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/8/</id>
     <published>2025-04-08T06:00:00.000Z</published>
-    <updated>2025-04-08T06:58:38.605Z</updated>
+    <updated>2025-04-08T07:37:41.474Z</updated>
     
     
-    <summary type="html">Butterfly魔改8：添加文章搜索功能并调整导航位置</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;添加搜索功能&quot;&gt;添加搜索功能&lt;/h1&gt;
+&lt;p&gt;在根目录下安装插件
+&lt;code&gt;npm install hexo-generator-search</summary>
+        
+      
     
     
     
@@ -61,10 +69,17 @@
     <link href="https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/7/"/>
     <id>https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/7/</id>
     <published>2025-04-08T05:00:00.000Z</published>
-    <updated>2025-04-08T07:10:38.258Z</updated>
+    <updated>2025-04-08T07:37:39.282Z</updated>
     
     
-    <summary type="html">Butterfly魔改7：修改首页导航内容和图标</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首页导航配置在&lt;code&gt;_config.yml&lt;/code&gt;中&lt;code&gt;manu&lt;/code&gt;下修改：&lt;/p&gt;
+&lt;figure class=&quot;highlight yml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
     
     
     
@@ -82,10 +97,17 @@
     <link href="https://diraw.github.io/2025/04/07/CS/git/1/"/>
     <id>https://diraw.github.io/2025/04/07/CS/git/1/</id>
     <published>2025-04-07T12:22:00.000Z</published>
-    <updated>2025-04-07T12:37:37.711Z</updated>
+    <updated>2025-04-08T07:37:13.033Z</updated>
     
     
-    <summary type="html">如何使用git本地回档</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;起因&quot;&gt;起因&lt;/h1&gt;
+&lt;p&gt;写博客，某一次&lt;code&gt;hexo d&lt;/code&gt;不知道什么情况，我的&lt;code&gt;img&lt;/code&gt;丢失了（似乎是&lt;code&gt;hexo</summary>
+        
+      
     
     
     
@@ -101,10 +123,18 @@
     <link href="https://diraw.github.io/2025/04/07/CS/Hexo/Butterfly/Custom/6/"/>
     <id>https://diraw.github.io/2025/04/07/CS/Hexo/Butterfly/Custom/6/</id>
     <published>2025-04-07T12:00:00.000Z</published>
-    <updated>2025-04-08T06:31:21.890Z</updated>
+    <updated>2025-04-08T07:37:35.852Z</updated>
     
     
-    <summary type="html">Butterfly修改透明背景和主题色</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;浏览本篇之前，请先完成&lt;a href=&quot;./0.md&quot;&gt;魔改准备工作&lt;/a&gt;&lt;/p&gt;
+&lt;h1</summary>
+        
+      
     
     
     
@@ -122,10 +152,18 @@
     <link href="https://diraw.github.io/2025/04/06/CS/Linux/6/"/>
     <id>https://diraw.github.io/2025/04/06/CS/Linux/6/</id>
     <published>2025-04-06T08:00:00.000Z</published>
-    <updated>2025-04-06T08:29:34.468Z</updated>
+    <updated>2025-04-08T07:38:15.708Z</updated>
     
     
-    <summary type="html">双系统windows时间显示不对</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;原因&quot;&gt;原因&lt;/h1&gt;
+&lt;p&gt;linux会自动把BIOS改成伦敦时间（GMT+0），windows不知道，错把BIOS当成北京时间（GMT+8），所以windows上的时间会晚8个小时&lt;/p&gt;
+&lt;h1</summary>
+        
+      
     
     
     
@@ -143,10 +181,18 @@
     <link href="https://diraw.github.io/2025/04/05/CS/Linux/5/"/>
     <id>https://diraw.github.io/2025/04/05/CS/Linux/5/</id>
     <published>2025-04-05T14:00:00.000Z</published>
-    <updated>2025-04-06T08:22:33.463Z</updated>
+    <updated>2025-04-08T07:38:12.015Z</updated>
     
     
-    <summary type="html">ubuntu安装cuda驱动</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一安装nvidia-driver&quot;&gt;一、安装nvidia-driver&lt;/h1&gt;
+&lt;p&gt;运行 &lt;code&gt;ubuntu-drivers devices&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
     
     
     
@@ -166,10 +212,16 @@
     <link href="https://diraw.github.io/2025/04/05/CS/Linux/4/"/>
     <id>https://diraw.github.io/2025/04/05/CS/Linux/4/</id>
     <published>2025-04-05T07:00:00.000Z</published>
-    <updated>2025-04-05T07:31:55.541Z</updated>
+    <updated>2025-04-08T07:38:08.274Z</updated>
     
     
-    <summary type="html">重装ubuntu初始化**</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;1、安装clash&lt;/strong&gt; &lt;a href=&quot;https://app.chongjin01.icu/Linux/&quot;</summary>
+        
+      
     
     
     
@@ -187,10 +239,19 @@
     <link href="https://diraw.github.io/2025/04/04/CS/Linux/3/"/>
     <id>https://diraw.github.io/2025/04/04/CS/Linux/3/</id>
     <published>2025-04-04T09:00:00.000Z</published>
-    <updated>2025-04-04T01:51:23.739Z</updated>
+    <updated>2025-04-08T07:38:03.733Z</updated>
     
     
-    <summary type="html">如何缩短Linux终端中显示的用户名前缀</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;问题描述&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/img/202504/2.png&quot; alt=&quot;Image 2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;新装的ubuntu，这个终端的名称也太长了，主要是@后面这个设备名，所以我想把这玩意儿改短一些&lt;/p&gt;
+&lt;h1</summary>
+        
+      
     
     
     
@@ -208,10 +269,18 @@
     <link href="https://diraw.github.io/2025/04/04/CS/Linux/2/"/>
     <id>https://diraw.github.io/2025/04/04/CS/Linux/2/</id>
     <published>2025-04-04T07:00:00.000Z</published>
-    <updated>2025-04-05T08:55:30.890Z</updated>
+    <updated>2025-04-08T07:37:59.598Z</updated>
     
     
-    <summary type="html">在ubuntu上面安装vscode需注意的</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;问题描述&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;不要直接在ubuntu自带的应用商店上下载vscode&lt;/strong&gt;！因为中文输入法会有问题，输入法会显示在vscode左下角，很别扭。网上有的是无法用拼音输入汉字。&lt;/p&gt;
+&lt;h1</summary>
+        
+      
     
     
     
@@ -231,10 +300,19 @@
     <link href="https://diraw.github.io/2025/04/04/CS/Linux/1/"/>
     <id>https://diraw.github.io/2025/04/04/CS/Linux/1/</id>
     <published>2025-04-04T05:00:00.000Z</published>
-    <updated>2025-04-04T01:45:40.475Z</updated>
+    <updated>2025-04-08T07:37:55.730Z</updated>
     
     
-    <summary type="html">如何在ubuntu上面安装hexo</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;设备信息&quot;&gt;设备信息&lt;/h1&gt;
+&lt;p&gt;22.04.1-Ubuntu&lt;/p&gt;
+&lt;h1 id=&quot;安装步骤&quot;&gt;安装步骤&lt;/h1&gt;
+&lt;p&gt;安装过程参考&lt;a</summary>
+        
+      
     
     
     
@@ -254,10 +332,17 @@
     <link href="https://diraw.github.io/2025/01/07/CS/Hexo/Error/2/"/>
     <id>https://diraw.github.io/2025/01/07/CS/Hexo/Error/2/</id>
     <published>2025-01-07T04:38:00.000Z</published>
-    <updated>2025-01-07T04:49:00.973Z</updated>
+    <updated>2025-04-08T07:37:52.856Z</updated>
     
     
-    <summary type="html">Hexo部署twikoo功能时MongoDB报错：tlsv1 alert internal error</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;如下所示：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   </summary>
+        
+      
     
     
     
@@ -277,10 +362,17 @@
     <link href="https://diraw.github.io/2025/01/05/CS/Hexo/Butterfly/Custom/5/"/>
     <id>https://diraw.github.io/2025/01/05/CS/Hexo/Butterfly/Custom/5/</id>
     <published>2025-01-05T14:26:00.000Z</published>
-    <updated>2025-01-05T14:31:33.069Z</updated>
+    <updated>2025-04-08T07:37:33.329Z</updated>
     
     
-    <summary type="html">Butterfly在网站底部添加建站时间</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;看&lt;a</summary>
+        
+      
     
     
     
@@ -298,10 +390,20 @@
     <link href="https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/0/"/>
     <id>https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/0/</id>
     <published>2025-01-04T07:00:00.000Z</published>
-    <updated>2025-01-04T07:11:14.202Z</updated>
+    <updated>2025-04-08T07:37:17.822Z</updated>
     
     
-    <summary type="html">Butterfly魔改准备工作：文件管理魔改代码</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;对于一些全局的改变，我们可以用文件来管理更方便。&lt;/p&gt;
+&lt;h1 id=&quot;步骤&quot;&gt;步骤&lt;/h1&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;在 &lt;code&gt;&#92;themes&#92;butterfly&#92;source&#92;css&lt;/code&gt;</summary>
+        
+      
     
     
     
@@ -319,10 +421,19 @@
     <link href="https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/4/"/>
     <id>https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/4/</id>
     <published>2025-01-04T05:01:00.000Z</published>
-    <updated>2025-01-04T07:34:18.676Z</updated>
+    <updated>2025-04-08T07:37:27.482Z</updated>
     
     
-    <summary type="html">Butterfly自动检测深色/浅色模式</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;添加功能：根据系统的深色/浅色模式，自动切换网站的深色/浅色模式。&lt;/p&gt;
+&lt;h1 id=&quot;方法1&quot;&gt;方法1&lt;/h1&gt;
+&lt;p&gt;在</summary>
+        
+      
     
     
     
@@ -340,10 +451,19 @@
     <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/3/"/>
     <id>https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/3/</id>
     <published>2025-01-03T11:34:00.000Z</published>
-    <updated>2025-01-03T11:34:39.965Z</updated>
+    <updated>2025-04-08T07:37:25.198Z</updated>
     
     
-    <summary type="html">Butterfly修改副标题字体大小</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;众所周知，Butterfly在可以在 &lt;code&gt;_config.yml&lt;/code&gt; 中用
+&lt;code&gt;font&lt;/code&gt; 配置全局的字体和代码大小，如下图所示：&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
     
     
     
@@ -361,10 +481,18 @@
     <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/2/"/>
     <id>https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/2/</id>
     <published>2025-01-03T10:39:00.000Z</published>
-    <updated>2025-01-03T11:24:18.022Z</updated>
+    <updated>2025-04-08T07:37:22.882Z</updated>
     
     
-    <summary type="html">Butterfly添加页面渐变切换功能</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;准备工作&quot;&gt;准备工作&lt;/h1&gt;
+&lt;p&gt;这边使用Pjax来实现页面的动画。Butterfly内置了Pjax插件，直接在
+&lt;code&gt;/themes/butterfly/_config.yml&lt;/code&gt;</summary>
+        
+      
     
     
     
@@ -382,10 +510,18 @@
     <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/1/"/>
     <id>https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/1/</id>
     <published>2025-01-03T07:33:00.000Z</published>
-    <updated>2025-01-05T13:34:11.204Z</updated>
+    <updated>2025-04-08T07:37:19.993Z</updated>
     
     
-    <summary type="html">Butterfly添加首页大图预加载功能</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;众所周知，Butterfly的首页大图可以通过在 &lt;code&gt;_config.yml&lt;/code&gt;
+文件中中配置 &lt;code&gt;index_img&lt;/code&gt;</summary>
+        
+      
     
     
     
@@ -403,10 +539,18 @@
     <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Error/1/"/>
     <id>https://diraw.github.io/2025/01/03/CS/Hexo/Error/1/</id>
     <published>2025-01-02T16:00:00.000Z</published>
-    <updated>2025-01-03T07:53:02.359Z</updated>
+    <updated>2025-04-08T07:37:49.694Z</updated>
     
     
-    <summary type="html">Hexo d报错ssh: connect to host github.com port 22: Connection timed out解决办法</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;hexo d&lt;/code&gt; 报错ssh: connect to host github.com port 22:
+Connection timed out&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
     
     
     
@@ -424,10 +568,18 @@
     <link href="https://diraw.github.io/2025/01/02/CS/Hexo/Butterfly/Error/1/"/>
     <id>https://diraw.github.io/2025/01/02/CS/Hexo/Butterfly/Error/1/</id>
     <published>2025-01-02T13:36:00.000Z</published>
-    <updated>2025-01-03T07:50:18.263Z</updated>
+    <updated>2025-04-08T07:37:45.571Z</updated>
     
     
-    <summary type="html">Hexo在编译文件过程中报错TypeError: coverVal.indexOf is not a function解决办法</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;魔改了一下Butterfly的源代码之后 &lt;code&gt;hexo g&lt;/code&gt;
+出现如下报错：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
     
     
     
