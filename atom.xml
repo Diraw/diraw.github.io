@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-08T07:39:22.610Z</updated>
+  <updated>2025-04-09T08:35:23.379Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>英语单词记忆法总结记录</title>
+    <title>英语单词记忆法总结记录（附单词软件对比）</title>
     <link href="https://diraw.github.io/2025/04/08/EN/1/"/>
     <id>https://diraw.github.io/2025/04/08/EN/1/</id>
     <published>2025-04-08T08:00:00.000Z</published>
-    <updated>2025-04-08T07:39:22.610Z</updated>
+    <updated>2025-04-09T08:35:23.379Z</updated>
     
     
     <summary type="html">以下文字仅为我个人的经验和体会，单纯作为背单词方法交流使用，若有不适，请立即退出 一阶段：预备 一开始学英语死记硬背是可以的。 比如你小学的时候记**apple**这个单词，你就死记硬背“诶屁屁挨饿意”，在嘴里念个十几二十遍，也就肌肉记忆把这个单词记住了。 但这种记忆法并非长久之计，若想记忆得更快更好应该尽早跳过。</summary>
@@ -181,7 +181,7 @@
     <link href="https://diraw.github.io/2025/04/05/CS/Linux/5/"/>
     <id>https://diraw.github.io/2025/04/05/CS/Linux/5/</id>
     <published>2025-04-05T14:00:00.000Z</published>
-    <updated>2025-04-08T07:38:12.015Z</updated>
+    <updated>2025-04-08T11:59:51.043Z</updated>
     
     
       
@@ -354,6 +354,31 @@
     <category term="twikoo" scheme="https://diraw.github.io/tags/twikoo/"/>
     
     <category term="MongoDB" scheme="https://diraw.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于这个小站</title>
+    <link href="https://diraw.github.io/2025/01/05/about/"/>
+    <id>https://diraw.github.io/2025/01/05/about/</id>
+    <published>2025-01-05T14:48:00.000Z</published>
+    <updated>2025-04-09T08:30:20.466Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;对于我来说，一个自己的博客网站是属于自己的一片小天地。在这片小天地中，我可以自由地装饰、活动、抒发情绪。&lt;/p&gt;
+&lt;p&gt;也许我是为了逃避现实、也许是这里的自由弥补了现实中无法随心所欲的空缺，每每在做这种事情的时候，我都会进入心流状态，即便手头还有更紧急的工作…&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
     
   </entry>
   
@@ -560,35 +585,6 @@ Connection timed out&lt;/p&gt;
     <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
     
     <category term="ssh" scheme="https://diraw.github.io/tags/ssh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly报错TypeError: coverVal.indexOf is not a function解决办法</title>
-    <link href="https://diraw.github.io/2025/01/02/CS/Hexo/Butterfly/Error/1/"/>
-    <id>https://diraw.github.io/2025/01/02/CS/Hexo/Butterfly/Error/1/</id>
-    <published>2025-01-02T13:36:00.000Z</published>
-    <updated>2025-04-08T07:37:45.571Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;魔改了一下Butterfly的源代码之后 &lt;code&gt;hexo g&lt;/code&gt;
-出现如下报错：&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
     
   </entry>
   
