@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-10T01:53:12.209Z</updated>
+  <updated>2025-04-10T02:12:19.522Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -17,18 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>对含根式不定积分进行倒代换时可能会出现的一个问题</title>
+    <link href="https://diraw.github.io/2025/04/10/MATH/2/"/>
+    <id>https://diraw.github.io/2025/04/10/MATH/2/</id>
+    <published>2025-04-10T02:00:00.000Z</published>
+    <updated>2025-04-10T02:12:19.522Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/对含根式不定积分进行倒代换时可能会出现的一个问题.pdf&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数学" scheme="https://diraw.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="不定积分" scheme="https://diraw.github.io/tags/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>16届非数A类非恰当微分方程的积分因子求解</title>
     <link href="https://diraw.github.io/2025/04/10/MATH/1/"/>
     <id>https://diraw.github.io/2025/04/10/MATH/1/</id>
     <published>2025-04-10T01:00:00.000Z</published>
-    <updated>2025-04-10T01:53:12.209Z</updated>
+    <updated>2025-04-10T02:12:11.008Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;../../../../pdfs/16届非数A类非恰当微分方程的积分因子求解.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/16届非数A类非恰当微分方程的积分因子求解.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看
 PDF&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;当时做的时候就感觉是约去了个因子，但是找半天没找到，下来查找&lt;a</summary>
         
@@ -40,6 +65,33 @@ PDF&lt;/a&gt;&lt;/p&gt;
     
     
     <category term="微分方程" scheme="https://diraw.github.io/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>球、柱坐标系下的旋度、散度公式（附：拉梅系数的定义）</title>
+    <link href="https://diraw.github.io/2025/04/10/MATH/3/"/>
+    <id>https://diraw.github.io/2025/04/10/MATH/3/</id>
+    <published>2025-04-10T01:00:00.000Z</published>
+    <updated>2025-04-10T02:12:26.184Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/球、柱坐标系下的旋度、散度公式（附：拉梅系数的定义）.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看
+PDF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;直角坐标系 &lt;span class=&quot;math</summary>
+        
+      
+    
+    
+    
+    <category term="数学" scheme="https://diraw.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="场论" scheme="https://diraw.github.io/tags/%E5%9C%BA%E8%AE%BA/"/>
     
   </entry>
   
@@ -514,64 +566,6 @@ PDF&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;众所周知，Butterfly在可以在 &lt;code&gt;_config.yml&lt;/code&gt; 中用
 &lt;code&gt;font&lt;/code&gt; 配置全局的字体和代码大小，如下图所示：&lt;/p&gt;
 &lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改2：页面渐变切换</title>
-    <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/2/"/>
-    <id>https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/2/</id>
-    <published>2025-01-03T10:39:00.000Z</published>
-    <updated>2025-04-08T07:37:22.882Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;准备工作&quot;&gt;准备工作&lt;/h1&gt;
-&lt;p&gt;这边使用Pjax来实现页面的动画。Butterfly内置了Pjax插件，直接在
-&lt;code&gt;/themes/butterfly/_config.yml&lt;/code&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改1：首页大图预加载</title>
-    <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/1/"/>
-    <id>https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/1/</id>
-    <published>2025-01-03T07:33:00.000Z</published>
-    <updated>2025-04-08T07:37:19.993Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
-&lt;p&gt;众所周知，Butterfly的首页大图可以通过在 &lt;code&gt;_config.yml&lt;/code&gt;
-文件中中配置 &lt;code&gt;index_img&lt;/code&gt;</summary>
         
       
     
