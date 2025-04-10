@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-10T08:45:12.253Z</updated>
+  <updated>2025-04-10T13:10:31.405Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>这么大的世界，却找不到我的容身之所</title>
+    <link href="https://diraw.github.io/2025/04/10/LIFE/emo/1/"/>
+    <id>https://diraw.github.io/2025/04/10/LIFE/emo/1/</id>
+    <published>2025-04-10T13:00:00.000Z</published>
+    <updated>2025-04-10T13:10:31.405Z</updated>
+    
+    
+    <summary type="html">以下内容涉及负能量，若有不适，请立即退出！</summary>
+    
+    
+    
+    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="emo" scheme="https://diraw.github.io/tags/emo/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Git上传GitHub代码全过程/解决冲突/删除GitHub文件</title>
@@ -468,7 +487,7 @@ PDF&lt;/a&gt;&lt;/p&gt;
     <link href="https://diraw.github.io/2025/01/05/about/"/>
     <id>https://diraw.github.io/2025/01/05/about/</id>
     <published>2025-01-05T14:48:00.000Z</published>
-    <updated>2025-04-10T08:27:23.038Z</updated>
+    <updated>2025-04-10T13:05:36.743Z</updated>
     
     
       
@@ -533,36 +552,6 @@ PDF&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;步骤&quot;&gt;步骤&lt;/h1&gt;
 &lt;ol type=&quot;1&quot;&gt;
 &lt;li&gt;在 &lt;code&gt;&#92;themes&#92;butterfly&#92;source&#92;css&lt;/code&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改4：自动检测深色/浅色模式</title>
-    <link href="https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/4/"/>
-    <id>https://diraw.github.io/2025/01/04/CS/Hexo/Butterfly/Custom/4/</id>
-    <published>2025-01-04T05:01:00.000Z</published>
-    <updated>2025-04-08T07:37:27.482Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
-&lt;p&gt;添加功能：根据系统的深色/浅色模式，自动切换网站的深色/浅色模式。&lt;/p&gt;
-&lt;h1 id=&quot;方法1&quot;&gt;方法1&lt;/h1&gt;
-&lt;p&gt;在</summary>
         
       
     
