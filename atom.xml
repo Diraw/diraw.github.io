@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-09T08:35:23.379Z</updated>
+  <updated>2025-04-10T01:53:12.209Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>16届非数A类非恰当微分方程的积分因子求解</title>
+    <link href="https://diraw.github.io/2025/04/10/MATH/1/"/>
+    <id>https://diraw.github.io/2025/04/10/MATH/1/</id>
+    <published>2025-04-10T01:00:00.000Z</published>
+    <updated>2025-04-10T01:53:12.209Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;../../../../pdfs/16届非数A类非恰当微分方程的积分因子求解.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看
+PDF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;当时做的时候就感觉是约去了个因子，但是找半天没找到，下来查找&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="数学" scheme="https://diraw.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="微分方程" scheme="https://diraw.github.io/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>英语单词记忆法总结记录（附单词软件对比）</title>
@@ -362,7 +389,7 @@
     <link href="https://diraw.github.io/2025/01/05/about/"/>
     <id>https://diraw.github.io/2025/01/05/about/</id>
     <published>2025-01-05T14:48:00.000Z</published>
-    <updated>2025-04-09T08:30:20.466Z</updated>
+    <updated>2025-04-10T01:53:00.512Z</updated>
     
     
       
@@ -556,35 +583,6 @@
     <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
     
     <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo报错ssh: connect to host github.com port 22: Connection timed out解决办法</title>
-    <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Error/1/"/>
-    <id>https://diraw.github.io/2025/01/03/CS/Hexo/Error/1/</id>
-    <published>2025-01-02T16:00:00.000Z</published>
-    <updated>2025-04-08T07:37:49.694Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;code&gt;hexo d&lt;/code&gt; 报错ssh: connect to host github.com port 22:
-Connection timed out&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="ssh" scheme="https://diraw.github.io/tags/ssh/"/>
     
   </entry>
   
