@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>使用Git上传GitHub代码全过程/解决冲突/删除GitHub文件</title>
+      <link href="/2025/04/10/CS/git/2/"/>
+      <url>/2025/04/10/CS/git/2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一使用git上传代码的步骤">一、使用git上传代码的步骤</h1><p>假设我要上传的是<code>main</code>分支，github新建仓库默认是<code>main</code>分支</p><p>0、如果你的文件夹是<code>git clone</code>下来的，跳过下面的1、2步，因为这些已经有了</p><p>1、<code>git init</code> 初始化</p><p>2、<code>git remote add origin &lt;https&gt;</code>添加远程仓库的地址，如果后面<code>push</code>的时候报错：<code>fatal: unable to access 'https://github.com/...'</code>，可以选择<code>git remote set-url origin &lt;ssh&gt;</code></p><p>3、<code>git add .</code> 或者 <code>git add &lt;filename&gt;</code>将文件放入暂存区</p><p>4、<code>git commit -m "消息内容"</code>将暂存区文件提交到本地git仓库</p><p>5、<code>git branch</code>查看现在分支，如果现在是<code>master</code>分支，你要上传到<code>main</code>分支的话，则执行<code>git branch -M main</code></p><p>6、<code>git push origin main</code>把本地仓库上传到远程仓库，如果是仓库里面没文件的话（你创建仓库时点了创建<code>README.md</code>，这个就算文件了）要使用<code>git push -u origin main</code> ，中间多一个<code>-u</code></p><p>7、如果你在本地创建了一个新仓库，并尝试将其与一个已有的远程仓库合并，会报错：<code>fatal: refusing to merge unrelated histories</code>，表示Git认为你本地的历史与远程的历史没有共同的祖先，这时候使用<code>git pull origin main --allow-unrelated-histories</code>拉取远程更改并允许不相关的历史合并，再选择推送<code>git push origin main</code>即可</p><p>8、如果乱整一些操作之后<code>git push</code>，报错<code>Updates were rejected because the remote contains work that you do not have locally</code>，这个错误表明远程仓库的<code>main</code>分支包含了你本地没有的更新；或者<code>Updates were rejected because the tip of your current branch is behind</code>，这个错误表明你的本地<code>main</code>分支落后于远程<code>main</code>分支——执行<code>git pull origin main</code>将远程仓库的更改拉取到本地，然后再<code>git commit</code></p><p>9、如果在上述过程中出现了<code>you have unmerged files</code>出现了冲突，则<code>git status</code>查看并解决冲突，然后<code>git add &lt;conflicted-file&gt;</code>标记冲突已解决</p><h1 id="二解决冲突">二、解决冲突</h1><p>有冲突？干脆直接删了好了（）</p><p>1、删除文件 <code>rm -rf &lt;filename&gt;</code></p><p>2、标记删除 <code>git add &lt;filename&gt;</code></p><p>3、提交更改 <code>git commit -m "Remove conflicting file"</code></p><p>4、推送更改 <code>git push origin main</code></p><h1 id="三删除github上的文件">三、删除github上的文件</h1><p>1、<code>git pull origin main</code>将文件全部拉下来，这里是<code>main</code>分支，想操作<code>master</code>分支要改一下</p><p>2、<code>dir</code> 查看目录</p><p>3、<code>git rm -r --cached &lt;filepath&gt;</code>删除指定路径的文件</p><p>4、<code>git commit -m "删除了..."</code> 提交删除操作说明</p><p>5、<code>git push -u origin main</code> 提交更新</p><h1 id="四git学习">四、git学习</h1><p>1、<code>git add .</code>将文件放入暂存区(<code>.</code>代表所有文件)</p><p>2、<code>git commit -m "消息内容"</code>将暂存区的文件提交到git仓库(<code>-m</code>代表提交信息)</p><p>3、<code>git status</code> 查看文件状态</p><ul><li><code>untracked</code>未跟踪：通过<code>git add</code>变成<code>staged</code>状态</li><li><code>unmodify</code> 已入库，但未修改<ul><li>去处：要么修改文件内容，变成<code>modified</code>已修改；要么通过<code>git rm</code>变成<code>untracked</code>状态</li></ul></li><li><code>modified</code> 已修改<ul><li>去处：要么通过<code>git add</code>变成<code>staged</code>状态；要么通过<code>git checkout</code>变成<code>unmodify</code>状态</li></ul></li><li><code>staged</code> 已暂存<ul><li>去处：要么通过<code>git commit</code>提交到库中，重新变为<code>unmodify</code>状态；要么通过<code>git reset HEAD filname</code>取消暂存，变为<code>modified</code>状态</li></ul></li><li><code>commited</code> 已提交</li></ul><p>4、忽略文件<code>.gitignore</code></p><ul><li><code>*.txt</code> 会忽略所有 <code>.txt</code> 文件</li><li><code>!lib.txt</code> 会确保 <code>lib.txt</code> 文件不被忽略</li><li><code>build/</code> 会忽略 <code>build</code> 目录及其所有内容</li><li><code>/temp</code> 会忽略项目根目录下的 <code>temp</code> 文件或目录</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>对含根式不定积分进行倒代换时可能会出现的一个问题</title>
       <link href="/2025/04/10/MATH/2/"/>
       <url>/2025/04/10/MATH/2/</url>
@@ -411,7 +436,7 @@
       <link href="/2025/01/05/about/"/>
       <url>/2025/01/05/about/</url>
       
-        <content type="html"><![CDATA[<p>对于我来说，一个自己的博客网站是属于自己的一片小天地。在这片小天地中，我可以自由地装饰、活动、抒发情绪。</p><p>也许我是为了逃避现实、也许是这里的自由弥补了现实中无法随心所欲的空缺，每每在做这种事情的时候，我都会进入心流状态，即便手头还有更紧急的工作…</p><p>我在b站发视频、我创建自己的qq群、我搭建mc服务器，或许都是我对现实的对抗。或许这也是我的自我保护机制，是一种本能的风险规避。</p><p>我想在这里记录我的一切，记录阶段和总结，也记录迷茫和寻找。我希望这里能成为我的乌托邦。</p><p>我也希望遇见更多的人，想与更多的人建立联系。仍然还是想要一种归属感啊，你这家伙。</p>]]></content>
+        <content type="html"><![CDATA[<p>对于我来说，一个自己的博客网站是属于自己的一片小天地。在这片小天地中，我可以自由地装饰、活动、抒发情绪。</p><p>也许我是为了逃避现实、也许是这里的自由弥补了现实中无法随心所欲的空缺，每每在做这种事情的时候，我都会进入心流状态，即便手头还有更紧急的工作…</p><p>我在b站发视频、我创建自己的qq群、我搭建mc服务器，或许都是我对现实的对抗。或许这也是我的自我保护机制，是一种本能的风险规避吧。</p><p>我想在这里记录我的一切，记录阶段和总结，也记录迷茫和寻找。我希望这里能成为我的乌托邦。</p><p>我也希望遇见更多的人，想与更多的人建立联系。仍然还是想要一种归属感啊，你这家伙。</p>]]></content>
       
       
       <categories>

@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-10T02:12:19.522Z</updated>
+  <updated>2025-04-10T08:45:12.253Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Git上传GitHub代码全过程/解决冲突/删除GitHub文件</title>
+    <link href="https://diraw.github.io/2025/04/10/CS/git/2/"/>
+    <id>https://diraw.github.io/2025/04/10/CS/git/2/</id>
+    <published>2025-04-10T08:00:00.000Z</published>
+    <updated>2025-04-10T08:45:12.253Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一使用git上传代码的步骤&quot;&gt;一、使用git上传代码的步骤&lt;/h1&gt;
+&lt;p&gt;假设我要上传的是&lt;code&gt;main&lt;/code&gt;分支，github新建仓库默认是&lt;code&gt;main&lt;/code&gt;分支&lt;/p&gt;
+&lt;p&gt;0、如果你的文件夹是&lt;code&gt;git</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="git" scheme="https://diraw.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>对含根式不定积分进行倒代换时可能会出现的一个问题</title>
@@ -441,7 +468,7 @@ PDF&lt;/a&gt;&lt;/p&gt;
     <link href="https://diraw.github.io/2025/01/05/about/"/>
     <id>https://diraw.github.io/2025/01/05/about/</id>
     <published>2025-01-05T14:48:00.000Z</published>
-    <updated>2025-04-10T01:53:00.512Z</updated>
+    <updated>2025-04-10T08:27:23.038Z</updated>
     
     
       
@@ -536,36 +563,6 @@ PDF&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;添加功能：根据系统的深色/浅色模式，自动切换网站的深色/浅色模式。&lt;/p&gt;
 &lt;h1 id=&quot;方法1&quot;&gt;方法1&lt;/h1&gt;
 &lt;p&gt;在</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改3：修改副标题字体大小</title>
-    <link href="https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/3/"/>
-    <id>https://diraw.github.io/2025/01/03/CS/Hexo/Butterfly/Custom/3/</id>
-    <published>2025-01-03T11:34:00.000Z</published>
-    <updated>2025-04-08T07:37:25.198Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
-&lt;p&gt;众所周知，Butterfly在可以在 &lt;code&gt;_config.yml&lt;/code&gt; 中用
-&lt;code&gt;font&lt;/code&gt; 配置全局的字体和代码大小，如下图所示：&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
         
       
     
