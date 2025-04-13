@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-11T00:27:31.160Z</updated>
+  <updated>2025-04-13T10:54:48.644Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生活绝不会等你准备充分再让你上场：2025年大英赛参加有感</title>
+    <link href="https://diraw.github.io/2025/04/13/EN/2/"/>
+    <id>https://diraw.github.io/2025/04/13/EN/2/</id>
+    <published>2025-04-13T10:00:00.000Z</published>
+    <updated>2025-04-13T10:54:48.644Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="英语 生活" scheme="https://diraw.github.io/categories/%E8%8B%B1%E8%AF%AD-%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="大英赛" scheme="https://diraw.github.io/tags/%E5%A4%A7%E8%8B%B1%E8%B5%9B/"/>
+    
+    <category term="感悟" scheme="https://diraw.github.io/tags/%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>这么大的世界，却找不到我的容身之所</title>
@@ -531,34 +558,6 @@ PDF&lt;/a&gt;&lt;/p&gt;
     
     <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改5：在网站底部添加建站时间</title>
-    <link href="https://diraw.github.io/2025/01/05/CS/Hexo/Butterfly/Custom/5/"/>
-    <id>https://diraw.github.io/2025/01/05/CS/Hexo/Butterfly/Custom/5/</id>
-    <published>2025-01-05T14:26:00.000Z</published>
-    <updated>2025-04-08T07:37:33.329Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
-&lt;p&gt;看&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
     
   </entry>
   
