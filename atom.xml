@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-13T11:06:06.604Z</updated>
+  <updated>2025-04-15T12:26:57.708Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git入门教程（v20250414）</title>
+    <link href="https://diraw.github.io/2025/04/15/CS/git/3/"/>
+    <id>https://diraw.github.io/2025/04/15/CS/git/3/</id>
+    <published>2025-04-15T04:00:00.000Z</published>
+    <updated>2025-04-15T12:26:57.708Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;以下内容均为我作为大学生的身份、在实际操作中常用到的命令，今日将其总结并记录。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本教程对个人开发者应该是足够用的，但是对于大公司中的团队开发应该仍然不够。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="git" scheme="https://diraw.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>生活绝不会等你准备充分再让你上场：2025年大英赛参加有感</title>
@@ -529,31 +556,6 @@ PDF&lt;/a&gt;&lt;/p&gt;
     <category term="twikoo" scheme="https://diraw.github.io/tags/twikoo/"/>
     
     <category term="MongoDB" scheme="https://diraw.github.io/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于这个小站</title>
-    <link href="https://diraw.github.io/2025/01/05/about/"/>
-    <id>https://diraw.github.io/2025/01/05/about/</id>
-    <published>2025-01-05T14:48:00.000Z</published>
-    <updated>2025-04-10T13:05:36.743Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;对于我来说，一个自己的博客网站是属于自己的一片小天地。在这片小天地中，我可以自由地装饰、活动、抒发情绪。&lt;/p&gt;
-&lt;p&gt;也许我是为了逃避现实、也许是这里的自由弥补了现实中无法随心所欲的空缺，每每在做这种事情的时候，我都会进入心流状态，即便手头还有更紧急的工作…&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
     
   </entry>
   

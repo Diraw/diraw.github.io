@@ -1,0 +1,670 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Git入门教程（v20250414） | Diraw's World</title><meta name="author" content="Diraw"><meta name="copyright" content="Diraw"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="以下内容均为我作为大学生的身份、在实际操作中常用到的命令，今日将其总结并记录。 本教程对个人开发者应该是足够用的，但是对于大公司中的团队开发应该仍然不够。 第一次使用 在github创建远程仓库 1、在自己的profile页面，点击右上角的+号，然后点击New repository  2、填写仓库名字、选public、注意不添加README文件、然后点Create repository">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git入门教程（v20250414）">
+<meta property="og:url" content="https://diraw.github.io/2025/04/15/CS/git/3/index.html">
+<meta property="og:site_name" content="Diraw&#39;s World">
+<meta property="og:description" content="以下内容均为我作为大学生的身份、在实际操作中常用到的命令，今日将其总结并记录。 本教程对个人开发者应该是足够用的，但是对于大公司中的团队开发应该仍然不够。 第一次使用 在github创建远程仓库 1、在自己的profile页面，点击右上角的+号，然后点击New repository  2、填写仓库名字、选public、注意不添加README文件、然后点Create repository">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://diraw.github.io/img/avatar.png">
+<meta property="article:published_time" content="2025-04-15T04:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-15T12:26:57.708Z">
+<meta property="article:author" content="Diraw">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://diraw.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://diraw.github.io/2025/04/15/CS/git/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-LY9E5NJX4B"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-LY9E5NJX4B')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-LY9E5NJX4B', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Git入门教程（v20250414）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Diraw's World" type="application/atom+xml">
+</head><body style="visibility: hidden; overflow: hidden;"><div id="web_bg" style="background-image: url(/img/2.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Diraw's World</span></a><a class="nav-page-title" href="/"><span class="site-name">Git入门教程（v20250414）</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Git入门教程（v20250414）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-15T04:00:00.000Z" title="发表于 2025-04-15 12:00:00">2025-04-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-15T12:26:57.708Z" title="更新于 2025-04-15 20:26:57">2025-04-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>以下内容均为我作为大学生的身份、在实际操作中常用到的命令，今日将其总结并记录。</p>
+<p><strong>本教程对个人开发者应该是足够用的，但是对于大公司中的团队开发应该仍然不够。</strong></p>
+<h1 id="第一次使用">第一次使用</h1>
+<h2 id="在github创建远程仓库">在github创建远程仓库</h2>
+<p>1、在自己的<code>profile</code>页面，点击右上角的<code>+</code>号，然后点击<code>New repository</code></p>
+<p><img src="/img/202504/28.png" alt="Image 28" width="75%"></p>
+<p>2、填写仓库名字、选public、注意<strong>不添加README文件</strong>、然后点<code>Create repository</code></p>
+<p><img src="/img/202504/29.png" alt="Image 29" width="75%"></p>
+<p>3、然后就可以看到官方示例的仓库初始化代码（图里面我字打错了）</p>
+<p><img src="/img/202504/30.png" alt="Image 30" width="75%"></p>
+<h2 id="在本地创建仓库">在本地创建仓库</h2>
+<p>1、随便选一个位置，新建文件夹，进入文件夹，然后打开git bash</p>
+<p>win11的用户，按住shift点击鼠标右键，可以直接展开折叠选项</p>
+<p>2、在git
+bash中输入<code>git init</code>初始化，此时会发现文件夹下出现了<code>.git</code>文件夹，这个<code>.git</code>文件夹就是后面提到的本地仓库</p>
+<p><img src="/img/202504/31.png" alt="Image 31" width="75%"></p>
+<p>3、在文件夹下创建你想要上传到github仓库的文件，这里我直接新建<code>1.txt</code></p>
+<p>在git
+bash中输入<code>git staus</code>可以查看git状态，如下图可以看到<strong>红色的1.txt</strong>，且标记为Untrack未追踪</p>
+<p><img src="/img/202504/32.png" alt="Image 32" width="75%"></p>
+<p>4、<code>git add &lt;文件名字&gt;</code>将文件添加到暂存区，此时<code>git staus</code>可以发现，红色的1.txt<strong>变成绿色了</strong>，且标记变成了to
+be commited等待被提交</p>
+<p><img src="/img/202504/33.png" alt="Image 33" width="75%"></p>
+<p>5、这里我有新建了两个文件，并把它们add到暂存区，其中<code>git add .</code>的<code>.</code>代表所有文件，这个会比一个一个添加文件快速</p>
+<p><img src="/img/202504/34.png" alt="Image 34" width="75%"></p>
+<p>6、<code>git commit -m "提交信息"</code>将文件提交到本地仓库，-m是一个参数，后面用双引号括起来你的提交信息。提交之后查看<code>git staus</code>，发现working
+tree clean工作树干净了</p>
+<p>用<strong>工单</strong>来举例的话，git add就是挂起工单，git
+commit就是解决工单，即修改信息已经提交到本地仓库了</p>
+<p><img src="/img/202504/35.png" alt="Image 35" width="75%"></p>
+<p>到这一步，如果你不用远程仓库，其实也是可以的</p>
+<h2 id="提交到远程仓库">提交到远程仓库</h2>
+<p>1、<code>git remote add origin &lt;ssh or https&gt;</code>添加远程仓库地址，这个在初始化代码的时候github会自动生成</p>
+<p><img src="/img/202504/36.png" alt="Image 36" width="75%"></p>
+<p>2、<code>git branch -M main</code>将本分支强制重命名为main，-M就是强制的意思。你会注意到，github新创建的仓库的默认分支名是main，但是git
+bash默认是master（不过我不清楚最新版git
+bash有没有改过来啊），如果最后是从master push到main的话，会出问题</p>
+<p>3、<code>git push -u origin main</code>，-u是第一次上传需要加的参数，后面就不用加了，origin算是一个默认的参数，一般不会改变，后面的main代表的是你要push的分支</p>
+<p>此时刷新你github仓库的界面，发现文件已经上传了</p>
+<p><img src="/img/202504/37.png" alt="Image 37"></p>
+<h2 id="小结">小结</h2>
+<p>除第一次上传是按照以上的步骤，<strong>以后的上传可按照下面三个步骤</strong>：</p>
+<p>1、<code>git add .</code>添加所有文件到暂存区</p>
+<p>2、<code>git commit -m "提交信息"</code>将所有暂存区的更改提交到本地仓库</p>
+<p>3、<code>git push origin main</code>将本地仓库的内容push到远程仓库</p>
+<p><img src="/img/202504/87.png" alt="Image 87"></p>
+<p>注：</p>
+<p>1、善用<code>git status</code>查看git状态</p>
+<p>2、用vscode的源代码管理会更加方便</p>
+<h1 id="git-pull与冲突解决">git pull与冲突解决</h1>
+<h2 id="git-clone">git clone</h2>
+<p>现在我们到github上复制仓库的url，如下图所示，复制https</p>
+<p><img src="/img/202504/38.png" alt="Image 38"></p>
+<p>然后回到刚才放代码的地方，把存代码的文件夹删了，然后重新在文件夹里使用<code>git clone</code>命令，发现没有报错</p>
+<p><img src="/img/202504/39.png" alt="Image 39" width="75%"></p>
+<p><img src="/img/202504/40.png" alt="Image 40" width="75%"></p>
+<p>然后重新创建新的文件并上传（<code>4.txt</code>），均未报错。这说明这个本地的文件夹我们是可以删除和变动的</p>
+<p><img src="/img/202504/41.png" alt="Image 41" width="75%"></p>
+<p>然后我们在这个clone不删的情况下，又换一个目录位置，继续clone然后上传新文件（<code>5.txt</code>），发现也没有报错，这说明一台电脑里我们可以有多个clone的文件夹（当然这个没什么意义）</p>
+<p><img src="/img/202504/42.png" alt="Image 42" width="75%"></p>
+<p><img src="/img/202504/43.png" alt="Image 43" width="75%"></p>
+<h2 id="git-pull">git pull</h2>
+<p>但是这时候，我们回到刚才的那个文件夹，重新创建一个新的文件（<code>6.txt</code>），就会出现如下报错</p>
+<p><img src="/img/202504/44.png" alt="Image 44" width="75%"></p>
+<p>因为你刚才在另外一个文件夹上传了，但是这个原来的文件夹没有同步，所以出现了冲突，这时候应使用<code>git pull origin + &lt;分支名&gt;</code>进行拉取</p>
+<p>在你执行git
+pull的命令之后，会出现如下界面，这是进入到默认的vim编辑器中了，关于vim编辑器的使用可以参考其他的教程这</p>
+<p><img src="/img/202504/45.png" alt="Image 45" width="75%"></p>
+<p>是git拉取了远程仓库到本地自动merge合并时，你需要提交的merge信息，但我们也可以不用管。只需记住，按一下键盘左上角的<code>ESC</code>，然后输出<code>:q!</code>（注意命令会在窗口左下角显示），回车，即可退出vim编辑器</p>
+<p><img src="/img/202504/46.png" alt="Image 46" width="75%"></p>
+<p>之后就会发现，当前目录下多了远程仓库里的<code>5.txt</code></p>
+<p><img src="/img/202504/47.png" alt="Image 47" width="75%"></p>
+<p>这时候我们查看git
+status，发现比远程仓库多了两个commit，这是因为我们有一个新建<code>6.txt</code>的commit，然后再加上刚才merge的commit，一共有两个</p>
+<p><img src="/img/202504/48.png" alt="Image 48" width="75%"></p>
+<p>回到github的仓库界面我们也能看到是多了两个commit，和我上述说的一致</p>
+<p><img src="/img/202504/49.png" alt="Image 49"></p>
+<p><img src="/img/202504/50.png" alt="Image 50"></p>
+<h2 id="冲突解决">冲突解决</h2>
+<p>我们直接在github上面打开<code>1.txt</code>，然后修改文件内容为aaaaaaaa</p>
+<p><img src="/img/202504/51.png" alt="Image 51"></p>
+<p><img src="/img/202504/52.png" alt="Image 52" width="75%"></p>
+<p>然后回到本地打开<code>1.txt</code>，修改文件内容为bbbbbbb</p>
+<p><img src="/img/202504/53.png" alt="Image 53" width="75%"></p>
+<p>此时你查看status的时候会发现<code>1.txt</code>的状态是modified，已修改</p>
+<p><img src="/img/202504/54.png" alt="Image 54" width="75%"></p>
+<p>然后执行一套上传流程，发现报错</p>
+<p><img src="/img/202504/55.png" alt="Image 55" width="75%"></p>
+<p>按照要求git pull之后，提示在<code>1.txt</code>中有冲突</p>
+<p><img src="/img/202504/56.png" alt="Image 56" width="75%"></p>
+<p>我们进到<code>1.txt</code>中会发现两个版本文件的冲突用&lt;&lt;&lt;====&gt;&gt;&gt;符号进行了分隔，上面的是本地分支，标记为<code>HEAD</code>，下面的是远程分支，后面的是这个分支的哈希值</p>
+<p><img src="/img/202504/57.png" alt="Image 57" width="75%"></p>
+<p>我们修改冲突，假设我们同时保留aaaaa和bbbb，如下图</p>
+<p><img src="/img/202504/58.png" alt="Image 58" width="75%"></p>
+<p>此时你不能直接git push，不然会报错。而是应该用git
+add+commit的方式标记冲突解决，如下图所示</p>
+<p><img src="/img/202504/59.png" alt="Image 59" width="75%"></p>
+<p>且注意到commit之后我们的main后面的MERGING状态消失了。这时候我们再git
+push，发现上传成功了</p>
+<p><img src="/img/202504/60.png" alt="Image 60" width="75%"></p>
+<p>回到github上面也可以看到我们的两次commit，一次本地修改<code>1.txt</code>bbbbb的提交，一次git
+pull之后的merge</p>
+<p><img src="/img/202504/61.png" alt="Image 61"></p>
+<h1 id="如何回档">如何回档</h1>
+<h2 id="撤销git-add">撤销git add</h2>
+<p>现在我们在本地目录下删除<code>6.txt</code>，这时候git
+status会发现<code>6.txt</code>的状态为deleted</p>
+<p><img src="/img/202504/62.png" alt="Image 62" width="75%"></p>
+<p>然后我们git add一下再git
+status，发现<code>6.txt</code>的颜色从红色变成了绿色，这是未来我们可以用来区分哪些文件没有提交到暂存区的方式</p>
+<p><img src="/img/202504/63.png" alt="Image 63" width="75%"></p>
+<p>撤销git
+add的文件，使用<code>git restore --staged &lt;文件名&gt;</code>，如下图，此时git
+status发现<code>6.txt</code>的颜色又变回了红色，这说明“<code>6.txt</code>被删除的消息”被撤销“提交到暂存区”了</p>
+<p><img src="/img/202504/64.png" alt="Image 64" width="75%"></p>
+<p>但是工作目录中的<code>6.txt</code>并没有回来，要想恢复删除的文件的话，再执行<code>git restore &lt;文件名&gt;</code>（不用加--staged参数）即可</p>
+<h2 id="小结-1">小结</h2>
+<p><strong>对于已经删除但没有git
+add的文件</strong>：直接<code>git restore &lt;文件名&gt;</code></p>
+<p><strong>对于已经删除且已经git
+add的文件</strong>：先<code>git restore --staged &lt;文件名&gt;</code>撤销add，然后再<code>git restore &lt;文件名&gt;</code>恢复文件</p>
+<h2 id="撤销git-commit">撤销git commit</h2>
+<p>使用<code>git log</code>可以查看commit历史（如果信息太多，键入q退出显示），加上<code>--oneline</code>参数可以更简洁，如下图所示</p>
+<p>这里我们先把删除<code>6.txt</code>的消息提交了，再<code>git log --oneline</code>，发现历史已经更新了，且每次提交都有自己的哈希值</p>
+<p><img src="/img/202504/65.png" alt="Image 65" width="75%"></p>
+<p>执行<code>git reset + &lt;哈希值&gt;</code>，可以撤回提交。但注意，每次提交前面的哈希值，是代表<strong>这次提交之后的状态</strong></p>
+<p>这里我们执行<code>git reset --soft &lt;哈希值&gt;</code>，这个是软回档，即只撤销git
+commit，但是不撤销git
+add，如下图所示，这时候会发现，<code>6.txt</code>变成绿色、等待commit的状态</p>
+<p><img src="/img/202504/66.png" alt="Image 66" width="75%"></p>
+<p>如果想要让文件直接回来，执行<code>git reset --hard &lt;哈希值&gt;</code>，如下图所示，此时git
+status发现工作树干净，因为这是回档节点刚刚commit后的状态</p>
+<p><img src="/img/202504/67.png" alt="Image 67" width="75%"></p>
+<p>这个是硬回档，<strong>会丢失回档节点之后的所有提交</strong>，慎用，如下图，我的第九次提交的信息已经没有了</p>
+<p><img src="/img/202504/68.png" alt="Image 68" width="75%"></p>
+<p>不过有一种更安全的方式回档，即使用<code>git rever &lt;哈希值&gt;</code>，revert方式会创建一个新的merge，这样的话以前的commit就都会还在，如下图所示（同样中间会进到vim里面让你填revert的信息）</p>
+<p>（注，刚上述回档到merge，我又重新搞了第九次提交和第十次提交）</p>
+<p><img src="/img/202504/69.png" alt="Image 69" width="75%"></p>
+<p><img src="/img/202504/70.png" alt="Image 70" width="75%"></p>
+<p>值得注意的是，<strong>只考虑代码状态的话，revert代码会回到commit之前的状态，reset是回到commit之后的状态</strong></p>
+<p>因此如果我们revert到merge的节点，如下图所示发现会报错，我们需要选择我们需要回档的分支，使用<code>git show &lt;哈希值&gt;</code>可以查看两个分支的差异</p>
+<p>git
+show注意到Merge参数后面有两个哈希值，前面的代号为1，是下面红色的部分；后面的代号为2，是下面绿色的部分</p>
+<p><img src="/img/202504/71.png" alt="Image 71" width="75%"></p>
+<p>使用-m参数来选择revert的分支，执行<code>git revert -m &lt;代号1或者2&gt; &lt;哈希值&gt;</code>，同样需要填写revert的信息，即可回档</p>
+<p><img src="/img/202504/73.png" alt="Image 73" width="75%"></p>
+<p><img src="/img/202504/72.png" alt="Image 72" width="75%"></p>
+<p>此时如果我们再选择<code>-m 2</code>，会提示有冲突，这就又回到前面说解决冲突的步骤了</p>
+<p><img src="/img/202504/74.png" alt="Image 74" width="75%"></p>
+<p>解决冲突后，同样是add+commit操作，注意此时右上角的状态是专门的REVERTING状态</p>
+<p><img src="/img/202504/75.png" alt="Image 75" width="75%"></p>
+<h2 id="小结-2">小结</h2>
+<p>使用<code>git log --oneline</code>查看提交历史</p>
+<p><code>git reset --soft &lt;哈希值&gt;</code>：软回档，只撤销git
+commit，但是不撤销git add<br>
+<code>git reset --hard &lt;哈希值&gt;</code>：硬回档，全部撤回</p>
+<p><strong>注意：reset会丢失撤销节点之后所有commit的信息，使用revert能够更安全的撤回</strong></p>
+<p><code>git revert &lt;哈希值&gt;</code>：撤回到commit之前的状态</p>
+<p>如果是revert到merge节点，需要<code>git show &lt;哈希值&gt;</code>查看两个分支的差别，然后<code>git revert -m &lt;分支代号&gt; &lt;哈希值&gt;</code>撤回</p>
+<p><strong>注意：reset是撤回到节点commit之后（对硬回档来说）的状态，revert是撤回到commit之前的状态</strong></p>
+<h1 id="fork分支创建与pr">fork、分支创建与PR</h1>
+<p>如果我想给别人的仓库合并代码，我需要先fork，然后在fork的仓库上修改，最后PR过给原来的仓库等待审核</p>
+<p>我用我的小号新建了一个仓库，如图所示，点击fork，会创建一个自己的仓库，fork相当于复制</p>
+<p><img src="/img/202504/77.png" alt="Image 77" width="75%"></p>
+<p><img src="/img/202504/78.png" alt="Image 78" width="75%"></p>
+<p>可以看到fork的仓库下面会有fork专门的标识</p>
+<p><img src="/img/202504/79.png" alt="Image 79" width="75%"></p>
+<p>我们把fork仓库clone到本地来，使用<code>git checkout -b &lt;分支名&gt;</code>创建并且切换分支，-b参数就是对于创建新分支而言的，如果分支存在的话，直接checkout过去就行</p>
+<p>然后我们走一条流程git push上去</p>
+<p><img src="/img/202504/80.png" alt="Image 80" width="75%"></p>
+<p>此时回到github仓库，发现已经可以找到我们刚才创建的新分支了</p>
+<p><img src="/img/202504/81.png" alt="Image 81"></p>
+<p>点击Compare &amp; pull request，可以打开一个向原仓库合并的PR</p>
+<p><img src="/img/202504/82.png" alt="Image 82"></p>
+<p>填写你的PR标题、描述，最后创建PR</p>
+<p>在该界面上方，可以看到你是从fork仓库的diraw分支提交PR到原仓库的main分支</p>
+<p><img src="/img/202504/83.png" alt="Image 83"></p>
+<p>然后你就会自动跳转到原仓库下，整个PR的流程也就结束了</p>
+<p><img src="/img/202504/84.png" alt="Image 84"></p>
+<p>回到本地工作目录，我们可以使用<code>git branch</code>来查看本地仓库的所有分支，在git2.23版本之后，推荐使用<code>git switch &lt;分支名&gt;</code>来切换分支，详情请见补充/过时命令板块</p>
+<p><img src="/img/202504/85.png" alt="Image 85" width="75%"></p>
+<p>查看git版本使用<code>git -v</code></p>
+<p><img src="/img/202504/86.png" alt="Image 86" width="75%"></p>
+<h1 id="补充">补充</h1>
+<h2 id="更多细节">更多细节</h2>
+<h2 id="文件状态">文件状态</h2>
+<h2 id="过时命令">过时命令</h2>
+<h2 id="补充命令">补充命令</h2>
+<h2 id="高级命令">高级命令</h2>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://diraw.github.io">Diraw</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://diraw.github.io/2025/04/15/CS/git/3/">https://diraw.github.io/2025/04/15/CS/git/3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://diraw.github.io" target="_blank">Diraw's World</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/git/">git</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 右侧切换GitHub或邮箱评论</span></div><div class="comment-switch"><span class="first-comment">Giscus</span><span id="switch-btn"></span><span class="second-comment">Twikoo</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Diraw</div><div class="author-info-description">希望能构建心中的一片圣地</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/diraw"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://diraw.top/atom.xml" target="_blank" title=""><i class="fas fa-rss"></i></a><a class="social-icon" href="https://github.com/Diraw" target="_blank" title=""><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/3546387746654749" target="_blank" title=""><i class="fab fa-bilibili"></i></a><a class="social-icon" href="/dingrui1@stu.cdut.edu.cn" target="_blank" title=""><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my world.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">第一次使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8github%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">在github创建远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.</span> <span class="toc-text">在本地创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">提交到远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-pull%E4%B8%8E%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3"><span class="toc-number">2.</span> <span class="toc-text">git pull与冲突解决</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone"><span class="toc-number">2.1.</span> <span class="toc-text">git clone</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-pull"><span class="toc-number">2.2.</span> <span class="toc-text">git pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3"><span class="toc-number">2.3.</span> <span class="toc-text">冲突解决</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9B%9E%E6%A1%A3"><span class="toc-number">3.</span> <span class="toc-text">如何回档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80git-add"><span class="toc-number">3.1.</span> <span class="toc-text">撤销git add</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="toc-number">3.2.</span> <span class="toc-text">小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80git-commit"><span class="toc-number">3.3.</span> <span class="toc-text">撤销git commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="toc-number">3.4.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fork%E5%88%86%E6%94%AF%E5%88%9B%E5%BB%BA%E4%B8%8Epr"><span class="toc-number">4.</span> <span class="toc-text">fork、分支创建与PR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-number">5.</span> <span class="toc-text">补充</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E7%BB%86%E8%8A%82"><span class="toc-number">5.1.</span> <span class="toc-text">更多细节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81"><span class="toc-number">5.2.</span> <span class="toc-text">文件状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E6%97%B6%E5%91%BD%E4%BB%A4"><span class="toc-number">5.3.</span> <span class="toc-text">过时命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E5%91%BD%E4%BB%A4"><span class="toc-number">5.4.</span> <span class="toc-text">补充命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E5%91%BD%E4%BB%A4"><span class="toc-number">5.5.</span> <span class="toc-text">高级命令</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/15/CS/git/3/" title="Git入门教程（v20250414）">Git入门教程（v20250414）</a><time datetime="2025-04-15T04:00:00.000Z" title="发表于 2025-04-15 12:00:00">2025-04-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/13/EN/2/" title="生活绝不会等你准备充分再让你上场：2025年大英赛参加有感">生活绝不会等你准备充分再让你上场：2025年大英赛参加有感</a><time datetime="2025-04-13T10:00:00.000Z" title="发表于 2025-04-13 18:00:00">2025-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/10/LIFE/emo/1/" title="这么大的世界，却找不到我的容身之所">这么大的世界，却找不到我的容身之所</a><time datetime="2025-04-10T13:00:00.000Z" title="发表于 2025-04-10 21:00:00">2025-04-10</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By Diraw</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><!-- Add the time calculation script--><div></div><span id="timeDate">载入天数...</span><span id="times">载入时分...</span><script>var now = new Date(); 
+function createtime() { 
+  var grt = new Date("1/2/2025 21:36"); // 在此处修改你的建站时间
+  now.setTime(now.getTime() + 250); 
+  days = (now - grt) / 1000 / 60 / 60 / 24; 
+  dnum = Math.floor(days); 
+  hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); 
+  hnum = Math.floor(hours); 
+  if (String(hnum).length == 1) { hnum = "0" + hnum; } 
+  minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum); 
+  mnum = Math.floor(minutes); 
+  if (String(mnum).length == 1) { mnum = "0" + mnum; } 
+  document.getElementById("timeDate").innerHTML = "本网站已运行 " + dnum + " 天 "; 
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分"; 
+} 
+setInterval(createtime, 250);</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Diraw/diraw.github.io',
+      'data-repo-id': 'R_kgDOMamP7g',
+      'data-category-id': 'DIC_kwDOMamP7s4ClvNn',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-api-kappa.vercel.app/',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo-api-kappa.vercel.app/',
+      region: 'ap-shanghai',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Giscus' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Giscus' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: true,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
