@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-18T12:42:13.610Z</updated>
+  <updated>2025-04-18T13:59:20.312Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh无法远程到github</title>
+    <link href="https://diraw.github.io/2025/04/18/CS/github/1/"/>
+    <id>https://diraw.github.io/2025/04/18/CS/github/1/</id>
+    <published>2025-04-18T14:00:00.000Z</published>
+    <updated>2025-04-18T13:59:20.312Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;p&gt;在linux上面配github远程的时候发现连不上，如下图：&lt;/p&gt;
+&lt;img src=&quot;/img/202504/90.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="ssh" scheme="https://diraw.github.io/tags/ssh/"/>
+    
+    <category term="github" scheme="https://diraw.github.io/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>linux常用指令</title>
@@ -74,7 +102,7 @@
     <link href="https://diraw.github.io/2025/04/15/CS/git/3/"/>
     <id>https://diraw.github.io/2025/04/15/CS/git/3/</id>
     <published>2025-04-15T04:00:00.000Z</published>
-    <updated>2025-04-16T05:24:12.414Z</updated>
+    <updated>2025-04-18T13:55:54.403Z</updated>
     
     
       
@@ -496,35 +524,6 @@
     
     <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-    
-    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
-    
-    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在ubuntu上面安装vscode需注意的</title>
-    <link href="https://diraw.github.io/2025/04/04/CS/Linux/2/"/>
-    <id>https://diraw.github.io/2025/04/04/CS/Linux/2/</id>
-    <published>2025-04-04T07:00:00.000Z</published>
-    <updated>2025-04-08T07:37:59.598Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="vscode" scheme="https://diraw.github.io/tags/vscode/"/>
     
     <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
     
