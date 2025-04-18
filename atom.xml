@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-16T05:24:12.414Z</updated>
+  <updated>2025-04-18T12:42:13.610Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux常用指令</title>
+    <link href="https://diraw.github.io/2025/04/18/CS/Linux/7/"/>
+    <id>https://diraw.github.io/2025/04/18/CS/Linux/7/</id>
+    <published>2025-04-18T13:00:00.000Z</published>
+    <updated>2025-04-18T12:42:13.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;find&quot;&gt;&lt;a href=&quot;#find&quot; class=&quot;headerlink&quot; title=&quot;find&quot;&gt;&lt;/a&gt;find&lt;/h1&gt;&lt;h2 id=&quot;使用&quot;&gt;&lt;a href=&quot;#使用&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo部署generate时报错：TypeError: tokens.at is not a function</title>
+    <link href="https://diraw.github.io/2025/04/17/CS/Hexo/Error/3/"/>
+    <id>https://diraw.github.io/2025/04/17/CS/Hexo/Error/3/</id>
+    <published>2025-04-17T13:38:00.000Z</published>
+    <updated>2025-04-18T13:20:37.364Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在linux上安装hexo之后，&lt;code&gt;hexo g&lt;/code&gt;报错pandoc&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Git入门教程（Git 2.42）</title>
@@ -30,7 +83,7 @@
         
     <summary type="html">&lt;p&gt;&lt;strong&gt;本教程使用Git版本为2.42&lt;/strong&gt;，以下内容均为我作为大学生的身份、在实际操作中常用到的命令，今日将其总结并记录。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本教程对个人开发者应该是足够用的，但是对于团队开发应该仍然不够。&lt;/strong&gt;&lt;/p&gt;
-&lt;</summary>
+&lt;h1</summary>
         
       
     
@@ -95,9 +148,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;安装插件&quot;&gt;安装插件&lt;/h1&gt;
-&lt;p&gt;1、安装 &lt;code&gt;npm install --save hexo-tag-aplayer&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;如果出现&lt;code&gt;npm ERR! enoent ENOENT: no such file or</summary>
+    <summary type="html">&lt;h1 id=&quot;安装插件&quot;&gt;&lt;a href=&quot;#安装插件&quot; class=&quot;headerlink&quot; title=&quot;安装插件&quot;&gt;&lt;/a&gt;安装插件&lt;/h1&gt;&lt;p&gt;1、安装 &lt;code&gt;npm install --save</summary>
         
       
     
@@ -124,9 +175,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;一使用git上传代码的步骤&quot;&gt;一、使用git上传代码的步骤&lt;/h1&gt;
-&lt;p&gt;假设我要上传的是&lt;code&gt;main&lt;/code&gt;分支，github新建仓库默认是&lt;code&gt;main&lt;/code&gt;分支&lt;/p&gt;
-&lt;p&gt;0、如果你的文件夹是&lt;code&gt;git</summary>
+    <summary type="html">&lt;h1 id=&quot;一、使用git上传代码的步骤&quot;&gt;&lt;a href=&quot;#一、使用git上传代码的步骤&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -151,7 +200,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/对含根式不定积分进行倒代换时可能会出现的一个问题.pdf&quot;</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/对含根式不定积分进行倒代换时可能会出现的一个问题.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看 PDF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;起因是临近数学竞赛，在b站找视频刷题，然后发现视频里提供的方法有问题，评论区也没人说，遂作此文档</summary>
         
       
     
@@ -176,8 +226,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/16届非数A类非恰当微分方程的积分因子求解.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看
-PDF&lt;/a&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/16届非数A类非恰当微分方程的积分因子求解.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看 PDF&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;当时做的时候就感觉是约去了个因子，但是找半天没找到，下来查找&lt;a</summary>
         
       
@@ -203,9 +252,8 @@ PDF&lt;/a&gt;&lt;/p&gt;
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/球、柱坐标系下的旋度、散度公式（附：拉梅系数的定义）.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看
-PDF&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;直角坐标系 &lt;span class=&quot;math</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/球、柱坐标系下的旋度、散度公式（附：拉梅系数的定义）.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看 PDF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;直角坐标系 &lt;mjx-container class=&quot;MathJax&quot;</summary>
         
       
     
@@ -249,9 +297,7 @@ PDF&lt;/a&gt;&lt;/p&gt;
       
         
         
-    <summary type="html">&lt;h1 id=&quot;添加搜索功能&quot;&gt;添加搜索功能&lt;/h1&gt;
-&lt;p&gt;在根目录下安装插件
-&lt;code&gt;npm install hexo-generator-search</summary>
+    <summary type="html">&lt;h1 id=&quot;添加搜索功能&quot;&gt;&lt;a href=&quot;#添加搜索功能&quot; class=&quot;headerlink&quot; title=&quot;添加搜索功能&quot;&gt;&lt;/a&gt;添加搜索功能&lt;/h1&gt;&lt;p&gt;在根目录下安装插件 &lt;code&gt;npm install hexo-generator-search</summary>
         
       
     
@@ -306,8 +352,7 @@ PDF&lt;/a&gt;&lt;/p&gt;
       
         
         
-    <summary type="html">&lt;h1 id=&quot;起因&quot;&gt;起因&lt;/h1&gt;
-&lt;p&gt;写博客，某一次&lt;code&gt;hexo d&lt;/code&gt;不知道什么情况，我的&lt;code&gt;img&lt;/code&gt;丢失了（似乎是&lt;code&gt;hexo</summary>
+    <summary type="html">&lt;h1 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h1&gt;&lt;p&gt;写博客，某一次&lt;code&gt;hexo d&lt;/code&gt;不知道什么情况，我的&lt;code&gt;img&lt;/code&gt;丢失了（似乎是&lt;code&gt;hexo</summary>
         
       
     
@@ -332,9 +377,8 @@ PDF&lt;/a&gt;&lt;/p&gt;
       
         
         
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
-&lt;p&gt;浏览本篇之前，请先完成&lt;a href=&quot;./0.md&quot;&gt;魔改准备工作&lt;/a&gt;&lt;/p&gt;
-&lt;h1</summary>
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;浏览本篇之前，请先完成&lt;a href=&quot;./0.md&quot;&gt;魔改准备工作&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;修改透明背景&quot;&gt;&lt;a</summary>
         
       
     
@@ -361,9 +405,7 @@ PDF&lt;/a&gt;&lt;/p&gt;
       
         
         
-    <summary type="html">&lt;h1 id=&quot;原因&quot;&gt;原因&lt;/h1&gt;
-&lt;p&gt;linux会自动把BIOS改成伦敦时间（GMT+0），windows不知道，错把BIOS当成北京时间（GMT+8），所以windows上的时间会晚8个小时&lt;/p&gt;
-&lt;h1</summary>
+    <summary type="html">&lt;h1 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -390,9 +432,7 @@ PDF&lt;/a&gt;&lt;/p&gt;
       
         
         
-    <summary type="html">&lt;h1 id=&quot;一安装nvidia-driver&quot;&gt;一、安装nvidia-driver&lt;/h1&gt;
-&lt;p&gt;运行 &lt;code&gt;ubuntu-drivers devices&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
+    <summary type="html">&lt;h1 id=&quot;一、安装nvidia-driver&quot;&gt;&lt;a href=&quot;#一、安装nvidia-driver&quot; class=&quot;headerlink&quot; title=&quot;一、安装nvidia-driver&quot;&gt;&lt;/a&gt;一、安装nvidia-driver&lt;/h1&gt;&lt;p&gt;运行</summary>
         
       
     
@@ -421,7 +461,7 @@ PDF&lt;/a&gt;&lt;/p&gt;
       
         
         
-    <summary type="html">&lt;p&gt;&lt;strong&gt;1、安装clash&lt;/strong&gt; &lt;a href=&quot;https://app.chongjin01.icu/Linux/&quot;</summary>
+    <summary type="html">&lt;p&gt;&lt;strong&gt;1、安装clash&lt;/strong&gt; &lt;a</summary>
         
       
     
@@ -448,10 +488,7 @@ PDF&lt;/a&gt;&lt;/p&gt;
       
         
         
-    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;问题描述&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/img/202504/2.png&quot; alt=&quot;Image 2&quot;&gt;&lt;/p&gt;
-&lt;p&gt;新装的ubuntu，这个终端的名称也太长了，主要是@后面这个设备名，所以我想把这玩意儿改短一些&lt;/p&gt;
-&lt;h1</summary>
+    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;img src=&quot;/img/202504/2.png&quot; alt=&quot;Image</summary>
         
       
     
@@ -478,9 +515,7 @@ PDF&lt;/a&gt;&lt;/p&gt;
       
         
         
-    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;问题描述&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;不要直接在ubuntu自带的应用商店上下载vscode&lt;/strong&gt;！因为中文输入法会有问题，输入法会显示在vscode左下角，很别扭。网上有的是无法用拼音输入汉字。&lt;/p&gt;
-&lt;h1</summary>
+    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -488,74 +523,12 @@ PDF&lt;/a&gt;&lt;/p&gt;
     
     <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-    
-    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
-    
-    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
     
     <category term="vscode" scheme="https://diraw.github.io/tags/vscode/"/>
     
-  </entry>
-  
-  <entry>
-    <title>如何在ubuntu上面安装hexo</title>
-    <link href="https://diraw.github.io/2025/04/04/CS/Linux/1/"/>
-    <id>https://diraw.github.io/2025/04/04/CS/Linux/1/</id>
-    <published>2025-04-04T05:00:00.000Z</published>
-    <updated>2025-04-08T07:37:55.730Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;设备信息&quot;&gt;设备信息&lt;/h1&gt;
-&lt;p&gt;22.04.1-Ubuntu&lt;/p&gt;
-&lt;h1 id=&quot;安装步骤&quot;&gt;安装步骤&lt;/h1&gt;
-&lt;p&gt;安装过程参考&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
     <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
     
     <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo部署twikoo功能时MongoDB报错：tlsv1 alert internal error</title>
-    <link href="https://diraw.github.io/2025/01/07/CS/Hexo/Error/2/"/>
-    <id>https://diraw.github.io/2025/01/07/CS/Hexo/Error/2/</id>
-    <published>2025-01-07T04:38:00.000Z</published>
-    <updated>2025-04-08T07:37:52.856Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;如下所示：&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   </summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="twikoo" scheme="https://diraw.github.io/tags/twikoo/"/>
-    
-    <category term="MongoDB" scheme="https://diraw.github.io/tags/MongoDB/"/>
     
   </entry>
   
