@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-18T14:02:27.646Z</updated>
+  <updated>2025-04-18T14:49:39.489Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Butterfly魔改10：给标签添加次方篇数</title>
+    <link href="https://diraw.github.io/2025/04/18/CS/Hexo/Butterfly/Custom/10/"/>
+    <id>https://diraw.github.io/2025/04/18/CS/Hexo/Butterfly/Custom/10/</id>
+    <published>2025-04-18T15:00:00.000Z</published>
+    <updated>2025-04-18T14:49:39.489Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h1&gt;&lt;p&gt;效果如下图：&lt;/p&gt;
+&lt;img src=&quot;/img/202504/92.png&quot; alt=&quot;Image 92&quot;&gt;
+
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    
+  </entry>
   
   <entry>
     <title>ssh无法远程到github</title>
@@ -136,9 +166,9 @@
     
     
     
-    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
     <category term="英语" scheme="https://diraw.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
+    
+    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
     <category term="大英赛" scheme="https://diraw.github.io/tags/%E5%A4%A7%E8%8B%B1%E8%B5%9B/"/>
@@ -490,33 +520,6 @@
         
         
     <summary type="html">&lt;p&gt;&lt;strong&gt;1、安装clash&lt;/strong&gt; &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
-    
-    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何缩短Linux终端中显示的用户名前缀</title>
-    <link href="https://diraw.github.io/2025/04/04/CS/Linux/3/"/>
-    <id>https://diraw.github.io/2025/04/04/CS/Linux/3/</id>
-    <published>2025-04-04T09:00:00.000Z</published>
-    <updated>2025-04-08T07:38:03.733Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;img src=&quot;/img/202504/2.png&quot; alt=&quot;Image</summary>
         
       
     
