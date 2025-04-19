@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-18T14:49:39.489Z</updated>
+  <updated>2025-04-19T10:14:46.937Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>立体角（电动力学知识补充）</title>
+    <link href="https://diraw.github.io/2025/04/19/PHYSICS/2/"/>
+    <id>https://diraw.github.io/2025/04/19/PHYSICS/2/</id>
+    <published>2025-04-19T10:00:00.000Z</published>
+    <updated>2025-04-19T10:14:46.937Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;——写于&lt;mjx-container class=&quot;MathJax&quot; jax=&quot;SVG&quot;&gt;&lt;svg style=&quot;vertical-align: -0.439ex;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;9.249ex&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="物理" scheme="https://diraw.github.io/categories/%E7%89%A9%E7%90%86/"/>
+    
+    
+    <category term="电动力学" scheme="https://diraw.github.io/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>Butterfly魔改10：给标签添加次方篇数</title>
@@ -300,10 +325,10 @@
   
   <entry>
     <title>球、柱坐标系下的旋度、散度公式（附：拉梅系数的定义）</title>
-    <link href="https://diraw.github.io/2025/04/10/MATH/3/"/>
-    <id>https://diraw.github.io/2025/04/10/MATH/3/</id>
+    <link href="https://diraw.github.io/2025/04/10/PHYSICS/1/"/>
+    <id>https://diraw.github.io/2025/04/10/PHYSICS/1/</id>
     <published>2025-04-10T01:00:00.000Z</published>
-    <updated>2025-04-10T02:12:26.184Z</updated>
+    <updated>2025-04-19T10:03:53.133Z</updated>
     
     
       
@@ -317,7 +342,7 @@
     
     
     
-    <category term="数学" scheme="https://diraw.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="物理" scheme="https://diraw.github.io/categories/%E7%89%A9%E7%90%86/"/>
     
     
     <category term="场论" scheme="https://diraw.github.io/tags/%E5%9C%BA%E8%AE%BA/"/>
@@ -504,33 +529,6 @@
     <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
     
     <category term="cuda" scheme="https://diraw.github.io/tags/cuda/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>重装ubuntu初始化</title>
-    <link href="https://diraw.github.io/2025/04/05/CS/Linux/4/"/>
-    <id>https://diraw.github.io/2025/04/05/CS/Linux/4/</id>
-    <published>2025-04-05T07:00:00.000Z</published>
-    <updated>2025-04-08T07:47:18.827Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;1、安装clash&lt;/strong&gt; &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
-    
-    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
     
   </entry>
   
