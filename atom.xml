@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-19T10:14:46.937Z</updated>
+  <updated>2025-04-19T12:19:44.584Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在vscode上配置C++环境</title>
+    <link href="https://diraw.github.io/2025/04/19/CS/cpp/1/"/>
+    <id>https://diraw.github.io/2025/04/19/CS/cpp/1/</id>
+    <published>2025-04-19T12:22:00.000Z</published>
+    <updated>2025-04-19T12:19:44.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;下载g-gcc&quot;&gt;&lt;a href=&quot;#下载g-gcc&quot; class=&quot;headerlink&quot; title=&quot;下载g++/gcc&quot;&gt;&lt;/a&gt;下载g++/gcc&lt;/h1&gt;&lt;h2 id=&quot;windows&quot;&gt;&lt;a href=&quot;#windows&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="vscode" scheme="https://diraw.github.io/tags/vscode/"/>
+    
+    <category term="c++" scheme="https://diraw.github.io/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>立体角（电动力学知识补充）</title>
@@ -100,18 +127,18 @@
   </entry>
   
   <entry>
-    <title>Linux常用指令</title>
+    <title>Ubuntu常用指令</title>
     <link href="https://diraw.github.io/2025/04/18/CS/Linux/7/"/>
     <id>https://diraw.github.io/2025/04/18/CS/Linux/7/</id>
     <published>2025-04-18T13:00:00.000Z</published>
-    <updated>2025-04-18T14:16:33.706Z</updated>
+    <updated>2025-04-19T12:19:16.023Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;find&quot;&gt;&lt;a href=&quot;#find&quot; class=&quot;headerlink&quot; title=&quot;find&quot;&gt;&lt;/a&gt;find&lt;/h1&gt;&lt;h2 id=&quot;使用&quot;&gt;&lt;a href=&quot;#使用&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;常用&quot;&gt;&lt;a href=&quot;#常用&quot; class=&quot;headerlink&quot; title=&quot;常用&quot;&gt;&lt;/a&gt;常用&lt;/h1&gt;&lt;p&gt;&lt;code&gt;uname</summary>
         
       
     
@@ -500,35 +527,6 @@
     <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
     
     <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu安装cuda驱动</title>
-    <link href="https://diraw.github.io/2025/04/05/CS/Linux/5/"/>
-    <id>https://diraw.github.io/2025/04/05/CS/Linux/5/</id>
-    <published>2025-04-05T14:00:00.000Z</published>
-    <updated>2025-04-08T11:59:51.043Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、安装nvidia-driver&quot;&gt;&lt;a href=&quot;#一、安装nvidia-driver&quot; class=&quot;headerlink&quot; title=&quot;一、安装nvidia-driver&quot;&gt;&lt;/a&gt;一、安装nvidia-driver&lt;/h1&gt;&lt;p&gt;运行</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
-    
-    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
-    
-    <category term="cuda" scheme="https://diraw.github.io/tags/cuda/"/>
     
   </entry>
   
