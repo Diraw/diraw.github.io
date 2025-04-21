@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-20T13:37:50.423Z</updated>
+  <updated>2025-04-21T04:21:49.147Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C++指针学习</title>
+    <link href="https://diraw.github.io/2025/04/21/CS/cpp/2/"/>
+    <id>https://diraw.github.io/2025/04/21/CS/cpp/2/</id>
+    <published>2025-04-21T02:22:00.000Z</published>
+    <updated>2025-04-21T04:21:49.147Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;p&gt;指针是存储内存地址的变量，通过 &lt;code&gt;&amp;amp;&lt;/code&gt; 获取变量地址，&lt;code&gt;*&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="c++" scheme="https://diraw.github.io/tags/c/"/>
+    
+    <category term="指针" scheme="https://diraw.github.io/tags/%E6%8C%87%E9%92%88/"/>
+    
+    <category term="传参" scheme="https://diraw.github.io/tags/%E4%BC%A0%E5%8F%82/"/>
+    
+    <category term="内存" scheme="https://diraw.github.io/tags/%E5%86%85%E5%AD%98/"/>
+    
+    <category term="回调" scheme="https://diraw.github.io/tags/%E5%9B%9E%E8%B0%83/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2025四月刷题记录</title>
     <link href="https://diraw.github.io/2025/04/20/CS/cpp/luogu/1/"/>
     <id>https://diraw.github.io/2025/04/20/CS/cpp/luogu/1/</id>
     <published>2025-04-20T10:22:00.000Z</published>
-    <updated>2025-04-20T13:37:50.423Z</updated>
+    <updated>2025-04-20T13:59:30.589Z</updated>
     
     
       
@@ -500,34 +533,6 @@
     
     
     <category term="git" scheme="https://diraw.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改6：修改透明背景和主题色</title>
-    <link href="https://diraw.github.io/2025/04/07/CS/Hexo/Butterfly/Custom/6/"/>
-    <id>https://diraw.github.io/2025/04/07/CS/Hexo/Butterfly/Custom/6/</id>
-    <published>2025-04-07T12:00:00.000Z</published>
-    <updated>2025-04-16T02:02:39.345Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;浏览本篇之前，请先完成&lt;a href=&quot;./0.md&quot;&gt;魔改准备工作&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;修改透明背景&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
     
   </entry>
   
