@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>清理C盘</title>
+      <link href="/2025/04/25/CS/Windows/1/"/>
+      <url>/2025/04/25/CS/Windows/1/</url>
+      
+        <content type="html"><![CDATA[<p>C盘满了，清理一下，如图：</p><img src="/img/202504/25/1.png" alt="Image 1" width="50%"><img src="/img/202504/25/2.png" alt="Image 2" width="50%"><p>过程如下：</p><p>1、清理了一些在加装硬盘之前、安装在C盘的软件，比如anaconda(忍这个很久了)</p><p>2、把网易云、QQ、微信的缓存、下载路径移动到了D盘</p><p>3、装<code>spacesniffer_1_3_0_2</code>，可以扫描磁盘、把文件夹内存以矩形的形式显示，网址 <a href="https://sourceforge.net/projects/spacesniffer/">https://sourceforge.net/projects/spacesniffer/</a></p><p>记得以管理员身份运行</p><img src="/img/202504/25/3.png" alt="Image 3">]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+            <tag> C盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>将脚本文件保存为.desktop启动程序</title>
       <link href="/2025/04/23/CS/Linux/8/"/>
       <url>/2025/04/23/CS/Linux/8/</url>

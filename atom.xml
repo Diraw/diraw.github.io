@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-23T10:08:56.546Z</updated>
+  <updated>2025-04-25T14:53:30.477Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>清理C盘</title>
+    <link href="https://diraw.github.io/2025/04/25/CS/Windows/1/"/>
+    <id>https://diraw.github.io/2025/04/25/CS/Windows/1/</id>
+    <published>2025-04-25T15:00:00.000Z</published>
+    <updated>2025-04-25T14:53:30.477Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;C盘满了，清理一下，如图：&lt;/p&gt;
+&lt;img src=&quot;/img/202504/25/1.png&quot; alt=&quot;Image 1&quot; width=&quot;50%&quot;&gt;
+
+&lt;img src=&quot;/img/202504/25/2.png&quot; alt=&quot;Image 2&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    
+    <category term="C盘" scheme="https://diraw.github.io/tags/C%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>将脚本文件保存为.desktop启动程序</title>
@@ -508,33 +538,6 @@
     
     
     <category term="背单词" scheme="https://diraw.github.io/tags/%E8%83%8C%E5%8D%95%E8%AF%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改8：添加文章搜索功能并调整导航位置</title>
-    <link href="https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/8/"/>
-    <id>https://diraw.github.io/2025/04/08/CS/Hexo/Butterfly/Custom/8/</id>
-    <published>2025-04-08T06:00:00.000Z</published>
-    <updated>2025-04-08T11:35:20.792Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;添加搜索功能&quot;&gt;&lt;a href=&quot;#添加搜索功能&quot; class=&quot;headerlink&quot; title=&quot;添加搜索功能&quot;&gt;&lt;/a&gt;添加搜索功能&lt;/h1&gt;&lt;p&gt;在根目录下安装插件 &lt;code&gt;npm install hexo-generator-search</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
     
   </entry>
   
