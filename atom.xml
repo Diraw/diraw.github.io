@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-26T06:23:36.000Z</updated>
+  <updated>2025-04-26T08:00:47.961Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>重装windows初始化</title>
+    <link href="https://diraw.github.io/2025/04/26/CS/Windows/0/"/>
+    <id>https://diraw.github.io/2025/04/26/CS/Windows/0/</id>
+    <published>2025-04-26T15:00:00.000Z</published>
+    <updated>2025-04-26T08:00:47.961Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1、anaconda：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>powershell学习</title>
+    <link href="https://diraw.github.io/2025/04/26/CS/Windows/2/"/>
+    <id>https://diraw.github.io/2025/04/26/CS/Windows/2/</id>
+    <published>2025-04-26T15:00:00.000Z</published>
+    <updated>2025-04-26T09:17:40.760Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;shell&quot;&gt;&lt;a href=&quot;#shell&quot; class=&quot;headerlink&quot; title=&quot;shell&quot;&gt;&lt;/a&gt;shell&lt;/h1&gt;&lt;p&gt;Shell</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    
+    <category term="powershell" scheme="https://diraw.github.io/tags/powershell/"/>
+    
+  </entry>
   
   <entry>
     <title>清理C盘</title>
@@ -493,51 +545,6 @@
     
     
     <category term="微分方程" scheme="https://diraw.github.io/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>球、柱坐标系下的旋度、散度公式（附：拉梅系数的定义）</title>
-    <link href="https://diraw.github.io/2025/04/10/PHYSICS/1/"/>
-    <id>https://diraw.github.io/2025/04/10/PHYSICS/1/</id>
-    <published>2025-04-10T01:00:00.000Z</published>
-    <updated>2025-04-19T10:03:53.133Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;/pdfs/2024/球、柱坐标系下的旋度、散度公式（附：拉梅系数的定义）.pdf&quot; target=&quot;_blank&quot;&gt;点击在线查看 PDF&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;直角坐标系 &lt;mjx-container class=&quot;MathJax&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="物理" scheme="https://diraw.github.io/categories/%E7%89%A9%E7%90%86/"/>
-    
-    
-    <category term="场论" scheme="https://diraw.github.io/tags/%E5%9C%BA%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语单词记忆法总结记录（附单词软件对比）</title>
-    <link href="https://diraw.github.io/2025/04/08/EN/1/"/>
-    <id>https://diraw.github.io/2025/04/08/EN/1/</id>
-    <published>2025-04-08T08:00:00.000Z</published>
-    <updated>2025-04-09T08:35:23.379Z</updated>
-    
-    
-    <summary type="html">以下文字仅为我个人的经验和体会，单纯作为背单词方法交流使用，若有不适，请立即退出 一阶段：预备 一开始学英语死记硬背是可以的。 比如你小学的时候记**apple**这个单词，你就死记硬背“诶屁屁挨饿意”，在嘴里念个十几二十遍，也就肌肉记忆把这个单词记住了。 但这种记忆法并非长久之计，若想记忆得更快更好应该尽早跳过。</summary>
-    
-    
-    
-    <category term="英语" scheme="https://diraw.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
-    
-    
-    <category term="背单词" scheme="https://diraw.github.io/tags/%E8%83%8C%E5%8D%95%E8%AF%8D/"/>
     
   </entry>
   

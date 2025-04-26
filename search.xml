@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>重装windows初始化</title>
+      <link href="/2025/04/26/CS/Windows/0/"/>
+      <url>/2025/04/26/CS/Windows/0/</url>
+      
+        <content type="html"><![CDATA[<p>1、anaconda：<a href="https://www.anaconda.com/download/success">https://www.anaconda.com/download/success</a></p><p>记得把环境变量和清除缓存勾选上：</p><img src="/img/202504/26/5.png" alt="Image 5" width="75%"><ul><li>pytorch：<a href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></li></ul><p>检测代码：</p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"PyTorch GPU version is installed and available."</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"CUDA version: <span class="subst">{torch.version.cuda}</span>"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"Number of GPUs available: <span class="subst">{torch.cuda.device_count()}</span>"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(torch.cuda.device_count()):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f"GPU <span class="subst">{i}</span>: <span class="subst">{torch.cuda.get_device_name(i)}</span>"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"PyTorch GPU version is NOT installed or NOT available."</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Please check your PyTorch installation, NVIDIA drivers, and CUDA toolkit."</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>powershell学习</title>
+      <link href="/2025/04/26/CS/Windows/2/"/>
+      <url>/2025/04/26/CS/Windows/2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h1><p>Shell 是一个广泛的概念。它指的是一个命令行解释器，用户可以通过它与操作系统进行交互，执行命令、运行程序。不同的操作系统有不同的 Shell，例如在 Linux 和 macOS 中常见的 Bash、Zsh 等，而在 Windows 中，CMD 和 PowerShell 都是 Shell 的一种。</p><p>PowerShell 是微软开发的一种特定的 Shell。它是在 Windows 系统上引入的，旨在提供比传统的 CMD 更强大、更灵活的命令行环境，尤其是在系统管理和自动化方面。</p><h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><p>windows自带的powershell是5，现在最新版本是7</p><p>查看powshell版本</p><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-Host</span></span><br></pre></td></tr></table></figure><img src="/img/202504/26/6.png" alt="Image 6"><p>更新：</p><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">winget search Microsoft.PowerShell</span><br><span class="line">winget install <span class="literal">--id</span> Microsoft.PowerShell <span class="literal">--source</span> winget</span><br></pre></td></tr></table></figure><img src="/img/202504/26/8.png" alt="Image 8"><p>然后把新下载的powershell设置为默认启动项：</p><img src="/img/202504/26/9.png" alt="Image 9"><img src="/img/202504/26/10.png" alt="Image 10"><img src="/img/202504/26/11.png" alt="Image 11"><h1 id="cmdlet"><a href="#cmdlet" class="headerlink" title="cmdlet"></a>cmdlet</h1><p>Cmdlet（读作 command-let）是 PowerShell 中的基本命令单元。它们是轻量级的命令，用于执行特定的任务。与传统的命令行工具（如 Windows 命令提示符中的 dir 或 Linux 中的 ls）不同，Cmdlet 具有更强的结构化和一致性。</p><p>Cmdlet 的命名遵循“动词-名词”的结构，例如 Get-Process、Set-Location、New-Item。这种结构使得 Cmdlet 的功能更易于理解和记忆。动词表示要执行的操作（如 Get、Set、New），名词表示操作的对象（如 Process、Location、Item）。</p><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><ul><li>Get-ChildItem (别名 ls, dir)：查看文件和目录。这是最常用的命令之一，用于查看当前目录或指定路径下的内容。</li><li>Set-Location (别名 cd, chdir)：改变当前工作目录。频繁用于在不同目录之间切换。</li><li>New-Item：创建文件或目录。创建新的脚本文件、配置文件或文件夹时常用。</li><li>Remove-Item (别名 del, rm)：删除文件或目录。清理不再需要的文件和文件夹。</li><li>Get-Process (别名 ps)：查看当前运行的进程。常用于查看哪些程序正在运行以及它们的资源占用情况。</li><li>Clear-Host (别名 cls)：清空控制台屏幕。让你的终端界面更整洁。</li><li>Invoke-WebRequest (别名 iwr, wget, curl)：下载网页内容或文件。在需要从网络获取数据时常用。</li><li>Invoke-RestMethod：与 RESTful Web 服务交互。在自动化与 API 交互时常用。</li><li>Get-Content (别名 cat, type)：读取文件内容。查看配置文件或日志文件时常用。</li></ul><p>所以我觉得完全可以用linux的命令来弄</p><h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>powershell最大的特点是面向对象。bash和cmd传递的都是文本流，但是powershell传递的是对象。</p><p>举例：</p><p>在 Bash 中获取进程 ID 并杀死进程：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps aux | grep <span class="string">"myprocess"</span> | awk <span class="string">'{print $2}'</span> | xargs <span class="built_in">kill</span></span><br></pre></td></tr></table></figure><ul><li>ps aux 输出进程信息（文本），grep 过滤包含 “myprocess” 的行（文本），awk 解析文本提取进程 ID（文本），xargs kill 将进程 ID 作为参数传递给 kill 命令。整个过程涉及多次文本解析。</li></ul><p>而PowerShell 的面向对象工作方式：</p><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-Process</span> <span class="literal">-Name</span> myprocess | <span class="built_in">Stop-Process</span></span><br></pre></td></tr></table></figure><ul><li>Get-Process -Name myprocess 返回一个或多个表示 “myprocess” 进程的 Process 对象。这些对象包含了进程的各种信息，如 ID、名称、CPU 使用率等。通过管道 |，这些 Process 对象直接传递给 Stop-Process 命令。Stop-Process 命令能够直接接收 Process 对象，并利用对象中的信息（如进程 ID）来停止进程，而无需进行文本解析。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+            <tag> powershell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>清理C盘</title>
       <link href="/2025/04/25/CS/Windows/1/"/>
       <url>/2025/04/25/CS/Windows/1/</url>
