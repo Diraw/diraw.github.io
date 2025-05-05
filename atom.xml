@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-04-27T10:02:29.849Z</updated>
+  <updated>2025-05-05T06:12:41.593Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回忆过去，以及致2026年1月1日的一封信</title>
+    <link href="https://diraw.github.io/2025/05/04/LIFE/record/1/"/>
+    <id>https://diraw.github.io/2025/05/04/LIFE/record/1/</id>
+    <published>2025-05-04T13:00:00.000Z</published>
+    <updated>2025-05-05T06:12:41.593Z</updated>
+    
+    
+    <summary type="html">回忆过去，以及致2026年1月1日的一封信</summary>
+    
+    
+    
+    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="记录" scheme="https://diraw.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>自定义PowerShell命令</title>
@@ -519,31 +538,6 @@
     <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
     
     <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Git上传GitHub代码全过程/解决冲突/删除GitHub文件</title>
-    <link href="https://diraw.github.io/2025/04/10/CS/git/2/"/>
-    <id>https://diraw.github.io/2025/04/10/CS/git/2/</id>
-    <published>2025-04-10T08:00:00.000Z</published>
-    <updated>2025-04-10T08:45:12.253Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、使用git上传代码的步骤&quot;&gt;&lt;a href=&quot;#一、使用git上传代码的步骤&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="git" scheme="https://diraw.github.io/tags/git/"/>
     
   </entry>
   
