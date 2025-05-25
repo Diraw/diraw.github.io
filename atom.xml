@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-05-05T06:12:41.593Z</updated>
+  <updated>2025-05-25T09:37:15.607Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将vscode打开目录添加到右键菜单</title>
+    <link href="https://diraw.github.io/2025/05/25/CS/Windows/4/"/>
+    <id>https://diraw.github.io/2025/05/25/CS/Windows/4/</id>
+    <published>2025-05-25T10:00:00.000Z</published>
+    <updated>2025-05-25T09:37:15.607Z</updated>
+    
+    
+    <summary type="html">使用.reg文件自动添加注册表</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    
+    <category term="注册表" scheme="https://diraw.github.io/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>回忆过去，以及致2026年1月1日的一封信</title>
@@ -511,33 +532,6 @@
     
     
     <category term="1" scheme="https://diraw.github.io/tags/1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改9：添加音乐播放器</title>
-    <link href="https://diraw.github.io/2025/04/10/CS/Hexo/Butterfly/Custom/9/"/>
-    <id>https://diraw.github.io/2025/04/10/CS/Hexo/Butterfly/Custom/9/</id>
-    <published>2025-04-10T12:00:00.000Z</published>
-    <updated>2025-04-10T13:54:24.883Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;安装插件&quot;&gt;&lt;a href=&quot;#安装插件&quot; class=&quot;headerlink&quot; title=&quot;安装插件&quot;&gt;&lt;/a&gt;安装插件&lt;/h1&gt;&lt;p&gt;1、安装 &lt;code&gt;npm install --save</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
     
   </entry>
   
