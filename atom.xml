@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-05-25T09:37:15.607Z</updated>
+  <updated>2025-05-25T09:48:16.290Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>取消右键“显示更多选项”和管理右键菜单</title>
+    <link href="https://diraw.github.io/2025/05/25/CS/Windows/5/"/>
+    <id>https://diraw.github.io/2025/05/25/CS/Windows/5/</id>
+    <published>2025-05-25T10:10:00.000Z</published>
+    <updated>2025-05-25T09:48:16.290Z</updated>
+    
+    
+    <summary type="html">使用.reg文件取消右键“显示更多选项”，使用ContextMenuManager管理右键菜单</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    
+    <category term="注册表" scheme="https://diraw.github.io/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>将vscode打开目录添加到右键菜单</title>
@@ -515,23 +536,6 @@
     <category term="大英赛" scheme="https://diraw.github.io/tags/%E5%A4%A7%E8%8B%B1%E8%B5%9B/"/>
     
     <category term="感悟" scheme="https://diraw.github.io/tags/%E6%84%9F%E6%82%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>这么大的世界，却找不到我的容身之所</title>
-    <link href="https://diraw.github.io/2025/04/10/LIFE/emo/1/"/>
-    <id>https://diraw.github.io/2025/04/10/LIFE/emo/1/</id>
-    <published>2025-04-10T13:00:00.000Z</published>
-    <updated>2025-04-11T00:27:31.160Z</updated>
-    
-    
-    <summary type="html">以下内容涉及负能量，若有不适，请立即退出！</summary>
-    
-    
-    
-    
-    <category term="1" scheme="https://diraw.github.io/tags/1/"/>
     
   </entry>
   
