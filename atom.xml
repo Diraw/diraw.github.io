@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-05-25T09:52:40.037Z</updated>
+  <updated>2025-06-05T07:32:11.752Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI截图翻译工具 v0.3.0已更新</title>
+    <link href="https://diraw.github.io/2025/06/05/CS/github/2/"/>
+    <id>https://diraw.github.io/2025/06/05/CS/github/2/</id>
+    <published>2025-06-05T07:30:00.000Z</published>
+    <updated>2025-06-05T07:32:11.752Z</updated>
+    
+    
+    <summary type="html">科研辅助工具，一键截图+AI翻译，支持数学公式，贴片多窗口管理</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="github" scheme="https://diraw.github.io/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>取消右键“显示更多选项”和管理右键菜单</title>
@@ -513,29 +532,6 @@
     
     
     <category term="git" scheme="https://diraw.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>生活绝不会等你准备充分再让你上场：2025年大英赛参加有感</title>
-    <link href="https://diraw.github.io/2025/04/13/EN/2/"/>
-    <id>https://diraw.github.io/2025/04/13/EN/2/</id>
-    <published>2025-04-13T10:00:00.000Z</published>
-    <updated>2025-04-13T11:06:06.604Z</updated>
-    
-    
-    <summary type="html">年初满怀信心的说，我要参加大英赛拿奖进国赛，也用墨墨开始背起单词。虽然也背了几个月，从寒假开始，并且让词汇量突破了10k，那时候每天3、4个小时的背诵时间。结果从4月份开始，各种其他的事情来临，单词的事情就落下了。</summary>
-    
-    
-    
-    <category term="英语" scheme="https://diraw.github.io/categories/%E8%8B%B1%E8%AF%AD/"/>
-    
-    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="大英赛" scheme="https://diraw.github.io/tags/%E5%A4%A7%E8%8B%B1%E8%B5%9B/"/>
-    
-    <category term="感悟" scheme="https://diraw.github.io/tags/%E6%84%9F%E6%82%9F/"/>
     
   </entry>
   
