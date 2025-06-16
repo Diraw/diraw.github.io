@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-06-05T07:32:11.752Z</updated>
+  <updated>2025-06-16T10:26:18.957Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>免密ssh连接服务器</title>
+    <link href="https://diraw.github.io/2025/06/16/CS/debian/1/"/>
+    <id>https://diraw.github.io/2025/06/16/CS/debian/1/</id>
+    <published>2025-06-16T12:22:00.000Z</published>
+    <updated>2025-06-16T10:26:18.957Z</updated>
+    
+    
+    <summary type="html">新服务器初始化</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="ssh" scheme="https://diraw.github.io/tags/ssh/"/>
+    
+    <category term="服务器" scheme="https://diraw.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>AI截图翻译工具 v0.3.0已更新</title>
@@ -505,33 +526,6 @@
     
     
     <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git入门教程（Git 2.42）</title>
-    <link href="https://diraw.github.io/2025/04/15/CS/git/3/"/>
-    <id>https://diraw.github.io/2025/04/15/CS/git/3/</id>
-    <published>2025-04-15T04:00:00.000Z</published>
-    <updated>2025-04-18T14:03:15.971Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;本教程使用Git版本为2.42&lt;/strong&gt;，以下内容均为我作为大学生的身份、在实际操作中常用到的命令，今日将其总结并记录。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;本教程对个人开发者应该是足够用的，但是对于团队开发应该仍然不够。&lt;/strong&gt;&lt;/p&gt;
-&lt;h1</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="git" scheme="https://diraw.github.io/tags/git/"/>
     
   </entry>
   
