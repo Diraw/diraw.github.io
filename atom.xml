@@ -38,6 +38,27 @@
   </entry>
   
   <entry>
+    <title>创建git hook自动拉取远程仓库</title>
+    <link href="https://diraw.github.io/2025/06/16/CS/debian/2/"/>
+    <id>https://diraw.github.io/2025/06/16/CS/debian/2/</id>
+    <published>2025-06-16T12:22:00.000Z</published>
+    <updated>2025-06-21T02:11:15.967Z</updated>
+    
+    
+    <summary type="html">以gitee为例，使用python flask监听请求</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="git" scheme="https://diraw.github.io/tags/git/"/>
+    
+    <category term="服务器" scheme="https://diraw.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AI截图翻译工具 v0.3.0已更新</title>
     <link href="https://diraw.github.io/2025/06/05/CS/github/2/"/>
     <id>https://diraw.github.io/2025/06/05/CS/github/2/</id>
@@ -500,32 +521,6 @@
     <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
     
     <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo部署generate时报错：TypeError: tokens.at is not a function</title>
-    <link href="https://diraw.github.io/2025/04/17/CS/Hexo/Error/3/"/>
-    <id>https://diraw.github.io/2025/04/17/CS/Hexo/Error/3/</id>
-    <published>2025-04-17T13:38:00.000Z</published>
-    <updated>2025-04-18T13:20:37.364Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在linux上安装hexo之后，&lt;code&gt;hexo g&lt;/code&gt;报错pandoc&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
     
   </entry>
   
