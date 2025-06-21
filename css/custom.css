@@ -31,3 +31,31 @@ body {
 [data-theme="dark"] {
   --card-bg: rgba(255, 255, 255, 0.2);
 }
+
+/* 覆盖文章列表项的高度 */
+#recent-posts .recent-post-item {
+  height: auto !important;
+  /* 允许高度根据内容自适应 */
+  padding-top: 40px !important;
+  /* 顶部内边距 40px */
+  padding-bottom: 40px !important;
+  /* 底部内边距 40px */
+}
+
+
+@media screen and (max-width: 768px) {
+  #recent-posts .recent-post-item {
+    height: auto !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+}
+
+/* 针对大屏幕的高度覆盖，但暂时无法测试 */
+/* @media screen and (min-width: 2000px) {
+  #recent-posts .recent-post-item {
+    height: auto !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+} */
