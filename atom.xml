@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-06-21T03:14:57.482Z</updated>
+  <updated>2025-06-21T09:57:27.863Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Butterfly魔改11：网页自动调节首页帖子高度</title>
+    <link href="https://diraw.top/2025/06/21/CS/Hexo/Butterfly/Custom/11/"/>
+    <id>https://diraw.top/2025/06/21/CS/Hexo/Butterfly/Custom/11/</id>
+    <published>2025-06-21T11:00:00.000Z</published>
+    <updated>2025-06-21T09:57:27.863Z</updated>
+    
+    
+    <summary type="html">一直都觉得这个首页的帖子上下边距太宽了，终于忍不了把这个改了</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
+    
+  </entry>
   
   <entry>
     <title>创建git hook自动拉取远程仓库</title>
@@ -493,34 +514,6 @@
     <category term="ssh" scheme="https://diraw.top/tags/ssh/"/>
     
     <category term="github" scheme="https://diraw.top/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu常用指令</title>
-    <link href="https://diraw.top/2025/04/18/CS/Linux/0/"/>
-    <id>https://diraw.top/2025/04/18/CS/Linux/0/</id>
-    <published>2025-04-18T13:00:00.000Z</published>
-    <updated>2025-04-26T10:09:42.255Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;常用&quot;&gt;&lt;a href=&quot;#常用&quot; class=&quot;headerlink&quot; title=&quot;常用&quot;&gt;&lt;/a&gt;常用&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;uname</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="linux" scheme="https://diraw.top/tags/linux/"/>
-    
-    <category term="ubuntu" scheme="https://diraw.top/tags/ubuntu/"/>
     
   </entry>
   
