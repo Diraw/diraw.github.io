@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Diraw&#39;s World</title>
-  <icon>https://diraw.github.io/icon.png</icon>
+  <icon>https://diraw.top/icon.png</icon>
   
-  <link href="https://diraw.github.io/atom.xml" rel="self"/>
+  <link href="https://diraw.top/atom.xml" rel="self"/>
   
-  <link href="https://diraw.github.io/"/>
+  <link href="https://diraw.top/"/>
   <updated>2025-06-21T03:14:57.482Z</updated>
-  <id>https://diraw.github.io/</id>
+  <id>https://diraw.top/</id>
   
   <author>
     <name>Diraw</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>创建git hook自动拉取远程仓库</title>
-    <link href="https://diraw.github.io/2025/06/21/CS/www/2/"/>
-    <id>https://diraw.github.io/2025/06/21/CS/www/2/</id>
+    <link href="https://diraw.top/2025/06/21/CS/www/2/"/>
+    <id>https://diraw.top/2025/06/21/CS/www/2/</id>
     <published>2025-06-21T02:22:00.000Z</published>
     <updated>2025-06-21T03:14:57.482Z</updated>
     
@@ -28,19 +28,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="git" scheme="https://diraw.github.io/tags/git/"/>
+    <category term="git" scheme="https://diraw.top/tags/git/"/>
     
-    <category term="服务器" scheme="https://diraw.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>免密ssh连接服务器</title>
-    <link href="https://diraw.github.io/2025/06/16/CS/www/1/"/>
-    <id>https://diraw.github.io/2025/06/16/CS/www/1/</id>
+    <link href="https://diraw.top/2025/06/16/CS/www/1/"/>
+    <id>https://diraw.top/2025/06/16/CS/www/1/</id>
     <published>2025-06-16T12:22:00.000Z</published>
     <updated>2025-06-16T10:26:18.957Z</updated>
     
@@ -49,19 +49,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="ssh" scheme="https://diraw.github.io/tags/ssh/"/>
+    <category term="ssh" scheme="https://diraw.top/tags/ssh/"/>
     
-    <category term="服务器" scheme="https://diraw.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>AI截图翻译工具 v0.3.0已更新</title>
-    <link href="https://diraw.github.io/2025/06/05/CS/github/2/"/>
-    <id>https://diraw.github.io/2025/06/05/CS/github/2/</id>
+    <link href="https://diraw.top/2025/06/05/CS/github/2/"/>
+    <id>https://diraw.top/2025/06/05/CS/github/2/</id>
     <published>2025-06-05T07:30:00.000Z</published>
     <updated>2025-06-05T07:32:11.752Z</updated>
     
@@ -70,17 +70,17 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="github" scheme="https://diraw.github.io/tags/github/"/>
+    <category term="github" scheme="https://diraw.top/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>取消右键“显示更多选项”和管理右键菜单</title>
-    <link href="https://diraw.github.io/2025/05/25/CS/Windows/5/"/>
-    <id>https://diraw.github.io/2025/05/25/CS/Windows/5/</id>
+    <link href="https://diraw.top/2025/05/25/CS/Windows/5/"/>
+    <id>https://diraw.top/2025/05/25/CS/Windows/5/</id>
     <published>2025-05-25T10:10:00.000Z</published>
     <updated>2025-05-25T09:52:40.037Z</updated>
     
@@ -89,19 +89,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
-    <category term="注册表" scheme="https://diraw.github.io/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
+    <category term="注册表" scheme="https://diraw.top/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
     
   </entry>
   
   <entry>
     <title>将vscode打开目录添加到右键菜单</title>
-    <link href="https://diraw.github.io/2025/05/25/CS/Windows/4/"/>
-    <id>https://diraw.github.io/2025/05/25/CS/Windows/4/</id>
+    <link href="https://diraw.top/2025/05/25/CS/Windows/4/"/>
+    <id>https://diraw.top/2025/05/25/CS/Windows/4/</id>
     <published>2025-05-25T10:00:00.000Z</published>
     <updated>2025-05-25T09:37:15.607Z</updated>
     
@@ -110,19 +110,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
-    <category term="注册表" scheme="https://diraw.github.io/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
+    <category term="注册表" scheme="https://diraw.top/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
     
   </entry>
   
   <entry>
     <title>回忆过去，以及致2026年1月1日的一封信</title>
-    <link href="https://diraw.github.io/2025/05/04/LIFE/record/1/"/>
-    <id>https://diraw.github.io/2025/05/04/LIFE/record/1/</id>
+    <link href="https://diraw.top/2025/05/04/LIFE/record/1/"/>
+    <id>https://diraw.top/2025/05/04/LIFE/record/1/</id>
     <published>2025-05-04T13:00:00.000Z</published>
     <updated>2025-05-05T06:12:41.593Z</updated>
     
@@ -131,17 +131,17 @@
     
     
     
-    <category term="生活" scheme="https://diraw.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://diraw.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="记录" scheme="https://diraw.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    <category term="记录" scheme="https://diraw.top/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>自定义PowerShell命令</title>
-    <link href="https://diraw.github.io/2025/04/27/CS/Windows/3/"/>
-    <id>https://diraw.github.io/2025/04/27/CS/Windows/3/</id>
+    <link href="https://diraw.top/2025/04/27/CS/Windows/3/"/>
+    <id>https://diraw.top/2025/04/27/CS/Windows/3/</id>
     <published>2025-04-27T10:00:00.000Z</published>
     <updated>2025-04-27T10:02:29.849Z</updated>
     
@@ -157,19 +157,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
-    <category term="powershell" scheme="https://diraw.github.io/tags/powershell/"/>
+    <category term="powershell" scheme="https://diraw.top/tags/powershell/"/>
     
   </entry>
   
   <entry>
     <title>数学建模竞赛笔记</title>
-    <link href="https://diraw.github.io/2025/04/26/MATH/3/"/>
-    <id>https://diraw.github.io/2025/04/26/MATH/3/</id>
+    <link href="https://diraw.top/2025/04/26/MATH/3/"/>
+    <id>https://diraw.top/2025/04/26/MATH/3/</id>
     <published>2025-04-26T10:00:00.000Z</published>
     <updated>2025-04-26T10:33:17.993Z</updated>
     
@@ -184,17 +184,17 @@
     
     
     
-    <category term="数学" scheme="https://diraw.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="数学" scheme="https://diraw.top/categories/%E6%95%B0%E5%AD%A6/"/>
     
     
-    <category term="数模" scheme="https://diraw.github.io/tags/%E6%95%B0%E6%A8%A1/"/>
+    <category term="数模" scheme="https://diraw.top/tags/%E6%95%B0%E6%A8%A1/"/>
     
   </entry>
   
   <entry>
     <title>PowerShell学习</title>
-    <link href="https://diraw.github.io/2025/04/26/CS/Windows/2/"/>
-    <id>https://diraw.github.io/2025/04/26/CS/Windows/2/</id>
+    <link href="https://diraw.top/2025/04/26/CS/Windows/2/"/>
+    <id>https://diraw.top/2025/04/26/CS/Windows/2/</id>
     <published>2025-04-26T06:00:00.000Z</published>
     <updated>2025-04-26T10:34:39.601Z</updated>
     
@@ -209,19 +209,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
-    <category term="powershell" scheme="https://diraw.github.io/tags/powershell/"/>
+    <category term="powershell" scheme="https://diraw.top/tags/powershell/"/>
     
   </entry>
   
   <entry>
     <title>重装windows初始化</title>
-    <link href="https://diraw.github.io/2025/04/26/CS/Windows/0/"/>
-    <id>https://diraw.github.io/2025/04/26/CS/Windows/0/</id>
+    <link href="https://diraw.top/2025/04/26/CS/Windows/0/"/>
+    <id>https://diraw.top/2025/04/26/CS/Windows/0/</id>
     <published>2025-04-26T04:00:00.000Z</published>
     <updated>2025-04-26T10:35:31.133Z</updated>
     
@@ -236,17 +236,17 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
   </entry>
   
   <entry>
     <title>清理C盘</title>
-    <link href="https://diraw.github.io/2025/04/25/CS/Windows/1/"/>
-    <id>https://diraw.github.io/2025/04/25/CS/Windows/1/</id>
+    <link href="https://diraw.top/2025/04/25/CS/Windows/1/"/>
+    <id>https://diraw.top/2025/04/25/CS/Windows/1/</id>
     <published>2025-04-25T15:00:00.000Z</published>
     <updated>2025-04-26T10:10:27.219Z</updated>
     
@@ -264,17 +264,17 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="windows" scheme="https://diraw.github.io/tags/windows/"/>
+    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
   </entry>
   
   <entry>
     <title>将脚本文件保存为.desktop启动程序</title>
-    <link href="https://diraw.github.io/2025/04/23/CS/Linux/7/"/>
-    <id>https://diraw.github.io/2025/04/23/CS/Linux/7/</id>
+    <link href="https://diraw.top/2025/04/23/CS/Linux/7/"/>
+    <id>https://diraw.top/2025/04/23/CS/Linux/7/</id>
     <published>2025-04-23T12:00:00.000Z</published>
     <updated>2025-04-23T10:08:56.546Z</updated>
     
@@ -291,19 +291,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
+    <category term="linux" scheme="https://diraw.top/tags/linux/"/>
     
-    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
+    <category term="ubuntu" scheme="https://diraw.top/tags/ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式学习</title>
-    <link href="https://diraw.github.io/2025/04/21/CS/Re/1/"/>
-    <id>https://diraw.github.io/2025/04/21/CS/Re/1/</id>
+    <link href="https://diraw.top/2025/04/21/CS/Re/1/"/>
+    <id>https://diraw.top/2025/04/21/CS/Re/1/</id>
     <published>2025-04-21T05:00:00.000Z</published>
     <updated>2025-04-21T09:15:03.155Z</updated>
     
@@ -318,17 +318,17 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="正则表达式" scheme="https://diraw.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <category term="正则表达式" scheme="https://diraw.top/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>C++指针学习</title>
-    <link href="https://diraw.github.io/2025/04/21/CS/cpp/2/"/>
-    <id>https://diraw.github.io/2025/04/21/CS/cpp/2/</id>
+    <link href="https://diraw.top/2025/04/21/CS/cpp/2/"/>
+    <id>https://diraw.top/2025/04/21/CS/cpp/2/</id>
     <published>2025-04-21T02:22:00.000Z</published>
     <updated>2025-04-21T09:11:56.939Z</updated>
     
@@ -343,25 +343,25 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="c++" scheme="https://diraw.github.io/tags/c/"/>
+    <category term="c++" scheme="https://diraw.top/tags/c/"/>
     
-    <category term="指针" scheme="https://diraw.github.io/tags/%E6%8C%87%E9%92%88/"/>
+    <category term="指针" scheme="https://diraw.top/tags/%E6%8C%87%E9%92%88/"/>
     
-    <category term="传参" scheme="https://diraw.github.io/tags/%E4%BC%A0%E5%8F%82/"/>
+    <category term="传参" scheme="https://diraw.top/tags/%E4%BC%A0%E5%8F%82/"/>
     
-    <category term="内存" scheme="https://diraw.github.io/tags/%E5%86%85%E5%AD%98/"/>
+    <category term="内存" scheme="https://diraw.top/tags/%E5%86%85%E5%AD%98/"/>
     
-    <category term="回调" scheme="https://diraw.github.io/tags/%E5%9B%9E%E8%B0%83/"/>
+    <category term="回调" scheme="https://diraw.top/tags/%E5%9B%9E%E8%B0%83/"/>
     
   </entry>
   
   <entry>
     <title>2025四月刷题记录</title>
-    <link href="https://diraw.github.io/2025/04/20/CS/cpp/luogu/1/"/>
-    <id>https://diraw.github.io/2025/04/20/CS/cpp/luogu/1/</id>
+    <link href="https://diraw.top/2025/04/20/CS/cpp/luogu/1/"/>
+    <id>https://diraw.top/2025/04/20/CS/cpp/luogu/1/</id>
     <published>2025-04-20T10:22:00.000Z</published>
     <updated>2025-04-24T02:33:04.324Z</updated>
     
@@ -377,19 +377,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="c++" scheme="https://diraw.github.io/tags/c/"/>
+    <category term="c++" scheme="https://diraw.top/tags/c/"/>
     
-    <category term="洛谷" scheme="https://diraw.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+    <category term="洛谷" scheme="https://diraw.top/tags/%E6%B4%9B%E8%B0%B7/"/>
     
   </entry>
   
   <entry>
     <title>在vscode上配置C++环境</title>
-    <link href="https://diraw.github.io/2025/04/19/CS/cpp/1/"/>
-    <id>https://diraw.github.io/2025/04/19/CS/cpp/1/</id>
+    <link href="https://diraw.top/2025/04/19/CS/cpp/1/"/>
+    <id>https://diraw.top/2025/04/19/CS/cpp/1/</id>
     <published>2025-04-19T12:22:00.000Z</published>
     <updated>2025-04-19T12:19:44.584Z</updated>
     
@@ -404,19 +404,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="vscode" scheme="https://diraw.github.io/tags/vscode/"/>
+    <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
     
-    <category term="c++" scheme="https://diraw.github.io/tags/c/"/>
+    <category term="c++" scheme="https://diraw.top/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>立体角（电动力学知识补充）</title>
-    <link href="https://diraw.github.io/2025/04/19/PHYSICS/2/"/>
-    <id>https://diraw.github.io/2025/04/19/PHYSICS/2/</id>
+    <link href="https://diraw.top/2025/04/19/PHYSICS/2/"/>
+    <id>https://diraw.top/2025/04/19/PHYSICS/2/</id>
     <published>2025-04-19T10:00:00.000Z</published>
     <updated>2025-04-19T10:14:46.937Z</updated>
     
@@ -431,17 +431,17 @@
     
     
     
-    <category term="物理" scheme="https://diraw.github.io/categories/%E7%89%A9%E7%90%86/"/>
+    <category term="物理" scheme="https://diraw.top/categories/%E7%89%A9%E7%90%86/"/>
     
     
-    <category term="电动力学" scheme="https://diraw.github.io/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/>
+    <category term="电动力学" scheme="https://diraw.top/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>Butterfly魔改10：给标签添加次方篇数</title>
-    <link href="https://diraw.github.io/2025/04/18/CS/Hexo/Butterfly/Custom/10/"/>
-    <id>https://diraw.github.io/2025/04/18/CS/Hexo/Butterfly/Custom/10/</id>
+    <link href="https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/"/>
+    <id>https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/</id>
     <published>2025-04-18T15:00:00.000Z</published>
     <updated>2025-04-18T14:49:39.489Z</updated>
     
@@ -459,19 +459,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="Hexo" scheme="https://diraw.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
     
-    <category term="Butterfly" scheme="https://diraw.github.io/tags/Butterfly/"/>
+    <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
     
   </entry>
   
   <entry>
     <title>ssh无法远程到github</title>
-    <link href="https://diraw.github.io/2025/04/18/CS/github/1/"/>
-    <id>https://diraw.github.io/2025/04/18/CS/github/1/</id>
+    <link href="https://diraw.top/2025/04/18/CS/github/1/"/>
+    <id>https://diraw.top/2025/04/18/CS/github/1/</id>
     <published>2025-04-18T14:00:00.000Z</published>
     <updated>2025-04-18T14:02:27.646Z</updated>
     
@@ -487,19 +487,19 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="ssh" scheme="https://diraw.github.io/tags/ssh/"/>
+    <category term="ssh" scheme="https://diraw.top/tags/ssh/"/>
     
-    <category term="github" scheme="https://diraw.github.io/tags/github/"/>
+    <category term="github" scheme="https://diraw.top/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu常用指令</title>
-    <link href="https://diraw.github.io/2025/04/18/CS/Linux/0/"/>
-    <id>https://diraw.github.io/2025/04/18/CS/Linux/0/</id>
+    <link href="https://diraw.top/2025/04/18/CS/Linux/0/"/>
+    <id>https://diraw.top/2025/04/18/CS/Linux/0/</id>
     <published>2025-04-18T13:00:00.000Z</published>
     <updated>2025-04-26T10:09:42.255Z</updated>
     
@@ -515,12 +515,12 @@
     
     
     
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="linux" scheme="https://diraw.github.io/tags/linux/"/>
+    <category term="linux" scheme="https://diraw.top/tags/linux/"/>
     
-    <category term="ubuntu" scheme="https://diraw.github.io/tags/ubuntu/"/>
+    <category term="ubuntu" scheme="https://diraw.top/tags/ubuntu/"/>
     
   </entry>
   
