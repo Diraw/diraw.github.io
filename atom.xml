@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Diraw&#39;s World</title>
+  <title>Diraw的世界</title>
   <icon>https://diraw.top/icon.png</icon>
   
   <link href="https://diraw.top/atom.xml" rel="self"/>
