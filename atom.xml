@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-06-16T10:26:18.957Z</updated>
+  <updated>2025-06-21T02:40:25.706Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>创建git hook自动拉取远程仓库</title>
+    <link href="https://diraw.github.io/2025/06/21/CS/debian/2/"/>
+    <id>https://diraw.github.io/2025/06/21/CS/debian/2/</id>
+    <published>2025-06-21T02:22:00.000Z</published>
+    <updated>2025-06-21T02:40:25.706Z</updated>
+    
+    
+    <summary type="html">以gitee为例，使用python flask监听请求</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="git" scheme="https://diraw.github.io/tags/git/"/>
+    
+    <category term="服务器" scheme="https://diraw.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>免密ssh连接服务器</title>
@@ -32,27 +53,6 @@
     
     
     <category term="ssh" scheme="https://diraw.github.io/tags/ssh/"/>
-    
-    <category term="服务器" scheme="https://diraw.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>创建git hook自动拉取远程仓库</title>
-    <link href="https://diraw.github.io/2025/06/16/CS/debian/2/"/>
-    <id>https://diraw.github.io/2025/06/16/CS/debian/2/</id>
-    <published>2025-06-16T12:22:00.000Z</published>
-    <updated>2025-06-21T02:11:15.967Z</updated>
-    
-    
-    <summary type="html">以gitee为例，使用python flask监听请求</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="git" scheme="https://diraw.github.io/tags/git/"/>
     
     <category term="服务器" scheme="https://diraw.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
