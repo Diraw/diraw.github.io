@@ -6,7 +6,7 @@
   <link href="https://diraw.github.io/atom.xml" rel="self"/>
   
   <link href="https://diraw.github.io/"/>
-  <updated>2025-06-21T02:40:25.706Z</updated>
+  <updated>2025-06-21T03:14:57.482Z</updated>
   <id>https://diraw.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>创建git hook自动拉取远程仓库</title>
-    <link href="https://diraw.github.io/2025/06/21/CS/debian/2/"/>
-    <id>https://diraw.github.io/2025/06/21/CS/debian/2/</id>
+    <link href="https://diraw.github.io/2025/06/21/CS/www/2/"/>
+    <id>https://diraw.github.io/2025/06/21/CS/www/2/</id>
     <published>2025-06-21T02:22:00.000Z</published>
-    <updated>2025-06-21T02:40:25.706Z</updated>
+    <updated>2025-06-21T03:14:57.482Z</updated>
     
     
     <summary type="html">以gitee为例，使用python flask监听请求</summary>
@@ -39,8 +39,8 @@
   
   <entry>
     <title>免密ssh连接服务器</title>
-    <link href="https://diraw.github.io/2025/06/16/CS/debian/1/"/>
-    <id>https://diraw.github.io/2025/06/16/CS/debian/1/</id>
+    <link href="https://diraw.github.io/2025/06/16/CS/www/1/"/>
+    <id>https://diraw.github.io/2025/06/16/CS/www/1/</id>
     <published>2025-06-16T12:22:00.000Z</published>
     <updated>2025-06-16T10:26:18.957Z</updated>
     
