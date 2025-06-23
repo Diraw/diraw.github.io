@@ -59,3 +59,20 @@ body {
     padding-bottom: 10px !important;
   }
 } */
+
+/* 针对白天模式下 .card-tag-cloud 内部链接的颜色 */
+/* 使用 CSS 变量来获取 Hexo 辅助函数中生成的随机颜色 */
+.card-tag-cloud .tag-cloud-item {
+  color: var(--tag-color);
+  text-decoration: none;
+}
+
+/* 暗黑模式下 .card-tag-cloud 内部链接的颜色 */
+[data-theme="dark"] .card-tag-cloud .tag-cloud-item {
+  color: rgba(255, 255, 255, 0.7) !important;
+  /* 在暗黑模式下强制为灰白色 */
+}
+
+[data-theme="dark"] .collections-item-content a {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
