@@ -76,3 +76,29 @@ body {
 [data-theme="dark"] .collections-item-content a {
   color: rgba(255, 255, 255, 0.7) !important;
 }
+
+[data-theme="dark"] .post-copyright-meta {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-theme="dark"] .post-meta__tag-list a {
+  color: white !important;
+}
+
+[data-theme="dark"] #post .tag_share .post-meta__tags {
+  border: 1px solid white !important;
+}
+
+[data-theme="dark"] #post .tag_share .post-meta__tags:hover {
+  border-color: #2a6e3f !important;
+  /* 悬停时边框变为绿色 */
+}
+
+[data-theme="dark"] #post .post-copyright:before {
+  color: white;
+}
+
+[data-theme='dark'] #recent-posts .recent-post-item>.recent-post-info>.article-title:hover {
+  color: rgba(255, 255, 255, 0.3) !important;
+  /* 黑暗模式下悬停颜色 */
+}
