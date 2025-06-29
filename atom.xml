@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-06-21T10:00:20.748Z</updated>
+  <updated>2025-06-29T06:16:49.337Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用云服务器对obsidian进行远程同步</title>
+    <link href="https://diraw.top/2025/06/29/CS/www/3/"/>
+    <id>https://diraw.top/2025/06/29/CS/www/3/</id>
+    <published>2025-06-29T05:22:00.000Z</published>
+    <updated>2025-06-29T06:16:49.337Z</updated>
+    
+    
+    <summary type="html">obsidian使用remotely save插件，服务器使用Apache，系统为debian</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="webdav" scheme="https://diraw.top/tags/webdav/"/>
+    
+    <category term="obsidian" scheme="https://diraw.top/tags/obsidian/"/>
+    
+  </entry>
   
   <entry>
     <title>Butterfly魔改11：网页自动调节首页帖子高度</title>
@@ -486,34 +509,6 @@
     <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
     
     <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ssh无法远程到github</title>
-    <link href="https://diraw.top/2025/04/18/CS/github/1/"/>
-    <id>https://diraw.top/2025/04/18/CS/github/1/</id>
-    <published>2025-04-18T14:00:00.000Z</published>
-    <updated>2025-04-18T14:02:27.646Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;p&gt;在linux上面配github远程的时候发现连不上，如下图：&lt;/p&gt;
-&lt;img src=&quot;/img/202504/90.png&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="ssh" scheme="https://diraw.top/tags/ssh/"/>
-    
-    <category term="github" scheme="https://diraw.top/tags/github/"/>
     
   </entry>
   
