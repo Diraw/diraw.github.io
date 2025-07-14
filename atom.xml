@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-06-29T06:16:49.337Z</updated>
+  <updated>2025-07-14T16:11:47.717Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>证明四元雅可比恒等式</title>
+    <link href="https://diraw.top/2025/07/14/PHYSICS/3/"/>
+    <id>https://diraw.top/2025/07/14/PHYSICS/3/</id>
+    <published>2025-07-14T10:00:00.000Z</published>
+    <updated>2025-07-14T16:11:47.717Z</updated>
+    
+    
+    <summary type="html">证明[A,[B,[C,D]]]+[B,[C,[D,A]]]+[C,[D,[A,B]]+[D,[A,[B,C]]]=0</summary>
+    
+    
+    
+    <category term="物理" scheme="https://diraw.top/categories/%E7%89%A9%E7%90%86/"/>
+    
+    
+    <category term="理论力学" scheme="https://diraw.top/tags/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>用云服务器对obsidian进行远程同步</title>
@@ -479,36 +498,6 @@
     
     
     <category term="电动力学" scheme="https://diraw.top/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改10：给标签添加次方篇数</title>
-    <link href="https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/"/>
-    <id>https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/</id>
-    <published>2025-04-18T15:00:00.000Z</published>
-    <updated>2025-06-23T11:05:47.360Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h1&gt;&lt;p&gt;效果如下图：&lt;/p&gt;
-&lt;img src=&quot;/img/202504/92.png&quot; alt=&quot;Image 92&quot;&gt;
-
-&lt;h1</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
     
   </entry>
   
