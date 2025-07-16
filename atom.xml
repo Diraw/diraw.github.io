@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-07-14T16:11:47.717Z</updated>
+  <updated>2025-07-16T01:18:37.698Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用云服务器自建云盘服务</title>
+    <link href="https://diraw.top/2025/07/16/CS/www/4/"/>
+    <id>https://diraw.top/2025/07/16/CS/www/4/</id>
+    <published>2025-07-16T01:22:00.000Z</published>
+    <updated>2025-07-16T01:18:37.698Z</updated>
+    
+    
+    <summary type="html">使用cloudreve自建云盘服务，服务器系统为debian</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="cloudreve" scheme="https://diraw.top/tags/cloudreve/"/>
+    
+    <category term="云盘" scheme="https://diraw.top/tags/%E4%BA%91%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>证明四元雅可比恒等式</title>
@@ -473,31 +496,6 @@
     <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
     
     <category term="c++" scheme="https://diraw.top/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>立体角（电动力学知识补充）</title>
-    <link href="https://diraw.top/2025/04/19/PHYSICS/2/"/>
-    <id>https://diraw.top/2025/04/19/PHYSICS/2/</id>
-    <published>2025-04-19T10:00:00.000Z</published>
-    <updated>2025-04-19T10:14:46.937Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;——写于&lt;mjx-container class=&quot;MathJax&quot; jax=&quot;SVG&quot;&gt;&lt;svg style=&quot;vertical-align: -0.439ex;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;9.249ex&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="物理" scheme="https://diraw.top/categories/%E7%89%A9%E7%90%86/"/>
-    
-    
-    <category term="电动力学" scheme="https://diraw.top/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/>
     
   </entry>
   
