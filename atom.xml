@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-07-16T01:18:37.698Z</updated>
+  <updated>2025-08-09T10:27:19.915Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Debain服务器常用工具</title>
+    <link href="https://diraw.top/2025/08/09/CS/www/5/"/>
+    <id>https://diraw.top/2025/08/09/CS/www/5/</id>
+    <published>2025-08-09T09:14:00.000Z</published>
+    <updated>2025-08-09T10:27:19.915Z</updated>
+    
+    
+    <summary type="html">网络流量监控(vnStat, nethogs, netdata)，系统资源监控(htop)，文件同步(rsync)，服务器安全防护(fail2ban)</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="debian" scheme="https://diraw.top/tags/debian/"/>
+    
+  </entry>
   
   <entry>
     <title>用云服务器自建云盘服务</title>
@@ -168,7 +189,7 @@
     <link href="https://diraw.top/2025/05/25/CS/Windows/5/"/>
     <id>https://diraw.top/2025/05/25/CS/Windows/5/</id>
     <published>2025-05-25T10:10:00.000Z</published>
-    <updated>2025-05-25T09:52:40.037Z</updated>
+    <updated>2025-05-25T10:07:58.840Z</updated>
     
     
     <summary type="html">使用.reg文件取消右键“显示更多选项”，使用ContextMenuManager管理右键菜单</summary>
@@ -469,33 +490,6 @@
     <category term="c++" scheme="https://diraw.top/tags/c/"/>
     
     <category term="洛谷" scheme="https://diraw.top/tags/%E6%B4%9B%E8%B0%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在vscode上配置C++环境</title>
-    <link href="https://diraw.top/2025/04/19/CS/cpp/1/"/>
-    <id>https://diraw.top/2025/04/19/CS/cpp/1/</id>
-    <published>2025-04-19T12:22:00.000Z</published>
-    <updated>2025-04-19T12:19:44.584Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;下载g-gcc&quot;&gt;&lt;a href=&quot;#下载g-gcc&quot; class=&quot;headerlink&quot; title=&quot;下载g++/gcc&quot;&gt;&lt;/a&gt;下载g++/gcc&lt;/h1&gt;&lt;h2 id=&quot;windows&quot;&gt;&lt;a href=&quot;#windows&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
-    
-    <category term="c++" scheme="https://diraw.top/tags/c/"/>
     
   </entry>
   
