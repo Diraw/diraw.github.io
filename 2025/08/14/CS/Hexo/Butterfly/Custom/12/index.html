@@ -1,0 +1,523 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Butterfly魔改12：归档页面按照月份折叠 | Diraw的世界</title><meta name="author" content="Diraw"><meta name="copyright" content="Diraw"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Hexo自带的归档页面是没有折叠功能的，所以文章展开之后翻页进行查找，我觉得这样不如按时间折叠起来查找方便">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Butterfly魔改12：归档页面按照月份折叠">
+<meta property="og:url" content="https://diraw.top/2025/08/14/CS/Hexo/Butterfly/Custom/12/index.html">
+<meta property="og:site_name" content="Diraw的世界">
+<meta property="og:description" content="Hexo自带的归档页面是没有折叠功能的，所以文章展开之后翻页进行查找，我觉得这样不如按时间折叠起来查找方便">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://diraw.top/img/avatar.png">
+<meta property="article:published_time" content="2025-08-14T11:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-14T09:59:30.928Z">
+<meta property="article:author" content="Diraw">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Butterfly">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://diraw.top/img/avatar.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://diraw.top/2025/08/14/CS/Hexo/Butterfly/Custom/12/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0a1c909c9bf124fdb4524159d9989c48";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-LY9E5NJX4B"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-LY9E5NJX4B')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-LY9E5NJX4B', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Butterfly魔改12：归档页面按照月份折叠',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/collections.css"><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Diraw的世界" type="application/atom+xml">
+</head><body style="visibility: hidden; overflow: hidden;"><div id="web_bg" style="background-image: url(/img/2.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Diraw的世界</span></a><a class="nav-page-title" href="/"><span class="site-name">Butterfly魔改12：归档页面按照月份折叠</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Butterfly魔改12：归档页面按照月份折叠</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-14T11:00:00.000Z" title="发表于 2025-08-14 19:00:00">2025-08-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-14T09:59:30.928Z" title="更新于 2025-08-14 17:59:30">2025-08-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>1、在根目录（不是主题目录）的 <code>_config.yml</code> 修改（如果没有就添加）per_page 的值为 0</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Archive page</span></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">0</span></span><br><span class="line">  <span class="attr">yearly:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">monthly:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">daily:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>然后去主题的 <code>_config.yml</code> 中把侧边栏的归档去掉，因为都在一页上面折叠显示了，这个侧边栏的月份归档意义不大了。另外就是，通过侧边进入的页面会有bug，所有文章会自动展开。</p>
+<p>其实是可以做一个：从侧边栏进入的页面自动定位到目前月份的位置，然后自动展开月份下的文章。但是我觉得这样就过于折腾了，侧边栏的月份归档的意义对我也不大，索性就怎么简单怎么来了。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aside:</span></span><br><span class="line">  <span class="attr">card_categories:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>之后来到 <code>themes/butterfly/layout/archive.pug </code></p>
+<ol>
+<li>将 <code>+articleSort(page.posts)</code> 修改为 <code>+articleSort(site.posts.sort('date', -1))</code>，从而获取全站所有文章数据。</li>
+<li>删除 <code>include includes/pagination.pug</code> 这一行，目的是移除分页导航栏</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">extends includes/layout.pug</span><br><span class="line"></span><br><span class="line">block content</span><br><span class="line">  include ./includes/mixins/article-sort.pug</span><br><span class="line">  #archive</span><br><span class="line">    .article-sort-title= `${_p('page.articles')} - ${getArchiveLength()}`</span><br><span class="line">    +articleSort(site.posts.sort('date', -1))</span><br><span class="line">    //include includes/pagination.pug</span><br></pre></td></tr></table></figure>
+
+<p>2、创建 <code>themes/butterfly/scripts/helpers/archive_helpers.js</code> 内容为：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// themes/butterfly/scripts/helpers/archive_helpers.js</span></span><br><span class="line"></span><br><span class="line">hexo.<span class="property">extend</span>.<span class="property">helper</span>.<span class="title function_">register</span>(<span class="string">'getMonthArticleCount'</span>, <span class="keyword">function</span>(<span class="params">posts, year, month</span>) {</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  posts.<span class="title function_">forEach</span>(<span class="function"><span class="params">article</span> =&gt;</span> {</span><br><span class="line">    <span class="comment">// 使用 this.date 来调用 Hexo 内置的日期格式化辅助函数</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">date</span>(article.<span class="property">date</span>, <span class="string">'YYYY'</span>) === year &amp;&amp; <span class="variable language_">this</span>.<span class="title function_">date</span>(article.<span class="property">date</span>, <span class="string">'MM'</span>) === month) {</span><br><span class="line">      count++;</span><br><span class="line">    }</span><br><span class="line">  });</span><br><span class="line">  <span class="keyword">return</span> count;</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+
+<p>这里是创建了 <code>getMonthArticleCount</code> 函数，用于统计指定年月中包含的文章数量。目的是为在月份标题上显示文章计数（如“八月 (2篇文章)”）提供数据支持。</p>
+<p>3、修改 <code>themes/butterfly/layout/includes/mixins.article-sort.pug</code>（下面代码全部覆盖）内容为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mixin articleSort(posts)</span><br><span class="line">  .article-sort</span><br><span class="line">    - let currentYear = 0</span><br><span class="line">    - let currentMonth = 0</span><br><span class="line">    - posts.forEach(post =&gt; {</span><br><span class="line">      - const postYear = date(post.date, 'YYYY')</span><br><span class="line">      - const postMonth = date(post.date, 'MM')</span><br><span class="line">      - const noCoverClass = post.cover === false || !theme.cover.archives_enable ? 'no-article-cover' : ''</span><br><span class="line">      - const title = post.title || _p('no_title')</span><br><span class="line"></span><br><span class="line">      if postYear !== currentYear</span><br><span class="line">        - currentYear = postYear</span><br><span class="line">        - currentMonth = 0 // 新的一年，重置月份跟踪器</span><br><span class="line">        .article-sort-item.year= postYear</span><br><span class="line">      </span><br><span class="line">      if postMonth !== currentMonth</span><br><span class="line">        - currentMonth = postMonth</span><br><span class="line">        - const monthName = date(post.date, config.month_format || 'MMMM') // 使用配置中的月份格式，默认为 'MMMM'</span><br><span class="line">        - const articleCountInMonth = getMonthArticleCount(posts, postYear, postMonth)</span><br><span class="line">        // 新增月份头部，可点击</span><br><span class="line">        .archive-month-header</span><br><span class="line">          i.fas.fa-folder.folder-icon</span><br><span class="line">          span.month-name= `${monthName} (${articleCountInMonth}篇文章)`</span><br><span class="line"></span><br><span class="line">      // 文章条目，默认会被JS隐藏</span><br><span class="line">      .article-sort-item(class=noCoverClass)</span><br><span class="line">        if post.cover &amp;&amp; theme.cover.archives_enable</span><br><span class="line">          a.article-sort-item-img(href=url_for(post.path) title=title)</span><br><span class="line">            if post.cover_type === 'img'</span><br><span class="line">              img(src=url_for(post.cover) alt=title onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`)</span><br><span class="line">            else</span><br><span class="line">              div(style=`background: ${post.cover}`)</span><br><span class="line">        .article-sort-item-info</span><br><span class="line">          .article-sort-item-time</span><br><span class="line">            i.far.fa-calendar-alt</span><br><span class="line">            time.post-meta-date-created(datetime=date_xml(post.date) title=_p('post.created') + ' ' + full_date(post.date))= date(post.date, config.date_format)</span><br><span class="line">          a.article-sort-item-title(href=url_for(post.path) title=title)= title</span><br><span class="line">    - })</span><br></pre></td></tr></table></figure>
+
+<p>这里修改了 <code>mixin articleSort</code>，在原有的按年分组逻辑之上，增加了按月分组的逻辑。为每个月份创建了一个可点击的 <code>&lt;div class="archive-month-header"&gt;</code> 元素，并将该月的所有文章放在其后。目的是生成支持折叠功能的 HTML 结构。</p>
+<p>4、在 <code>themes/butterfly/source/css/_page/archive.styl</code> 最后添加：</p>
+<figure class="highlight styl"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 新增的月份折叠样式</span></span><br><span class="line"><span class="selector-class">.archive-month-header</span></span><br><span class="line">  <span class="attribute">position</span>: relative</span><br><span class="line">  <span class="attribute">display</span>: flex</span><br><span class="line">  <span class="attribute">align-items</span>: center</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">15px</span> <span class="number">0</span> <span class="number">15px</span> <span class="number">10px</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">8px</span> <span class="number">15px</span></span><br><span class="line">  <span class="attribute">cursor</span>: pointer</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">var</span>(--card-bg)</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="built_in">var</span>(--card-shadow)</span><br><span class="line">  <span class="attribute">transition</span>: all .<span class="number">3s</span> ease-in-out</span><br><span class="line"></span><br><span class="line">  <span class="selector-pseudo">&amp;:hover</span></span><br><span class="line">    <span class="comment">// background: var(--pseudo-hover)</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">5px</span>)</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.folder-icon</span></span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">12px</span></span><br><span class="line">    <span class="attribute">transition</span>: transform .<span class="number">3s</span> ease</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.month-name</span></span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1.1em</span></span><br><span class="line">    <span class="attribute">font-weight</span>: bold</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">var</span>(--font-color)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 当展开时，图标旋转</span></span><br><span class="line">  &amp;<span class="selector-class">.active</span></span><br><span class="line">    <span class="selector-class">.folder-icon</span></span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">90deg</span>)</span><br><span class="line">      <span class="attribute">color</span>: <span class="built_in">var</span>(--pseudo-hover)</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 默认隐藏文章条目</span></span><br><span class="line"><span class="selector-class">.article-sort-item</span></span><br><span class="line">  &amp;<span class="selector-class">.is-hidden</span></span><br><span class="line">    <span class="attribute">display</span>: none</span><br><span class="line"></span><br><span class="line"><span class="comment">// 给月份下的文章条目增加一点缩进，使其看起来有层级关系</span></span><br><span class="line"><span class="selector-class">.archive-month-header</span> + <span class="selector-class">.article-sort-item</span></span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">30px</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.article-sort-item</span></span><br><span class="line">  <span class="comment">// 确保同月文章之间的缩进一致</span></span><br><span class="line">  <span class="selector-pseudo">&amp;:not</span>(.year) + <span class="selector-class">.article-sort-item</span><span class="selector-pseudo">:not</span>(.year)</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">30px</span></span><br></pre></td></tr></table></figure>
+
+<p>5、创建 <code>themes/butterfly/layout/includes/archive-collapse.pug</code> 内容为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">script.</span><br><span class="line">  function initArchiveCollapse() {</span><br><span class="line">    const archivePage = document.getElementById('archive');</span><br><span class="line">    if (!archivePage) return;</span><br><span class="line"></span><br><span class="line">    // 查找所有月份标题，如果一个都没有，就没必要继续了</span><br><span class="line">    const monthHeaders = archivePage.querySelectorAll('.archive-month-header');</span><br><span class="line">    if (monthHeaders.length === 0) return;</span><br><span class="line"></span><br><span class="line">    // 默认隐藏所有文章条目</span><br><span class="line">    const allArticles = archivePage.querySelectorAll('.article-sort-item:not(.year)');</span><br><span class="line">    allArticles.forEach(article =&gt; {</span><br><span class="line">      article.classList.add('is-hidden');</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    monthHeaders.forEach(header =&gt; {</span><br><span class="line">      // 避免重复绑定事件</span><br><span class="line">      if (header.classList.contains('archive-event-bound')) return;</span><br><span class="line">      header.classList.add('archive-event-bound');</span><br><span class="line">      </span><br><span class="line">      header.addEventListener('click', function () {</span><br><span class="line">        this.classList.toggle('active');</span><br><span class="line">        const icon = this.querySelector('.folder-icon');</span><br><span class="line">        if (icon) {</span><br><span class="line">          if (this.classList.contains('active')) {</span><br><span class="line">            icon.classList.remove('fa-folder');</span><br><span class="line">            icon.classList.add('fa-folder-open');</span><br><span class="line">          } else {</span><br><span class="line">            icon.classList.remove('fa-folder-open');</span><br><span class="line">            icon.classList.add('fa-folder');</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">        </span><br><span class="line">        let nextSibling = this.nextElementSibling;</span><br><span class="line">        while (nextSibling &amp;&amp; nextSibling.classList.contains('article-sort-item') &amp;&amp; !nextSibling.classList.contains('year')) {</span><br><span class="line">          nextSibling.classList.toggle('is-hidden');</span><br><span class="line">          nextSibling = nextSibling.nextElementSibling;</span><br><span class="line">        }</span><br><span class="line">      });</span><br><span class="line">    });</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  // 将执行函数包装起来</span><br><span class="line">  function executeScript() {</span><br><span class="line">    // 使用一个短暂的延迟来确保长列表完全渲染完毕</span><br><span class="line">    setTimeout(initArchiveCollapse, 100);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  document.addEventListener('DOMContentLoaded', executeScript);</span><br><span class="line">  document.addEventListener('pjax:complete', executeScript);</span><br></pre></td></tr></table></figure>
+
+<p>这里给予浏览器一个短暂的（100毫秒）缓冲时间，确保庞大的文章列表完全渲染到 DOM 中后，再执行隐藏和绑定事件的脚本，从而修复了页面加载后默认全部展开且无法操作的 Bug。</p>
+<p>之后来到 <code>themes/butterfly/layout/includes/additional-js.pug</code> 来到文件最后，添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//- Archives page collapse</span><br><span class="line">if is_archive()</span><br><span class="line">  !=partial('includes/archive-collapse', {}, {cache: true})</span><br></pre></td></tr></table></figure>
+
+<p><strong>大功告成！！</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://diraw.top">Diraw</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://diraw.top/2025/08/14/CS/Hexo/Butterfly/Custom/12/">https://diraw.top/2025/08/14/CS/Hexo/Butterfly/Custom/12/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://diraw.top" target="_blank">Diraw的世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/Butterfly/">Butterfly</a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 右侧切换GitHub或邮箱评论</span></div><div class="comment-switch"><span class="first-comment">Giscus</span><span id="switch-btn"></span><span class="second-comment">Twikoo</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Diraw</div><div class="author-info-description">希望能构建心中的一片圣地</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/diraw"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://diraw.top/atom.xml" target="_blank" title=""><i class="fas fa-rss"></i></a><a class="social-icon" href="https://github.com/Diraw" target="_blank" title=""><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/3546387746654749" target="_blank" title=""><i class="fab fa-bilibili"></i></a><a class="social-icon" href="mailto:dirawtop@gmail.com" target="_blank" title=""><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/14/CS/Hexo/Butterfly/Custom/12/" title="Butterfly魔改12：归档页面按照月份折叠">Butterfly魔改12：归档页面按照月份折叠</a><time datetime="2025-08-14T11:00:00.000Z" title="发表于 2025-08-14 19:00:00">2025-08-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/14/LIFE/record/2/" title="龙泉山拍英仙座流星雨记">龙泉山拍英仙座流星雨记</a><time datetime="2025-08-14T08:00:00.000Z" title="发表于 2025-08-14 16:00:00">2025-08-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/09/CS/www/5/" title="Debain服务器常用工具">Debain服务器常用工具</a><time datetime="2025-08-09T09:14:00.000Z" title="发表于 2025-08-09 17:14:00">2025-08-09</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By Diraw</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2025147634号-1</a></div><!-- Add the time calculation script--><div></div><span id="timeDate">载入天数...</span><span id="times">载入时分...</span><script>var now = new Date(); 
+function createtime() { 
+  var grt = new Date("1/2/2025 21:36"); // 在此处修改你的建站时间
+  now.setTime(now.getTime() + 250); 
+  days = (now - grt) / 1000 / 60 / 60 / 24; 
+  dnum = Math.floor(days); 
+  hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum); 
+  hnum = Math.floor(hours); 
+  if (String(hnum).length == 1) { hnum = "0" + hnum; } 
+  minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum); 
+  mnum = Math.floor(minutes); 
+  if (String(mnum).length == 1) { mnum = "0" + mnum; } 
+  document.getElementById("timeDate").innerHTML = "本网站已运行 " + dnum + " 天 "; 
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分"; 
+} 
+setInterval(createtime, 250);</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Diraw/diraw.github.io',
+      'data-repo-id': 'R_kgDOMamP7g',
+      'data-category-id': 'DIC_kwDOMamP7s4ClvNn',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-api-kappa.vercel.app/',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo-api-kappa.vercel.app/',
+      region: 'ap-shanghai',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Giscus' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Giscus' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: true,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

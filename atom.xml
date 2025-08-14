@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-08-14T08:45:54.762Z</updated>
+  <updated>2025-08-14T09:59:30.928Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Butterfly魔改12：归档页面按照月份折叠</title>
+    <link href="https://diraw.top/2025/08/14/CS/Hexo/Butterfly/Custom/12/"/>
+    <id>https://diraw.top/2025/08/14/CS/Hexo/Butterfly/Custom/12/</id>
+    <published>2025-08-14T11:00:00.000Z</published>
+    <updated>2025-08-14T09:59:30.928Z</updated>
+    
+    
+    <summary type="html">Hexo自带的归档页面是没有折叠功能的，所以文章展开之后翻页进行查找，我觉得这样不如按时间折叠起来查找方便</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
+    
+  </entry>
   
   <entry>
     <title>龙泉山拍英仙座流星雨记</title>
@@ -468,36 +489,6 @@
     <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
     
     <category term="c++" scheme="https://diraw.top/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改10：给标签添加次方篇数</title>
-    <link href="https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/"/>
-    <id>https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/</id>
-    <published>2025-04-18T15:00:00.000Z</published>
-    <updated>2025-08-14T05:28:22.672Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h1&gt;&lt;p&gt;效果如下图：&lt;/p&gt;
-&lt;img src=&quot;/img/202504/92.png&quot; alt=&quot;Image 92&quot;&gt;
-
-&lt;h1</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
     
   </entry>
   

@@ -102,3 +102,7 @@ body {
   color: rgba(255, 255, 255, 0.3) !important;
   /* 黑暗模式下悬停颜色 */
 }
+
+.pagination .space {
+  color: white !important;
+}
