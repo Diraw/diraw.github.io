@@ -163,9 +163,9 @@
     <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="git" scheme="https://diraw.top/tags/git/"/>
-    
     <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="git" scheme="https://diraw.top/tags/git/"/>
     
   </entry>
   
@@ -184,9 +184,9 @@
     <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="ssh" scheme="https://diraw.top/tags/ssh/"/>
-    
     <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="ssh" scheme="https://diraw.top/tags/ssh/"/>
     
   </entry>
   

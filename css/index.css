@@ -1947,7 +1947,6 @@ figure.highlight pre .javascript .function {
   transition: all 0.3s ease-in-out;
 }
 .archive-month-header:hover {
-  background: var(--pseudo-hover);
   -webkit-transform: translateX(5px);
   -moz-transform: translateX(5px);
   -o-transform: translateX(5px);
