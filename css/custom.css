@@ -91,7 +91,6 @@ body {
 
 [data-theme="dark"] #post .tag_share .post-meta__tags:hover {
   border-color: #2a6e3f !important;
-  /* 悬停时边框变为绿色 */
 }
 
 [data-theme="dark"] #post .post-copyright:before {
@@ -104,5 +103,140 @@ body {
 }
 
 .pagination .space {
+  color: white !important;
+}
+
+
+[data-theme="dark"] .collections-item-content a:hover {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] #aside-content .card-tag-cloud a:hover {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .site-data a:hover .headline {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .site-data a:hover .length-num {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .content a:hover {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+html[data-theme="dark"] #card-toc .toc-content .toc-link:hover {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+html[data-theme="dark"] #page-header.post-bg.nav-fixed.nav-visible #nav {
+  a:hover,
+  span.site-page:hover,
+  #toggle-menu:hover {
+    color: white !important;
+  }
+
+  #blog-info:hover {
+    color: white !important;
+  }
+}
+
+html[data-theme="dark"] #page-header.full_page.nav-fixed.nav-visible #nav {
+  #blog-info a.nav-site-title:hover {
+    color: white!important;
+  }
+  #search-button span.site-page.social-icon.search:hover {
+    color: white !important;
+  }
+  .menus_items .menus_item a.site-page:hover {
+    color: white !important;
+  }
+  #toggle-menu:hover {
+    color: white !important;
+  }
+}
+
+html[data-theme="dark"] #page-header.full_page.nav-fixed.nav-visible #nav {
+  .menus_items .menus_item:hover span.site-page.group,
+  .menus_items .menus_item:hover span.site-page.group>i,
+  .menus_items .menus_item:hover span.site-page.group>span {
+    color: white !important;
+  }
+
+}
+
+/* 默认状态：为文字添加过渡效果，确保颜色和透明度变化都平滑 */
+.flink-list>.flink-list-item .flink-item-name,
+.flink-list>.flink-list-item .flink-item-desc,
+.flink-list>.flink-list-item a {
+  transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* 白天模式下悬停：改变文字颜色 */
+.flink-list>.flink-list-item:hover .flink-item-name,
+.flink-list>.flink-list-item:hover .flink-item-desc,
+.flink-list>.flink-list-item:hover a {
+  color: #2a6e3f;
+  opacity: 1;
+}
+
+/* 在黑暗模式下，覆盖悬停时的文字透明度 */
+html[data-theme="dark"] .flink-list>.flink-list-item:hover .flink-item-name,
+html[data-theme="dark"] .flink-list>.flink-list-item:hover .flink-item-desc,
+html[data-theme="dark"] .flink-list>.flink-list-item:hover a {
+  color: white;
+}
+
+html[data-theme="dark"] #local-search .search-dialog .search-nav .search-dialog-title {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+html[data-theme="dark"] #local-search .search-close-button .fas.fa-times {
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: none !important;
+}
+
+html[data-theme="dark"] #local-search .search-close-button:hover .fas.fa-times {
+  color: white !important;
+}
+
+html[data-theme="dark"] #local-search-input .local-search-box .local-search-box--input:focus {
+  border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+html[data-theme="dark"] #local-search-results .search-result-list .local-search-hit-item:hover a,
+html[data-theme="dark"] #local-search-results .search-result-list .local-search-hit-item:hover span.search-result-title,
+html[data-theme="dark"] #local-search-results .search-result-list .local-search-hit-item:hover p.search-result {
+  color: white !important;
+}
+
+html[data-theme="dark"] #local-search-results .search-result-list .local-search-hit-item::marker {
+  color: white !important;
+}
+
+html[data-theme="dark"] #local-search-input .local-search-box .local-search-box--input {
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+html[data-theme="dark"] a.article-meta__categories:hover {
+  color: white !important;
+}
+
+html[data-theme="dark"] a.post-meta-categories:hover {
+    color: white !important;
+}
+
+html[data-theme="dark"] a.twikoo-count:hover {
+  color: white !important;
+}
+
+html[data-theme="dark"] span#twikoo-count:hover {
+  color: white !important;
+}
+
+html[data-theme="dark"] a[href*="#post-comment"]:hover {
   color: white !important;
 }
