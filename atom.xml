@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-08-09T10:27:19.915Z</updated>
+  <updated>2025-08-14T08:45:54.762Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>龙泉山拍英仙座流星雨记</title>
+    <link href="https://diraw.top/2025/08/14/LIFE/record/2/"/>
+    <id>https://diraw.top/2025/08/14/LIFE/record/2/</id>
+    <published>2025-08-14T08:00:00.000Z</published>
+    <updated>2025-08-14T08:45:54.762Z</updated>
+    
+    
+    <summary type="html">每个时代都有仰望星空的人，你把这叫作浪漫，我觉得这是伴随一生的诅咒。记录第一次拍流星。</summary>
+    
+    
+    
+    <category term="生活" scheme="https://diraw.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="记录" scheme="https://diraw.top/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="星空" scheme="https://diraw.top/tags/%E6%98%9F%E7%A9%BA/"/>
+    
+    <category term="流星雨" scheme="https://diraw.top/tags/%E6%B5%81%E6%98%9F%E9%9B%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Debain服务器常用工具</title>
@@ -57,25 +80,6 @@
     <category term="cloudreve" scheme="https://diraw.top/tags/cloudreve/"/>
     
     <category term="云盘" scheme="https://diraw.top/tags/%E4%BA%91%E7%9B%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>证明四元雅可比恒等式</title>
-    <link href="https://diraw.top/2025/07/14/PHYSICS/3/"/>
-    <id>https://diraw.top/2025/07/14/PHYSICS/3/</id>
-    <published>2025-07-14T10:00:00.000Z</published>
-    <updated>2025-07-14T16:11:47.717Z</updated>
-    
-    
-    <summary type="html">证明[A,[B,[C,D]]]+[B,[C,[D,A]]]+[C,[D,[A,B]]+[D,[A,[B,C]]]=0</summary>
-    
-    
-    
-    <category term="物理" scheme="https://diraw.top/categories/%E7%89%A9%E7%90%86/"/>
-    
-    
-    <category term="理论力学" scheme="https://diraw.top/tags/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/"/>
     
   </entry>
   
@@ -274,31 +278,6 @@
   </entry>
   
   <entry>
-    <title>数学建模竞赛笔记</title>
-    <link href="https://diraw.top/2025/04/26/MATH/3/"/>
-    <id>https://diraw.top/2025/04/26/MATH/3/</id>
-    <published>2025-04-26T10:00:00.000Z</published>
-    <updated>2025-04-26T10:33:17.993Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h1&gt;&lt;h2 id=&quot;MATLAB学习&quot;&gt;&lt;a href=&quot;#MATLAB学习&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="数学" scheme="https://diraw.top/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-    <category term="数模" scheme="https://diraw.top/tags/%E6%95%B0%E6%A8%A1/"/>
-    
-  </entry>
-  
-  <entry>
     <title>PowerShell学习</title>
     <link href="https://diraw.top/2025/04/26/CS/Windows/2/"/>
     <id>https://diraw.top/2025/04/26/CS/Windows/2/</id>
@@ -466,19 +445,18 @@
   </entry>
   
   <entry>
-    <title>2025四月刷题记录</title>
-    <link href="https://diraw.top/2025/04/20/CS/cpp/luogu/1/"/>
-    <id>https://diraw.top/2025/04/20/CS/cpp/luogu/1/</id>
-    <published>2025-04-20T10:22:00.000Z</published>
-    <updated>2025-04-24T02:33:04.324Z</updated>
+    <title>在vscode上配置C++环境</title>
+    <link href="https://diraw.top/2025/04/19/CS/cpp/1/"/>
+    <id>https://diraw.top/2025/04/19/CS/cpp/1/</id>
+    <published>2025-04-19T12:22:00.000Z</published>
+    <updated>2025-04-19T12:19:44.584Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;做着玩&lt;/p&gt;
-&lt;h1 id=&quot;一、语法学习&quot;&gt;&lt;a href=&quot;#一、语法学习&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;下载g-gcc&quot;&gt;&lt;a href=&quot;#下载g-gcc&quot; class=&quot;headerlink&quot; title=&quot;下载g++/gcc&quot;&gt;&lt;/a&gt;下载g++/gcc&lt;/h1&gt;&lt;h2 id=&quot;windows&quot;&gt;&lt;a href=&quot;#windows&quot;</summary>
         
       
     
@@ -487,9 +465,39 @@
     <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
+    <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
+    
     <category term="c++" scheme="https://diraw.top/tags/c/"/>
     
-    <category term="洛谷" scheme="https://diraw.top/tags/%E6%B4%9B%E8%B0%B7/"/>
+  </entry>
+  
+  <entry>
+    <title>Butterfly魔改10：给标签添加次方篇数</title>
+    <link href="https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/"/>
+    <id>https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/</id>
+    <published>2025-04-18T15:00:00.000Z</published>
+    <updated>2025-08-14T05:28:22.672Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h1&gt;&lt;p&gt;效果如下图：&lt;/p&gt;
+&lt;img src=&quot;/img/202504/92.png&quot; alt=&quot;Image 92&quot;&gt;
+
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
     
   </entry>
   
