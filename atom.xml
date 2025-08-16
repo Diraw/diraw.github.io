@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-08-14T09:59:30.928Z</updated>
+  <updated>2025-08-16T09:39:30.303Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用python脚本对vscode服务器cpu占用率进行检测</title>
+    <link href="https://diraw.top/2025/08/16/CS/www/6/"/>
+    <id>https://diraw.top/2025/08/16/CS/www/6/</id>
+    <published>2025-08-16T09:14:00.000Z</published>
+    <updated>2025-08-16T09:39:30.303Z</updated>
+    
+    
+    <summary type="html">有没有好用而且资源占用率低的ssh软件啊，vscode服务器时不时就把服务器cpu占满了（虽然一部分也是我的问题）</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="python" scheme="https://diraw.top/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Butterfly魔改12：归档页面按照月份折叠</title>
@@ -462,33 +485,6 @@
     <category term="内存" scheme="https://diraw.top/tags/%E5%86%85%E5%AD%98/"/>
     
     <category term="回调" scheme="https://diraw.top/tags/%E5%9B%9E%E8%B0%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在vscode上配置C++环境</title>
-    <link href="https://diraw.top/2025/04/19/CS/cpp/1/"/>
-    <id>https://diraw.top/2025/04/19/CS/cpp/1/</id>
-    <published>2025-04-19T12:22:00.000Z</published>
-    <updated>2025-04-19T12:19:44.584Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;下载g-gcc&quot;&gt;&lt;a href=&quot;#下载g-gcc&quot; class=&quot;headerlink&quot; title=&quot;下载g++/gcc&quot;&gt;&lt;/a&gt;下载g++/gcc&lt;/h1&gt;&lt;h2 id=&quot;windows&quot;&gt;&lt;a href=&quot;#windows&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
-    
-    <category term="c++" scheme="https://diraw.top/tags/c/"/>
     
   </entry>
   
