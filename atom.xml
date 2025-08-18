@@ -345,33 +345,6 @@
   </entry>
   
   <entry>
-    <title>PowerShell学习</title>
-    <link href="https://diraw.top/2025/04/26/CS/Windows/2/"/>
-    <id>https://diraw.top/2025/04/26/CS/Windows/2/</id>
-    <published>2025-04-26T06:00:00.000Z</published>
-    <updated>2025-04-26T10:34:39.601Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;shell&quot;&gt;&lt;a href=&quot;#shell&quot; class=&quot;headerlink&quot; title=&quot;shell&quot;&gt;&lt;/a&gt;shell&lt;/h1&gt;&lt;p&gt;Shell</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
-    
-    <category term="powershell" scheme="https://diraw.top/tags/powershell/"/>
-    
-  </entry>
-  
-  <entry>
     <title>重装windows初始化</title>
     <link href="https://diraw.top/2025/04/26/CS/Windows/0/"/>
     <id>https://diraw.top/2025/04/26/CS/Windows/0/</id>
@@ -454,18 +427,18 @@
   </entry>
   
   <entry>
-    <title>正则表达式学习</title>
-    <link href="https://diraw.top/2025/04/21/CS/Re/1/"/>
-    <id>https://diraw.top/2025/04/21/CS/Re/1/</id>
-    <published>2025-04-21T05:00:00.000Z</published>
-    <updated>2025-04-21T09:15:03.155Z</updated>
+    <title>在vscode上配置C++环境</title>
+    <link href="https://diraw.top/2025/04/19/CS/cpp/1/"/>
+    <id>https://diraw.top/2025/04/19/CS/cpp/1/</id>
+    <published>2025-04-19T12:22:00.000Z</published>
+    <updated>2025-04-19T12:19:44.584Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot; title=&quot;基本语法&quot;&gt;&lt;/a&gt;基本语法&lt;/h1&gt;&lt;h2 id=&quot;匹配&quot;&gt;&lt;a href=&quot;#匹配&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;下载g-gcc&quot;&gt;&lt;a href=&quot;#下载g-gcc&quot; class=&quot;headerlink&quot; title=&quot;下载g++/gcc&quot;&gt;&lt;/a&gt;下载g++/gcc&lt;/h1&gt;&lt;h2 id=&quot;windows&quot;&gt;&lt;a href=&quot;#windows&quot;</summary>
         
       
     
@@ -474,7 +447,39 @@
     <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-    <category term="正则表达式" scheme="https://diraw.top/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
+    
+    <category term="c++" scheme="https://diraw.top/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly魔改10：给标签添加次方篇数</title>
+    <link href="https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/"/>
+    <id>https://diraw.top/2025/04/18/CS/Hexo/Butterfly/Custom/10/</id>
+    <published>2025-04-18T15:00:00.000Z</published>
+    <updated>2025-08-14T05:28:22.672Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h1&gt;&lt;p&gt;效果如下图：&lt;/p&gt;
+&lt;img src=&quot;/img/202504/92.png&quot; alt=&quot;Image 92&quot;&gt;
+
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
     
   </entry>
   
