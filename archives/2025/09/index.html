@@ -1,0 +1,450 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>九月 2025 | Diraw的世界</title><meta name="author" content="Diraw"><meta name="copyright" content="Diraw"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="希望能构建心中的一片圣地">
+<meta property="og:type" content="website">
+<meta property="og:title" content="九月 2025">
+<meta property="og:url" content="https://diraw.top/archives/2025/09/index.html">
+<meta property="og:site_name" content="Diraw的世界">
+<meta property="og:description" content="希望能构建心中的一片圣地">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://diraw.top/img/avatar.png">
+<meta property="article:author" content="Diraw">
+<meta property="article:tag" content="物理 数学 计算机 生活 成长">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://diraw.top/img/avatar.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://diraw.top/archives/2025/09/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0a1c909c9bf124fdb4524159d9989c48";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-LY9E5NJX4B"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-LY9E5NJX4B')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-LY9E5NJX4B', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '九月 2025',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/collections.css"><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Diraw的世界" type="application/atom+xml">
+</head><body style="visibility: hidden; overflow: hidden;"><div id="web_bg" style="background-image: url(/img/2.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://wiki.diraw.top"><i class="fa-fw fas fa-book"></i><span> wiki</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Diraw的世界</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://wiki.diraw.top"><i class="fa-fw fas fa-book"></i><span> wiki</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">九月 2025</h1></div></header><main class="layout" id="content-inner"><div id="archive"><div class="article-sort-title">全部文章 - 1</div><div class="article-sort"><div class="article-sort-item year">2025</div><!-- 新增月份头部，可点击--><div class="archive-month-header"><i class="fas fa-folder folder-icon"></i><span class="month-name">九月 (1篇文章)</span></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-09-28T03:20:00.000Z" title="发表于 2025-09-28 11:20:00">2025-09-28</time></div><a class="article-sort-item-title" href="/2025/09/28/CS/www/8/" title="放弃todesk，服务器自建rustdesk服务">放弃todesk，服务器自建rustdesk服务</a></div></div><!-- 新增月份头部，可点击--><div class="archive-month-header"><i class="fas fa-folder folder-icon"></i><span class="month-name">八月 (5篇文章)</span></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-08-16T12:14:00.000Z" title="发表于 2025-08-16 20:14:00">2025-08-16</time></div><a class="article-sort-item-title" href="/2025/08/16/CS/www/7/" title="自建EasyImage图床，并配置Twikoo">自建EasyImage图床，并配置Twikoo</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-08-16T09:14:00.000Z" title="发表于 2025-08-16 17:14:00">2025-08-16</time></div><a class="article-sort-item-title" href="/2025/08/16/CS/www/6/" title="用Python脚本对vscode服务器cpu占用率进行检测">用Python脚本对vscode服务器cpu占用率进行检测</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-08-14T11:00:00.000Z" title="发表于 2025-08-14 19:00:00">2025-08-14</time></div><a class="article-sort-item-title" href="/2025/08/14/CS/Hexo/Butterfly/Custom/12/" title="Butterfly魔改12：归档页面按照月份折叠">Butterfly魔改12：归档页面按照月份折叠</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-08-14T08:00:00.000Z" title="发表于 2025-08-14 16:00:00">2025-08-14</time></div><a class="article-sort-item-title" href="/2025/08/14/LIFE/record/2/" title="龙泉山拍英仙座流星雨记">龙泉山拍英仙座流星雨记</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-08-09T09:14:00.000Z" title="发表于 2025-08-09 17:14:00">2025-08-09</time></div><a class="article-sort-item-title" href="/2025/08/09/CS/www/5/" title="Debain服务器常用工具">Debain服务器常用工具</a></div></div><!-- 新增月份头部，可点击--><div class="archive-month-header"><i class="fas fa-folder folder-icon"></i><span class="month-name">七月 (1篇文章)</span></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-07-16T01:22:00.000Z" title="发表于 2025-07-16 09:22:00">2025-07-16</time></div><a class="article-sort-item-title" href="/2025/07/16/CS/www/4/" title="用云服务器自建云盘服务">用云服务器自建云盘服务</a></div></div><!-- 新增月份头部，可点击--><div class="archive-month-header"><i class="fas fa-folder folder-icon"></i><span class="month-name">六月 (5篇文章)</span></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-06-29T05:22:00.000Z" title="发表于 2025-06-29 13:22:00">2025-06-29</time></div><a class="article-sort-item-title" href="/2025/06/29/CS/www/3/" title="用云服务器对obsidian进行远程同步">用云服务器对obsidian进行远程同步</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-06-21T11:00:00.000Z" title="发表于 2025-06-21 19:00:00">2025-06-21</time></div><a class="article-sort-item-title" href="/2025/06/21/CS/Hexo/Butterfly/Custom/11/" title="Butterfly魔改11：网页自动调节首页帖子高度">Butterfly魔改11：网页自动调节首页帖子高度</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-06-21T02:22:00.000Z" title="发表于 2025-06-21 10:22:00">2025-06-21</time></div><a class="article-sort-item-title" href="/2025/06/21/CS/www/2/" title="创建git hook自动拉取远程仓库">创建git hook自动拉取远程仓库</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-06-16T12:22:00.000Z" title="发表于 2025-06-16 20:22:00">2025-06-16</time></div><a class="article-sort-item-title" href="/2025/06/16/CS/www/1/" title="免密ssh连接服务器">免密ssh连接服务器</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-06-05T07:30:00.000Z" title="发表于 2025-06-05 15:30:00">2025-06-05</time></div><a class="article-sort-item-title" href="/2025/06/05/CS/github/2/" title="AI截图翻译工具 v0.3.0已更新">AI截图翻译工具 v0.3.0已更新</a></div></div><!-- 新增月份头部，可点击--><div class="archive-month-header"><i class="fas fa-folder folder-icon"></i><span class="month-name">五月 (3篇文章)</span></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-05-25T10:10:00.000Z" title="发表于 2025-05-25 18:10:00">2025-05-25</time></div><a class="article-sort-item-title" href="/2025/05/25/CS/Windows/5/" title="取消右键“显示更多选项”和管理右键菜单">取消右键“显示更多选项”和管理右键菜单</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-05-25T10:00:00.000Z" title="发表于 2025-05-25 18:00:00">2025-05-25</time></div><a class="article-sort-item-title" href="/2025/05/25/CS/Windows/4/" title="将vscode打开目录添加到右键菜单">将vscode打开目录添加到右键菜单</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-05-04T13:00:00.000Z" title="发表于 2025-05-04 21:00:00">2025-05-04</time></div><a class="article-sort-item-title" href="/2025/05/04/LIFE/record/1/" title="回忆过去，以及致2026年1月1日的一封信">回忆过去，以及致2026年1月1日的一封信</a></div></div><!-- 新增月份头部，可点击--><div class="archive-month-header"><i class="fas fa-folder folder-icon"></i><span class="month-name">四月 (24篇文章)</span></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-27T10:00:00.000Z" title="发表于 2025-04-27 18:00:00">2025-04-27</time></div><a class="article-sort-item-title" href="/2025/04/27/CS/Windows/3/" title="自定义PowerShell命令">自定义PowerShell命令</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-26T04:00:00.000Z" title="发表于 2025-04-26 12:00:00">2025-04-26</time></div><a class="article-sort-item-title" href="/2025/04/26/CS/Windows/0/" title="重装windows初始化">重装windows初始化</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-25T15:00:00.000Z" title="发表于 2025-04-25 23:00:00">2025-04-25</time></div><a class="article-sort-item-title" href="/2025/04/25/CS/Windows/1/" title="清理C盘">清理C盘</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-23T12:00:00.000Z" title="发表于 2025-04-23 20:00:00">2025-04-23</time></div><a class="article-sort-item-title" href="/2025/04/23/CS/Linux/7/" title="将脚本文件保存为.desktop启动程序">将脚本文件保存为.desktop启动程序</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-19T12:22:00.000Z" title="发表于 2025-04-19 20:22:00">2025-04-19</time></div><a class="article-sort-item-title" href="/2025/04/19/CS/cpp/1/" title="在vscode上配置C++环境">在vscode上配置C++环境</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-18T15:00:00.000Z" title="发表于 2025-04-18 23:00:00">2025-04-18</time></div><a class="article-sort-item-title" href="/2025/04/18/CS/Hexo/Butterfly/Custom/10/" title="Butterfly魔改10：给标签添加次方篇数">Butterfly魔改10：给标签添加次方篇数</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-18T14:00:00.000Z" title="发表于 2025-04-18 22:00:00">2025-04-18</time></div><a class="article-sort-item-title" href="/2025/04/18/CS/github/1/" title="ssh无法远程到github">ssh无法远程到github</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-17T13:38:00.000Z" title="发表于 2025-04-17 21:38:00">2025-04-17</time></div><a class="article-sort-item-title" href="/2025/04/17/CS/Hexo/Error/3/" title="Hexo部署generate时报错：TypeError: tokens.at is not a function">Hexo部署generate时报错：TypeError: tokens.at is not a function</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-15T04:00:00.000Z" title="发表于 2025-04-15 12:00:00">2025-04-15</time></div><a class="article-sort-item-title" href="/2025/04/15/CS/git/3/" title="Git入门教程">Git入门教程</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-13T10:00:00.000Z" title="发表于 2025-04-13 18:00:00">2025-04-13</time></div><a class="article-sort-item-title" href="/2025/04/13/EN/2/" title="生活绝不会等你准备充分再让你上场：2025年大英赛参加有感">生活绝不会等你准备充分再让你上场：2025年大英赛参加有感</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-10T13:00:00.000Z" title="发表于 2025-04-10 21:00:00">2025-04-10</time></div><a class="article-sort-item-title" href="/2025/04/10/LIFE/emo/1/" title="这么大的世界，却找不到我的容身之所">这么大的世界，却找不到我的容身之所</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-10T12:00:00.000Z" title="发表于 2025-04-10 20:00:00">2025-04-10</time></div><a class="article-sort-item-title" href="/2025/04/10/CS/Hexo/Butterfly/Custom/9/" title="Butterfly魔改9：添加音乐播放器">Butterfly魔改9：添加音乐播放器</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-10T08:00:00.000Z" title="发表于 2025-04-10 16:00:00">2025-04-10</time></div><a class="article-sort-item-title" href="/2025/04/10/CS/git/2/" title="使用Git上传GitHub代码全过程/解决冲突/删除GitHub文件">使用Git上传GitHub代码全过程/解决冲突/删除GitHub文件</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-08T08:00:00.000Z" title="发表于 2025-04-08 16:00:00">2025-04-08</time></div><a class="article-sort-item-title" href="/2025/04/08/EN/1/" title="英语单词记忆法总结记录（附单词软件对比）">英语单词记忆法总结记录（附单词软件对比）</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-08T06:00:00.000Z" title="发表于 2025-04-08 14:00:00">2025-04-08</time></div><a class="article-sort-item-title" href="/2025/04/08/CS/Hexo/Butterfly/Custom/8/" title="Butterfly魔改8：添加文章搜索功能并调整导航位置">Butterfly魔改8：添加文章搜索功能并调整导航位置</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-08T05:00:00.000Z" title="发表于 2025-04-08 13:00:00">2025-04-08</time></div><a class="article-sort-item-title" href="/2025/04/08/CS/Hexo/Butterfly/Custom/7/" title="Butterfly魔改7：修改首页导航内容和图标">Butterfly魔改7：修改首页导航内容和图标</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-07T12:22:00.000Z" title="发表于 2025-04-07 20:22:00">2025-04-07</time></div><a class="article-sort-item-title" href="/2025/04/07/CS/git/1/" title="如何使用git本地回档">如何使用git本地回档</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-07T12:00:00.000Z" title="发表于 2025-04-07 20:00:00">2025-04-07</time></div><a class="article-sort-item-title" href="/2025/04/07/CS/Hexo/Butterfly/Custom/6/" title="Butterfly魔改6：修改透明背景和主题色">Butterfly魔改6：修改透明背景和主题色</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-06T08:00:00.000Z" title="发表于 2025-04-06 16:00:00">2025-04-06</time></div><a class="article-sort-item-title" href="/2025/04/06/CS/Linux/6/" title="双系统windows时间显示不对">双系统windows时间显示不对</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-05T14:00:00.000Z" title="发表于 2025-04-05 22:00:00">2025-04-05</time></div><a class="article-sort-item-title" href="/2025/04/05/CS/Linux/5/" title="ubuntu安装cuda驱动">ubuntu安装cuda驱动</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-05T07:00:00.000Z" title="发表于 2025-04-05 15:00:00">2025-04-05</time></div><a class="article-sort-item-title" href="/2025/04/05/CS/Linux/4/" title="重装ubuntu初始化">重装ubuntu初始化</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-04T09:00:00.000Z" title="发表于 2025-04-04 17:00:00">2025-04-04</time></div><a class="article-sort-item-title" href="/2025/04/04/CS/Linux/3/" title="如何缩短Linux终端中显示的用户名前缀">如何缩短Linux终端中显示的用户名前缀</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-04T07:00:00.000Z" title="发表于 2025-04-04 15:00:00">2025-04-04</time></div><a class="article-sort-item-title" href="/2025/04/04/CS/Linux/2/" title="在ubuntu上面安装vscode需注意的">在ubuntu上面安装vscode需注意的</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-04-04T05:00:00.000Z" title="发表于 2025-04-04 13:00:00">2025-04-04</time></div><a class="article-sort-item-title" href="/2025/04/04/CS/Linux/1/" title="如何在ubuntu上面安装hexo">如何在ubuntu上面安装hexo</a></div></div><!-- 新增月份头部，可点击--><div class="archive-month-header"><i class="fas fa-folder folder-icon"></i><span class="month-name">一月 (9篇文章)</span></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-01-07T04:38:00.000Z" title="发表于 2025-01-07 12:38:00">2025-01-07</time></div><a class="article-sort-item-title" href="/2025/01/07/CS/Hexo/Error/2/" title="Hexo部署twikoo功能时MongoDB报错：tlsv1 alert internal error">Hexo部署twikoo功能时MongoDB报错：tlsv1 alert internal error</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-01-05T14:26:00.000Z" title="发表于 2025-01-05 22:26:00">2025-01-05</time></div><a class="article-sort-item-title" href="/2025/01/05/CS/Hexo/Butterfly/Custom/5/" title="Butterfly魔改5：在网站底部添加建站时间">Butterfly魔改5：在网站底部添加建站时间</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-01-04T07:00:00.000Z" title="发表于 2025-01-04 15:00:00">2025-01-04</time></div><a class="article-sort-item-title" href="/2025/01/04/CS/Hexo/Butterfly/Custom/0/" title="Butterfly魔改准备工作：文件管理魔改代码">Butterfly魔改准备工作：文件管理魔改代码</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-01-04T05:01:00.000Z" title="发表于 2025-01-04 13:01:00">2025-01-04</time></div><a class="article-sort-item-title" href="/2025/01/04/CS/Hexo/Butterfly/Custom/4/" title="Butterfly魔改4：自动检测深色/浅色模式">Butterfly魔改4：自动检测深色/浅色模式</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-01-03T11:34:00.000Z" title="发表于 2025-01-03 19:34:00">2025-01-03</time></div><a class="article-sort-item-title" href="/2025/01/03/CS/Hexo/Butterfly/Custom/3/" title="Butterfly魔改3：修改副标题字体大小">Butterfly魔改3：修改副标题字体大小</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-01-03T10:39:00.000Z" title="发表于 2025-01-03 18:39:00">2025-01-03</time></div><a class="article-sort-item-title" href="/2025/01/03/CS/Hexo/Butterfly/Custom/2/" title="Butterfly魔改2：页面渐变切换">Butterfly魔改2：页面渐变切换</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-01-03T07:33:00.000Z" title="发表于 2025-01-03 15:33:00">2025-01-03</time></div><a class="article-sort-item-title" href="/2025/01/03/CS/Hexo/Butterfly/Custom/1/" title="Butterfly魔改1：首页大图预加载">Butterfly魔改1：首页大图预加载</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-01-02T16:00:00.000Z" title="发表于 2025-01-03 00:00:00">2025-01-03</time></div><a class="article-sort-item-title" href="/2025/01/03/CS/Hexo/Error/1/" title="Hexo报错ssh: connect to host github.com port 22: Connection timed out解决办法">Hexo报错ssh: connect to host github.com port 22: Connection timed out解决办法</a></div></div><!-- 文章条目，默认会被JS隐藏--><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-01-02T13:36:00.000Z" title="发表于 2025-01-02 21:36:00">2025-01-02</time></div><a class="article-sort-item-title" href="/2025/01/02/CS/Hexo/Butterfly/Error/1/" title="Butterfly报错TypeError: coverVal.indexOf is not a function解决办法">Butterfly报错TypeError: coverVal.indexOf is not a function解决办法</a></div></div></div><!--include includes/pagination.pug--></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Diraw</div><div class="author-info-description">希望能构建心中的一片圣地</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/diraw"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://diraw.top/atom.xml" target="_blank" title=""><i class="fas fa-rss"></i></a><a class="social-icon" href="https://github.com/Diraw" target="_blank" title=""><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/3546387746654749" target="_blank" title=""><i class="fab fa-bilibili"></i></a><a class="social-icon" href="mailto:dirawtop@gmail.com" target="_blank" title=""><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><p>所有<strong>知识搬运类</strong>博文已全部移动至<strong><a target="_blank" rel="noopener" href="http://wiki.diraw.top">wiki文档</a></strong></p></div></div><div class="card-widget"><div class="item-headline"><i class="fa fa-location-arrow"></i><span>其他站点</span></div><div class="collections-item-content"><a target="_blank" rel="noopener" href="https://note.diraw.top">资料分享</a></div><div class="collections-item-content"><a target="_blank" rel="noopener" href="https://cloud.diraw.top/">云盘服务</a></div><div class="collections-item-content"><a target="_blank" rel="noopener" href="https://word.wiki.diraw.top/">词源文档</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/28/CS/www/8/" title="放弃todesk，服务器自建rustdesk服务">放弃todesk，服务器自建rustdesk服务</a><time datetime="2025-09-28T03:20:00.000Z" title="发表于 2025-09-28 11:20:00">2025-09-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/16/CS/www/7/" title="自建EasyImage图床，并配置Twikoo">自建EasyImage图床，并配置Twikoo</a><time datetime="2025-08-16T12:14:00.000Z" title="发表于 2025-08-16 20:14:00">2025-08-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/16/CS/www/6/" title="用Python脚本对vscode服务器cpu占用率进行检测">用Python脚本对vscode服务器cpu占用率进行检测</a><time datetime="2025-08-16T09:14:00.000Z" title="发表于 2025-08-16 17:14:00">2025-08-16</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="card-category-list-name">生活</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD/"><span class="card-category-list-name">英语</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><span class="card-category-list-name">计算机</span><span class="card-category-list-count">43</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%A4%A7%E8%8B%B1%E8%B5%9B/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(67, 194, 86);">大英赛<sup>1</sup></a><a href="/tags/%E6%84%9F%E6%82%9F/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(50, 160, 50);">感悟<sup>1</sup></a><a href="/tags/%E8%83%8C%E5%8D%95%E8%AF%8D/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(111, 50, 126);">背单词<sup>1</sup></a><a href="/tags/linux/" class="tag-cloud-item" style="font-size: 1.34em; --tag-color: rgb(108, 69, 136);">linux<sup>7</sup></a><a href="/tags/ubuntu/" class="tag-cloud-item" style="font-size: 1.34em; --tag-color: rgb(114, 74, 50);">ubuntu<sup>7</sup></a><a href="/tags/vscode/" class="tag-cloud-item" style="font-size: 1.22em; --tag-color: rgb(87, 50, 57);">vscode<sup>3</sup></a><a href="/tags/Hexo/" class="tag-cloud-item" style="font-size: 1.45em; --tag-color: rgb(179, 106, 50);">Hexo<sup>18</sup></a><a href="/tags/cuda/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(117, 154, 122);">cuda<sup>1</sup></a><a href="/tags/windows/" class="tag-cloud-item" style="font-size: 1.3em; --tag-color: rgb(187, 52, 185);">windows<sup>5</sup></a><a href="/tags/powershell/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(50, 93, 55);">powershell<sup>1</sup></a><a href="/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/" class="tag-cloud-item" style="font-size: 1.19em; --tag-color: rgb(198, 50, 116);">注册表<sup>2</sup></a><a href="/tags/c/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(198, 50, 120);">c++<sup>1</sup></a><a href="/tags/git/" class="tag-cloud-item" style="font-size: 1.26em; --tag-color: rgb(127, 157, 190);">git<sup>4</sup></a><a href="/tags/ssh/" class="tag-cloud-item" style="font-size: 1.22em; --tag-color: rgb(99, 50, 141);">ssh<sup>3</sup></a><a href="/tags/github/" class="tag-cloud-item" style="font-size: 1.19em; --tag-color: rgb(174, 92, 150);">github<sup>2</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="tag-cloud-item" style="font-size: 1.38em; --tag-color: rgb(50, 111, 90);">服务器<sup>8</sup></a><a href="/tags/webdav/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(90, 128, 123);">webdav<sup>1</sup></a><a href="/tags/obsidian/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(168, 104, 107);">obsidian<sup>1</sup></a><a href="/tags/debian/" class="tag-cloud-item" style="font-size: 1.22em; --tag-color: rgb(152, 195, 189);">debian<sup>3</sup></a><a href="/tags/cloudreve/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(106, 143, 162);">cloudreve<sup>1</sup></a><a href="/tags/%E4%BA%91%E7%9B%98/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(50, 68, 130);">云盘<sup>1</sup></a><a href="/tags/python/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(50, 85, 151);">python<sup>1</sup></a><a href="/tags/1/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(58, 145, 82);">1<sup>1</sup></a><a href="/tags/%E8%AE%B0%E5%BD%95/" class="tag-cloud-item" style="font-size: 1.19em; --tag-color: rgb(57, 113, 124);">记录<sup>2</sup></a><a href="/tags/%E6%98%9F%E7%A9%BA/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(50, 145, 72);">星空<sup>1</sup></a><a href="/tags/%E6%B5%81%E6%98%9F%E9%9B%A8/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(50, 152, 168);">流星雨<sup>1</sup></a><a href="/tags/twikoo/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(73, 50, 122);">twikoo<sup>1</sup></a><a href="/tags/MongoDB/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(139, 125, 50);">MongoDB<sup>1</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/" class="tag-cloud-item" style="font-size: 1.15em; --tag-color: rgb(59, 156, 154);">图床<sup>1</sup></a><a href="/tags/Butterfly/" class="tag-cloud-item" style="font-size: 1.41em; --tag-color: rgb(111, 155, 50);">Butterfly<sup>14</sup></a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">48</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">35.5k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-28T04:03:29.073Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By Diraw</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2025147634号-1</a></div><div></div><span id="timeDate">载入天数...</span><span id="times">载入时分...</span><script>// 定义网站的起始运行时间
+// 请根据你的网站实际启动时间修改此处的日期和时间
+var grt = new Date("1/2/2025 21:36:00"); 
+
+// createtime 函数用于计算并更新显示时间
+function createtime() {
+  // 每次调用时都获取最新的当前时间，这是确保时间准确的关键
+  var now = new Date(); 
+
+  // 计算当前时间与起始时间之间的总毫秒差
+  var diff = now - grt;
+
+  // 如果起始时间在当前时间之后（例如，未来时间），则显示0天0小时0分
+  if (diff < 0) {
+    document.getElementById("timeDate").innerHTML = "本网站已运行 0 天 ";
+    document.getElementById("times").innerHTML = "00 小时 00 分";
+    return; // 结束函数执行
+  }
+
+  // 计算天数
+  var days = diff / (1000 * 60 * 60 * 24);
+  var dnum = Math.floor(days); 
+
+  // 计算小时数（从总毫秒差中减去天数对应的毫秒数，再转换为小时）
+  var hours = (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+  var hnum = Math.floor(hours); 
+  // 补零，确保小时数始终为两位
+  if (String(hnum).length == 1) { hnum = "0" + hnum; } 
+
+  // 计算分钟数（从小时数剩余的毫秒数中转换为分钟）
+  var minutes = (diff % (1000 * 60 * 60)) / (1000 * 60);
+  var mnum = Math.floor(minutes); 
+  // 补零，确保分钟数始终为两位
+  if (String(mnum).length == 1) { mnum = "0" + mnum; } 
+
+  // 更新页面上对应元素的文本内容
+  document.getElementById("timeDate").innerHTML = "本网站已运行 " + dnum + " 天 "; 
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分"; 
+} 
+
+// 使用 DOMContentLoaded 事件确保 HTML 元素加载完毕后再执行脚本
+document.addEventListener('DOMContentLoaded', function() {
+  // 第一次快速更新：页面加载后立即执行一次 createtime 函数
+  createtime();
+
+  setInterval(createtime, 1000); 
+});</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script src="/js/custom.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: true,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><script>function initArchiveCollapse() {
+  //- console.log('initArchiveCollapse function called!');
+  const archivePage = document.getElementById('archive');
+  if (!archivePage) {
+    //- console.log('Archive page element not found.');
+    return;
+  }
+
+  // 查找所有月份标题，如果一个都没有，就没必要继续了
+  const monthHeaders = archivePage.querySelectorAll('.archive-month-header');
+  if (monthHeaders.length === 0) {
+    //- console.log('No month headers found.');
+    return;
+  }
+
+  // 默认隐藏所有文章条目
+  const allArticles = archivePage.querySelectorAll('.article-sort-item:not(.year)');
+  allArticles.forEach(article => {
+    article.classList.add('is-hidden');
+  });
+
+  monthHeaders.forEach(header => {
+    // 避免重复绑定事件
+    if (header.classList.contains('archive-event-bound')) {
+      //- console.log('Skipping already bound header:', header);
+      return;
+    }
+    header.classList.add('archive-event-bound');
+    
+    header.addEventListener('click', function () {
+      this.classList.toggle('active');
+      const icon = this.querySelector('.folder-icon');
+      if (icon) {
+        if (this.classList.contains('active')) {
+          icon.classList.remove('fa-folder');
+          icon.classList.add('fa-folder-open');
+        } else {
+          icon.classList.remove('fa-folder-open');
+          icon.classList.add('fa-folder');
+        }
+      }
+      
+      let nextSibling = this.nextElementSibling;
+      while (nextSibling && nextSibling.classList.contains('article-sort-item') && !nextSibling.classList.contains('year')) {
+        nextSibling.classList.toggle('is-hidden');
+        nextSibling = nextSibling.nextElementSibling;
+      }
+    });
+  });
+}
+
+// 将执行函数包装起来
+function executeScript() {
+  //- console.log('executeScript called!');
+  // 使用一个短暂的延迟来确保长列表完全渲染完毕
+  setTimeout(initArchiveCollapse, 100);
+}
+
+document.addEventListener('DOMContentLoaded', executeScript);
+document.addEventListener('pjax:complete', executeScript);</script></div></body></html>
