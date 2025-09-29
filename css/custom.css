@@ -240,3 +240,7 @@ html[data-theme="dark"] span#twikoo-count:hover {
 html[data-theme="dark"] a[href*="#post-comment"]:hover {
   color: white !important;
 }
+
+html[data-theme="dark"] a[href="http://wiki.diraw.top"]:hover {
+  color: rgba(255, 255, 255, 0.7) !important;
+}

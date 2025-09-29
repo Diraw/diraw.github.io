@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-09-28T04:03:17.285Z</updated>
+  <updated>2025-09-29T05:44:05.156Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决windows更新之后，wsl不见了的问题</title>
+    <link href="https://diraw.top/2025/09/29/CS/Windows/6/"/>
+    <id>https://diraw.top/2025/09/29/CS/Windows/6/</id>
+    <published>2025-09-29T05:40:00.000Z</published>
+    <updated>2025-09-29T05:44:05.156Z</updated>
+    
+    
+    <summary type="html">windows更新之后wsl没了，文件资源管理器左边栏有linux的图标，但是点进去是空文件夹</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
+    
+    <category term="wsl" scheme="https://diraw.top/tags/wsl/"/>
+    
+  </entry>
   
   <entry>
     <title>放弃todesk，服务器自建rustdesk服务</title>
@@ -444,33 +465,6 @@
     <category term="linux" scheme="https://diraw.top/tags/linux/"/>
     
     <category term="ubuntu" scheme="https://diraw.top/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在vscode上配置C++环境</title>
-    <link href="https://diraw.top/2025/04/19/CS/cpp/1/"/>
-    <id>https://diraw.top/2025/04/19/CS/cpp/1/</id>
-    <published>2025-04-19T12:22:00.000Z</published>
-    <updated>2025-04-19T12:19:44.584Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;下载g-gcc&quot;&gt;&lt;a href=&quot;#下载g-gcc&quot; class=&quot;headerlink&quot; title=&quot;下载g++/gcc&quot;&gt;&lt;/a&gt;下载g++/gcc&lt;/h1&gt;&lt;h2 id=&quot;windows&quot;&gt;&lt;a href=&quot;#windows&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
-    
-    <category term="c++" scheme="https://diraw.top/tags/c/"/>
     
   </entry>
   
