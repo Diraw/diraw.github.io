@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-09-29T05:44:05.156Z</updated>
+  <updated>2025-10-04T13:15:50.223Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -17,11 +17,51 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用Ditto在不同windows电脑之间共享剪贴板</title>
+    <link href="https://diraw.top/2025/10/04/CS/Windows/7/"/>
+    <id>https://diraw.top/2025/10/04/CS/Windows/7/</id>
+    <published>2025-10-04T13:02:00.000Z</published>
+    <updated>2025-10-04T13:15:50.223Z</updated>
+    
+    
+    <summary type="html">推荐一个windows上很好用的小工具</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>debian服务器清理垃圾文件</title>
+    <link href="https://diraw.top/2025/10/04/CS/www/9/"/>
+    <id>https://diraw.top/2025/10/04/CS/www/9/</id>
+    <published>2025-10-04T12:09:00.000Z</published>
+    <updated>2025-10-04T13:00:50.596Z</updated>
+    
+    
+    <summary type="html">储存空间又满了QAQ</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="debian" scheme="https://diraw.top/tags/debian/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解决windows更新之后，wsl不见了的问题</title>
     <link href="https://diraw.top/2025/09/29/CS/Windows/6/"/>
     <id>https://diraw.top/2025/09/29/CS/Windows/6/</id>
     <published>2025-09-29T05:40:00.000Z</published>
-    <updated>2025-09-29T05:44:05.156Z</updated>
+    <updated>2025-10-04T12:07:31.976Z</updated>
     
     
     <summary type="html">windows更新之后wsl没了，文件资源管理器左边栏有linux的图标，但是点进去是空文件夹</summary>
@@ -408,63 +448,6 @@
     
     
     <category term="windows" scheme="https://diraw.top/tags/windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>清理C盘</title>
-    <link href="https://diraw.top/2025/04/25/CS/Windows/1/"/>
-    <id>https://diraw.top/2025/04/25/CS/Windows/1/</id>
-    <published>2025-04-25T15:00:00.000Z</published>
-    <updated>2025-04-26T10:10:27.219Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;C盘满了，清理一下，如图：&lt;/p&gt;
-&lt;img src=&quot;/img/202504/25/1.png&quot; alt=&quot;Image 1&quot; width=&quot;50%&quot;&gt;
-
-&lt;img src=&quot;/img/202504/25/2.png&quot; alt=&quot;Image 2&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>将脚本文件保存为.desktop启动程序</title>
-    <link href="https://diraw.top/2025/04/23/CS/Linux/7/"/>
-    <id>https://diraw.top/2025/04/23/CS/Linux/7/</id>
-    <published>2025-04-23T12:00:00.000Z</published>
-    <updated>2025-04-23T10:08:56.546Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在&lt;code&gt;~/.local/share/applications/&lt;/code&gt;下创建&lt;code&gt;.desktop&lt;/code&gt;文件，该目录用于存放用户自定义的应用程序启动器&lt;/p&gt;
-&lt;p&gt;在文件中写入如下内容：&lt;/p&gt;
-&lt;figure</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="linux" scheme="https://diraw.top/tags/linux/"/>
-    
-    <category term="ubuntu" scheme="https://diraw.top/tags/ubuntu/"/>
     
   </entry>
   

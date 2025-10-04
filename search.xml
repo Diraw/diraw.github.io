@@ -4,11 +4,63 @@
   
     
     <entry>
+      <title>使用Ditto在不同windows电脑之间共享剪贴板</title>
+      <link href="/2025/10/04/CS/Windows/7/"/>
+      <url>/2025/10/04/CS/Windows/7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="https://github.com/sabrogden/Ditto/releases">https://github.com/sabrogden/Ditto/releases</a></p><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><ul><li>双击或拖动或shift enter粘贴</li><li>按住ctrl多选</li></ul><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul><li>常规<ul><li>窗口弹出位置：上次打开位置</li><li>粘贴条目的过期日期：3天</li></ul></li><li>支持类型<ul><li>删除 Rich Text Format（不然复制较大excel表格会卡死）</li></ul></li><li>键盘快捷键<ul><li>激活Ditto：Ctrl + Alt + ,</li><li>粘贴时将剪贴项移动到列表顶部</li><li>使用当前所选组的最后十个复制项目<ul><li>位置1：Ctrl + Num 1</li><li>……</li></ul></li></ul></li></ul><h1 id="跨设备共享"><a href="#跨设备共享" class="headerlink" title="跨设备共享"></a>跨设备共享</h1><p>因为个人PC的IP一直在变，所以我使用同一局域网内电脑名称进行共享。具体配置如下图：</p><img src="/img/202510/6.png" width="75%"><p>在另外一台上也这样配置即可</p><p>成功后在一台电脑上ctrl-c之后，在另外一台电脑上马上就会出现复制的内容，并显示PC名称和IP：</p><img src="/img/202510/5.png" width="75%">]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>debian服务器清理垃圾文件</title>
+      <link href="/2025/10/04/CS/www/9/"/>
+      <url>/2025/10/04/CS/www/9/</url>
+      
+        <content type="html"><![CDATA[<h1 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h1><ol><li>查看 <code>/var/log/</code> 目录的大小</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">du</span> -sh /var/log/</span><br></pre></td></tr></table></figure><ol start="2"><li>查看根目录下前20大的目录，从大到小排列输出</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">du</span> -h / | <span class="built_in">sort</span> -rh | <span class="built_in">head</span> -n 20</span><br></pre></td></tr></table></figure><img src="/img/202510/3.png" width="75%"><ol start="3"><li>排除一些目录不进行扫描（比如我这里的 <code>/mnt</code> 是专门为Cloudreve挂载的机械盘）</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">du</span> -h --exclude=/mnt / | <span class="built_in">sort</span> -rh | <span class="built_in">head</span> -n 20</span><br></pre></td></tr></table></figure><h1 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h1><h2 id="APT缓存"><a href="#APT缓存" class="headerlink" title="APT缓存"></a>APT缓存</h2><ol><li>清理旧的下载包：</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt clean</span><br></pre></td></tr></table></figure><p>这个命令会删除 <code>/var/cache/apt/archives/</code> 目录下的所有 <code>.deb</code> 文件。</p><ol start="2"><li>清理不再需要的依赖包：</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt autoremove</span><br></pre></td></tr></table></figure><p>这个命令会删除那些作为其他软件包的依赖安装，但现在已经没有其他软件包依赖它们的包</p><h2 id="系统日志"><a href="#系统日志" class="headerlink" title="系统日志"></a>系统日志</h2><p>journal 是 systemd 的日志系统。它会存储大量的系统事件和程序输出。</p><ol><li>查看 journal 日志大小：</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">journalctl --disk-usage</span><br></pre></td></tr></table></figure><ol start="2"><li>设置 journal 日志大小限制：</li></ol><p>编辑 <code>/etc/systemd/journald.conf</code> 文件，修改 <code>SystemMaxUse</code> 参数来限制日志的最大占用空间。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SystemMaxUse=500M</span><br></pre></td></tr></table></figure><ol start="3"><li>保存并退出。然后重启 systemd-journald 服务：</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl restart systemd-journald</span><br></pre></td></tr></table></figure><p>这不会立即释放空间，但会阻止日志继续增长，并在达到限制时自动清理旧日志。</p><ol start="4"><li>立即清理旧的 journal 日志。</li></ol><p>按大小清理（例如，保留最近 500M 的日志）：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> journalctl --vacuum-size=500M</span><br></pre></td></tr></table></figure><p>按时间清理（例如，保留最近 7 天的日志）：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> journalctl --vacuum-time=7d</span><br></pre></td></tr></table></figure><h2 id="vscode服务器"><a href="#vscode服务器" class="headerlink" title="vscode服务器"></a>vscode服务器</h2><img src="/img/202510/4.png" width="75%"><p><code>.vscode-server</code> 是 Visual Studio Code 远程开发时在服务器上安装的组件。它包含 VS Code 的服务器端运行时、扩展等。cli/servers 目录可能包含不同版本的 VS Code Server。</p><p>我之前一直用的是 vscode 远程的服务器，但是后来发现太占用内存了（因为我喜欢直接 ssh 到根目录；<a href="https://diraw.top/2025/08/16/CS/www/6/">https://diraw.top/2025/08/16/CS/www/6/</a> ），后来发现用 mobaxterm 和 nvim 也很方便，便不再使用 VS Code 远程连接服务器了。</p><p>可以尝试删除整个 <code>.vscode-server</code> 目录，下次连接时 VS Code 会重新安装最新版本</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /root/.vscode-server</span><br></pre></td></tr></table></figure><h2 id="netdata"><a href="#netdata" class="headerlink" title="netdata"></a>netdata</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> debian </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决windows更新之后，wsl不见了的问题</title>
       <link href="/2025/09/29/CS/Windows/6/"/>
       <url>/2025/09/29/CS/Windows/6/</url>
       
-        <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>windows更新之后wsl没了，文件资源管理器左边栏有linux的图标，但是点进去是空文件夹</p><p>尝试在命令行中打开ubuntu或者运行wsl命令会出现：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PS C:\WINDOWS\system32&gt; wsl --install </span><br><span class="line">wsl: WSL 安装似乎已损坏 (错误代码： Wsl/CallMsi/Install/REGDB_E_CLASSNOTREG)。 </span><br><span class="line">按任意键修复 WSL，或 CTRL-C 取消。 </span><br><span class="line">此提示将在 60 秒后超时。</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PS C:\WINDOWS\system32&gt; wsl --update </span><br><span class="line">wsl: WSL 安装似乎已损坏 (错误代码： Wsl/CallMsi/Install/REGDB_E_CLASSNOTREG)。 </span><br><span class="line">按任意键修复 WSL，或 CTRL-C 取消。 </span><br><span class="line">此提示将在 60 秒后超时。 </span><br><span class="line">没有注册类 </span><br><span class="line">错误代码: Wsl/CallMsi/Install/REGDB_E_CLASSNOTREG</span><br></pre></td></tr></table></figure><p>使用 <code>SFC /scannow</code> 和 <code>DISM /Online /Cleanup-Image /RestoreHealth</code> 命令，都没有检查出问题</p><h1 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h1><p>猜测原因是 Windows 更新在某种程度上破坏了 WSL 核心组件的注册信息，导致系统无法正确识别和加载 WSL 所需的类，因此<strong>尝试禁用并重新启用 WSL 功能</strong></p><ol><li>以管理员身份打开 PowerShell</li><li>运行以下命令禁用 WSL 功能：</li></ol><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">disable-feature</span> /featurename:Microsoft<span class="literal">-Windows-Subsystem-Linux</span> /norestart</span><br><span class="line">dism.exe /online /<span class="built_in">disable-feature</span> /featurename:VirtualMachinePlatform /norestart</span><br></pre></td></tr></table></figure><ol start="3"><li>重新启动计算机</li><li>以管理员身份打开 PowerShell</li><li>运行以下命令启用 WSL 功能</li></ol><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows-Subsystem-Linux</span> /all /norestart</span><br><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>windows更新之后wsl没了，文件资源管理器左边栏有linux的图标，但是点进去是空文件夹</p><p>尝试在命令行中打开ubuntu或者运行wsl命令会出现：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PS C:\WINDOWS\system32&gt; wsl --install </span><br><span class="line">wsl: WSL 安装似乎已损坏 (错误代码： Wsl/CallMsi/Install/REGDB_E_CLASSNOTREG)。 </span><br><span class="line">按任意键修复 WSL，或 CTRL-C 取消。 </span><br><span class="line">此提示将在 60 秒后超时。</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PS C:\WINDOWS\system32&gt; wsl --update </span><br><span class="line">wsl: WSL 安装似乎已损坏 (错误代码： Wsl/CallMsi/Install/REGDB_E_CLASSNOTREG)。 </span><br><span class="line">按任意键修复 WSL，或 CTRL-C 取消。 </span><br><span class="line">此提示将在 60 秒后超时。 </span><br><span class="line">没有注册类 </span><br><span class="line">错误代码: Wsl/CallMsi/Install/REGDB_E_CLASSNOTREG</span><br></pre></td></tr></table></figure><p>使用 <code>SFC /scannow</code> 和 <code>DISM /Online /Cleanup-Image /RestoreHealth</code> 命令，都没有检查出问题</p><h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>猜测原因是 Windows 更新在某种程度上破坏了 WSL 核心组件的注册信息，导致系统无法正确识别和加载 WSL 所需的类，因此<strong>尝试禁用并重新启用 WSL 功能</strong></p><ol><li>以管理员身份打开 PowerShell</li><li>运行以下命令禁用 WSL 功能：</li></ol><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">disable-feature</span> /featurename:Microsoft<span class="literal">-Windows-Subsystem-Linux</span> /norestart</span><br><span class="line">dism.exe /online /<span class="built_in">disable-feature</span> /featurename:VirtualMachinePlatform /norestart</span><br></pre></td></tr></table></figure><ol start="3"><li>重新启动计算机（必要，不然会报错：50）</li><li>以管理员身份打开 PowerShell</li><li>运行以下命令启用 WSL 功能</li></ol><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows-Subsystem-Linux</span> /all /norestart</span><br><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure><h1 id="其他情况"><a href="#其他情况" class="headerlink" title="其他情况"></a>其他情况</h1><p>还有一种情况是，wsl需要更新：</p><img src="/img/202510/1.png" width="75%"><p>需要以管理员身份运行命令行，输入：<code>wsl.exe --update </code></p><img src="/img/202510/2.png" width="75%"><p>之后重启电脑就可以在文件资源管理器看到wsl图标了</p>]]></content>
       
       
       <categories>
