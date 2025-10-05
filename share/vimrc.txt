@@ -1,0 +1,213 @@
+" Owner:Diraw | Version:2025/10/5 | https://diraw.top/share/.vimrc
+
+" ---插件管理器配置---
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'git@github.com:neoclide/coc.nvim.git', {'branch': 'release'} " 代码补全
+Plug 'morhetz/gruvbox' " 主题
+Plug 'luochen1990/rainbow' " 彩虹括号
+Plug 'itchyny/lightline.vim' " 底部提示栏
+Plug 'git@github.com:preservim/nerdtree.git', { 'on': 'NERDTreeToggle' } " 文件树
+Plug 'git@github.com:preservim/nerdcommenter.git' " 快捷注释
+Plug 'git@github.com:jiangmiao/auto-pairs.git' " 自动补全括号
+Plug 'git@github.com:sheerun/vim-polyglot.git' " 语法高亮
+Plug 'tpope/vim-fugitive' " git插件
+
+call plug#end()
+
+" ---Vim配置---
+" 设置 leader 键位
+let mapleader = ","
+let g:mapleader = ','
+
+set tabstop=4 "设置制表符的宽度为4个空格
+set softtabstop=4
+set shiftwidth=4
+set expandtab "将制表符转换为空格
+set autoindent "开启自动缩进
+set smartindent
+
+set number "显示行号
+set incsearch "在输入搜索模式时，实时高亮匹配项
+set hlsearch "高亮所有匹配项
+set ignorecase "搜索时忽略大小写
+set smartcase "如果搜索模式包含大写字母，则区分大小写，否则忽略大小写
+set undofile "启用持久化撤销历史，即使关闭vim也能保留
+set undodir=~/.config/nvim/undodir
+
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,gbk,big5
+
+set clipboard=
+let g:loaded_python_provider = 1
+let g:loaded_python3_provider = 1
+
+highlight LineNr ctermfg=gray
+
+" 设置切换 paste 模式的快捷键
+nnoremap <F2> :set paste!<CR>
+
+" 清除高亮匹配项快捷键
+nnoremap <F5> :nohlsearch<CR>
+
+" ---coc.nvim配置---
+
+let g:coc_global_extensions = ['coc-copilot']
+
+" 使用TAB键进行选择
+inoremap <silent><expr> <TAB>
+    \ coc#pum#visible() ? coc#pum#next(1) :
+    \ CheckBackspace() ? "\<Tab>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" ctrl+@ 进行触发刷新
+inoremap <silent><expr> <c-@> coc#refresh()
+
+" 智能回退
+function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" 对之前（[g）和之后（]g）的进行代码诊断
+nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
+nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
+
+" 跳转到定义、类型定义、实现、引用
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
+
+" 使用 K 查看文档
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+    if CocAction('hasProvider', 'hover')
+        call CocActionAsync('doHover')
+    else
+        call feedkeys('K', 'in')
+    endif
+endfunction
+
+" 标准化代码
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" 代码重构
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+" 设置补全窗口未选择字符为深灰色，背景为白色
+highlight CocFloating ctermfg=darkgray ctermbg=lightgray
+
+set pumheight=7 "限制补全菜单长度
+
+" ---Gruvbox主题配置---
+if has('termguicolors')
+    set termguicolors
+endif
+
+colorscheme gruvbox
+
+set background=dark
+
+let g:gruvbox_italic = '1' " 启用斜体
+let g:gruvbox_bold = '1' " 启用粗体
+
+" ---rainbow配置---
+let g:rainbow_active = 1
+
+" ---lightline配置---
+set laststatus=2
+
+let g:lightline = {}
+
+" 对于活动窗口显示绝对路径，非活动窗口显示文件名
+let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
+        \ 'left': [ [ 'mode', 'paste' ],
+                \ [ 'readonly', 'my_filepath', 'modified', 'gitstatus'] ],
+        \ 'right': [ [ 'lineinfo' ], [ 'percent' ],
+                \ [ 'fileformat', 'fileencoding'] ],
+    \ },
+    \ 'inactive': {
+        \ 'left': [ [ 'filename' ] ],
+        \ 'right': [ [ 'lineinfo' ], [ 'percent' ] ],
+    \ },
+    \ 'component_function': {
+        \ 'my_filepath': 'LightlineFilepath',
+        \ 'gitstatus': 'LightlineGitStatus',
+    \ },
+\ }
+
+" 获取绝对路径的函数
+function! LightlineFilepath()
+    return expand('%:p')
+endfunction
+
+" 获取 Git 状态的函数
+function! LightlineGitStatus()
+    if exists('*FugitiveHead')
+        " 获取当前分支名称
+        let l:branch = FugitiveHead()
+        " 获取当前文件绝对路径
+        let l:file = expand('%:p')
+        " 如果文件不存在或不可读
+        if empty(l:file) || !filereadable(l:file)
+            return (empty(l:branch) ? '(no branch)' : l:branch) . ':Missing'
+        endif
+        " 查询当前文件的 Git 状态
+        let l:status = system('git status --porcelain ' . shellescape(l:file))
+        let l:status = substitute(l:status, '\n', '', 'g')
+        let l:state = ''
+        if l:status =~ '^??'
+            let l:state = 'Untracked'
+        elseif l:status =~ '^!!'
+            let l:state = 'Ignored'
+        elseif l:status =~ '^M ' || l:status =~ '^ M'
+            let l:state = 'Modified'
+        elseif l:status =~ '^A '
+            let l:state = 'Staged'
+        elseif l:status =~ '^D '
+            let l:state = 'Deleted'
+        elseif l:status =~ '^R '
+            let l:state = 'Renamed'
+        elseif l:status =~ '^C '
+            let l:state = 'Copied'
+        elseif l:status =~ '^UU'
+            let l:state = 'Unmerged'
+        else
+            let l:state = 'Clean'
+        endif
+        return (empty(l:branch) ? '(no branch)' : l:branch) . ':' . l:state
+    endif
+    return ''
+endfunction
+
+" ---nerdtree配置---
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" ---auto-pairs配置---
+
+" 移除 .vimrc 文件中对于双引号的补全
+autocmd BufNewFile,BufRead *.vimrc let b:AutoPairs = AutoPairsDefine({}, ['"'])
+
+" ---nerdcommenter配置---
+let g:NERDCreateDefaultMappings = 1
+
+" 默认在注释分隔符后添加空格
+let g:NERDSpaceDelims = 1
+
+" 允许注释和反转空行
+let g:NERDCommentEmptyLines = 1
+
+" 将行式注释分隔符左对齐，而不是跟随代码缩进
+let g:NERDDefaultAlign = 'left'
