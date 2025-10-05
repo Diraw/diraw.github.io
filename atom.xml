@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-10-04T13:15:50.223Z</updated>
+  <updated>2025-10-05T09:18:51.807Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在ubuntu/debian上安装neovim，并分享个人配置文件</title>
+    <link href="https://diraw.top/2025/10/05/CS/Linux/8/"/>
+    <id>https://diraw.top/2025/10/05/CS/Linux/8/</id>
+    <published>2025-10-05T09:17:00.000Z</published>
+    <updated>2025-10-05T09:18:51.807Z</updated>
+    
+    
+    <summary type="html">从vim切换到nvim了</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="linux" scheme="https://diraw.top/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://diraw.top/tags/ubuntu/"/>
+    
+    <category term="debian" scheme="https://diraw.top/tags/debian/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Ditto在不同windows电脑之间共享剪贴板</title>
@@ -423,31 +446,6 @@
     <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
     <category term="powershell" scheme="https://diraw.top/tags/powershell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>重装windows初始化</title>
-    <link href="https://diraw.top/2025/04/26/CS/Windows/0/"/>
-    <id>https://diraw.top/2025/04/26/CS/Windows/0/</id>
-    <published>2025-04-26T04:00:00.000Z</published>
-    <updated>2025-04-26T10:35:31.133Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;1、anaconda&lt;/strong&gt;：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
   </entry>
   
