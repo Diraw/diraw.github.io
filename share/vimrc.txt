@@ -1,7 +1,7 @@
 " Owner:Diraw | Version:2025/10/5 | https://diraw.top/share/.vimrc
 
 " ---插件管理器配置---
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'git@github.com:neoclide/coc.nvim.git', {'branch': 'release'} " 代码补全
 Plug 'morhetz/gruvbox' " 主题
@@ -33,7 +33,7 @@ set hlsearch "高亮所有匹配项
 set ignorecase "搜索时忽略大小写
 set smartcase "如果搜索模式包含大写字母，则区分大小写，否则忽略大小写
 set undofile "启用持久化撤销历史，即使关闭vim也能保留
-set undodir=~/.config/nvim/undodir
+set undodir=~/.vim/undodir
 
 set encoding=utf-8
 set fileencoding=utf-8
