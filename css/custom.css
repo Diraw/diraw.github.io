@@ -282,3 +282,7 @@ html[data-theme="dark"] .post-copyright a:hover {
 html[data-theme="dark"] footer a:hover {
   color: white !important;
 }
+
+html[data-theme="dark"] #post-comment a:hover {
+  color: white !important;
+}
