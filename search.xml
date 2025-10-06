@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>使用diskpart格式化u盘</title>
+      <link href="/2025/10/06/CS/Windows/8/"/>
+      <url>/2025/10/06/CS/Windows/8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>u盘之前拿去刷启动盘了，之后直接在文件资源管理器里面格式化不了，有写保护，只好用diskpart来处理</p><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><ol><li>以管理员的身份启动cmd，输入 <code>diskpart</code></li><li><code>list disk</code> 查看磁盘编号（可以先 右键开始菜单-磁盘管理 看看u盘有没有被识别以及编号）</li></ol><img src="/img/202510/12.png" width="75%"><ol start="3"><li><code>select disk 2</code> 选择u盘（可以 <code>detail disk</code> 查看磁盘具体信息）</li></ol><img src="/img/202510/13.png" width="75%"><ol start="4"><li><code>clean</code> 清除磁盘数据</li><li><code>create partition primary</code> 创建主分区，<code>select partition 1</code> 选择分区，<code>format fs=ntfs quick</code> 以ntfs的文件系统格式化</li><li><code>assign</code> 分配盘符（实测会自动分配），<code>exit</code> 退出程序</li></ol><img src="/img/202510/14.png" width="50%"><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>一些知识性的内容写在wiki那边了：<a href="https://wiki.diraw.top/%E5%85%B6%E4%BB%96/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%B3%BB%E7%BB%9F%E5%88%86%E5%8C%BA">系统分区</a>、<a href="https://wiki.diraw.top/windows/%E8%BD%AF%E4%BB%B6/diskpart">dispart</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在ubuntu/debian上安装neovim，并分享个人配置文件</title>
       <link href="/2025/10/05/CS/Linux/8/"/>
       <url>/2025/10/05/CS/Linux/8/</url>

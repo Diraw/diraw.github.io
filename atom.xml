@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-10-05T12:27:31.662Z</updated>
+  <updated>2025-10-06T08:21:34.374Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用diskpart格式化u盘</title>
+    <link href="https://diraw.top/2025/10/06/CS/Windows/8/"/>
+    <id>https://diraw.top/2025/10/06/CS/Windows/8/</id>
+    <published>2025-10-06T08:00:00.000Z</published>
+    <updated>2025-10-06T08:21:34.374Z</updated>
+    
+    
+    <summary type="html">u盘之前拿去刷启动盘了，之后直接在文件资源管理器里面格式化不了，有写保护，只好用diskpart来处理</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
+    
+  </entry>
   
   <entry>
     <title>在ubuntu/debian上安装neovim，并分享个人配置文件</title>
@@ -44,7 +63,7 @@
     <link href="https://diraw.top/2025/10/04/CS/Windows/7/"/>
     <id>https://diraw.top/2025/10/04/CS/Windows/7/</id>
     <published>2025-10-04T13:02:00.000Z</published>
-    <updated>2025-10-04T13:15:50.223Z</updated>
+    <updated>2025-10-06T07:36:34.228Z</updated>
     
     
     <summary type="html">推荐一个windows上很好用的小工具</summary>
@@ -410,34 +429,6 @@
     
     
     <category term="记录" scheme="https://diraw.top/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义PowerShell命令</title>
-    <link href="https://diraw.top/2025/04/27/CS/Windows/3/"/>
-    <id>https://diraw.top/2025/04/27/CS/Windows/3/</id>
-    <published>2025-04-27T10:00:00.000Z</published>
-    <updated>2025-04-27T10:02:29.849Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot; title=&quot;步骤&quot;&gt;&lt;/a&gt;步骤&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1、打开 PowerShell 配置文件：&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
-    
-    <category term="powershell" scheme="https://diraw.top/tags/powershell/"/>
     
   </entry>
   

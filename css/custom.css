@@ -244,3 +244,41 @@ html[data-theme="dark"] a[href*="#post-comment"]:hover {
 html[data-theme="dark"] a[href="http://wiki.diraw.top"]:hover {
   color: rgba(255, 255, 255, 0.7) !important;
 }
+
+html[data-theme="dark"] a.article-sort-item-title:hover {
+  color: white !important;
+}
+
+html[data-theme="dark"] a.category-list-link:hover {
+  color: white !important;
+}
+
+html[data-theme="light"] article a:not(#aside-content a) {
+  color: #8b0000;
+}
+
+html[data-theme="light"] article a:not(#aside-content a):hover {
+  color: #f40002;
+}
+
+/* 暗模式下，正文内 <p> 标签中超链接的颜色 */
+html[data-theme="dark"] article a {
+  color: #beb8dc;
+}
+
+html[data-theme="dark"] article a:hover {
+  color: #ddd7ff;
+}
+
+html[data-theme="dark"] code {
+  /* color: #8ecfc9 !important; */
+  color: #82b0d2 !important;
+}
+
+html[data-theme="dark"] .post-copyright a:hover {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html[data-theme="dark"] footer a:hover {
+  color: white !important;
+}
