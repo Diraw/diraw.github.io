@@ -342,3 +342,7 @@ html[data-theme="dark"] .archive-announcement a:hover {
 html[data-theme="light"] .archive-announcement p {
   color: #000000;
 }
+
+html[data-theme="dark"] #page a:hover {
+  color: white !important;
+}
