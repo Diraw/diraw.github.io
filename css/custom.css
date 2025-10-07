@@ -286,3 +286,58 @@ html[data-theme="dark"] footer a:hover {
 html[data-theme="dark"] #post-comment a:hover {
   color: white !important;
 }
+
+html[data-theme="dark"] #nav a:hover {
+  color: white !important;
+}
+
+html[data-theme="dark"] #nav .menus_item span:hover {
+  color: white !important;
+}
+
+html[data-theme="dark"] #nav #search-button span:hover {
+  color: white !important;
+}
+
+.archive-announcement {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 0;
+
+  font-size: 1.1em;
+  color: #fff;
+  line-height: 1.5;
+  border-radius: 5px;
+
+  padding-bottom: 15px;
+}
+
+.archive-announcement::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  /* 竖线距离左侧的距离，与下方时间轴竖线对齐 */
+  top: 0;
+  bottom: -10px;
+  /* 关键：向下延伸，覆盖与下方元素的间距 */
+  width: 2px;
+  background-color: #46b869;
+  z-index: 1;
+  /* 确保竖线在其他元素之上 */
+}
+
+.archive-announcement p {
+  margin: 0;
+}
+
+.archive-announcement a {
+  color: #beb8dc;
+  font-weight: bold;
+}
+
+.archive-announcement a:hover {
+  color: #ddd7ff;
+  /* 鼠标悬停时的颜色 */
+  text-decoration: none;
+  /* 鼠标悬停时移除下划线 */
+}
