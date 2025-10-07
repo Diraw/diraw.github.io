@@ -330,14 +330,15 @@ html[data-theme="dark"] #nav #search-button span:hover {
   margin: 0;
 }
 
-.archive-announcement a {
+html[data-theme="dark"] .archive-announcement a {
   color: #beb8dc;
   font-weight: bold;
 }
 
-.archive-announcement a:hover {
+html[data-theme="dark"] .archive-announcement a:hover {
   color: #ddd7ff;
-  /* 鼠标悬停时的颜色 */
-  text-decoration: none;
-  /* 鼠标悬停时移除下划线 */
+}
+
+html[data-theme="light"] .archive-announcement p {
+  color: #000000;
 }
