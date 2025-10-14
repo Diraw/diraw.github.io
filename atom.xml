@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-10-06T11:13:01.893Z</updated>
+  <updated>2025-10-14T11:44:40.763Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Tailscale对多台服务器进行内部组网并进行流量转发</title>
+    <link href="https://diraw.top/2025/10/14/CS/www/11/"/>
+    <id>https://diraw.top/2025/10/14/CS/www/11/</id>
+    <published>2025-10-14T11:04:00.000Z</published>
+    <updated>2025-10-14T11:44:40.763Z</updated>
+    
+    
+    <summary type="html">Tailscale底层使用WireGuard协议，性能优秀，延迟低，且配置简单</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>在debian服务器上搭建syncthing中转</title>
@@ -145,7 +164,7 @@
     <link href="https://diraw.top/2025/09/28/CS/www/8/"/>
     <id>https://diraw.top/2025/09/28/CS/www/8/</id>
     <published>2025-09-28T03:20:00.000Z</published>
-    <updated>2025-09-30T09:55:59.826Z</updated>
+    <updated>2025-10-14T11:45:34.562Z</updated>
     
     
     <summary type="html">被todesk恶心到了，遂转向开源的rustdesk，简单易用，直接薄纱了。本教程使用docker进行安装</summary>
@@ -401,27 +420,6 @@
     
     
     <summary type="html">使用.reg文件取消右键“显示更多选项”，使用ContextMenuManager管理右键菜单</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
-    
-    <category term="注册表" scheme="https://diraw.top/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>将vscode打开目录添加到右键菜单</title>
-    <link href="https://diraw.top/2025/05/25/CS/Windows/4/"/>
-    <id>https://diraw.top/2025/05/25/CS/Windows/4/</id>
-    <published>2025-05-25T10:00:00.000Z</published>
-    <updated>2025-05-25T09:37:15.607Z</updated>
-    
-    
-    <summary type="html">使用.reg文件自动添加注册表</summary>
     
     
     
