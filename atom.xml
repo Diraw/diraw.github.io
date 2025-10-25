@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-10-14T13:19:32.368Z</updated>
+  <updated>2025-10-25T12:17:09.366Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>在没有systemd的系统上启动守护进程</title>
+    <link href="https://diraw.top/2025/10/25/CS/Windows/9/"/>
+    <id>https://diraw.top/2025/10/25/CS/Windows/9/</id>
+    <published>2025-10-25T12:17:00.000Z</published>
+    <updated>2025-10-25T12:17:09.366Z</updated>
+    
+    
+    <summary type="html">解决 wsl 上 System has not been booted with systemd as init system (PID 1). Can&#39;t operate. 的问题</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="wsl" scheme="https://diraw.top/tags/wsl/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用Tailscale对多台服务器进行内部组网并进行流量转发</title>
     <link href="https://diraw.top/2025/10/14/CS/www/11/"/>
     <id>https://diraw.top/2025/10/14/CS/www/11/</id>
     <published>2025-10-14T11:04:00.000Z</published>
-    <updated>2025-10-14T13:19:32.368Z</updated>
+    <updated>2025-10-25T12:15:36.438Z</updated>
     
     
     <summary type="html">Tailscale底层使用WireGuard协议，性能优秀，延迟低，且配置简单</summary>
@@ -408,27 +427,6 @@
     
     
     <category term="github" scheme="https://diraw.top/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>取消右键“显示更多选项”和管理右键菜单</title>
-    <link href="https://diraw.top/2025/05/25/CS/Windows/5/"/>
-    <id>https://diraw.top/2025/05/25/CS/Windows/5/</id>
-    <published>2025-05-25T10:10:00.000Z</published>
-    <updated>2025-05-25T10:07:58.840Z</updated>
-    
-    
-    <summary type="html">使用.reg文件取消右键“显示更多选项”，使用ContextMenuManager管理右键菜单</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
-    
-    <category term="注册表" scheme="https://diraw.top/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
     
   </entry>
   
