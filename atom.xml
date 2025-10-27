@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-10-27T12:26:38.190Z</updated>
+  <updated>2025-10-27T12:28:53.180Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>不需要中继服务器，使用tailscale的内网ip进行windows自带的远程桌面连接</title>
+    <title>不需要服务器，使用tailscale内网ip进行windows自带远程桌面连接</title>
     <link href="https://diraw.top/2025/10/27/CS/Windows/10/"/>
     <id>https://diraw.top/2025/10/27/CS/Windows/10/</id>
     <published>2025-10-27T11:49:00.000Z</published>
-    <updated>2025-10-27T12:26:38.190Z</updated>
+    <updated>2025-10-27T12:28:53.180Z</updated>
     
     
     <summary type="html">相对于rustdesk来说安装更加方便，而且tailscale端对端、windows自带服务更安全</summary>
