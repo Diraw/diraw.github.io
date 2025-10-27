@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>不需要中继服务器，使用tailscale的内网ip进行windows自带的远程桌面连接</title>
+      <link href="/2025/10/27/CS/Windows/10/"/>
+      <url>/2025/10/27/CS/Windows/10/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装-tailscale"><a href="#安装-tailscale" class="headerlink" title="安装 tailscale"></a>安装 tailscale</h1><p>访问 <a href="https://tailscale.com/">Tailscale 官网</a>，使用 Google、Microsoft 或 GitHub 账号注册并登录，下载安装即可</p><p>之后打开终端，输入：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tailscale status</span><br></pre></td></tr></table></figure><img src="/img/202510/19.png" width="75%"><p>就可以看到你的ACL内网ip了</p><h1 id="被控机操作"><a href="#被控机操作" class="headerlink" title="被控机操作"></a>被控机操作</h1><p>1、<strong>家庭版只能控制别人，但是不能被控</strong>；其他版本不受影响</p><p>2、<strong>被控设备必须要有密码</strong>，没有密码连不上；修改密码 ctrl + alt + delete 组合键</p><p>3、启用远程桌面功能：“设置” -&gt; “系统” -&gt; “远程桌面”</p><p>win10：</p><img src="/img/202510/20.png"><p>4、可以 “设置” -&gt; “账户” -&gt; “其他账户” -&gt; “将其他人添加到这台电脑”，右键新建用户</p><img src="/img/202510/21.png"><p>然后回到开启远程桌面设置的地方，点击 “选择可远程访问这台电脑的用户” -&gt; “添加” -&gt; 输入名字 -&gt; “检查名称” -&gt; 确定</p><img src="/img/202510/22.png"><p>5、或者你可以直接创建拥有管理员权限的账户，管理员权限的账户自动可以被远程访问</p><h1 id="主控机操作"><a href="#主控机操作" class="headerlink" title="主控机操作"></a>主控机操作</h1><p>搜索 “远程桌面连接” -&gt; 输入内网ip -&gt; “显示选项” -&gt; 勾选“始终要求凭据” -&gt; 输入用户名 -&gt; 连接</p><img src="/img/202510/23.png" width="50%">]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在没有systemd的系统上启动守护进程</title>
       <link href="/2025/10/25/CS/Windows/9/"/>
       <url>/2025/10/25/CS/Windows/9/</url>
