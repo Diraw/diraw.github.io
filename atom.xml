@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-10-30T11:17:16.614Z</updated>
+  <updated>2025-10-27T12:28:53.180Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,33 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>测试</title>
-    <link href="https://diraw.top/2025/10/30/CS/cpp/2/"/>
-    <id>https://diraw.top/2025/10/30/CS/cpp/2/</id>
-    <published>2025-10-30T11:16:00.000Z</published>
-    <updated>2025-10-30T11:17:16.614Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一级&quot;&gt;&lt;a href=&quot;#一级&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
-    
-    <category term="c++" scheme="https://diraw.top/tags/c/"/>
-    
-  </entry>
   
   <entry>
     <title>不需要服务器，使用tailscale内网ip进行windows自带远程桌面连接</title>
@@ -433,6 +406,27 @@
     
     
     <category term="git" scheme="https://diraw.top/tags/git/"/>
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>免密ssh连接服务器</title>
+    <link href="https://diraw.top/2025/06/16/CS/www/1/"/>
+    <id>https://diraw.top/2025/06/16/CS/www/1/</id>
+    <published>2025-06-16T12:22:00.000Z</published>
+    <updated>2025-10-26T11:50:53.418Z</updated>
+    
+    
+    <summary type="html">新服务器初始化</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="ssh" scheme="https://diraw.top/tags/ssh/"/>
     
     <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
