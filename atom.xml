@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-12-05T15:31:01.243Z</updated>
+  <updated>2025-12-05T15:34:57.435Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://diraw.top/2025/12/05/CS/x220/1/"/>
     <id>https://diraw.top/2025/12/05/CS/x220/1/</id>
     <published>2025-12-05T15:21:00.000Z</published>
-    <updated>2025-12-05T15:31:01.243Z</updated>
+    <updated>2025-12-05T15:34:57.435Z</updated>
     
     
-    <summary type="html">通过 systemd-logind 和 acpid 脚本精确地控制屏幕熄灭的时间。开始倒腾买的二手x220…</summary>
+    <summary type="html">通过 systemd-logind 和 acpid 脚本精确地控制屏幕熄灭的时间，以及开始捣腾买的二手x220…</summary>
     
     
     
