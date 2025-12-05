@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-11-23T11:59:40.972Z</updated>
+  <updated>2025-12-03T13:59:35.824Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -17,14 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>自建github-readme-stats服务</title>
+    <link href="https://diraw.top/2025/12/03/CS/www/12/"/>
+    <id>https://diraw.top/2025/12/03/CS/www/12/</id>
+    <published>2025-12-03T13:44:00.000Z</published>
+    <updated>2025-12-03T13:59:35.824Z</updated>
+    
+    
+    <summary type="html">最近github-readme-stats官方的vercel配额一直崩，遂自己部署一个来用</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="github" scheme="https://diraw.top/tags/github/"/>
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Clifford代数和宇称不守恒</title>
     <link href="https://diraw.top/2025/11/07/PHYSICS/1/"/>
     <id>https://diraw.top/2025/11/07/PHYSICS/1/</id>
     <published>2025-11-07T14:25:00.000Z</published>
-    <updated>2025-11-23T11:59:40.972Z</updated>
+    <updated>2025-12-05T14:56:43.292Z</updated>
     
     
-    <summary type="html">从群、环、域等基本概念开始，一步步构建结合代数、Clifford代数、Dirac代数等数学结构，最后证明宇称不守恒。</summary>
+    <summary type="html">从群、环、域基本概念开始，一步步构建结合代数、Clifford代数、Dirac代数数学结构，最后证明宇称不守恒。</summary>
     
     
     
@@ -406,27 +427,6 @@
     <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
     
     <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>创建git hook自动拉取远程仓库</title>
-    <link href="https://diraw.top/2025/06/21/CS/www/2/"/>
-    <id>https://diraw.top/2025/06/21/CS/www/2/</id>
-    <published>2025-06-21T02:22:00.000Z</published>
-    <updated>2025-08-15T03:51:21.890Z</updated>
-    
-    
-    <summary type="html">以gitee为例，使用python flask监听请求</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="git" scheme="https://diraw.top/tags/git/"/>
-    
-    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
