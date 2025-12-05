@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-12-03T13:59:35.824Z</updated>
+  <updated>2025-12-05T15:31:01.243Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设置debian笔记本电脑合盖熄屏但不断网</title>
+    <link href="https://diraw.top/2025/12/05/CS/x220/1/"/>
+    <id>https://diraw.top/2025/12/05/CS/x220/1/</id>
+    <published>2025-12-05T15:21:00.000Z</published>
+    <updated>2025-12-05T15:31:01.243Z</updated>
+    
+    
+    <summary type="html">通过 systemd-logind 和 acpid 脚本精确地控制屏幕熄灭的时间。开始倒腾买的二手x220…</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="debian" scheme="https://diraw.top/tags/debian/"/>
+    
+    <category term="x220" scheme="https://diraw.top/tags/x220/"/>
+    
+  </entry>
   
   <entry>
     <title>自建github-readme-stats服务</title>
@@ -406,27 +427,6 @@
     <category term="webdav" scheme="https://diraw.top/tags/webdav/"/>
     
     <category term="obsidian" scheme="https://diraw.top/tags/obsidian/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改11：网页自动调节首页帖子高度</title>
-    <link href="https://diraw.top/2025/06/21/CS/Hexo/Butterfly/Custom/11/"/>
-    <id>https://diraw.top/2025/06/21/CS/Hexo/Butterfly/Custom/11/</id>
-    <published>2025-06-21T11:00:00.000Z</published>
-    <updated>2025-08-14T05:28:26.873Z</updated>
-    
-    
-    <summary type="html">一直都觉得这个首页的帖子上下边距太宽了，终于忍不了把这个改了</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
     
   </entry>
   
