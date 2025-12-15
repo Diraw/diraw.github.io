@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-12-15T09:42:30.697Z</updated>
+  <updated>2025-12-15T14:22:50.219Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>自建文本分享 Pastebin 服务</title>
+    <title>自建长链转短链URL服务</title>
+    <link href="https://diraw.top/2025/12/15/CS/www/14/"/>
+    <id>https://diraw.top/2025/12/15/CS/www/14/</id>
+    <published>2025-12-15T14:20:00.000Z</published>
+    <updated>2025-12-15T14:22:50.219Z</updated>
+    
+    
+    <summary type="html">使用 Docker + Shlink 自托管部署</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自建文本分享Pastebin服务</title>
     <link href="https://diraw.top/2025/12/15/CS/www/13/"/>
     <id>https://diraw.top/2025/12/15/CS/www/13/</id>
     <published>2025-12-15T08:32:00.000Z</published>
-    <updated>2025-12-15T09:42:30.697Z</updated>
+    <updated>2025-12-15T14:20:47.693Z</updated>
     
     
     <summary type="html">在 Debian 服务器上部署一个像 paste.ubuntu.com 这样的网站，使用项目为 PrivateBin</summary>
@@ -402,27 +421,6 @@
     <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     <category term="debian" scheme="https://diraw.top/tags/debian/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用云服务器自建云盘服务</title>
-    <link href="https://diraw.top/2025/07/16/CS/www/4/"/>
-    <id>https://diraw.top/2025/07/16/CS/www/4/</id>
-    <published>2025-07-16T01:22:00.000Z</published>
-    <updated>2025-10-05T09:49:21.197Z</updated>
-    
-    
-    <summary type="html">使用cloudreve自建云盘服务，服务器系统为debian</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    <category term="cloudreve" scheme="https://diraw.top/tags/cloudreve/"/>
     
   </entry>
   
