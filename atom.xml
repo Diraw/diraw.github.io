@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-12-05T15:34:57.435Z</updated>
+  <updated>2025-12-15T09:42:30.697Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自建文本分享 Pastebin 服务</title>
+    <link href="https://diraw.top/2025/12/15/CS/www/13/"/>
+    <id>https://diraw.top/2025/12/15/CS/www/13/</id>
+    <published>2025-12-15T08:32:00.000Z</published>
+    <updated>2025-12-15T09:42:30.697Z</updated>
+    
+    
+    <summary type="html">在 Debian 服务器上部署一个像 paste.ubuntu.com 这样的网站，使用项目为 PrivateBin</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>设置debian笔记本电脑合盖熄屏但不断网</title>
@@ -404,29 +423,6 @@
     <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     <category term="cloudreve" scheme="https://diraw.top/tags/cloudreve/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用云服务器对obsidian进行远程同步</title>
-    <link href="https://diraw.top/2025/06/29/CS/www/3/"/>
-    <id>https://diraw.top/2025/06/29/CS/www/3/</id>
-    <published>2025-06-29T05:22:00.000Z</published>
-    <updated>2025-06-29T06:16:49.337Z</updated>
-    
-    
-    <summary type="html">obsidian使用remotely save插件，服务器使用Apache，系统为debian</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    <category term="webdav" scheme="https://diraw.top/tags/webdav/"/>
-    
-    <category term="obsidian" scheme="https://diraw.top/tags/obsidian/"/>
     
   </entry>
   
