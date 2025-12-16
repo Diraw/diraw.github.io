@@ -346,3 +346,89 @@ html[data-theme="light"] .archive-announcement p {
 html[data-theme="dark"] #page a:hover {
   color: white !important;
 }
+
+html[data-theme="dark"] pre.language-bash {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+html[data-theme="dark"] pre.language-bash code {
+  text-shadow: none !important;
+  /* 保持移除阴影 */
+  /* 设置一个基础的文字颜色，通常是代码的默认颜色 */
+  color: #D4D4D4;
+  /* 比如一个亮灰色 */
+}
+
+/* 假设你用的是 Prism.js 的类名，你可以这样覆盖： */
+html[data-theme="dark"] pre.language-bash .token.comment {
+  /* # Start tailscaled... */
+  color: #6A9955;
+  /* 更亮的绿色 */
+}
+
+html[data-theme="dark"] pre.language-bash .token.keyword {
+  /* if, else, then, fi */
+  color: #569CD6;
+  /* 清晰的蓝色 */
+}
+
+html[data-theme="dark"] pre.language-bash .token.string {
+  /* "Starting tailscaled..." */
+  color: #CE9178;
+  /* 温暖的橘色 */
+}
+
+html[data-theme="dark"] pre.language-bash .token.operator {
+  /* >, &, / */
+  color: #D4D4D4;
+  /* 与默认文字颜色相同，或更亮一点 */
+  background-color: transparent !important;
+  /* 如果操作符有背景色，将其移除 */
+}
+
+html[data-theme="dark"] pre.language-bash .token.builtin {
+  /* echo, sudo - 内置命令可能用这个 */
+  color: #C586C0;
+  /* 紫红色 */
+}
+
+/* 首先针对按钮本身进行设置，确保它有背景和边框 */
+html[data-theme="dark"] .copy-to-clipboard-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* 浅灰半透明背景 */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* 浅灰半透明边框 */
+  border-radius: 4px;
+  /* 轻微圆角，可选 */
+  padding: 4px 8px;
+  /* 调整内边距，可选 */
+  box-sizing: border-box;
+  /* 确保 padding 不会增加按钮总尺寸，可选 */
+}
+
+/* 接着设置按钮内文字的颜色 */
+html[data-theme="dark"] .copy-to-clipboard-button span {
+  color: #E0E0E0;
+  /* 亮灰色文字，确保可见 */
+  /* 如果还有图标，可能需要设置图标的颜色，例如：
+     fill: #E0E0E0; (如果是 SVG 图标)
+     或者直接设置 button 的 color 如果图标是字体图标 */
+}
+
+/* 鼠标悬停时的效果，增加交互性 */
+html[data-theme="dark"] .copy-to-clipboard-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* 悬停时背景更亮一点 */
+  border-color: rgba(255, 255, 255, 0.4);
+  /* 悬停时边框更亮一点 */
+  cursor: pointer;
+  /* 提示用户这是可点击元素 */
+}
+
+html[data-theme="dark"] .highlight-tools i.fa-angle-down:hover,
+html[data-theme="dark"] .highlight-tools i.fa-paste:hover {
+  /* 悬停时的颜色：设置为一个更亮的颜色，例如纯白色 */
+  color: #FFFFFF;
+  /* 纯白色 */
+}
