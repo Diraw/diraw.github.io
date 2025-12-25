@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-12-25T14:51:40.018Z</updated>
+  <updated>2025-12-25T14:55:34.140Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>自建jsDelivr 镜像服务，并配置Hexo Butterfly主题</title>
+    <title>自建jsDelivr镜像服务，并配置Hexo Butterfly主题</title>
     <link href="https://diraw.top/2025/12/25/CS/www/15/"/>
     <id>https://diraw.top/2025/12/25/CS/www/15/</id>
     <published>2025-12-25T14:29:00.000Z</published>
-    <updated>2025-12-25T14:51:40.018Z</updated>
+    <updated>2025-12-25T14:55:34.140Z</updated>
     
     
     <summary type="html">jsDelivr 在国内的访问时好时坏，导致网站的图标、字体加载很慢，索性自己建个镜像算了</summary>
