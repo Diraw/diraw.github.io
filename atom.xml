@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-12-25T14:55:34.140Z</updated>
+  <updated>2025-12-26T12:11:05.328Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>非独立联合概率分布和Copula理论</title>
+    <link href="https://diraw.top/2025/12/26/PHYSICS/2/"/>
+    <id>https://diraw.top/2025/12/26/PHYSICS/2/</id>
+    <published>2025-12-26T12:07:00.000Z</published>
+    <updated>2025-12-26T12:11:05.328Z</updated>
+    
+    
+    <summary type="html">介绍了构建非独立联合概率分布的方法，包括从已知分布变换、利用边缘和条件分布，并重点讲解了 Copula 理论</summary>
+    
+    
+    
+    <category term="物理" scheme="https://diraw.top/categories/%E7%89%A9%E7%90%86/"/>
+    
+    
+    <category term="物理" scheme="https://diraw.top/tags/%E7%89%A9%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>自建jsDelivr镜像服务，并配置Hexo Butterfly主题</title>
@@ -124,7 +143,7 @@
     <link href="https://diraw.top/2025/11/07/PHYSICS/1/"/>
     <id>https://diraw.top/2025/11/07/PHYSICS/1/</id>
     <published>2025-11-07T14:25:00.000Z</published>
-    <updated>2025-12-26T11:24:43.167Z</updated>
+    <updated>2025-12-26T11:29:49.696Z</updated>
     
     
     <summary type="html">从群、环、域基本概念开始，一步步构建结合代数、Clifford代数、Dirac代数数学结构，最后证明宇称不守恒。</summary>
@@ -404,25 +423,6 @@
     <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
     
     <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>龙泉山拍英仙座流星雨记</title>
-    <link href="https://diraw.top/2025/08/14/LIFE/record/2/"/>
-    <id>https://diraw.top/2025/08/14/LIFE/record/2/</id>
-    <published>2025-08-14T08:00:00.000Z</published>
-    <updated>2025-10-05T10:00:47.554Z</updated>
-    
-    
-    <summary type="html">每个时代都有仰望星空的人，你把这叫作浪漫，而我觉得这是伴随一生的诅咒。</summary>
-    
-    
-    
-    <category term="生活" scheme="https://diraw.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="记录" scheme="https://diraw.top/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
