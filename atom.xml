@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-12-31T11:00:47.454Z</updated>
+  <updated>2025-12-31T18:13:29.427Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2026跨年：写给2027年1月1日的信</title>
+    <link href="https://diraw.top/2026/01/01/LIFE/record/3/"/>
+    <id>https://diraw.top/2026/01/01/LIFE/record/3/</id>
+    <published>2025-12-31T17:15:00.000Z</published>
+    <updated>2025-12-31T18:13:29.427Z</updated>
+    
+    
+    <summary type="html">新年，新气象。新年，改过自新。新年，重头再来。</summary>
+    
+    
+    
+    <category term="生活" scheme="https://diraw.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="跨年" scheme="https://diraw.top/tags/%E8%B7%A8%E5%B9%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>非独立联合概率分布和Copula理论</title>
@@ -402,27 +421,6 @@
     <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     <category term="python" scheme="https://diraw.top/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Butterfly魔改12：归档页面按照月份折叠</title>
-    <link href="https://diraw.top/2025/08/14/CS/Hexo/Butterfly/Custom/12/"/>
-    <id>https://diraw.top/2025/08/14/CS/Hexo/Butterfly/Custom/12/</id>
-    <published>2025-08-14T11:00:00.000Z</published>
-    <updated>2025-08-16T15:51:30.116Z</updated>
-    
-    
-    <summary type="html">Hexo自带的归档页面是没有折叠功能的，我觉得这样不如按时间折叠起来对于查找方便</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://diraw.top/tags/Hexo/"/>
-    
-    <category term="Butterfly" scheme="https://diraw.top/tags/Butterfly/"/>
     
   </entry>
   
