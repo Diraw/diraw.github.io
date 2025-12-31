@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-12-27T14:32:57.671Z</updated>
+  <updated>2025-12-31T11:00:47.454Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://diraw.top/2025/12/26/PHYSICS/2/"/>
     <id>https://diraw.top/2025/12/26/PHYSICS/2/</id>
     <published>2025-12-26T12:07:00.000Z</published>
-    <updated>2025-12-27T14:32:57.671Z</updated>
+    <updated>2025-12-31T11:00:47.454Z</updated>
     
     
-    <summary type="html">介绍了构建非独立联合概率分布的方法，包括从已知分布变换、利用边缘和条件分布，并重点讲解了 Copula 理论</summary>
+    <summary type="html">介绍了构建非独立联合概率分布的方法，并重点讲解了 Copula 理论</summary>
     
     
     
