@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2025-12-31T18:32:41.918Z</updated>
+  <updated>2026-01-14T14:35:48.571Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python：全局解释器锁GIL</title>
+    <link href="https://diraw.top/2026/01/14/CS/python/1/"/>
+    <id>https://diraw.top/2026/01/14/CS/python/1/</id>
+    <published>2026-01-14T14:00:00.000Z</published>
+    <updated>2026-01-14T14:35:48.571Z</updated>
+    
+    
+    <summary type="html">自 Python 诞生以来的三十余年间，GIL 作为 CPython 内存管理和线程安全模型的基础，既成就了 Python 在单线程脚本和胶水语言领域的霸主地位，也成为了其在多核并发计算时代面临的最大技术债务</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="python" scheme="https://diraw.top/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>2026跨年：写给2027年1月1日的信</title>
@@ -398,29 +417,6 @@
     <category term="debian" scheme="https://diraw.top/tags/debian/"/>
     
     <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用Python脚本对vscode服务器cpu占用率进行检测</title>
-    <link href="https://diraw.top/2025/08/16/CS/www/6/"/>
-    <id>https://diraw.top/2025/08/16/CS/www/6/</id>
-    <published>2025-08-16T09:14:00.000Z</published>
-    <updated>2025-08-16T12:07:43.421Z</updated>
-    
-    
-    <summary type="html">有没有好用而且资源占用率低的ssh软件啊，vscode服务器时不时就把服务器cpu占满了（虽然也是我的问题）</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="vscode" scheme="https://diraw.top/tags/vscode/"/>
-    
-    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    <category term="python" scheme="https://diraw.top/tags/python/"/>
     
   </entry>
   

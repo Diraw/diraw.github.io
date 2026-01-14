@@ -1,0 +1,520 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Python：全局解释器锁GIL | Diraw的世界</title><meta name="author" content="Diraw"><meta name="copyright" content="Diraw"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="自 Python 诞生以来的三十余年间，GIL 作为 CPython 内存管理和线程安全模型的基础，既成就了 Python 在单线程脚本和胶水语言领域的霸主地位，也成为了其在多核并发计算时代面临的最大技术债务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python：全局解释器锁GIL">
+<meta property="og:url" content="https://diraw.top/2026/01/14/CS/python/1/index.html">
+<meta property="og:site_name" content="Diraw的世界">
+<meta property="og:description" content="自 Python 诞生以来的三十余年间，GIL 作为 CPython 内存管理和线程安全模型的基础，既成就了 Python 在单线程脚本和胶水语言领域的霸主地位，也成为了其在多核并发计算时代面临的最大技术债务">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://diraw.top/img/avatar.png">
+<meta property="article:published_time" content="2026-01-14T14:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-14T14:35:48.571Z">
+<meta property="article:author" content="Diraw">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://diraw.top/img/avatar.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://diraw.top/2026/01/14/CS/python/1/index.html"><link rel="preconnect" href="https://cdn.diraw.top"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.2.2"><link rel="stylesheet" href="https://cdn.diraw.top/npm/font-awesome/6.6.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0a1c909c9bf124fdb4524159d9989c48";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-LY9E5NJX4B"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-LY9E5NJX4B')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-LY9E5NJX4B', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.diraw.top/npm/egjs-infinitegrid/4.12.0/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python：全局解释器锁GIL',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/collections.css"><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Diraw的世界" type="application/atom+xml">
+</head><body style="visibility: hidden; overflow: hidden;"><div id="web_bg" style="background-image: url(/img/2.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">66</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://wiki.diraw.top"><i class="fa-fw fas fa-book"></i><span> wiki</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa-solid fa-earth-asia"></i><span> 世界</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html"><i class="fa-fw fa-solid fa-satellite"></i><span> 虫洞</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Diraw的世界</span></a><a class="nav-page-title" href="/"><span class="site-name">Python：全局解释器锁GIL</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://wiki.diraw.top"><i class="fa-fw fas fa-book"></i><span> wiki</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa-solid fa-earth-asia"></i><span> 世界</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html"><i class="fa-fw fa-solid fa-satellite"></i><span> 虫洞</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Python：全局解释器锁GIL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-01-14T14:00:00.000Z" title="发表于 2026-01-14 22:00:00">2026-01-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-14T14:35:48.571Z" title="更新于 2026-01-14 22:35:48">2026-01-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2026/01/14/CS/python/1/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>全局解释器锁（Global Interpreter Lock，简称 GIL）是 Python 编程语言（特指 CPython 参考实现）中最具争议、最被误解，同时也最核心的技术特征之一。</p>
+<p>自 Python 诞生以来的三十余年间，GIL 作为 CPython 内存管理和线程安全模型的基础，既成就了 Python 在单线程脚本和胶水语言领域的霸主地位，也成为了其在多核并发计算时代面临的最大技术债务 。</p>
+<h1 id="锁的设计哲学"><a href="#锁的设计哲学" class="headerlink" title="锁的设计哲学"></a>锁的设计哲学</h1><p>在 CPython 中，每个 Python 对象都有一个 <code>ob_refcnt</code> 字段记录引用次数。一旦归零，内存立即回收。这种机制简单高效，但在多线程下并不安全。</p>
+<p>在多线程环境下，如果两个线程同时对同一个对象执行 <code>del</code> 操作（即 <code>ob_refcnt--</code>），且没有锁保护，就可能发生<strong>竞态条件（Race Condition）</strong>，导致计数器计算错误，进而引发内存泄漏或程序崩溃。</p>
+<p>为了解决上述问题，CPython 选择了粗粒度锁（GIL）：<strong>强制规定在任何一个 Python 进程内，无论有多少个 CPU 核心，同一时刻只能有一个线程处于“解释执行 Python 字节码”的状态。</strong></p>
+<h1 id="GIL-的具体实例"><a href="#GIL-的具体实例" class="headerlink" title="GIL 的具体实例"></a>GIL 的具体实例</h1><p>GIL 的存在导致 Python 多线程在处理不同类型任务时表现出<strong>截然不同的性能特征</strong>。</p>
+<h2 id="CPU-密集型任务的并行度为零"><a href="#CPU-密集型任务的并行度为零" class="headerlink" title="CPU 密集型任务的并行度为零"></a>CPU 密集型任务的并行度为零</h2><p>对于纯计算任务，多线程不仅无法利用多核加速，反而<strong>因为锁竞争（GIL Context Switching）导致比单线程更慢</strong>。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cpu_bound_task</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">"""纯 CPU 计算任务：递减计数"""</span></span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">        n -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">COUNT = <span class="number">100_000_000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 单线程</span></span><br><span class="line">start = time.time()</span><br><span class="line">cpu_bound_task(COUNT)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"单线程: <span class="subst">{time.time() - start:<span class="number">.4</span>f}</span> seconds"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 多线程 (2个线程，各跑一半任务)</span></span><br><span class="line">t1 = threading.Thread(target=cpu_bound_task, args=(COUNT // <span class="number">2</span>,))</span><br><span class="line">t2 = threading.Thread(target=cpu_bound_task, args=(COUNT // <span class="number">2</span>,))</span><br><span class="line"></span><br><span class="line">start = time.time()</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"多线程: <span class="subst">{time.time() - start:<span class="number">.4</span>f}</span> seconds"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">单线程: 3.2728 seconds</span><br><span class="line">多线程: 3.3046 seconds</span><br></pre></td></tr></table></figure>
+
+<p>多线程版本通常比单线程版本慢或者持平。这是因为两个线程在单个 CPU 核心上争抢 GIL，产生了额外的上下文切换开销，却无法并行执行。</p>
+<h2 id="I-O-密集型任务的伪并行"><a href="#I-O-密集型任务的伪并行" class="headerlink" title="I/O 密集型任务的伪并行"></a>I/O 密集型任务的伪并行</h2><p>当 Python 线程执行 I/O 操作（如读写文件、网络请求、time.sleep）时，它会<strong>主动释放 GIL</strong>。这使得 Python 多线程在 I/O 密集型场景下非常有效。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">io_bound_task</span>(<span class="params">sec</span>):</span><br><span class="line">    <span class="string">"""模拟 I/O 等待"""</span></span><br><span class="line">    time.sleep(sec)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 单线程执行 (预期 2 秒)</span></span><br><span class="line">start = time.time()</span><br><span class="line">io_bound_task(<span class="number">1</span>)</span><br><span class="line">io_bound_task(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"单线程 I/O: <span class="subst">{time.time() - start:<span class="number">.4</span>f}</span> seconds"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 多线程执行 (预期 1 秒)</span></span><br><span class="line">t1 = threading.Thread(target=io_bound_task, args=(<span class="number">1</span>,))</span><br><span class="line">t2 = threading.Thread(target=io_bound_task, args=(<span class="number">1</span>,))</span><br><span class="line"></span><br><span class="line">start = time.time()</span><br><span class="line">t1.start(); t2.start()</span><br><span class="line">t1.join(); t2.join()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"多线程 I/O: <span class="subst">{time.time() - start:<span class="number">.4</span>f}</span> seconds"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">单线程 I/O: 2.0017 seconds</span><br><span class="line">多线程 I/O: 1.0015 seconds</span><br></pre></td></tr></table></figure>
+
+<p>多线程版本耗时几乎减半。这是因为线程 A 在 sleep 时释放了 GIL，线程 B 立即获得 GIL 并运行，实现了并发等待。</p>
+<h2 id="护送效应（Convoy-Effect）"><a href="#护送效应（Convoy-Effect）" class="headerlink" title="护送效应（Convoy Effect）"></a>护送效应（Convoy Effect）</h2><p>当 CPU 密集型线程（如后台压缩数据）与 I/O 密集型线程（如 UI 响应）共存时，CPU 线程会频繁霸占 GIL，导致 I/O 线程唤醒后难以抢到锁，造成 UI 卡顿或网络延迟抖动。</p>
+<h1 id="传统规避方案"><a href="#传统规避方案" class="headerlink" title="传统规避方案"></a>传统规避方案</h1><p>在 PEP 703 之前，为了利用多核，最通用的方案是 multiprocessing。</p>
+<p><strong>多进程（Multiprocessing）：以空间换时间</strong></p>
+<p><strong>代码：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cpu_bound_task</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">        n -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    COUNT = <span class="number">100_000_000</span></span><br><span class="line">    tasks = [COUNT // <span class="number">2</span>, COUNT // <span class="number">2</span>]</span><br><span class="line">    <span class="keyword">with</span> Pool(processes=<span class="number">2</span>) <span class="keyword">as</span> p:</span><br><span class="line">        start = time.time()</span><br><span class="line">        p.<span class="built_in">map</span>(cpu_bound_task, tasks)</span><br><span class="line">        end = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f"多进程: <span class="subst">{end - start:<span class="number">.4</span>f}</span> seconds"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">多进程: 1.7697 seconds</span><br></pre></td></tr></table></figure>
+
+<p>相比多线程，多进程能利用多核 CPU，速度显著提升（通常快 1.8-2 倍）。但代价是内存占用翻倍以及进程间通信（IPC）的高开销 。</p>
+<p><strong>注意</strong>：</p>
+<ol>
+<li><strong>保留了 <code>if __name__ == '__main__':</code></strong>，这在 Windows 系统上是运行多进程<strong>必须</strong>的，否则会陷入无限递归创建子进程的死循环</li>
+<li>原因：<ul>
+<li><strong>Windows 的生成（Spawn）机制</strong>： 在 Windows 上，Python 无法像 Linux 那样直接克隆父进程。它必须启动一个全新的 Python 解释器，然后把你的 <code>.py</code> 文件重新导入（Import）一遍，以便让子进程知道有哪些函数可以运行。</li>
+<li><strong>递归爆炸</strong>：<ul>
+<li>主进程运行代码，遇到 <code>Pool(2)</code>。</li>
+<li>主进程启动子进程 A。</li>
+<li>子进程 A 为了运行，会重新导入你的 <code>.py</code> 文件。</li>
+<li><strong>如果没有保护</strong>，子进程 A 在导入时也会执行到 <code>Pool(2)</code> 这行代码。</li>
+<li>于是子进程 A 又去启动子进程 B……</li>
+<li>循环往复，直到你的系统资源（内存/进程数）耗尽，电脑直接卡死或崩溃。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="革命性突破：PEP-703-与自由线程-Python"><a href="#革命性突破：PEP-703-与自由线程-Python" class="headerlink" title="革命性突破：PEP 703 与自由线程 Python"></a>革命性突破：PEP 703 与自由线程 Python</h1><h2 id="下载无-GIL-的-Python"><a href="#下载无-GIL-的-Python" class="headerlink" title="下载无 GIL 的 Python"></a>下载无 GIL 的 Python</h2><p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/windows/">官网</a>下载 installer，选择自定义安装，在 <code>Advanced Options</code> 中，勾选 <code>free-threaded</code> 版本</p>
+<img src="https://img.diraw.top/i/u/2026/01/14/10ef7n6.png" width="75%">
+
+<p>然后在安装目录下会有两个python解释器，<strong>选择带 <code>t</code> 的版本</strong></p>
+<img src="https://img.diraw.top/i/u/2026/01/14/10f6fn2.png" width="75%">
+
+<p><strong>验证</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&amp; E:/Python/py314t/python3.14t.exe -X gil=0 -c <span class="string">"import sys; print(f'解释器路径: {sys.executable}'); print(f'GIL 是否已禁用: {not sys._is_gil_enabled()}')"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>参数</strong>：<code>-X gil=0</code></li>
+</ul>
+<p><strong>输出</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">解释器路径: E:\Python\py314t\python3.14t.exe</span><br><span class="line">GIL 是否已禁用: True</span><br></pre></td></tr></table></figure>
+
+<p>为什么官方要分两个文件？这是为了<strong>生产环境的安全</strong>考虑。</p>
+<ul>
+<li><strong>标准版 (<code>python.exe</code>)</strong>：性能经过数十年优化，最稳定，支持所有第三方库，但受 GIL 限制。</li>
+<li><strong>自由线程版 (<code>python3.14t.exe</code>)</strong>：允许真正的多核并行，但因为内部加锁机制改变，单线程任务可能变慢，且部分旧的 C 扩展库可能会崩溃。</li>
+</ul>
+<h2 id="多线程性能检验"><a href="#多线程性能检验" class="headerlink" title="多线程性能检验"></a>多线程性能检验</h2><p><strong>代码：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cpu_task</span>():</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10_000_000</span>):</span><br><span class="line">        count += i</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run</span>():</span><br><span class="line">    <span class="built_in">print</span>(</span><br><span class="line">        <span class="string">f"Python版本: <span class="subst">{sys.version.split()[<span class="number">0</span>]}</span> | GIL: <span class="subst">{<span class="string">'禁用'</span> <span class="keyword">if</span> <span class="keyword">not</span> sys._is_gil_enabled() <span class="keyword">else</span> <span class="string">'开启'</span>}</span>"</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1. 单线程顺序执行</span></span><br><span class="line">    start = time.time()</span><br><span class="line">    cpu_task()</span><br><span class="line">    cpu_task()</span><br><span class="line">    t_single = time.time() - start</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"单线程（顺序执行2次）: <span class="subst">{t_single:<span class="number">.4</span>f}</span> 秒"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2. 多线程并行执行</span></span><br><span class="line">    t1 = threading.Thread(target=cpu_task)</span><br><span class="line">    t2 = threading.Thread(target=cpu_task)</span><br><span class="line">    start = time.time()</span><br><span class="line">    t1.start()</span><br><span class="line">    t2.start()</span><br><span class="line">    t1.join()</span><br><span class="line">    t2.join()</span><br><span class="line">    t_multi = time.time() - start</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"多线程（并行执行2次）: <span class="subst">{t_multi:<span class="number">.4</span>f}</span> 秒"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"加速比: <span class="subst">{t_single / t_multi:<span class="number">.2</span>f}</span>x"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    run()</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Python版本: 3.14.2 | GIL: 禁用</span><br><span class="line">单线程（顺序执行2次）: 0.5047 秒</span><br><span class="line">多线程（并行执行2次）: 0.2557 秒</span><br><span class="line">加速比: 1.97x</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://diraw.top">Diraw</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://diraw.top/2026/01/14/CS/python/1/">https://diraw.top/2026/01/14/CS/python/1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://diraw.top" target="_blank">Diraw的世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Diraw</div><div class="author-info-description">希望能构建心中的一片圣地</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">66</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/diraw"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://diraw.top/atom.xml" target="_blank" title=""><i class="fas fa-rss"></i></a><a class="social-icon" href="https://github.com/Diraw" target="_blank" title=""><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/3546387746654749" target="_blank" title=""><i class="fab fa-bilibili"></i></a><a class="social-icon" href="mailto:dirawtop@gmail.com" target="_blank" title=""><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><p>所有<strong>知识整理类</strong>博文已全部移动至<strong><a target="_blank" rel="noopener" href="http://wiki.diraw.top">wiki文档</a></strong></p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%81%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6"><span class="toc-number">1.</span> <span class="toc-text">锁的设计哲学</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GIL-%E7%9A%84%E5%85%B7%E4%BD%93%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">GIL 的具体实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU-%E5%AF%86%E9%9B%86%E5%9E%8B%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%BA%A6%E4%B8%BA%E9%9B%B6"><span class="toc-number">2.1.</span> <span class="toc-text">CPU 密集型任务的并行度为零</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I-O-%E5%AF%86%E9%9B%86%E5%9E%8B%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BC%AA%E5%B9%B6%E8%A1%8C"><span class="toc-number">2.2.</span> <span class="toc-text">I&#x2F;O 密集型任务的伪并行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A4%E9%80%81%E6%95%88%E5%BA%94%EF%BC%88Convoy-Effect%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">护送效应（Convoy Effect）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E8%A7%84%E9%81%BF%E6%96%B9%E6%A1%88"><span class="toc-number">3.</span> <span class="toc-text">传统规避方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A9%E5%91%BD%E6%80%A7%E7%AA%81%E7%A0%B4%EF%BC%9APEP-703-%E4%B8%8E%E8%87%AA%E7%94%B1%E7%BA%BF%E7%A8%8B-Python"><span class="toc-number">4.</span> <span class="toc-text">革命性突破：PEP 703 与自由线程 Python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%97%A0-GIL-%E7%9A%84-Python"><span class="toc-number">4.1.</span> <span class="toc-text">下载无 GIL 的 Python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%A7%E8%83%BD%E6%A3%80%E9%AA%8C"><span class="toc-number">4.2.</span> <span class="toc-text">多线程性能检验</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/14/CS/python/1/" title="Python：全局解释器锁GIL">Python：全局解释器锁GIL</a><time datetime="2026-01-14T14:00:00.000Z" title="发表于 2026-01-14 22:00:00">2026-01-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/01/LIFE/record/3/" title="2026跨年：写给2027年1月1日的信">2026跨年：写给2027年1月1日的信</a><time datetime="2025-12-31T17:15:00.000Z" title="发表于 2026-01-01 01:15:00">2026-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/26/PHYSICS/2/" title="非独立联合概率分布和Copula理论">非独立联合概率分布和Copula理论</a><time datetime="2025-12-26T12:07:00.000Z" title="发表于 2025-12-26 20:07:00">2025-12-26</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 - 2026 By Diraw</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2025147634号-1</a></div><div></div><span id="timeDate">载入天数...</span><span id="times">载入时分...</span><script>// 定义网站的起始运行时间
+// 请根据你的网站实际启动时间修改此处的日期和时间
+var grt = new Date("1/2/2025 21:36:00"); 
+
+// createtime 函数用于计算并更新显示时间
+function createtime() {
+  // 每次调用时都获取最新的当前时间，这是确保时间准确的关键
+  var now = new Date(); 
+
+  // 计算当前时间与起始时间之间的总毫秒差
+  var diff = now - grt;
+
+  // 如果起始时间在当前时间之后（例如，未来时间），则显示0天0小时0分
+  if (diff < 0) {
+    document.getElementById("timeDate").innerHTML = "本网站已运行 0 天 ";
+    document.getElementById("times").innerHTML = "00 小时 00 分";
+    return; // 结束函数执行
+  }
+
+  // 计算天数
+  var days = diff / (1000 * 60 * 60 * 24);
+  var dnum = Math.floor(days); 
+
+  // 计算小时数（从总毫秒差中减去天数对应的毫秒数，再转换为小时）
+  var hours = (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+  var hnum = Math.floor(hours); 
+  // 补零，确保小时数始终为两位
+  if (String(hnum).length == 1) { hnum = "0" + hnum; } 
+
+  // 计算分钟数（从小时数剩余的毫秒数中转换为分钟）
+  var minutes = (diff % (1000 * 60 * 60)) / (1000 * 60);
+  var mnum = Math.floor(minutes); 
+  // 补零，确保分钟数始终为两位
+  if (String(mnum).length == 1) { mnum = "0" + mnum; } 
+
+  // 更新页面上对应元素的文本内容
+  document.getElementById("timeDate").innerHTML = "本网站已运行 " + dnum + " 天 "; 
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分"; 
+} 
+
+// 使用 DOMContentLoaded 事件确保 HTML 元素加载完毕后再执行脚本
+document.addEventListener('DOMContentLoaded', function() {
+  // 第一次快速更新：页面加载后立即执行一次 createtime 函数
+  createtime();
+
+  setInterval(createtime, 1000); 
+});</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.2.2"></script><script src="/js/main.js?v=5.2.2"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.diraw.top/',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo.diraw.top/',
+      region: 'ap-shanghai',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.diraw.top/npm/twikoo/1.6.39/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><link rel="stylesheet" href="https://cdn.diraw.top/npm/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.diraw.top/npm/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.diraw.top/npm/butterfly-extsrc/1.1.4/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.diraw.top/npm/pjax/0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: true,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.2.2"></script></div></div></body></html>
