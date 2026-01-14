@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2026-01-14T15:29:17.470Z</updated>
+  <updated>2026-01-14T16:03:52.964Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://diraw.top/2026/01/14/CS/python/1/"/>
     <id>https://diraw.top/2026/01/14/CS/python/1/</id>
     <published>2026-01-14T14:00:00.000Z</published>
-    <updated>2026-01-14T15:29:17.470Z</updated>
+    <updated>2026-01-14T16:03:52.964Z</updated>
     
     
     <summary type="html">自 Python 诞生以来的三十余年间，GIL 作为 CPython 内存管理和线程安全模型的基础，既成就了 Python 在单线程脚本和胶水语言领域的霸主地位，也成为了其在多核并发计算时代面临的最大技术债务</summary>
