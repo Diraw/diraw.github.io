@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2026-01-14T16:03:52.964Z</updated>
+  <updated>2026-03-19T14:00:38.926Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>wsl碎片化和扩容解决方案</title>
+    <link href="https://diraw.top/2026/03/19/CS/Windows/11/"/>
+    <id>https://diraw.top/2026/03/19/CS/Windows/11/</id>
+    <published>2026-03-19T13:47:00.000Z</published>
+    <updated>2026-03-19T14:00:38.926Z</updated>
+    
+    
+    <summary type="html">工作站上动态容量的ubuntu wsl读取速度只有22MB/s，碎片化100%也是无敌了</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="wsl" scheme="https://diraw.top/tags/wsl/"/>
+    
+  </entry>
   
   <entry>
     <title>Python：全局解释器锁GIL</title>
@@ -387,27 +406,6 @@
     
     
     <summary type="html">被todesk恶心到了，遂转向开源的rustdesk，简单易用，直接薄纱了。本教程使用docker进行安装</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="debian" scheme="https://diraw.top/tags/debian/"/>
-    
-    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自建EasyImage图床，并配置Twikoo</title>
-    <link href="https://diraw.top/2025/08/16/CS/www/7/"/>
-    <id>https://diraw.top/2025/08/16/CS/www/7/</id>
-    <published>2025-08-16T12:14:00.000Z</published>
-    <updated>2025-10-26T09:04:04.362Z</updated>
-    
-    
-    <summary type="html">终于搞好了，官方的教程写的真烂</summary>
     
     
     
