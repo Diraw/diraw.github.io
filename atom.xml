@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2026-03-19T14:06:02.523Z</updated>
+  <updated>2026-07-16T06:02:21.352Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>EasyTier Windows 开机自启实现</title>
+    <link href="https://diraw.top/2026/07/16/CS/Windows/12/"/>
+    <id>https://diraw.top/2026/07/16/CS/Windows/12/</id>
+    <published>2026-07-16T05:29:00.000Z</published>
+    <updated>2026-07-16T06:02:21.352Z</updated>
+    
+    
+    <summary type="html">基于 WinSW 将 EasyTier 部署为 Windows 系统服务，实现开机自启。</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="注册表" scheme="https://diraw.top/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>wsl碎片化和扩容解决方案</title>
@@ -394,27 +413,6 @@
     <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
     <category term="wsl" scheme="https://diraw.top/tags/wsl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>放弃todesk，服务器自建rustdesk服务</title>
-    <link href="https://diraw.top/2025/09/28/CS/www/8/"/>
-    <id>https://diraw.top/2025/09/28/CS/www/8/</id>
-    <published>2025-09-28T03:20:00.000Z</published>
-    <updated>2025-10-14T11:45:34.562Z</updated>
-    
-    
-    <summary type="html">被todesk恶心到了，遂转向开源的rustdesk，简单易用，直接薄纱了。本教程使用docker进行安装</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="debian" scheme="https://diraw.top/tags/debian/"/>
-    
-    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
