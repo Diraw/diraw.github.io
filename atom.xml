@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2026-07-16T06:02:21.352Z</updated>
+  <updated>2026-07-17T07:31:46.481Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -17,14 +17,60 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>RTX 3060 离线工作站 NVIDIA 535 驱动更新与 initrd 启动故障复盘</title>
+    <link href="https://diraw.top/2026/07/17/CS/Linux/10/"/>
+    <id>https://diraw.top/2026/07/17/CS/Linux/10/</id>
+    <published>2026-07-17T07:28:00.000Z</published>
+    <updated>2026-07-17T07:31:46.481Z</updated>
+    
+    
+    <summary type="html">本文记录了一台配备 NVIDIA RTX 3060、无法直接连接互联网的 Ubuntu 工作站在离线更新 NVIDIA 535 驱动时遇到的完整故障链</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="linux" scheme="https://diraw.top/tags/linux/"/>
+    
+    <category term="nvidia" scheme="https://diraw.top/tags/nvidia/"/>
+    
+    <category term="initramfs" scheme="https://diraw.top/tags/initramfs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS 超算 GPU 节点内核与 NVIDIA 驱动升级记录：从 535 到 595.80</title>
+    <link href="https://diraw.top/2026/07/17/CS/Linux/9/"/>
+    <id>https://diraw.top/2026/07/17/CS/Linux/9/</id>
+    <published>2026-07-17T06:23:00.000Z</published>
+    <updated>2026-07-17T07:32:22.325Z</updated>
+    
+    
+    <summary type="html">这次升级过程中踩到的坑比较典型：新驱动需要新内核，新内核需要新 GCC，驱动编译又牵涉到 RDMA/IB 模块，最后还因为存储网络没起来导致共享 home 丢失。</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="linux" scheme="https://diraw.top/tags/linux/"/>
+    
+    <category term="centos" scheme="https://diraw.top/tags/centos/"/>
+    
+    <category term="nvidia" scheme="https://diraw.top/tags/nvidia/"/>
+    
+  </entry>
+  
+  <entry>
     <title>EasyTier Windows 开机自启实现</title>
     <link href="https://diraw.top/2026/07/16/CS/Windows/12/"/>
     <id>https://diraw.top/2026/07/16/CS/Windows/12/</id>
     <published>2026-07-16T05:29:00.000Z</published>
-    <updated>2026-07-16T06:02:21.352Z</updated>
+    <updated>2026-07-16T06:22:58.589Z</updated>
     
     
-    <summary type="html">基于 WinSW 将 EasyTier 部署为 Windows 系统服务，实现开机自启。</summary>
+    <summary type="html">基于 WinSW 将 EasyTier 部署为 Windows 系统服务，实现开机自启</summary>
     
     
     
@@ -371,48 +417,6 @@
     
     
     <category term="windows" scheme="https://diraw.top/tags/windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>debian服务器清理垃圾文件</title>
-    <link href="https://diraw.top/2025/10/04/CS/www/9/"/>
-    <id>https://diraw.top/2025/10/04/CS/www/9/</id>
-    <published>2025-10-04T12:09:00.000Z</published>
-    <updated>2025-10-04T13:00:50.596Z</updated>
-    
-    
-    <summary type="html">储存空间又满了QAQ</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="debian" scheme="https://diraw.top/tags/debian/"/>
-    
-    <category term="服务器" scheme="https://diraw.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决windows更新之后，wsl不见了的问题</title>
-    <link href="https://diraw.top/2025/09/29/CS/Windows/6/"/>
-    <id>https://diraw.top/2025/09/29/CS/Windows/6/</id>
-    <published>2025-09-29T05:40:00.000Z</published>
-    <updated>2025-10-04T12:07:31.976Z</updated>
-    
-    
-    <summary type="html">windows更新之后wsl没了，文件资源管理器左边栏有linux的图标，但是点进去是空文件夹</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
-    
-    <category term="wsl" scheme="https://diraw.top/tags/wsl/"/>
     
   </entry>
   

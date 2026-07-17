@@ -1,0 +1,746 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CentOS 超算 GPU 节点内核与 NVIDIA 驱动升级记录：从 535 到 595.80 | Diraw的世界</title><meta name="author" content="Diraw"><meta name="copyright" content="Diraw"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="这次升级过程中踩到的坑比较典型：新驱动需要新内核，新内核需要新 GCC，驱动编译又牵涉到 RDMA&#x2F;IB 模块，最后还因为存储网络没起来导致共享 home 丢失。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS 超算 GPU 节点内核与 NVIDIA 驱动升级记录：从 535 到 595.80">
+<meta property="og:url" content="https://diraw.top/2026/07/17/CS/Linux/9/index.html">
+<meta property="og:site_name" content="Diraw的世界">
+<meta property="og:description" content="这次升级过程中踩到的坑比较典型：新驱动需要新内核，新内核需要新 GCC，驱动编译又牵涉到 RDMA&#x2F;IB 模块，最后还因为存储网络没起来导致共享 home 丢失。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://diraw.top/img/avatar.png">
+<meta property="article:published_time" content="2026-07-17T06:23:00.000Z">
+<meta property="article:modified_time" content="2026-07-17T07:32:22.325Z">
+<meta property="article:author" content="Diraw">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="centos">
+<meta property="article:tag" content="nvidia">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://diraw.top/img/avatar.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://diraw.top/2026/07/17/CS/Linux/9/index.html"><link rel="preconnect" href="https://cdn.diraw.top"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.2.2"><link rel="stylesheet" href="https://cdn.diraw.top/npm/font-awesome/6.6.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0a1c909c9bf124fdb4524159d9989c48";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-LY9E5NJX4B"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-LY9E5NJX4B')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-LY9E5NJX4B', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.diraw.top/npm/egjs-infinitegrid/4.12.0/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CentOS 超算 GPU 节点内核与 NVIDIA 驱动升级记录：从 535 到 595.80',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/collections.css"><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Diraw的世界" type="application/atom+xml">
+</head><body style="visibility: hidden; overflow: hidden;"><div id="web_bg" style="background-image: url(/img/2.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://wiki.diraw.top"><i class="fa-fw fas fa-book"></i><span> wiki</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa-solid fa-earth-asia"></i><span> 世界</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html"><i class="fa-fw fa-solid fa-satellite"></i><span> 虫洞</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Diraw的世界</span></a><a class="nav-page-title" href="/"><span class="site-name">CentOS 超算 GPU 节点内核与 NVIDIA 驱动升级记录：从 535 到 595.80</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://wiki.diraw.top"><i class="fa-fw fas fa-book"></i><span> wiki</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa-solid fa-earth-asia"></i><span> 世界</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html"><i class="fa-fw fa-solid fa-satellite"></i><span> 虫洞</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">CentOS 超算 GPU 节点内核与 NVIDIA 驱动升级记录：从 535 到 595.80</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-07-17T06:23:00.000Z" title="发表于 2026-07-17 14:23:00">2026-07-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-17T07:32:22.325Z" title="更新于 2026-07-17 15:32:22">2026-07-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2026/07/17/CS/Linux/9/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>这次维护的目标是升级超算 GPU 节点 <code>gpu2</code> 的 NVIDIA 驱动，以满足某些 CUDA 二进制库对新版 NVIDIA kernel driver 的要求。</p>
+<p>原始环境大致如下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">系统：CentOS 7</span><br><span class="line">原内核：3.10.0-957.el7.x86_64</span><br><span class="line">原驱动：NVIDIA 535.154.05</span><br><span class="line">目标驱动：NVIDIA 595.80</span><br><span class="line">GPU：RTX 3090 × 8</span><br><span class="line">Slurm 分区：gpu</span><br><span class="line">维护节点：gpu2</span><br><span class="line">管理节点：admin1</span><br><span class="line">共享目录：/public，通过 NFS 挂载</span><br><span class="line">存储网络：ib0，12.12.12.0/24</span><br></pre></td></tr></table></figure>
+
+<p>这次升级过程中踩到的坑比较典型：</p>
+<p><strong>新驱动需要新内核，新内核需要新 GCC，驱动编译又牵涉到 RDMA/IB 模块，最后还因为存储网络没起来导致共享 home 丢失。</strong></p>
+<p>最终成功组合是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Kernel: 5.4.278-1.el7.elrepo.x86_64</span><br><span class="line">NVIDIA Driver: 595.80</span><br><span class="line">CUDA reported by driver: 13.2</span><br><span class="line">Compiler: devtoolset-9 gcc 9.3.1</span><br><span class="line">Install option: --no-peermem</span><br><span class="line">IB/IPoIB: mlx5_core + mlx5_ib + ib_ipoib</span><br><span class="line">/public: 12.12.12.250:/public nfs4</span><br><span class="line">Slurm: gpu2 idle，可正常提交 GPU 作业</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="维护前准备：先保护调度环境"><a href="#维护前准备：先保护调度环境" class="headerlink" title="维护前准备：先保护调度环境"></a>维护前准备：先保护调度环境</h1><p>升级 GPU 驱动和内核前，第一步不是安装软件，而是保护正在运行的作业和 Slurm 调度状态。</p>
+<p>先查看 <code>gpu2</code> 上是否有作业：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">squeue -w gpu2</span><br></pre></td></tr></table></figure>
+
+<p>如果有作业，需要等待结束或由管理员确认后取消：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /opt/gridview/slurm/bin/scancel &lt;jobid&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后将节点置为维护状态：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /opt/gridview/slurm/bin/scontrol update NodeName=gpu2 State=DRAIN Reason=<span class="string">"kernel/driver upgrade"</span></span><br></pre></td></tr></table></figure>
+
+<p>确认节点进入 drain：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/opt/gridview/slurm/bin/sinfo -N -l | grep gpu2</span><br></pre></td></tr></table></figure>
+
+<p>这一点非常重要。不要在节点仍可接收作业时升级内核和驱动。</p>
+<hr>
+<h2 id="为什么不能只用-Docker-或虚拟机解决"><a href="#为什么不能只用-Docker-或虚拟机解决" class="headerlink" title="为什么不能只用 Docker 或虚拟机解决"></a>为什么不能只用 Docker 或虚拟机解决</h2><p>一开始也考虑过 Docker 或虚拟机。结论是：</p>
+<p><strong>Docker 不能绕过宿主机 NVIDIA kernel driver。</strong></p>
+<p>容器可以换 CUDA runtime、用户态库、PyTorch 版本，但实际和 GPU 通信的内核驱动仍然来自宿主机。<br>如果某个二进制库要求宿主机驱动版本达到 595+，那么容器内装再新的 CUDA runtime 也无效。</p>
+<p>虚拟机 GPU passthrough 也不是优先方案，因为它要求 IOMMU 正常启用，还会牵涉 Slurm/GRES、GPU 隔离、性能和运维复杂度。最终选择直接升级 <code>gpu2</code> 宿主机内核和驱动。</p>
+<hr>
+<h1 id="内核选择：不要盲目追新"><a href="#内核选择：不要盲目追新" class="headerlink" title="内核选择：不要盲目追新"></a>内核选择：不要盲目追新</h1><p>最开始尝试过 ELRepo 的 <code>kernel-ml 6.9.7</code>。这个内核可以正常启动，但后续编译 NVIDIA 595.80 时遇到 <code>Module.symvers parse error</code> 和 <code>nvidia-uvm</code> 构建失败。</p>
+<p>最终选择了更保守的 ELRepo <code>kernel-lt 5.4.278</code>。</p>
+<p>原因是：</p>
+<ol>
+<li>NVIDIA 595 需要比 CentOS 7 默认 3.10 更新的内核；</li>
+<li>但超算节点不需要最新主线内核；</li>
+<li>CentOS 7 老用户态和太新的 6.x 内核组合容易触发兼容性问题；</li>
+<li><code>kernel-lt</code> 更适合作为生产环境折中方案。</li>
+</ol>
+<p>在 <code>admin1</code> 上下载：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /tmp/gpu2-kernel-lt</span><br><span class="line"><span class="built_in">cd</span> /tmp/gpu2-kernel-lt</span><br><span class="line"></span><br><span class="line">curl -L -O http://mirrors.coreix.net/elrepo-archive-archive/kernel/el7/x86_64/RPMS/kernel-lt-5.4.278-1.el7.elrepo.x86_64.rpm</span><br><span class="line">curl -L -O http://mirrors.coreix.net/elrepo-archive-archive/kernel/el7/x86_64/RPMS/kernel-lt-devel-5.4.278-1.el7.elrepo.x86_64.rpm</span><br><span class="line"></span><br><span class="line">rpm -K kernel-lt-5.4.278-1.el7.elrepo.x86_64.rpm</span><br><span class="line">rpm -K kernel-lt-devel-5.4.278-1.el7.elrepo.x86_64.rpm</span><br></pre></td></tr></table></figure>
+
+<p>传到 <code>gpu2</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh gpu2 <span class="string">'mkdir -p /tmp/gpu2-kernel-lt'</span></span><br><span class="line">scp /tmp/gpu2-kernel-lt/*.rpm gpu2:/tmp/gpu2-kernel-lt/</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>gpu2</code> 上安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp/gpu2-kernel-lt</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> yum localinstall -y \</span><br><span class="line">  kernel-lt-5.4.278-1.el7.elrepo.x86_64.rpm \</span><br><span class="line">  kernel-lt-devel-5.4.278-1.el7.elrepo.x86_64.rpm</span><br></pre></td></tr></table></figure>
+
+<p>确认 GRUB 条目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grubby --info=ALL | egrep -i <span class="string">'^(index|kernel|title)='</span></span><br></pre></td></tr></table></figure>
+
+<p>当时看到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">index=0</span><br><span class="line">kernel=/boot/vmlinuz-5.4.278-1.el7.elrepo.x86_64</span><br><span class="line"></span><br><span class="line">index=1</span><br><span class="line">kernel=/boot/vmlinuz-6.9.7-1.el7.elrepo.x86_64</span><br><span class="line"></span><br><span class="line">index=2</span><br><span class="line">kernel=/boot/vmlinuz-3.10.0-957.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>为了保留回退能力，先把默认内核仍设为旧的 3.10，只让下一次临时启动 5.4：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grubby --set-default /boot/vmlinuz-3.10.0-957.el7.x86_64</span><br><span class="line"><span class="built_in">sudo</span> grub2-reboot 0</span><br><span class="line"><span class="built_in">sudo</span> grub2-editenv list</span><br><span class="line"><span class="built_in">sudo</span> reboot</span><br></pre></td></tr></table></figure>
+
+<p>重启后验证：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">uname</span> -r</span><br><span class="line"><span class="built_in">cat</span> /proc/version</span><br></pre></td></tr></table></figure>
+
+<p>输出为：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">5.4.278-1.el7.elrepo.x86_64</span><br><span class="line">gcc version 9.3.1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="GCC-工具链：CentOS-7-默认-GCC-太旧"><a href="#GCC-工具链：CentOS-7-默认-GCC-太旧" class="headerlink" title="GCC 工具链：CentOS 7 默认 GCC 太旧"></a>GCC 工具链：CentOS 7 默认 GCC 太旧</h1><p>NVIDIA 595 在新内核上编译内核模块时，CentOS 7 默认 GCC 4.8.5 不够用。</p>
+<p>之前在 6.9 内核上已经遇到过：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">gcc: error: unrecognized command line option '-fpatchable-function-entry=16,16'</span><br><span class="line">gcc: error: unrecognized command line option '-mrecord-mcount'</span><br><span class="line">gcc: error: unrecognized command line option '-Wimplicit-fallthrough=5'</span><br></pre></td></tr></table></figure>
+
+<p>因此需要安装 <code>devtoolset-9</code>。</p>
+<p>在 <code>admin1</code> 上下载 devtoolset-9 相关 RPM 后，传到 <code>gpu2</code> 并离线安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp/gpu2-devtoolset9</span><br><span class="line"><span class="built_in">sudo</span> yum localinstall -y *.rpm</span><br></pre></td></tr></table></figure>
+
+<p>验证：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /opt/rh/devtoolset-9/enable</span><br><span class="line">gcc --version</span><br><span class="line">ld --version | <span class="built_in">head</span> -1</span><br></pre></td></tr></table></figure>
+
+<p>应看到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">gcc (GCC) 9.3.1</span><br><span class="line">GNU ld version 2.32</span><br></pre></td></tr></table></figure>
+
+<p>后续运行 NVIDIA 安装器时显式指定 GCC：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">env</span> \</span><br><span class="line">  PATH=/opt/rh/devtoolset-9/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \</span><br><span class="line">  CC=/opt/rh/devtoolset-9/root/usr/bin/gcc \</span><br><span class="line">  ./NVIDIA-Linux-x86_64-595.80.run --concurrency-level=1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="NVIDIA-595-80-安装：最终使用-no-peermem"><a href="#NVIDIA-595-80-安装：最终使用-no-peermem" class="headerlink" title="NVIDIA 595.80 安装：最终使用 --no-peermem"></a>NVIDIA 595.80 安装：最终使用 <code>--no-peermem</code></h1><p>在 <code>5.4.278</code> 内核下安装 NVIDIA 595.80。</p>
+<p>先确认 nouveau 没有加载：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsmod | grep nouveau</span><br></pre></td></tr></table></figure>
+
+<p>然后安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /tmp/makeself.*</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">env</span> \</span><br><span class="line">  PATH=/opt/rh/devtoolset-9/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \</span><br><span class="line">  CC=/opt/rh/devtoolset-9/root/usr/bin/gcc \</span><br><span class="line">  ./NVIDIA-Linux-x86_64-595.80.run --concurrency-level=1 --no-peermem</span><br></pre></td></tr></table></figure>
+
+<p>安装器选项：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Kernel module type: NVIDIA Proprietary</span><br><span class="line">32-bit compatibility libraries: No</span><br><span class="line">nvidia-xconfig: No</span><br></pre></td></tr></table></figure>
+
+<p>这里使用了 <code>--no-peermem</code>。原因是 <code>nvidia-peermem</code> 编译失败，但它不是普通 CUDA 必需模块，而是 GPUDirect RDMA 相关模块。</p>
+<p>普通 CUDA 更关键的是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">nvidia</span><br><span class="line">nvidia_uvm</span><br><span class="line">nvidia_modeset</span><br></pre></td></tr></table></figure>
+
+<p>安装成功后不要立刻随意重启。因为之前默认内核仍是 3.10，需要再次指定下一次进入 5.4：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grubby --set-default /boot/vmlinuz-3.10.0-957.el7.x86_64</span><br><span class="line"><span class="built_in">sudo</span> grub2-reboot 0</span><br><span class="line"><span class="built_in">sudo</span> reboot</span><br></pre></td></tr></table></figure>
+
+<p>重启后验证：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">uname</span> -r</span><br><span class="line">nvidia-smi</span><br><span class="line">lsmod | grep -E <span class="string">'nvidia|uvm'</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">uname -r -&gt; 5.4.278-1.el7.elrepo.x86_64</span><br><span class="line">nvidia-smi -&gt; Driver Version: 595.80</span><br><span class="line">lsmod -&gt; nvidia_uvm 已加载</span><br></pre></td></tr></table></figure>
+
+<p>确认成功后，将 5.4 固定为默认内核：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grubby --set-default /boot/vmlinuz-5.4.278-1.el7.elrepo.x86_64</span><br><span class="line"><span class="built_in">sudo</span> grubby --default-kernel</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="意外问题：共享-home-丢失"><a href="#意外问题：共享-home-丢失" class="headerlink" title="意外问题：共享 home 丢失"></a>意外问题：共享 home 丢失</h1><p>驱动升级成功后，发现 SSH 到 <code>gpu2</code> 时 starship、zsh、个人配置都没了，登录提示也变成普通 bash：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">[dingrui@gpu2 ~]$</span><br></pre></td></tr></table></figure>
+
+<p>同时登录时曾出现：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Creating home directory for dingrui.</span><br></pre></td></tr></table></figure>
+
+<p>检查后发现：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">df</span> -hT <span class="variable">$HOME</span></span><br></pre></td></tr></table></figure>
+
+<p>在 <code>gpu2</code> 上显示：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">/dev/sda3 ext4 ... /</span><br></pre></td></tr></table></figure>
+
+<p>而在正常的 <code>gpu1</code> 上：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">istorage1:/public nfs4 ... /public</span><br></pre></td></tr></table></figure>
+
+<p>这说明 <code>gpu2</code> 的 <code>/public</code> 没有挂载 NFS，共享 home 丢失，系统在本地根分区下临时创建了一个“影子 home”。</p>
+<p>这时不要复制配置文件来修。正确做法是恢复 <code>/public</code> 挂载。</p>
+<hr>
+<h2 id="根因：InfiniBand-IPoIB-存储网络没起来"><a href="#根因：InfiniBand-IPoIB-存储网络没起来" class="headerlink" title="根因：InfiniBand/IPoIB 存储网络没起来"></a>根因：InfiniBand/IPoIB 存储网络没起来</h2><p>在 <code>gpu2</code> 上检查：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ping -c 3 istorage1</span><br><span class="line">ping -c 3 12.12.12.250</span><br><span class="line">getent hosts istorage1</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">getent hosts istorage1 -&gt; 12.12.12.250</span><br><span class="line">ping -&gt; Network is unreachable</span><br></pre></td></tr></table></figure>
+
+<p>说明 DNS 没问题，但到存储网段没有路由。</p>
+<p>对比 <code>gpu1</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ip -br addr</span><br><span class="line">ip route</span><br></pre></td></tr></table></figure>
+
+<p><code>gpu1</code> 正常：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">ib0 UP 12.12.12.201/24</span><br><span class="line">12.12.12.0/24 dev ib0</span><br></pre></td></tr></table></figure>
+
+<p><code>gpu2</code> 异常：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">没有 ib0</span><br><span class="line">没有 12.12.12.0/24 路由</span><br></pre></td></tr></table></figure>
+
+<p>检查硬件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lspci | grep -Ei <span class="string">'mellanox|infiniband|network|ethernet'</span></span><br></pre></td></tr></table></figure>
+
+<p>看到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Infiniband controller: Mellanox Technologies MT28908 Family [ConnectX-6]</span><br></pre></td></tr></table></figure>
+
+<p>说明硬件在，但 IPoIB 接口没起来。</p>
+<p>加载模块：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> modprobe mlx5_core</span><br><span class="line"><span class="built_in">sudo</span> modprobe mlx5_ib</span><br><span class="line"><span class="built_in">sudo</span> modprobe ib_ipoib</span><br></pre></td></tr></table></figure>
+
+<p>然后 <code>ib0</code> 出现，但状态为 DOWN：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ip -br addr</span><br></pre></td></tr></table></figure>
+
+<p>启动接口：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ifup ib0</span><br></pre></td></tr></table></figure>
+
+<p>验证：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ip -br addr | grep ib0</span><br><span class="line">ip route get 12.12.12.250</span><br><span class="line">ping -c 3 12.12.12.250</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">ib0 UP 12.12.12.202/24</span><br><span class="line">12.12.12.250 dev ib0 src 12.12.12.202</span><br><span class="line">ping 正常</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="恢复-public-NFS-挂载"><a href="#恢复-public-NFS-挂载" class="headerlink" title="恢复 /public NFS 挂载"></a>恢复 <code>/public</code> NFS 挂载</h2><p>存储网络恢复后，手动挂载：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> mount -t nfs4 \</span><br><span class="line">  -o rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,hard,proto=tcp,timeo=600,retrans=2,sec=sys,local_lock=none \</span><br><span class="line">  12.12.12.250:/public /public</span><br></pre></td></tr></table></figure>
+
+<p>验证：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">df</span> -hT /public /public/home /public/home/dingrui</span><br><span class="line">findmnt /public</span><br><span class="line"><span class="built_in">which</span> starship</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">12.12.12.250:/public nfs4 ... /public</span><br><span class="line">which starship -&gt; ~/bin/starship</span><br></pre></td></tr></table></figure>
+
+<p>重新 SSH 后，starship prompt 恢复：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">dingrui in 🌐 gpu2 in ~</span><br><span class="line">❯</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="让-IB-和-NFS-重启后自动恢复"><a href="#让-IB-和-NFS-重启后自动恢复" class="headerlink" title="让 IB 和 NFS 重启后自动恢复"></a>让 IB 和 NFS 重启后自动恢复</h2><p>这一步很关键，否则下一次重启后 <code>/public</code> 可能再次丢失。</p>
+<p>写入自动加载模块：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/modules-load.d/ipoib.conf &gt;/dev/null &lt;&lt;<span class="string">'EOF'</span></span><br><span class="line">mlx5_core</span><br><span class="line">mlx5_ib</span><br><span class="line">ib_ipoib</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<p>添加 <code>/etc/fstab</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/fstab /etc/fstab.bak.$(<span class="built_in">date</span> +%F_%H%M%S)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'12.12.12.250:/public /public nfs4 rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,hard,proto=tcp,timeo=600,retrans=2,sec=sys,local_lock=none,_netdev,nofail 0 0'</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> -a /etc/fstab</span><br></pre></td></tr></table></figure>
+
+<p>测试：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> mount -a</span><br><span class="line"><span class="built_in">df</span> -hT /public</span><br></pre></td></tr></table></figure>
+
+<p>为了闭环，又做了一次受控重启测试。重启后检查：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">uname</span> -r</span><br><span class="line">ip -br addr | grep ib0</span><br><span class="line"><span class="built_in">df</span> -hT /public/home/dingrui</span><br><span class="line">nvidia-smi</span><br><span class="line"><span class="built_in">which</span> starship</span><br></pre></td></tr></table></figure>
+
+<p>全部正常：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Kernel: 5.4.278</span><br><span class="line">ib0: UP 12.12.12.202/24</span><br><span class="line">/public: nfs4</span><br><span class="line">NVIDIA: 595.80</span><br><span class="line">starship: ~/bin/starship</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="恢复-Slurm-调度"><a href="#恢复-Slurm-调度" class="headerlink" title="恢复 Slurm 调度"></a>恢复 Slurm 调度</h1><p>确认系统、GPU、NFS、IB 都正常后，恢复节点：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /opt/gridview/slurm/bin/scontrol update NodeName=gpu2 State=RESUME</span><br></pre></td></tr></table></figure>
+
+<p>验证：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/opt/gridview/slurm/bin/sinfo -N -l | grep gpu2</span><br><span class="line">/opt/gridview/slurm/bin/scontrol show node gpu2 | egrep <span class="string">'State=|Reason='</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">gpu2 ... idle ...</span><br><span class="line">State=IDLE</span><br></pre></td></tr></table></figure>
+
+<p><code>sinfo</code> 中也显示：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">gpu up infinite 1 idle gpu2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Slurm-GPU-测试作业"><a href="#Slurm-GPU-测试作业" class="headerlink" title="Slurm GPU 测试作业"></a>Slurm GPU 测试作业</h2><p>测试脚本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> &gt; ~/test_gpu2.sh &lt;&lt;<span class="string">'EOF'</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="comment">#SBATCH -p gpu</span></span><br><span class="line"><span class="comment">#SBATCH -w gpu2</span></span><br><span class="line"><span class="comment">#SBATCH --gres=gpu:1</span></span><br><span class="line"><span class="comment">#SBATCH -J test_gpu2</span></span><br><span class="line"><span class="comment">#SBATCH -o test_gpu2.%j.out</span></span><br><span class="line"></span><br><span class="line">hostname</span><br><span class="line"><span class="built_in">uname</span> -r</span><br><span class="line">nvidia-smi</span><br><span class="line"><span class="built_in">df</span> -hT /public/home/<span class="variable">$USER</span></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<p>提交：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sbatch -A dingrui ~/test_gpu2.sh</span><br></pre></td></tr></table></figure>
+
+<p>查看输出：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/test_gpu2.&lt;jobid&gt;.out</span><br></pre></td></tr></table></figure>
+
+<p>结果显示：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">gpu2</span><br><span class="line">5.4.278-1.el7.elrepo.x86_64</span><br><span class="line">NVIDIA-SMI 595.80</span><br><span class="line">Driver Version: 595.80</span><br><span class="line">CUDA Version: 13.2</span><br><span class="line">12.12.12.250:/public nfs4 ... /public</span><br></pre></td></tr></table></figure>
+
+<p>因为脚本里申请的是：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#SBATCH --gres=gpu:1</span></span><br></pre></td></tr></table></figure>
+
+<p>所以作业环境里只看到 1 张 GPU 是正常的，说明 Slurm GRES 隔离生效。</p>
+<hr>
+<h1 id="关于-nvidia-peermem"><a href="#关于-nvidia-peermem" class="headerlink" title="关于 nvidia-peermem"></a>关于 <code>nvidia-peermem</code></h1><p>这次安装使用了：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--no-peermem</span><br></pre></td></tr></table></figure>
+
+<p>原因是 <code>nvidia-peermem</code> 模块构建失败。</p>
+<p><code>nvidia-peermem</code> 主要用于：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">GPUDirect RDMA</span><br><span class="line">InfiniBand 直接访问 GPU 显存</span><br><span class="line">多节点 GPU 通信</span><br><span class="line">部分 NCCL over IB 高性能路径</span><br></pre></td></tr></table></figure>
+
+<p>普通 CUDA 计算依赖的核心模块是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">nvidia</span><br><span class="line">nvidia_uvm</span><br><span class="line">nvidia_modeset</span><br></pre></td></tr></table></figure>
+
+<p>当前这些模块都已正常加载：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsmod | grep -E <span class="string">'nvidia|uvm'</span></span><br></pre></td></tr></table></figure>
+
+<p>所以普通 CUDA、PyTorch、TensorFlow、自定义 CUDA 二进制库通常不受影响。</p>
+<p>不过，<code>nvidia-peermem</code> 失败可能与当时 RDMA/IB 栈没有完整加载有关。升级后最初只有 <code>mlx5_core</code>，没有完整的：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">mlx5_ib</span><br><span class="line">ib_ipoib</span><br><span class="line">ib_core</span><br></pre></td></tr></table></figure>
+
+<p>因此如果后续确实需要 GPUDirect RDMA，可以在维护窗口重新尝试安装 peermem：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /opt/gridview/slurm/bin/scontrol update NodeName=gpu2 State=DRAIN Reason=<span class="string">"try nvidia-peermem"</span></span><br><span class="line"></span><br><span class="line">ip -br addr | grep ib0</span><br><span class="line">lsmod | grep -E <span class="string">'mlx5_ib|ib_core|ib_ipoib|nvidia'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /tmp/makeself.*</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">env</span> \</span><br><span class="line">  PATH=/opt/rh/devtoolset-9/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \</span><br><span class="line">  CC=/opt/rh/devtoolset-9/root/usr/bin/gcc \</span><br><span class="line">  ./NVIDIA-Linux-x86_64-595.80.run --concurrency-level=1</span><br></pre></td></tr></table></figure>
+
+<p>如果失败，再回到已知成功方案：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">env</span> \</span><br><span class="line">  PATH=/opt/rh/devtoolset-9/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \</span><br><span class="line">  CC=/opt/rh/devtoolset-9/root/usr/bin/gcc \</span><br><span class="line">  ./NVIDIA-Linux-x86_64-595.80.run --concurrency-level=1 --no-peermem</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="回退方案"><a href="#回退方案" class="headerlink" title="回退方案"></a>回退方案</h1><p>整个过程中始终保留旧内核，这是非常重要的。</p>
+<p>查看内核：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grubby --info=ALL | egrep -i <span class="string">'^(index|kernel|title)='</span></span><br></pre></td></tr></table></figure>
+
+<p>如果需要回退到旧内核：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grubby --set-default /boot/vmlinuz-3.10.0-957.el7.x86_64</span><br><span class="line"><span class="built_in">sudo</span> reboot</span><br></pre></td></tr></table></figure>
+
+<p>如果只是下一次临时启动某个内核，可以使用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grub2-reboot &lt;index&gt;</span><br><span class="line"><span class="built_in">sudo</span> reboot</span><br></pre></td></tr></table></figure>
+
+<p>这次实践中，“默认旧内核 + 下一次临时启动新内核”的方式非常有用。</p>
+<p>它可以避免新内核启动失败后节点长期卡在不可用状态。</p>
+<hr>
+<h1 id="最终检查清单"><a href="#最终检查清单" class="headerlink" title="最终检查清单"></a>最终检查清单</h1><p>升级完成后，应至少检查以下项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">uname</span> -r</span><br><span class="line"><span class="built_in">sudo</span> grubby --default-kernel</span><br><span class="line"></span><br><span class="line">nvidia-smi</span><br><span class="line">nvidia-smi -L</span><br><span class="line">lsmod | grep -E <span class="string">'nvidia|uvm'</span></span><br><span class="line"></span><br><span class="line">ip -br addr | grep ib0</span><br><span class="line">ip route get 12.12.12.250</span><br><span class="line"><span class="built_in">df</span> -hT /public/home/<span class="variable">$USER</span></span><br><span class="line"><span class="built_in">which</span> starship</span><br><span class="line"></span><br><span class="line">/opt/gridview/slurm/bin/sinfo -N -l | grep gpu2</span><br><span class="line">/opt/gridview/slurm/bin/scontrol show node gpu2 | egrep <span class="string">'State=|Reason='</span></span><br></pre></td></tr></table></figure>
+
+<p>建议记录成功状态：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/gpu2-driver-upgrade-record</span><br><span class="line"></span><br><span class="line">{</span><br><span class="line">  <span class="built_in">date</span></span><br><span class="line">  hostname</span><br><span class="line">  <span class="built_in">uname</span> -r</span><br><span class="line">  <span class="built_in">cat</span> /proc/version</span><br><span class="line">  <span class="built_in">sudo</span> grubby --default-kernel</span><br><span class="line">  ip -br addr | grep ib0</span><br><span class="line">  <span class="built_in">df</span> -hT /public/home/<span class="variable">$USER</span></span><br><span class="line">  nvidia-smi</span><br><span class="line">  lsmod | grep -E <span class="string">'nvidia|uvm|mlx5|ipoib'</span></span><br><span class="line">  /opt/gridview/slurm/bin/sinfo -N -l | grep gpu2</span><br><span class="line">} | <span class="built_in">tee</span> ~/gpu2-driver-upgrade-record/gpu2_final_success.txt</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h1><p>这次维护最大的经验是：<strong>GPU 驱动升级不是单独的 NVIDIA 问题，而是内核、编译器、网络、存储、Slurm 权限共同作用的问题。</strong></p>
+<p>几个关键注意事项：</p>
+<ol>
+<li><p><strong>先 Drain 节点，再维护。</strong><br>不要让用户作业在维护过程中进入节点。</p>
+</li>
+<li><p><strong>不要盲目追最新内核。</strong><br>对 CentOS 7 来说，<code>kernel-lt 5.4</code> 比 <code>kernel-ml 6.9</code> 更稳。</p>
+</li>
+<li><p><strong>保留旧内核回退。</strong><br>使用 <code>grub2-reboot</code> 做一次性启动，比直接改默认内核更安全。</p>
+</li>
+<li><p><strong>新内核需要匹配的新 GCC。</strong><br>CentOS 7 默认 GCC 4.8.5 很容易无法编译新版 NVIDIA 模块。</p>
+</li>
+<li><p><strong>普通 CUDA 不一定需要 <code>nvidia-peermem</code>。</strong><br>没有 GPUDirect RDMA 需求时，可以使用 <code>--no-peermem</code>。</p>
+</li>
+<li><p><strong>不要忽略共享存储。</strong><br>登录后配置丢失、starship 消失，不一定是 shell 配置问题，可能是 <code>/public</code> 没挂上。</p>
+</li>
+<li><p><strong>IB/IPoIB 要随内核一起检查。</strong><br>新内核启动后，<code>mlx5_ib</code>、<code>ib_ipoib</code> 可能没有自动加载，导致 NFS 存储网络不可达。</p>
+</li>
+<li><p><strong>Slurm 测试必须通过真实作业完成。</strong><br><code>nvidia-smi</code> 在 SSH 中正常不等于 Slurm 作业环境正常。</p>
+</li>
+<li><p><strong>临时修改 Slurm 分区权限要写回配置。</strong><br><code>scontrol update PartitionName=...</code> 只是运行时状态，长期生效需要改 <code>slurm.conf</code>。</p>
+</li>
+<li><p><strong>每一步都要验证，而不是假设成功。</strong><br>这次问题能排完，靠的就是每一步都对比 <code>gpu1</code> 和 <code>gpu2</code> 的实际状态。</p>
+</li>
+</ol>
+<hr>
+<h1 id="最终状态"><a href="#最终状态" class="headerlink" title="最终状态"></a>最终状态</h1><p>最终 <code>gpu2</code> 已恢复为：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Node: gpu2</span><br><span class="line">State: IDLE</span><br><span class="line">Kernel: 5.4.278-1.el7.elrepo.x86_64</span><br><span class="line">NVIDIA Driver: 595.80</span><br><span class="line">CUDA reported by driver: 13.2</span><br><span class="line">GPU: RTX 3090 × 8</span><br><span class="line">NFS: 12.12.12.250:/public mounted on /public</span><br><span class="line">IB: ib0 12.12.12.202/24</span><br><span class="line">Slurm GPU job test: passed</span><br></pre></td></tr></table></figure>
+
+<p>到这里，<code>gpu2</code> 的内核、驱动、共享存储、IB 网络和 Slurm 作业验证全部闭环。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://diraw.top">Diraw</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://diraw.top/2026/07/17/CS/Linux/9/">https://diraw.top/2026/07/17/CS/Linux/9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://diraw.top" target="_blank">Diraw的世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a><a class="post-meta__tags" href="/tags/centos/">centos</a><a class="post-meta__tags" href="/tags/nvidia/">nvidia</a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Diraw</div><div class="author-info-description">希望能构建心中的一片圣地</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/diraw"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://diraw.top/atom.xml" target="_blank" title=""><i class="fas fa-rss"></i></a><a class="social-icon" href="https://github.com/Diraw" target="_blank" title=""><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/3546387746654749" target="_blank" title=""><i class="fab fa-bilibili"></i></a><a class="social-icon" href="mailto:dirawtop@gmail.com" target="_blank" title=""><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><p>所有<strong>知识整理类</strong>博文已全部移动至<strong><a target="_blank" rel="noopener" href="http://wiki.diraw.top">wiki文档</a></strong></p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%B4%E6%8A%A4%E5%89%8D%E5%87%86%E5%A4%87%EF%BC%9A%E5%85%88%E4%BF%9D%E6%8A%A4%E8%B0%83%E5%BA%A6%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text">维护前准备：先保护调度环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%8F%AA%E7%94%A8-Docker-%E6%88%96%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A7%A3%E5%86%B3"><span class="toc-number">2.1.</span> <span class="toc-text">为什么不能只用 Docker 或虚拟机解决</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E6%A0%B8%E9%80%89%E6%8B%A9%EF%BC%9A%E4%B8%8D%E8%A6%81%E7%9B%B2%E7%9B%AE%E8%BF%BD%E6%96%B0"><span class="toc-number">3.</span> <span class="toc-text">内核选择：不要盲目追新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GCC-%E5%B7%A5%E5%85%B7%E9%93%BE%EF%BC%9ACentOS-7-%E9%BB%98%E8%AE%A4-GCC-%E5%A4%AA%E6%97%A7"><span class="toc-number">4.</span> <span class="toc-text">GCC 工具链：CentOS 7 默认 GCC 太旧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NVIDIA-595-80-%E5%AE%89%E8%A3%85%EF%BC%9A%E6%9C%80%E7%BB%88%E4%BD%BF%E7%94%A8-no-peermem"><span class="toc-number">5.</span> <span class="toc-text">NVIDIA 595.80 安装：最终使用 --no-peermem</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%84%8F%E5%A4%96%E9%97%AE%E9%A2%98%EF%BC%9A%E5%85%B1%E4%BA%AB-home-%E4%B8%A2%E5%A4%B1"><span class="toc-number">6.</span> <span class="toc-text">意外问题：共享 home 丢失</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E5%9B%A0%EF%BC%9AInfiniBand-IPoIB-%E5%AD%98%E5%82%A8%E7%BD%91%E7%BB%9C%E6%B2%A1%E8%B5%B7%E6%9D%A5"><span class="toc-number">6.1.</span> <span class="toc-text">根因：InfiniBand&#x2F;IPoIB 存储网络没起来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D-public-NFS-%E6%8C%82%E8%BD%BD"><span class="toc-number">6.2.</span> <span class="toc-text">恢复 &#x2F;public NFS 挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A9-IB-%E5%92%8C-NFS-%E9%87%8D%E5%90%AF%E5%90%8E%E8%87%AA%E5%8A%A8%E6%81%A2%E5%A4%8D"><span class="toc-number">6.3.</span> <span class="toc-text">让 IB 和 NFS 重启后自动恢复</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D-Slurm-%E8%B0%83%E5%BA%A6"><span class="toc-number">7.</span> <span class="toc-text">恢复 Slurm 调度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Slurm-GPU-%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A"><span class="toc-number">7.1.</span> <span class="toc-text">Slurm GPU 测试作业</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-nvidia-peermem"><span class="toc-number">8.</span> <span class="toc-text">关于 nvidia-peermem</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9E%E9%80%80%E6%96%B9%E6%A1%88"><span class="toc-number">9.</span> <span class="toc-text">回退方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%A3%80%E6%9F%A5%E6%B8%85%E5%8D%95"><span class="toc-number">10.</span> <span class="toc-text">最终检查清单</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93"><span class="toc-number">11.</span> <span class="toc-text">经验总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E7%8A%B6%E6%80%81"><span class="toc-number">12.</span> <span class="toc-text">最终状态</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/17/CS/Linux/10/" title="RTX 3060 离线工作站 NVIDIA 535 驱动更新与 initrd 启动故障复盘">RTX 3060 离线工作站 NVIDIA 535 驱动更新与 initrd 启动故障复盘</a><time datetime="2026-07-17T07:28:00.000Z" title="发表于 2026-07-17 15:28:00">2026-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/17/CS/Linux/9/" title="CentOS 超算 GPU 节点内核与 NVIDIA 驱动升级记录：从 535 到 595.80">CentOS 超算 GPU 节点内核与 NVIDIA 驱动升级记录：从 535 到 595.80</a><time datetime="2026-07-17T06:23:00.000Z" title="发表于 2026-07-17 14:23:00">2026-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/16/CS/Windows/12/" title="EasyTier Windows 开机自启实现">EasyTier Windows 开机自启实现</a><time datetime="2026-07-16T05:29:00.000Z" title="发表于 2026-07-16 13:29:00">2026-07-16</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 - 2026 By Diraw</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2025147634号-1</a></div><div></div><span id="timeDate">载入天数...</span><span id="times">载入时分...</span><script>// 定义网站的起始运行时间
+// 请根据你的网站实际启动时间修改此处的日期和时间
+var grt = new Date("1/2/2025 21:36:00"); 
+
+// createtime 函数用于计算并更新显示时间
+function createtime() {
+  // 每次调用时都获取最新的当前时间，这是确保时间准确的关键
+  var now = new Date(); 
+
+  // 计算当前时间与起始时间之间的总毫秒差
+  var diff = now - grt;
+
+  // 如果起始时间在当前时间之后（例如，未来时间），则显示0天0小时0分
+  if (diff < 0) {
+    document.getElementById("timeDate").innerHTML = "本网站已运行 0 天 ";
+    document.getElementById("times").innerHTML = "00 小时 00 分";
+    return; // 结束函数执行
+  }
+
+  // 计算天数
+  var days = diff / (1000 * 60 * 60 * 24);
+  var dnum = Math.floor(days); 
+
+  // 计算小时数（从总毫秒差中减去天数对应的毫秒数，再转换为小时）
+  var hours = (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+  var hnum = Math.floor(hours); 
+  // 补零，确保小时数始终为两位
+  if (String(hnum).length == 1) { hnum = "0" + hnum; } 
+
+  // 计算分钟数（从小时数剩余的毫秒数中转换为分钟）
+  var minutes = (diff % (1000 * 60 * 60)) / (1000 * 60);
+  var mnum = Math.floor(minutes); 
+  // 补零，确保分钟数始终为两位
+  if (String(mnum).length == 1) { mnum = "0" + mnum; } 
+
+  // 更新页面上对应元素的文本内容
+  document.getElementById("timeDate").innerHTML = "本网站已运行 " + dnum + " 天 "; 
+  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分"; 
+} 
+
+// 使用 DOMContentLoaded 事件确保 HTML 元素加载完毕后再执行脚本
+document.addEventListener('DOMContentLoaded', function() {
+  // 第一次快速更新：页面加载后立即执行一次 createtime 函数
+  createtime();
+
+  setInterval(createtime, 1000); 
+});</script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.2.2"></script><script src="/js/main.js?v=5.2.2"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.diraw.top/',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo.diraw.top/',
+      region: 'ap-shanghai',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.diraw.top/npm/twikoo/1.6.39/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><link rel="stylesheet" href="https://cdn.diraw.top/npm/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.diraw.top/npm/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.diraw.top/npm/butterfly-extsrc/1.1.4/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.diraw.top/npm/pjax/0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: true,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.2.2"></script></div></div></body></html>
