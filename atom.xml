@@ -6,7 +6,7 @@
   <link href="https://diraw.top/atom.xml" rel="self"/>
   
   <link href="https://diraw.top/"/>
-  <updated>2026-07-17T07:31:46.481Z</updated>
+  <updated>2026-09-08T14:03:11.799Z</updated>
   <id>https://diraw.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitHub PR 流程与 cherry-pick 多 commit 标准做法</title>
+    <link href="https://diraw.top/2026/09/08/CS/git/4/"/>
+    <id>https://diraw.top/2026/09/08/CS/git/4/</id>
+    <published>2026-09-08T14:03:00.000Z</published>
+    <updated>2026-09-08T14:03:11.799Z</updated>
+    
+    
+    <summary type="html">协作开发中遇到的一些问题</summary>
+    
+    
+    
+    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="github" scheme="https://diraw.top/tags/github/"/>
+    
+    <category term="git" scheme="https://diraw.top/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>RTX 3060 离线工作站 NVIDIA 535 驱动更新与 initrd 启动故障复盘</title>
@@ -398,25 +419,6 @@
     <category term="ubuntu" scheme="https://diraw.top/tags/ubuntu/"/>
     
     <category term="debian" scheme="https://diraw.top/tags/debian/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Ditto在不同windows电脑之间共享剪贴板</title>
-    <link href="https://diraw.top/2025/10/04/CS/Windows/7/"/>
-    <id>https://diraw.top/2025/10/04/CS/Windows/7/</id>
-    <published>2025-10-04T13:02:00.000Z</published>
-    <updated>2025-10-06T07:36:34.228Z</updated>
-    
-    
-    <summary type="html">推荐一个windows上很好用的小工具</summary>
-    
-    
-    
-    <category term="计算机" scheme="https://diraw.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="windows" scheme="https://diraw.top/tags/windows/"/>
     
   </entry>
   
